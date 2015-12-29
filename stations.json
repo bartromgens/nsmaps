@@ -1,0 +1,74 @@
+{
+    "stations": [
+        {
+            "lat": "52.0888900756836",
+            "lon": "5.11027765274048",
+            "names": {
+                "long": "Utrecht Centraal",
+                "middle": "Utrecht C.",
+                "short": "Utrecht C"
+            },
+            "type": "megastation"
+        },
+        {
+            "lat": "52.09896",
+            "lon": "5.06523",
+            "names": {
+                "long": "Utrecht Leidsche Rijn",
+                "middle": "Leidsche Rijn",
+                "short": "Leidsche R"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.0655555725098",
+            "lon": "5.14416646957397",
+            "names": {
+                "long": "Utrecht Lunetten",
+                "middle": "Utrecht Lunetten",
+                "short": "Lunetten"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.087776184082",
+            "lon": "5.13138866424561",
+            "names": {
+                "long": "Utrecht Maliebaan",
+                "middle": "Maliebaan",
+                "short": "Maliebaan"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.1100006103516",
+            "lon": "5.12472200393677",
+            "names": {
+                "long": "Utrecht Overvecht",
+                "middle": "Overvecht",
+                "short": "Overvecht"
+            },
+            "type": "knooppuntStoptreinstation"
+        },
+        {
+            "lat": "52.1005554199219",
+            "lon": "5.04166650772095",
+            "names": {
+                "long": "Utrecht Terwijde",
+                "middle": "Utrecht Terwijde",
+                "short": "Terwijde"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.103055",
+            "lon": "5.09",
+            "names": {
+                "long": "Utrecht Zuilen",
+                "middle": "Utrecht Zuilen",
+                "short": "Zuilen"
+            },
+            "type": "stoptreinstation"
+        }
+    ]
+}

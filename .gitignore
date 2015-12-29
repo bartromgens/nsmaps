@@ -1,0 +1,10 @@
+/env/*
+/env2/*
+
+*.pyc
+
+/.idea/*
+
+local_settings.py
+*.sqlite
+*.log
