@@ -10,7 +10,8 @@ def update_station_data():
 
     data = {'stations': []}
     for station in stations:
-        if station.country == "NL" and "Utrecht" in station.names['long']:
+        # if station.country == "NL" and "Utrecht" in station.names['long']:
+        if station.country == "NL":
             names = station.names
             data['stations'].append({'names': names, 'lon': station.lon, 'lat': station.lat, 'type': station.stationtype})
 
