@@ -1,6 +1,3436 @@
 {
     "stations": [
         {
+            "lat": "51.69048",
+            "lon": "5.29362",
+            "names": {
+                "long": "'s-Hertogenbosch",
+                "middle": "'s-Hertogenbosch",
+                "short": "Den Bosch"
+            },
+            "type": "knooppuntIntercitystation"
+        },
+        {
+            "lat": "51.700553894043",
+            "lon": "5.3183331489563",
+            "names": {
+                "long": "'s-Hertogenbosch Oost",
+                "middle": "Hertogenbosch O.",
+                "short": "H'bosch O"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.4091682",
+            "lon": "5.893611",
+            "names": {
+                "long": "'t Harde",
+                "middle": "'t Harde",
+                "short": "'t Harde"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.9213265245505",
+            "lon": "6.57862722873687",
+            "names": {
+                "long": "Aalten",
+                "middle": "Aalten",
+                "short": "Aalten"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.2785",
+            "lon": "4.977",
+            "names": {
+                "long": "Abcoude",
+                "middle": "Abcoude",
+                "short": "Abcoude"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "53.0463905334473",
+            "lon": "5.84361124038696",
+            "names": {
+                "long": "Akkrum",
+                "middle": "Akkrum",
+                "short": "Akkrum"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.6377792358398",
+            "lon": "4.73972225189209",
+            "names": {
+                "long": "Alkmaar",
+                "middle": "Alkmaar",
+                "short": "Alkmaar"
+            },
+            "type": "knooppuntIntercitystation"
+        },
+        {
+            "lat": "52.6438903808594",
+            "lon": "4.76416683197022",
+            "names": {
+                "long": "Alkmaar Noord",
+                "middle": "Alkmaar Noord",
+                "short": "Alkmaar N"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.3580551147461",
+            "lon": "6.65388870239258",
+            "names": {
+                "long": "Almelo",
+                "middle": "Almelo",
+                "short": "Almelo"
+            },
+            "type": "knooppuntIntercitystation"
+        },
+        {
+            "lat": "52.3419456481934",
+            "lon": "6.66666650772095",
+            "names": {
+                "long": "Almelo de Riet",
+                "middle": "Almelo de Riet",
+                "short": "de Riet"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.3941650390625",
+            "lon": "5.2780556678772",
+            "names": {
+                "long": "Almere Buiten",
+                "middle": "Almere Buiten",
+                "short": "Buiten"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.37503",
+            "lon": "5.21764",
+            "names": {
+                "long": "Almere Centrum",
+                "middle": "Almere C.",
+                "short": "Almere C"
+            },
+            "type": "knooppuntIntercitystation"
+        },
+        {
+            "lat": "52.3675003051758",
+            "lon": "5.19027757644653",
+            "names": {
+                "long": "Almere Muziekwijk",
+                "middle": "Muziekwijk",
+                "short": "Muziekwijk"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.4033317565918",
+            "lon": "5.30055570602417",
+            "names": {
+                "long": "Almere Oostvaarders",
+                "middle": "Oostvaarders",
+                "short": "Oostvaard"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.3766670227051",
+            "lon": "5.24472236633301",
+            "names": {
+                "long": "Almere Parkwijk",
+                "middle": "Almere Parkwijk",
+                "short": "Parkwijk"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.342778",
+            "lon": "5.151944",
+            "names": {
+                "long": "Almere Poort",
+                "middle": "Almere Poort",
+                "short": "Almere P"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.1244430541992",
+            "lon": "4.65777778625488",
+            "names": {
+                "long": "Alphen a/d Rijn",
+                "middle": "Alphen a/d Rijn",
+                "short": "Alphen"
+            },
+            "type": "knooppuntIntercitystation"
+        },
+        {
+            "lat": "52.1538887023926",
+            "lon": "5.37055540084839",
+            "names": {
+                "long": "Amersfoort",
+                "middle": "Amersfoort",
+                "short": "Amersfoort"
+            },
+            "type": "knooppuntIntercitystation"
+        },
+        {
+            "lat": "52.1748221374512",
+            "lon": "5.40388870239258",
+            "names": {
+                "long": "Amersfoort Schothorst",
+                "middle": "Schothorst",
+                "short": "Schothorst"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.1927795410156",
+            "lon": "5.43388891220093",
+            "names": {
+                "long": "Amersfoort Vathorst",
+                "middle": "Vathorst",
+                "short": "Vathorst"
+            },
+            "type": "sneltreinstation"
+        },
+        {
+            "lat": "52.3466682434082",
+            "lon": "4.91777801513672",
+            "names": {
+                "long": "Amsterdam Amstel",
+                "middle": "Amsterdam Amstel",
+                "short": "Amstel"
+            },
+            "type": "intercitystation"
+        },
+        {
+            "lat": "52.3122215270996",
+            "lon": "4.94694423675537",
+            "names": {
+                "long": "Amsterdam Bijlmer ArenA",
+                "middle": "Bijlmer ArenA",
+                "short": "Bijlmer A"
+            },
+            "type": "knooppuntStoptreinstation"
+        },
+        {
+            "lat": "52.3788871765137",
+            "lon": "4.90027761459351",
+            "names": {
+                "long": "Amsterdam Centraal",
+                "middle": "Amsterdam C.",
+                "short": "A'dam C"
+            },
+            "type": "megastation"
+        },
+        {
+            "lat": "52.29844",
+            "lon": "4.95972",
+            "names": {
+                "long": "Amsterdam Holendrecht",
+                "middle": "Holendrecht",
+                "short": "Holendrcht"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.3577766418457",
+            "lon": "4.83388900756836",
+            "names": {
+                "long": "Amsterdam Lelylaan",
+                "middle": "Lelylaan",
+                "short": "Lelylaan"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.3605537414551",
+            "lon": "4.93111133575439",
+            "names": {
+                "long": "Amsterdam Muiderpoort",
+                "middle": "Muiderpoort",
+                "short": "Muiderprt"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.3372230529785",
+            "lon": "4.89027786254883",
+            "names": {
+                "long": "Amsterdam RAI",
+                "middle": "Amsterdam RAI",
+                "short": "A'dam RAI"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.35526",
+            "lon": "4.94651",
+            "names": {
+                "long": "Amsterdam Science Park",
+                "middle": "Science Park",
+                "short": "Scienceprk"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.3888893127441",
+            "lon": "4.83777761459351",
+            "names": {
+                "long": "Amsterdam Sloterdijk",
+                "middle": "Sloterdijk",
+                "short": "Sloterdijk"
+            },
+            "type": "knooppuntIntercitystation"
+        },
+        {
+            "lat": "52.330134",
+            "lon": "4.92975",
+            "names": {
+                "long": "Amsterdam Van der Madeweg",
+                "middle": "Van der Madeweg",
+                "short": "vd Madeweg"
+            },
+            "type": "facultatiefStation"
+        },
+        {
+            "lat": "52.3388900756836",
+            "lon": "4.871666431427",
+            "names": {
+                "long": "Amsterdam Zuid",
+                "middle": "Amsterdam Zuid",
+                "short": "A'dam Z"
+            },
+            "type": "intercitystation"
+        },
+        {
+            "lat": "52.8672218322754",
+            "lon": "4.81111097335815",
+            "names": {
+                "long": "Anna Paulowna",
+                "middle": "Anna Paulowna",
+                "short": "Anna Paulo"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.2091674804687",
+            "lon": "5.97027778625488",
+            "names": {
+                "long": "Apeldoorn",
+                "middle": "Apeldoorn",
+                "short": "Apeldoorn"
+            },
+            "type": "knooppuntIntercitystation"
+        },
+        {
+            "lat": "52.2052764892578",
+            "lon": "6.00055551528931",
+            "names": {
+                "long": "Apeldoorn De Maten",
+                "middle": "De Maten",
+                "short": "De Maten"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.2152786254883",
+            "lon": "6.00444459915161",
+            "names": {
+                "long": "Apeldoorn Osseveld",
+                "middle": "Osseveld",
+                "short": "Osseveld"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "53.3258135",
+            "lon": "6.8619577",
+            "names": {
+                "long": "Appingedam",
+                "middle": "Appingedam",
+                "short": "Appingedam"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.8719444274902",
+            "lon": "4.99277782440186",
+            "names": {
+                "long": "Arkel",
+                "middle": "Arkel",
+                "short": "Arkel"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.5016670227051",
+            "lon": "3.66916656494141",
+            "names": {
+                "long": "Arnemuiden",
+                "middle": "Arnemuiden",
+                "short": "Arnemuiden"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.9850006103516",
+            "lon": "5.89916658401489",
+            "names": {
+                "long": "Arnhem",
+                "middle": "Arnhem",
+                "short": "Arnhem"
+            },
+            "type": "knooppuntIntercitystation"
+        },
+        {
+            "lat": "51.9880561828613",
+            "lon": "5.94388866424561",
+            "names": {
+                "long": "Arnhem Presikhaaf",
+                "middle": "Presikhaaf",
+                "short": "Presikhaaf"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.985279083252",
+            "lon": "5.91944456100464",
+            "names": {
+                "long": "Arnhem Velperpoort",
+                "middle": "Velperpoort",
+                "short": "Velperprt"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.9550018310547",
+            "lon": "5.85194444656372",
+            "names": {
+                "long": "Arnhem Zuid",
+                "middle": "Arnhem Zuid",
+                "short": "Arnhem Z"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.9916648864746",
+            "lon": "6.57083320617676",
+            "names": {
+                "long": "Assen",
+                "middle": "Assen",
+                "short": "Assen"
+            },
+            "type": "knooppuntIntercitystation"
+        },
+        {
+            "lat": "52.2083320617676",
+            "lon": "5.28083324432373",
+            "names": {
+                "long": "Baarn",
+                "middle": "Baarn",
+                "short": "Baarn"
+            },
+            "type": "knooppuntStoptreinstation"
+        },
+        {
+            "lat": "53.1844",
+            "lon": "7.19937",
+            "names": {
+                "long": "Bad Nieuweschans",
+                "middle": "Bad Nieuweschans",
+                "short": "Nweschans"
+            },
+            "type": "knooppuntStoptreinstation"
+        },
+        {
+            "lat": "53.3608969",
+            "lon": "6.5185581",
+            "names": {
+                "long": "Baflo",
+                "middle": "Baflo",
+                "short": "Baflo"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.8547210693359",
+            "lon": "4.5533332824707",
+            "names": {
+                "long": "Barendrecht",
+                "middle": "Barendrecht",
+                "short": "Barendrcht"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.1399993896484",
+            "lon": "5.59027767181396",
+            "names": {
+                "long": "Barneveld Centrum",
+                "middle": "Barneveld C.",
+                "short": "Barnevld C"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.1613883972168",
+            "lon": "5.59805536270142",
+            "names": {
+                "long": "Barneveld Noord",
+                "middle": "Barneveld Noord",
+                "short": "Barnevld N"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.128853",
+            "lon": "5.60246",
+            "names": {
+                "long": "Barneveld Zuid",
+                "middle": "Barneveld Zuid",
+                "short": "Barnevld Z"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "53.3068857",
+            "lon": "6.593054",
+            "names": {
+                "long": "Bedum",
+                "middle": "Bedum",
+                "short": "Bedum"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "50.9474983215332",
+            "lon": "5.78666687011719",
+            "names": {
+                "long": "Beek-Elsloo",
+                "middle": "Beek-Elsloo",
+                "short": "Beek-E"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.8994445800781",
+            "lon": "5.19444465637207",
+            "names": {
+                "long": "Beesd",
+                "middle": "Beesd",
+                "short": "Beesd"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.8547210693359",
+            "lon": "6.52111101150513",
+            "names": {
+                "long": "Beilen",
+                "middle": "Beilen",
+                "short": "Beilen"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.4938888549805",
+            "lon": "4.29611110687256",
+            "names": {
+                "long": "Bergen op Zoom",
+                "middle": "Bergen op Zoom",
+                "short": "Bergen opZ"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.5099983215332",
+            "lon": "5.38916683197022",
+            "names": {
+                "long": "Best",
+                "middle": "Best",
+                "short": "Best"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.4783325195313",
+            "lon": "4.65666675567627",
+            "names": {
+                "long": "Beverwijk",
+                "middle": "Beverwijk",
+                "short": "Beverwijk"
+            },
+            "type": "intercitystation"
+        },
+        {
+            "lat": "52.1300010681152",
+            "lon": "5.20388889312744",
+            "names": {
+                "long": "Bilthoven",
+                "middle": "Bilthoven",
+                "short": "Bilthoven"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.372501373291",
+            "lon": "6.15500020980835",
+            "names": {
+                "long": "Blerick",
+                "middle": "Blerick",
+                "short": "Blerick"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.404167175293",
+            "lon": "4.62750005722046",
+            "names": {
+                "long": "Bloemendaal",
+                "middle": "Bloemendaal",
+                "short": "Bloemendl"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.0813903808594",
+            "lon": "4.7461109161377",
+            "names": {
+                "long": "Bodegraven",
+                "middle": "Bodegraven",
+                "short": "Bodegraven"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.2988891601562",
+            "lon": "6.74805545806885",
+            "names": {
+                "long": "Borne",
+                "middle": "Borne",
+                "short": "Borne"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.0777778625488",
+            "lon": "4.64694452285767",
+            "names": {
+                "long": "Boskoop",
+                "middle": "Boskoop",
+                "short": "Boskoop"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.832222",
+            "lon": "4.878056",
+            "names": {
+                "long": "Boven-Hardinxveld",
+                "middle": "Boven-Hardinxv.",
+                "short": "Boven-H."
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.6961097717285",
+            "lon": "5.25277757644653",
+            "names": {
+                "long": "Bovenkarspel Flora",
+                "middle": "Bovenkarspel Fl.",
+                "short": "Bovenk Flo"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.6949996948242",
+            "lon": "5.23777770996094",
+            "names": {
+                "long": "Bovenkarspel-Grootebroek",
+                "middle": "Bovenkarspel-Gr.",
+                "short": "Bovenk-Gr"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.6445217676531",
+            "lon": "5.93903303146362",
+            "names": {
+                "long": "Boxmeer",
+                "middle": "Boxmeer",
+                "short": "Boxmeer"
+            },
+            "type": "knooppuntStoptreinstation"
+        },
+        {
+            "lat": "51.58433",
+            "lon": "5.31912",
+            "names": {
+                "long": "Boxtel",
+                "middle": "Boxtel",
+                "short": "Boxtel"
+            },
+            "type": "knooppuntStoptreinstation"
+        },
+        {
+            "lat": "51.5955543518066",
+            "lon": "4.78000020980835",
+            "names": {
+                "long": "Breda",
+                "middle": "Breda",
+                "short": "Breda"
+            },
+            "type": "knooppuntIntercitystation"
+        },
+        {
+            "lat": "51.606388092041",
+            "lon": "4.72083330154419",
+            "names": {
+                "long": "Breda-Prinsenbeek",
+                "middle": "Prinsenbeek",
+                "short": "Prinsenbk"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.17149",
+            "lon": "4.9906",
+            "names": {
+                "long": "Breukelen",
+                "middle": "Breukelen",
+                "short": "Breukelen"
+            },
+            "type": "knooppuntStoptreinstation"
+        },
+        {
+            "lat": "52.0911102294922",
+            "lon": "6.14694452285767",
+            "names": {
+                "long": "Brummen",
+                "middle": "Brummen",
+                "short": "Brummen"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "53.2564547",
+            "lon": "6.1446496",
+            "names": {
+                "long": "Buitenpost",
+                "middle": "Buitenpost",
+                "short": "Buitenpost"
+            },
+            "type": "knooppuntSneltreinstation"
+        },
+        {
+            "lat": "50.8969459533691",
+            "lon": "5.73666667938232",
+            "names": {
+                "long": "Bunde",
+                "middle": "Bunde",
+                "short": "Bunde"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.0630569458008",
+            "lon": "5.19444465637207",
+            "names": {
+                "long": "Bunnik",
+                "middle": "Bunnik",
+                "short": "Bunnik"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.2658348083496",
+            "lon": "5.16305541992188",
+            "names": {
+                "long": "Bussum Zuid",
+                "middle": "Bussum Zuid",
+                "short": "Bussum Z"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.9541664123535",
+            "lon": "4.58416652679443",
+            "names": {
+                "long": "Capelle Schollevaar",
+                "middle": "Schollevaar",
+                "short": "Schollevr"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.5458335876465",
+            "lon": "4.65861129760742",
+            "names": {
+                "long": "Castricum",
+                "middle": "Castricum",
+                "short": "Castricum"
+            },
+            "type": "intercitystation"
+        },
+        {
+            "lat": "50.8761100769043",
+            "lon": "6.05972242355347",
+            "names": {
+                "long": "Chevremont",
+                "middle": "Chevremont",
+                "short": "Chevremont"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.6636123657227",
+            "lon": "6.73555564880371",
+            "names": {
+                "long": "Coevorden",
+                "middle": "Coevorden",
+                "short": "Coevorden"
+            },
+            "type": "knooppuntSneltreinstation"
+        },
+        {
+            "lat": "51.7266825879048",
+            "lon": "5.87429523468017",
+            "names": {
+                "long": "Cuijk",
+                "middle": "Cuijk",
+                "short": "Cuijk"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.9466667175293",
+            "lon": "5.22694444656372",
+            "names": {
+                "long": "Culemborg",
+                "middle": "Culemborg",
+                "short": "Culemborg"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.4407702",
+            "lon": "6.5759947",
+            "names": {
+                "long": "Daarlerveen",
+                "middle": "Daarlerveen",
+                "short": "Daarlervn"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.6941680908203",
+            "lon": "6.75805568695068",
+            "names": {
+                "long": "Dalen",
+                "middle": "Dalen",
+                "short": "Dalen"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.4983329772949",
+            "lon": "6.25861120223999",
+            "names": {
+                "long": "Dalfsen",
+                "middle": "Dalfsen",
+                "short": "Dalfsen"
+            },
+            "type": "sneltreinstation"
+        },
+        {
+            "lat": "52.1472206115723",
+            "lon": "4.4563889503479",
+            "names": {
+                "long": "De Vink",
+                "middle": "De Vink",
+                "short": "De Vink"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "53.24817",
+            "lon": "6.03463",
+            "names": {
+                "long": "De Westereen",
+                "middle": "De Westereen",
+                "short": "Westereen"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "53.1888115",
+            "lon": "5.7281572",
+            "names": {
+                "long": "Deinum",
+                "middle": "Deinum",
+                "short": "Deinum"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.2599983215332",
+            "lon": "6.7161111831665",
+            "names": {
+                "long": "Delden",
+                "middle": "Delden",
+                "short": "Delden"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.0066680908203",
+            "lon": "4.35638904571533",
+            "names": {
+                "long": "Delft",
+                "middle": "Delft",
+                "short": "Delft"
+            },
+            "type": "knooppuntIntercitystation"
+        },
+        {
+            "lat": "51.9908332824707",
+            "lon": "4.36472225189209",
+            "names": {
+                "long": "Delft Zuid",
+                "middle": "Delft Zuid",
+                "short": "Delft Z"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "53.3336625",
+            "lon": "6.9240797",
+            "names": {
+                "long": "Delfzijl",
+                "middle": "Delfzijl",
+                "short": "Delfzijl"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "53.3320834",
+            "lon": "6.9069092",
+            "names": {
+                "long": "Delfzijl West",
+                "middle": "Delfzijl West",
+                "short": "Delfzijl W"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.1402778625488",
+            "lon": "5.24277782440186",
+            "names": {
+                "long": "Den Dolder",
+                "middle": "Den Dolder",
+                "short": "Den Dolder"
+            },
+            "type": "knooppuntStoptreinstation"
+        },
+        {
+            "lat": "52.0802764892578",
+            "lon": "4.32499980926514",
+            "names": {
+                "long": "Den Haag Centraal",
+                "middle": "Den Haag C.",
+                "short": "Den Haag C"
+            },
+            "type": "megastation"
+        },
+        {
+            "lat": "52.0697212219238",
+            "lon": "4.32250022888184",
+            "names": {
+                "long": "Den Haag HS",
+                "middle": "Den Haag HS",
+                "short": "Dn Haag HS"
+            },
+            "type": "knooppuntIntercitystation"
+        },
+        {
+            "lat": "52.0786094665527",
+            "lon": "4.34277772903442",
+            "names": {
+                "long": "Den Haag Laan v NOI",
+                "middle": "Laan v NOI",
+                "short": "Laan v NOI"
+            },
+            "type": "intercitystation"
+        },
+        {
+            "lat": "52.0905570983887",
+            "lon": "4.36944437026978",
+            "names": {
+                "long": "Den Haag Mariahoeve",
+                "middle": "Mariahoeve",
+                "short": "Mariahoeve"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.0538902282715",
+            "lon": "4.3086109161377",
+            "names": {
+                "long": "Den Haag Moerwijk",
+                "middle": "Moerwijk",
+                "short": "Moerwijk"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.0552787780762",
+            "lon": "4.39222240447998",
+            "names": {
+                "long": "Den Haag Ypenburg",
+                "middle": "Ypenburg",
+                "short": "Ypenburg"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.9552764892578",
+            "lon": "4.76111125946045",
+            "names": {
+                "long": "Den Helder",
+                "middle": "Den Helder",
+                "short": "Den Helder"
+            },
+            "type": "intercitystation"
+        },
+        {
+            "lat": "52.9324989318848",
+            "lon": "4.76416683197022",
+            "names": {
+                "long": "Den Helder Zuid",
+                "middle": "Den Helder Zuid",
+                "short": "Dn Heldr Z"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.4558334350586",
+            "lon": "5.78888893127441",
+            "names": {
+                "long": "Deurne",
+                "middle": "Deurne",
+                "short": "Deurne"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.2574996948242",
+            "lon": "6.16055536270142",
+            "names": {
+                "long": "Deventer",
+                "middle": "Deventer",
+                "short": "Deventer"
+            },
+            "type": "knooppuntIntercitystation"
+        },
+        {
+            "lat": "52.2502784729004",
+            "lon": "6.21444463729858",
+            "names": {
+                "long": "Deventer Colmschate",
+                "middle": "Colmschate",
+                "short": "Colmschate"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.933502",
+            "lon": "6.1324106",
+            "names": {
+                "long": "Didam",
+                "middle": "Didam",
+                "short": "Didam"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.345832824707",
+            "lon": "4.9655556678772",
+            "names": {
+                "long": "Diemen",
+                "middle": "Diemen",
+                "short": "Diemen"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.3302764892578",
+            "lon": "4.95583343505859",
+            "names": {
+                "long": "Diemen Zuid",
+                "middle": "Diemen Zuid",
+                "short": "Diemen Z"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.0449981689453",
+            "lon": "6.10305547714233",
+            "names": {
+                "long": "Dieren",
+                "middle": "Dieren",
+                "short": "Dieren"
+            },
+            "type": "intercitystation"
+        },
+        {
+            "lat": "51.9585962",
+            "lon": "6.2962148",
+            "names": {
+                "long": "Doetinchem",
+                "middle": "Doetinchem",
+                "short": "Doetinchem"
+            },
+            "type": "knooppuntStoptreinstation"
+        },
+        {
+            "lat": "51.9591413",
+            "lon": "6.2598521",
+            "names": {
+                "long": "Doetinchem De Huet",
+                "middle": "De Huet",
+                "short": "De Huet"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.8072204589844",
+            "lon": "4.66833353042603",
+            "names": {
+                "long": "Dordrecht",
+                "middle": "Dordrecht",
+                "short": "Dordrecht"
+            },
+            "type": "knooppuntIntercitystation"
+        },
+        {
+            "lat": "51.801944732666",
+            "lon": "4.71666669845581",
+            "names": {
+                "long": "Dordrecht Stadspolders",
+                "middle": "Stadspolders",
+                "short": "Stadspldrs"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.7900009155273",
+            "lon": "4.67138910293579",
+            "names": {
+                "long": "Dordrecht Zuid",
+                "middle": "Dordrecht Zuid",
+                "short": "Dordrcht Z"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.0652770996094",
+            "lon": "5.25861120223999",
+            "names": {
+                "long": "Driebergen-Zeist",
+                "middle": "Driebergen-Zeist",
+                "short": "Driebergen"
+            },
+            "type": "knooppuntStoptreinstation"
+        },
+        {
+            "lat": "52.4425010681152",
+            "lon": "4.63805532455444",
+            "names": {
+                "long": "Driehuis",
+                "middle": "Driehuis",
+                "short": "Driehuis"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "53.1778086",
+            "lon": "5.6347411",
+            "names": {
+                "long": "Dronryp",
+                "middle": "Dronryp",
+                "short": "Dronryp"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.5344",
+            "lon": "5.72089",
+            "names": {
+                "long": "Dronten",
+                "middle": "Dronten",
+                "short": "Dronten"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.9433326721191",
+            "lon": "6.01472234725952",
+            "names": {
+                "long": "Duiven",
+                "middle": "Duiven",
+                "short": "Duiven"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.3233337402344",
+            "lon": "4.93638896942139",
+            "names": {
+                "long": "Duivendrecht",
+                "middle": "Duivendrecht",
+                "short": "Duivendt"
+            },
+            "type": "knooppuntStoptreinstation"
+        },
+        {
+            "lat": "51.1005554199219",
+            "lon": "5.87888908386231",
+            "names": {
+                "long": "Echt",
+                "middle": "Echt",
+                "short": "Echt"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.0436096191406",
+            "lon": "5.66833353042603",
+            "names": {
+                "long": "Ede Centrum",
+                "middle": "Ede C.",
+                "short": "Ede C"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.0277786254883",
+            "lon": "5.67305564880371",
+            "names": {
+                "long": "Ede-Wageningen",
+                "middle": "Ede-Wageningen",
+                "short": "Ede-Wag"
+            },
+            "type": "knooppuntIntercitystation"
+        },
+        {
+            "lat": "50.82317",
+            "lon": "5.92479",
+            "names": {
+                "long": "Eijs-Wittem",
+                "middle": "Eijs-Wittem",
+                "short": "Eijs-Witt"
+            },
+            "type": "facultatiefStation"
+        },
+        {
+            "lat": "50.7719459533691",
+            "lon": "5.71000003814697",
+            "names": {
+                "long": "Eijsden",
+                "middle": "Eijsden",
+                "short": "Eijsden"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.4433326721191",
+            "lon": "5.48138904571533",
+            "names": {
+                "long": "Eindhoven",
+                "middle": "Eindhoven",
+                "short": "Eindhoven"
+            },
+            "type": "knooppuntIntercitystation"
+        },
+        {
+            "lat": "51.4511108398438",
+            "lon": "5.45583343505859",
+            "names": {
+                "long": "Eindhoven Strijp-S",
+                "middle": "Strijp-S",
+                "short": "Strijp-S"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.9169425964355",
+            "lon": "5.85500001907349",
+            "names": {
+                "long": "Elst",
+                "middle": "Elst",
+                "short": "Elst"
+            },
+            "type": "knooppuntStoptreinstation"
+        },
+        {
+            "lat": "52.7900009155273",
+            "lon": "6.89944458007812",
+            "names": {
+                "long": "Emmen",
+                "middle": "Emmen",
+                "short": "Emmen"
+            },
+            "type": "sneltreinstation"
+        },
+        {
+            "lat": "52.7488663746914",
+            "lon": "6.87478065490722",
+            "names": {
+                "long": "Emmen Zuid",
+                "middle": "Emmen Zuid",
+                "short": "Emmen Z"
+            },
+            "type": "sneltreinstation"
+        },
+        {
+            "lat": "52.6991653442383",
+            "lon": "5.28638887405396",
+            "names": {
+                "long": "Enkhuizen",
+                "middle": "Enkhuizen",
+                "short": "Enkhuizen"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.2224998474121",
+            "lon": "6.8899998664856",
+            "names": {
+                "long": "Enschede",
+                "middle": "Enschede",
+                "short": "Enschede"
+            },
+            "type": "knooppuntIntercitystation"
+        },
+        {
+            "lat": "52.2213897705078",
+            "lon": "6.95111131668091",
+            "names": {
+                "long": "Enschede De Eschmarke",
+                "middle": "De Eschmarke",
+                "short": "Eschmarke"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.2374992370605",
+            "lon": "6.83888912200928",
+            "names": {
+                "long": "Enschede Kennispark",
+                "middle": "Kennispark",
+                "short": "Kennispark"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.3016662597656",
+            "lon": "5.61472225189209",
+            "names": {
+                "long": "Ermelo",
+                "middle": "Ermelo",
+                "short": "Ermelo"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.5750007629395",
+            "lon": "4.63583326339722",
+            "names": {
+                "long": "Etten-Leur",
+                "middle": "Etten-Leur",
+                "short": "Etten-Leur"
+            },
+            "type": "intercitystation"
+        },
+        {
+            "lat": "50.8905563354492",
+            "lon": "6.04500007629395",
+            "names": {
+                "long": "Eygelshoven",
+                "middle": "Eygelshoven",
+                "short": "Eygelshov"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "50.8960498196442",
+            "lon": "6.0602474212646396",
+            "names": {
+                "long": "Eygelshoven Markt",
+                "middle": "Eygelshoven Mrkt",
+                "short": "Eygelsh M"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "53.2351834",
+            "lon": "5.9886615",
+            "names": {
+                "long": "Feanwalden",
+                "middle": "Feanwalden",
+                "short": "Feanwalden"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "53.1824488",
+            "lon": "5.5483094",
+            "names": {
+                "long": "Franeker",
+                "middle": "Franeker",
+                "short": "Franeker"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.93074",
+            "lon": "6.3486",
+            "names": {
+                "long": "Gaanderen",
+                "middle": "Gaanderen",
+                "short": "Gaanderen"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.47625",
+            "lon": "6.56674",
+            "names": {
+                "long": "Geerdijk",
+                "middle": "Geerdijk",
+                "short": "Geerdijk"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.88301",
+            "lon": "5.27127",
+            "names": {
+                "long": "Geldermalsen",
+                "middle": "Geldermalsen",
+                "short": "G'malsen"
+            },
+            "type": "knooppuntStoptreinstation"
+        },
+        {
+            "lat": "51.4197235107422",
+            "lon": "5.55055570602417",
+            "names": {
+                "long": "Geldrop",
+                "middle": "Geldrop",
+                "short": "Geldrop"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "50.9669456481934",
+            "lon": "5.84305572509766",
+            "names": {
+                "long": "Geleen Oost",
+                "middle": "Geleen Oost",
+                "short": "Geleen O"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "50.9755554199219",
+            "lon": "5.82472229003906",
+            "names": {
+                "long": "Geleen-Lutterade",
+                "middle": "Geleen-Lutterade",
+                "short": "Geleen-Lut"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.583610534668",
+            "lon": "4.92611122131348",
+            "names": {
+                "long": "Gilze-Rijen",
+                "middle": "Gilze-Rijen",
+                "short": "Gilze-Rij"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.2186126708984",
+            "lon": "6.97444438934326",
+            "names": {
+                "long": "Glanerbrug",
+                "middle": "Glanerbrug",
+                "short": "Glanerbrug"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.4980545043945",
+            "lon": "3.89055562019348",
+            "names": {
+                "long": "Goes",
+                "middle": "Goes",
+                "short": "Goes"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.2302780151367",
+            "lon": "6.58444452285767",
+            "names": {
+                "long": "Goor",
+                "middle": "Goor",
+                "short": "Goor"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.8338890075684",
+            "lon": "4.96833324432373",
+            "names": {
+                "long": "Gorinchem",
+                "middle": "Gorinchem",
+                "short": "Gorinchem"
+            },
+            "type": "knooppuntStoptreinstation"
+        },
+        {
+            "lat": "52.0175018310547",
+            "lon": "4.70444440841675",
+            "names": {
+                "long": "Gouda",
+                "middle": "Gouda",
+                "short": "Gouda"
+            },
+            "type": "knooppuntIntercitystation"
+        },
+        {
+            "lat": "52.0149993896484",
+            "lon": "4.7408332824707",
+            "names": {
+                "long": "Gouda Goverwelle",
+                "middle": "Gouda Goverwelle",
+                "short": "Goverwelle"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.6091651916504",
+            "lon": "6.67583322525024",
+            "names": {
+                "long": "Gramsbergen",
+                "middle": "Gramsbergen",
+                "short": "Gramsbergn"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "53.2557403255735",
+            "lon": "6.30977869033813",
+            "names": {
+                "long": "Grijpskerk",
+                "middle": "Grijpskerk",
+                "short": "Grijpskerk"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "53.2105560302734",
+            "lon": "6.56472206115723",
+            "names": {
+                "long": "Groningen",
+                "middle": "Groningen",
+                "short": "Groningen"
+            },
+            "type": "knooppuntIntercitystation"
+        },
+        {
+            "lat": "53.20480027",
+            "lon": "6.5854178",
+            "names": {
+                "long": "Groningen Europapark",
+                "middle": "Europapark",
+                "short": "Europapark"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "53.2301469",
+            "lon": "6.5563172",
+            "names": {
+                "long": "Groningen Noord",
+                "middle": "Groningen Noord",
+                "short": "Groning N"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "53.0888900756836",
+            "lon": "5.82250022888184",
+            "names": {
+                "long": "Grou-Jirnsum",
+                "middle": "Grou-Jirnsum",
+                "short": "Grou-Jirns"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "50.833056",
+            "lon": "5.898056",
+            "names": {
+                "long": "Gulpen-Wijlre",
+                "middle": "Gulpen-Wijlre",
+                "short": "Gulpen-W"
+            },
+            "type": "facultatiefStation"
+        },
+        {
+            "lat": "52.3877792358398",
+            "lon": "4.63833332061768",
+            "names": {
+                "long": "Haarlem",
+                "middle": "Haarlem",
+                "short": "Haarlem"
+            },
+            "type": "knooppuntIntercitystation"
+        },
+        {
+            "lat": "52.3827781677246",
+            "lon": "4.67305564880371",
+            "names": {
+                "long": "Haarlem Spaarnwoude",
+                "middle": "Spaarnwoude",
+                "short": "Spaarnwde"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.385935",
+            "lon": "4.747165",
+            "names": {
+                "long": "Halfweg-Zwanenburg",
+                "middle": "Halfweg-Zwanenb.",
+                "short": "Halfweg-Zw"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.5727767944336",
+            "lon": "6.62861108779907",
+            "names": {
+                "long": "Hardenberg",
+                "middle": "Hardenberg",
+                "short": "Hardenberg"
+            },
+            "type": "sneltreinstation"
+        },
+        {
+            "lat": "52.3375015258789",
+            "lon": "5.61972236633301",
+            "names": {
+                "long": "Harderwijk",
+                "middle": "Harderwijk",
+                "short": "Harderwijk"
+            },
+            "type": "knooppuntStoptreinstation"
+        },
+        {
+            "lat": "51.82944",
+            "lon": "4.81556",
+            "names": {
+                "long": "Hardinxveld Blauwe Zoom",
+                "middle": "Blauwe Zoom",
+                "short": "Blauwe Z"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.8305549621582",
+            "lon": "4.83583354949951",
+            "names": {
+                "long": "Hardinxveld-Giessendam",
+                "middle": "Hardinxveld-G.",
+                "short": "Hardinxvld"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "53.1761093139648",
+            "lon": "6.61722230911255",
+            "names": {
+                "long": "Haren",
+                "middle": "Haren",
+                "short": "Haren"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "53.1704205",
+            "lon": "5.4251932",
+            "names": {
+                "long": "Harlingen",
+                "middle": "Harlingen",
+                "short": "Harlingen"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "53.174917",
+            "lon": "5.4112885",
+            "names": {
+                "long": "Harlingen Haven",
+                "middle": "Harlingen Haven",
+                "short": "Harl Haven"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.4952774047852",
+            "lon": "4.68694448471069",
+            "names": {
+                "long": "Heemskerk",
+                "middle": "Heemskerk",
+                "short": "Heemskerk"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.3591651916504",
+            "lon": "4.60666656494141",
+            "names": {
+                "long": "Heemstede-Aerdenhout",
+                "middle": "Heemstede-A.",
+                "short": "Heemstede"
+            },
+            "type": "intercitystation"
+        },
+        {
+            "lat": "52.9613876342773",
+            "lon": "5.91416645050049",
+            "names": {
+                "long": "Heerenveen",
+                "middle": "Heerenveen",
+                "short": "Heerenveen"
+            },
+            "type": "intercitystation"
+        },
+        {
+            "lat": "52.9352760314941",
+            "lon": "5.94388866424561",
+            "names": {
+                "long": "Heerenveen IJsstadion",
+                "middle": "IJsstadion",
+                "short": "H'veen IJs"
+            },
+            "type": "facultatiefStation"
+        },
+        {
+            "lat": "52.6697235107422",
+            "lon": "4.82277774810791",
+            "names": {
+                "long": "Heerhugowaard",
+                "middle": "Heerhugowaard",
+                "short": "Heerhugow"
+            },
+            "type": "knooppuntStoptreinstation"
+        },
+        {
+            "lat": "50.8908348083496",
+            "lon": "5.97499990463257",
+            "names": {
+                "long": "Heerlen",
+                "middle": "Heerlen",
+                "short": "Heerlen"
+            },
+            "type": "knooppuntIntercitystation"
+        },
+        {
+            "lat": "50.8901689328708",
+            "lon": "5.99334239959716",
+            "names": {
+                "long": "Heerlen De Kissel",
+                "middle": "Hrl De Kissel",
+                "short": "De Kissel"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "50.896667",
+            "lon": "5.952222",
+            "names": {
+                "long": "Heerlen Woonboulevard",
+                "middle": "Hrl Woonblvd",
+                "short": "Heerlen W"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.3849983215332",
+            "lon": "5.56944465637207",
+            "names": {
+                "long": "Heeze",
+                "middle": "Heeze",
+                "short": "Heeze"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.5994453430176",
+            "lon": "4.70055532455444",
+            "names": {
+                "long": "Heiloo",
+                "middle": "Heiloo",
+                "short": "Heiloo"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.4272232055664",
+            "lon": "6.22111129760742",
+            "names": {
+                "long": "Heino",
+                "middle": "Heino",
+                "short": "Heino"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.4755554199219",
+            "lon": "5.66194438934326",
+            "names": {
+                "long": "Helmond",
+                "middle": "Helmond",
+                "short": "Helmond"
+            },
+            "type": "knooppuntIntercitystation"
+        },
+        {
+            "lat": "51.46794",
+            "lon": "5.63085",
+            "names": {
+                "long": "Helmond 't Hout",
+                "middle": "Helmond 't Hout",
+                "short": "'t Hout"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.4622230529785",
+            "lon": "5.60722208023071",
+            "names": {
+                "long": "Helmond Brandevoort",
+                "middle": "Brandevoort",
+                "short": "Brandevrt"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.47068",
+            "lon": "5.70177",
+            "names": {
+                "long": "Helmond Brouwhuis",
+                "middle": "Brouwhuis",
+                "short": "Brouwhuis"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.9222129",
+            "lon": "5.6737254",
+            "names": {
+                "long": "Hemmen-Dodewaard",
+                "middle": "Hemmen-Dodewaard",
+                "short": "Hemmen-D"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.2616653442383",
+            "lon": "6.79388904571533",
+            "names": {
+                "long": "Hengelo",
+                "middle": "Hengelo",
+                "short": "Hengelo"
+            },
+            "type": "knooppuntIntercitystation"
+        },
+        {
+            "lat": "52.261667",
+            "lon": "6.773611",
+            "names": {
+                "long": "Hengelo Gezondheidspark",
+                "middle": "Hengelo Gezondh.",
+                "short": "Hengelo G"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.2688903808594",
+            "lon": "6.81944465637207",
+            "names": {
+                "long": "Hengelo Oost",
+                "middle": "Hengelo Oost",
+                "short": "Hengelo O"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.3025016784668",
+            "lon": "4.56555557250977",
+            "names": {
+                "long": "Hillegom",
+                "middle": "Hillegom",
+                "short": "Hillegom"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.2258338928223",
+            "lon": "5.18194437026978",
+            "names": {
+                "long": "Hilversum",
+                "middle": "Hilversum",
+                "short": "Hilversum"
+            },
+            "type": "knooppuntIntercitystation"
+        },
+        {
+            "lat": "52.2380561828613",
+            "lon": "5.17388868331909",
+            "names": {
+                "long": "Hilversum Media Park",
+                "middle": "Media Park",
+                "short": "Media Park"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.2161102294922",
+            "lon": "5.18722200393677",
+            "names": {
+                "long": "Hilversum Sportpark",
+                "middle": "Sportpark",
+                "short": "Sportpark"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.9464903",
+            "lon": "5.423063",
+            "names": {
+                "long": "Hindeloopen",
+                "middle": "Hindeloopen",
+                "short": "Hindeloopn"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.9752769470215",
+            "lon": "4.1288890838623",
+            "names": {
+                "long": "Hoek van Holland Haven",
+                "middle": "Hoek v H. Haven",
+                "short": "HvH Haven"
+            },
+            "type": "knooppuntStoptreinstation"
+        },
+        {
+            "lat": "51.9816665649414",
+            "lon": "4.11972236633301",
+            "names": {
+                "long": "Hoek van Holland Strand",
+                "middle": "Hoek v H. Strand",
+                "short": "HvH Strand"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "50.9055557250977",
+            "lon": "5.93055534362793",
+            "names": {
+                "long": "Hoensbroek",
+                "middle": "Hoensbroek",
+                "short": "Hoensbroek"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.16652",
+            "lon": "5.45718",
+            "names": {
+                "long": "Hoevelaken",
+                "middle": "Hoevelaken",
+                "short": "Hoevelaken"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.1777763366699",
+            "lon": "5.17916679382324",
+            "names": {
+                "long": "Hollandsche Rading",
+                "middle": "Holl. Rading",
+                "short": "Hol Rading"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.2838897705078",
+            "lon": "6.42027759552002",
+            "names": {
+                "long": "Holten",
+                "middle": "Holten",
+                "short": "Holten"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.2933349609375",
+            "lon": "4.70055532455444",
+            "names": {
+                "long": "Hoofddorp",
+                "middle": "Hoofddorp",
+                "short": "Hoofddorp"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.7338905334473",
+            "lon": "6.47361087799072",
+            "names": {
+                "long": "Hoogeveen",
+                "middle": "Hoogeveen",
+                "short": "Hoogeveen"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "53.1598181316756",
+            "lon": "6.77075386047363",
+            "names": {
+                "long": "Hoogezand-Sappemeer",
+                "middle": "Hoogezand-Sap.",
+                "short": "Hoogezand"
+            },
+            "type": "knooppuntStoptreinstation"
+        },
+        {
+            "lat": "52.6905555725098",
+            "lon": "5.18388891220093",
+            "names": {
+                "long": "Hoogkarspel",
+                "middle": "Hoogkarspel",
+                "short": "Hoogkrspl"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.6447219848633",
+            "lon": "5.05555534362793",
+            "names": {
+                "long": "Hoorn",
+                "middle": "Hoorn",
+                "short": "Hoorn"
+            },
+            "type": "knooppuntIntercitystation"
+        },
+        {
+            "lat": "52.6536102294922",
+            "lon": "5.08555555343628",
+            "names": {
+                "long": "Hoorn Kersenboogerd",
+                "middle": "Kersenboogerd",
+                "short": "Hoorn Kers"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.4263877868652",
+            "lon": "6.04222202301025",
+            "names": {
+                "long": "Horst-Sevenum",
+                "middle": "Horst-Sevenum",
+                "short": "Horst-Sev"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.03402",
+            "lon": "5.16821",
+            "names": {
+                "long": "Houten",
+                "middle": "Houten",
+                "short": "Houten"
+            },
+            "type": "knooppuntStoptreinstation"
+        },
+        {
+            "lat": "52.01701",
+            "lon": "5.17949",
+            "names": {
+                "long": "Houten Castellum",
+                "middle": "Castellum",
+                "short": "Houten C"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "50.8733329772949",
+            "lon": "5.79722213745117",
+            "names": {
+                "long": "Houthem-St Gerlach",
+                "middle": "Houthem-St Gerl.",
+                "short": "Houthem-St"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "53.2187783",
+            "lon": "5.934543",
+            "names": {
+                "long": "Hurdegaryp",
+                "middle": "Hurdegaryp",
+                "short": "Hurdegaryp"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "53.0146614",
+            "lon": "5.6160801",
+            "names": {
+                "long": "IJlst",
+                "middle": "IJlst",
+                "short": "IJlst"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.5597229003906",
+            "lon": "5.92166662216186",
+            "names": {
+                "long": "Kampen",
+                "middle": "Kampen",
+                "short": "Kampen"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.5331",
+            "lon": "5.91309",
+            "names": {
+                "long": "Kampen Zuid",
+                "middle": "Kampen Zuid",
+                "short": "Kampen Z"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.4808349609375",
+            "lon": "3.95611119270325",
+            "names": {
+                "long": "Kapelle-Biezelinge",
+                "middle": "Kapelle-Biezel.",
+                "short": "Kapelle-B"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "50.8616676330566",
+            "lon": "6.05749988555908",
+            "names": {
+                "long": "Kerkrade Centrum",
+                "middle": "Kerkrade C.",
+                "short": "Kerkrade"
+            },
+            "type": "knooppuntStoptreinstation"
+        },
+        {
+            "lat": "50.85355",
+            "lon": "6.02578",
+            "names": {
+                "long": "Kerkrade West",
+                "middle": "Kerkrade West",
+                "short": "Kerkrade W"
+            },
+            "type": "facultatiefStation"
+        },
+        {
+            "lat": "51.9313869",
+            "lon": "5.5833465",
+            "names": {
+                "long": "Kesteren",
+                "middle": "Kesteren",
+                "short": "Kesteren"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.1780548095703",
+            "lon": "6.08361101150513",
+            "names": {
+                "long": "Klarenbeek",
+                "middle": "Klarenbeek",
+                "short": "Klarenbk"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "50.8663902282715",
+            "lon": "5.8905553817749",
+            "names": {
+                "long": "Klimmen-Ransdaal",
+                "middle": "Klimmen-Ransdaal",
+                "short": "Klimmen-R"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.458610534668",
+            "lon": "4.80555534362793",
+            "names": {
+                "long": "Koog Bloemwijk",
+                "middle": "Koog Bloemwijk",
+                "short": "Koog Bloem"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.469165802002",
+            "lon": "4.80499982833862",
+            "names": {
+                "long": "Koog-Zaandijk",
+                "middle": "Koog-Zaandijk",
+                "short": "Koog Zaand"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.9028197",
+            "lon": "5.4106913",
+            "names": {
+                "long": "Koudum-Molkwerum",
+                "middle": "Koudum-Molkwerum",
+                "short": "Koudum-M"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.4333343505859",
+            "lon": "4.11694431304932",
+            "names": {
+                "long": "Krabbendijke",
+                "middle": "Krabbendijke",
+                "short": "Krabbendke"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.49511",
+            "lon": "4.75417",
+            "names": {
+                "long": "Krommenie-Assendelft",
+                "middle": "Krommenie-Ass.",
+                "short": "Krommenie"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "53.1617362",
+            "lon": "6.7220882",
+            "names": {
+                "long": "Kropswolde",
+                "middle": "Kropswolde",
+                "short": "Kropswolde"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.4650001525879",
+            "lon": "4.03722238540649",
+            "names": {
+                "long": "Kruiningen-Yerseke",
+                "middle": "Kruiningen-Y.",
+                "short": "Kruiningen"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.6911125183105",
+            "lon": "4.66305541992188",
+            "names": {
+                "long": "Lage Zwaluwe",
+                "middle": "Lage Zwaluwe",
+                "short": "Lage Zwalu"
+            },
+            "type": "knooppuntStoptreinstation"
+        },
+        {
+            "lat": "50.8963890075684",
+            "lon": "6.01916646957398",
+            "names": {
+                "long": "Landgraaf",
+                "middle": "Landgraaf",
+                "short": "Landgraaf"
+            },
+            "type": "knooppuntStoptreinstation"
+        },
+        {
+            "lat": "51.8947219848633",
+            "lon": "5.09138870239258",
+            "names": {
+                "long": "Leerdam",
+                "middle": "Leerdam",
+                "short": "Leerdam"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "53.1958351135254",
+            "lon": "5.79222202301025",
+            "names": {
+                "long": "Leeuwarden",
+                "middle": "Leeuwarden",
+                "short": "Leeuwarden"
+            },
+            "type": "knooppuntIntercitystation"
+        },
+        {
+            "lat": "53.19889",
+            "lon": "5.81639",
+            "names": {
+                "long": "Leeuwarden Achter d Hoven",
+                "middle": "Achter de Hoven",
+                "short": "Achter d.H"
+            },
+            "type": "facultatiefStation"
+        },
+        {
+            "lat": "53.2021808",
+            "lon": "5.8422968",
+            "names": {
+                "long": "Leeuwarden Camminghaburen",
+                "middle": "Camminghaburen",
+                "short": "Camminghab"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.1661109924316",
+            "lon": "4.48166656494141",
+            "names": {
+                "long": "Leiden Centraal",
+                "middle": "Leiden C.",
+                "short": "Leiden C"
+            },
+            "type": "knooppuntIntercitystation"
+        },
+        {
+            "lat": "52.1469459533691",
+            "lon": "4.49249982833862",
+            "names": {
+                "long": "Leiden Lammenschans",
+                "middle": "Lammenschans",
+                "short": "Leiden Lam"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.5077781677246",
+            "lon": "5.47277784347534",
+            "names": {
+                "long": "Lelystad Centrum",
+                "middle": "Lelystad C.",
+                "short": "Lelystad"
+            },
+            "type": "knooppuntIntercitystation"
+        },
+        {
+            "lat": "52.01188",
+            "lon": "6.59641",
+            "names": {
+                "long": "Lichtenvoorde-Groenlo",
+                "middle": "Lichtenvoorde-G.",
+                "short": "Lichtenv-G"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.1666679382324",
+            "lon": "6.42638874053955",
+            "names": {
+                "long": "Lochem",
+                "middle": "Lochem",
+                "short": "Lochem"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "53.3347145",
+            "lon": "6.7472625",
+            "names": {
+                "long": "Loppersum",
+                "middle": "Loppersum",
+                "short": "Loppersum"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.085277557373",
+            "lon": "5.62444448471069",
+            "names": {
+                "long": "Lunteren",
+                "middle": "Lunteren",
+                "short": "Lunteren"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.3037623603504",
+            "lon": "5.63034296035766",
+            "names": {
+                "long": "Maarheeze",
+                "middle": "Maarheeze",
+                "short": "Maarheeze"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.0641670227051",
+            "lon": "5.36999988555908",
+            "names": {
+                "long": "Maarn",
+                "middle": "Maarn",
+                "short": "Maarn"
+            },
+            "type": "knooppuntStoptreinstation"
+        },
+        {
+            "lat": "52.1352767944336",
+            "lon": "5.03361129760742",
+            "names": {
+                "long": "Maarssen",
+                "middle": "Maarssen",
+                "short": "Maarssen"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.9161109924316",
+            "lon": "4.25472211837769",
+            "names": {
+                "long": "Maassluis",
+                "middle": "Maassluis",
+                "short": "Maassluis"
+            },
+            "type": "knooppuntStoptreinstation"
+        },
+        {
+            "lat": "51.9258346557617",
+            "lon": "4.23611116409302",
+            "names": {
+                "long": "Maassluis West",
+                "middle": "Maassluis West",
+                "short": "Maassl W"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "50.8502769470215",
+            "lon": "5.70555543899536",
+            "names": {
+                "long": "Maastricht",
+                "middle": "Maastricht",
+                "short": "Maastricht"
+            },
+            "type": "knooppuntIntercitystation"
+        },
+        {
+            "lat": "50.87087",
+            "lon": "5.71774",
+            "names": {
+                "long": "Maastricht Noord",
+                "middle": "Maastricht Noord",
+                "short": "Maastr N"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "50.8386116027832",
+            "lon": "5.71722221374512",
+            "names": {
+                "long": "Maastricht Randwyck",
+                "middle": "Maastricht Randw",
+                "short": "Maastr Rw"
+            },
+            "type": "knooppuntStoptreinstation"
+        },
+        {
+            "lat": "53.1296368",
+            "lon": "5.7131996",
+            "names": {
+                "long": "Mantgum",
+                "middle": "Mantgum",
+                "short": "Mantgum"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.5094451904297",
+            "lon": "6.57527780532837",
+            "names": {
+                "long": "Mari\u00c3\u00abnberg",
+                "middle": "Mari\u00c3\u00abnberg",
+                "short": "Mari\u00c3\u00abnberg"
+            },
+            "type": "knooppuntSneltreinstation"
+        },
+        {
+            "lat": "53.1607232",
+            "lon": "6.7402989",
+            "names": {
+                "long": "Martenshoek",
+                "middle": "Martenshoek",
+                "short": "Martensh"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "50.882879392551",
+            "lon": "5.75099945068359",
+            "names": {
+                "long": "Meerssen",
+                "middle": "Meerssen",
+                "short": "Meerssen"
+            },
+            "type": "sneltreinstation"
+        },
+        {
+            "lat": "52.6908340454102",
+            "lon": "6.19750022888184",
+            "names": {
+                "long": "Meppel",
+                "middle": "Meppel",
+                "short": "Meppel"
+            },
+            "type": "knooppuntStoptreinstation"
+        },
+        {
+            "lat": "51.4947204589844",
+            "lon": "3.61722230911255",
+            "names": {
+                "long": "Middelburg",
+                "middle": "Middelburg",
+                "short": "Middelburg"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.77158",
+            "lon": "5.88145",
+            "names": {
+                "long": "Mook Molenhoek",
+                "middle": "Molenhoek",
+                "short": "Mook Molen"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.2802772521973",
+            "lon": "5.15694427490234",
+            "names": {
+                "long": "Naarden-Bussum",
+                "middle": "Naarden-Bussum",
+                "short": "Naarden-B"
+            },
+            "type": "knooppuntStoptreinstation"
+        },
+        {
+            "lat": "52.7186126708984",
+            "lon": "6.84861087799072",
+            "names": {
+                "long": "Nieuw Amsterdam",
+                "middle": "Nieuw Amsterdam",
+                "short": "Nw A'dam"
+            },
+            "type": "sneltreinstation"
+        },
+        {
+            "lat": "52.2588882446289",
+            "lon": "4.64555549621582",
+            "names": {
+                "long": "Nieuw Vennep",
+                "middle": "Nieuw Vennep",
+                "short": "Nw Vennep"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.9652786254883",
+            "lon": "4.61694431304932",
+            "names": {
+                "long": "Nieuwerkerk a/d IJssel",
+                "middle": "Nieuwerkerk",
+                "short": "Nieuwerkrk"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.2222213745117",
+            "lon": "5.49388885498047",
+            "names": {
+                "long": "Nijkerk",
+                "middle": "Nijkerk",
+                "short": "Nijkerk"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.8436126708984",
+            "lon": "5.85222244262695",
+            "names": {
+                "long": "Nijmegen",
+                "middle": "Nijmegen",
+                "short": "Nijmegen"
+            },
+            "type": "knooppuntIntercitystation"
+        },
+        {
+            "lat": "51.8241653442383",
+            "lon": "5.79555559158325",
+            "names": {
+                "long": "Nijmegen Dukenburg",
+                "middle": "Dukenburg",
+                "short": "Dukenburg"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.8273",
+            "lon": "5.822722",
+            "names": {
+                "long": "Nijmegen Goffert",
+                "middle": "Nijmegen Goffert",
+                "short": "Goffert"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.8269462585449",
+            "lon": "5.86749982833862",
+            "names": {
+                "long": "Nijmegen Heyendaal",
+                "middle": "Nm Heyendaal",
+                "short": "Heyendaal"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.861811",
+            "lon": "5.859686",
+            "names": {
+                "long": "Nijmegen Lent",
+                "middle": "Nijmegen Lent",
+                "short": "Lent"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.36555",
+            "lon": "6.471111",
+            "names": {
+                "long": "Nijverdal",
+                "middle": "Nijverdal",
+                "short": "Nijverdal"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.3708343505859",
+            "lon": "5.78527784347534",
+            "names": {
+                "long": "Nunspeet",
+                "middle": "Nunspeet",
+                "short": "Nunspeet"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "50.9194450378418",
+            "lon": "5.89277791976929",
+            "names": {
+                "long": "Nuth",
+                "middle": "Nuth",
+                "short": "Nuth"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.6780548095703",
+            "lon": "4.90722227096558",
+            "names": {
+                "long": "Obdam",
+                "middle": "Obdam",
+                "short": "Obdam"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.5822219848633",
+            "lon": "5.19416666030884",
+            "names": {
+                "long": "Oisterwijk",
+                "middle": "Oisterwijk",
+                "short": "Oisterwijk"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.3063888549805",
+            "lon": "6.93472242355347",
+            "names": {
+                "long": "Oldenzaal",
+                "middle": "Oldenzaal",
+                "short": "Oldenzaal"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.3347206115723",
+            "lon": "6.11305570602417",
+            "names": {
+                "long": "Olst",
+                "middle": "Olst",
+                "short": "Olst"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.5094451904297",
+            "lon": "6.41583347320557",
+            "names": {
+                "long": "Ommen",
+                "middle": "Ommen",
+                "short": "Ommen"
+            },
+            "type": "knooppuntSneltreinstation"
+        },
+        {
+            "lat": "51.9949989318848",
+            "lon": "5.84000015258789",
+            "names": {
+                "long": "Oosterbeek",
+                "middle": "Oosterbeek",
+                "short": "Oosterbeek"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.9261615",
+            "lon": "5.6371145",
+            "names": {
+                "long": "Opheusden",
+                "middle": "Opheusden",
+                "short": "Opheusden"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.7655563354492",
+            "lon": "5.53222227096558",
+            "names": {
+                "long": "Oss",
+                "middle": "Oss",
+                "short": "Oss"
+            },
+            "type": "knooppuntIntercitystation"
+        },
+        {
+            "lat": "51.758056640625",
+            "lon": "5.50555562973022",
+            "names": {
+                "long": "Oss West",
+                "middle": "Oss West",
+                "short": "Oss W"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.587776184082",
+            "lon": "4.53333330154419",
+            "names": {
+                "long": "Oudenbosch",
+                "middle": "Oudenbosch",
+                "short": "Oudenbosch"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.3911094665527",
+            "lon": "4.6061110496521",
+            "names": {
+                "long": "Overveen",
+                "middle": "Overveen",
+                "short": "Overveen"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.5030555725098",
+            "lon": "4.95361089706421",
+            "names": {
+                "long": "Purmerend",
+                "middle": "Purmerend",
+                "short": "Purmerend"
+            },
+            "type": "knooppuntStoptreinstation"
+        },
+        {
+            "lat": "52.5113906860352",
+            "lon": "4.96833324432373",
+            "names": {
+                "long": "Purmerend Overwhere",
+                "middle": "Overwhere",
+                "short": "Overwhere"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.4965906325416",
+            "lon": "4.93562936782836",
+            "names": {
+                "long": "Purmerend Weidevenne",
+                "middle": "Weidevenne",
+                "short": "Weidevenne"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.2649993896484",
+            "lon": "5.57527780532837",
+            "names": {
+                "long": "Putten",
+                "middle": "Putten",
+                "short": "Putten"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.3916664123535",
+            "lon": "6.27750015258789",
+            "names": {
+                "long": "Raalte",
+                "middle": "Raalte",
+                "short": "Raalte"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.7941665649414",
+            "lon": "5.63583326339722",
+            "names": {
+                "long": "Ravenstein",
+                "middle": "Ravenstein",
+                "short": "Ravenstein"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.2832191665301",
+            "lon": "6.07895851135253",
+            "names": {
+                "long": "Reuver",
+                "middle": "Reuver",
+                "short": "Reuver"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.0099983215332",
+            "lon": "6.03055572509766",
+            "names": {
+                "long": "Rheden",
+                "middle": "Rheden",
+                "short": "Rheden"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.958610534668",
+            "lon": "5.57833337783814",
+            "names": {
+                "long": "Rhenen",
+                "middle": "Rhenen",
+                "short": "Rhenen"
+            },
+            "type": "knooppuntStoptreinstation"
+        },
+        {
+            "lat": "52.3122215270996",
+            "lon": "6.52027797698975",
+            "names": {
+                "long": "Rijssen",
+                "middle": "Rijssen",
+                "short": "Rijssen"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.039722442627",
+            "lon": "4.31916666030884",
+            "names": {
+                "long": "Rijswijk",
+                "middle": "Rijswijk",
+                "short": "Rijswijk"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.422779083252",
+            "lon": "4.16111087799072",
+            "names": {
+                "long": "Rilland-Bath",
+                "middle": "Rilland-Bath",
+                "short": "Rilland-B"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.1930541992188",
+            "lon": "5.9941668510437",
+            "names": {
+                "long": "Roermond",
+                "middle": "Roermond",
+                "short": "Roermond"
+            },
+            "type": "knooppuntIntercitystation"
+        },
+        {
+            "lat": "53.4192128",
+            "lon": "6.7606167",
+            "names": {
+                "long": "Roodeschool",
+                "middle": "Roodeschool",
+                "short": "Roodesch"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.5402793884277",
+            "lon": "4.45833349227905",
+            "names": {
+                "long": "Roosendaal",
+                "middle": "Roosendaal",
+                "short": "Roosendaal"
+            },
+            "type": "knooppuntIntercitystation"
+        },
+        {
+            "lat": "51.7147216796875",
+            "lon": "5.36805534362793",
+            "names": {
+                "long": "Rosmalen",
+                "middle": "Rosmalen",
+                "short": "Rosmalen"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.9519462585449",
+            "lon": "4.55361127853394",
+            "names": {
+                "long": "Rotterdam Alexander",
+                "middle": "Alexander",
+                "short": "Alexander"
+            },
+            "type": "intercitystation"
+        },
+        {
+            "lat": "51.9202766418457",
+            "lon": "4.48888874053955",
+            "names": {
+                "long": "Rotterdam Blaak",
+                "middle": "Rotterdam Blaak",
+                "short": "Blaak"
+            },
+            "type": "intercitystation"
+        },
+        {
+            "lat": "51.9249992370605",
+            "lon": "4.46888875961304",
+            "names": {
+                "long": "Rotterdam Centraal",
+                "middle": "Rotterdam C.",
+                "short": "R'dam C"
+            },
+            "type": "megastation"
+        },
+        {
+            "lat": "51.8800010681152",
+            "lon": "4.53138875961304",
+            "names": {
+                "long": "Rotterdam Lombardijen",
+                "middle": "Lombardijen",
+                "short": "Lombardije"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.9422225952148",
+            "lon": "4.48166656494141",
+            "names": {
+                "long": "Rotterdam Noord",
+                "middle": "Rotterdam Noord",
+                "short": "R'dam N"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.8938903808594",
+            "lon": "4.51972198486328",
+            "names": {
+                "long": "Rotterdam Stadion",
+                "middle": "R'dam Stadion",
+                "short": "R'dam Sta"
+            },
+            "type": "facultatiefStation"
+        },
+        {
+            "lat": "51.9044456481934",
+            "lon": "4.51027774810791",
+            "names": {
+                "long": "Rotterdam Zuid",
+                "middle": "Rotterdam Zuid",
+                "short": "R'dam Z"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.0810888",
+            "lon": "6.4492656",
+            "names": {
+                "long": "Ruurlo",
+                "middle": "Ruurlo",
+                "short": "Ruurlo"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.4338874816895",
+            "lon": "4.63250017166138",
+            "names": {
+                "long": "Santpoort Noord",
+                "middle": "Santpoort Noord",
+                "short": "Santprt N"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.4197235107422",
+            "lon": "4.63138866424561",
+            "names": {
+                "long": "Santpoort Zuid",
+                "middle": "Santpoort Zuid",
+                "short": "Santprt Z"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "53.1589183",
+            "lon": "6.7955648",
+            "names": {
+                "long": "Sappemeer Oost",
+                "middle": "Sappemeer Oost",
+                "short": "Sappemr O"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.215278",
+            "lon": "4.517222",
+            "names": {
+                "long": "Sassenheim",
+                "middle": "Sassenheim",
+                "short": "Sassenheim"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "53.29113",
+            "lon": "6.5404",
+            "names": {
+                "long": "Sauwerd",
+                "middle": "Sauwerd",
+                "short": "Sauwerd"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.7844429016113",
+            "lon": "4.80527782440186",
+            "names": {
+                "long": "Schagen",
+                "middle": "Schagen",
+                "short": "Schagen"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "53.1655362",
+            "lon": "6.9777775",
+            "names": {
+                "long": "Scheemda",
+                "middle": "Scheemda",
+                "short": "Scheemda"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.9212438128032",
+            "lon": "4.4089937210083",
+            "names": {
+                "long": "Schiedam Centrum",
+                "middle": "Schiedam C.",
+                "short": "Schiedam C"
+            },
+            "type": "intercitystation"
+        },
+        {
+            "lat": "51.9222221374512",
+            "lon": "4.38222217559814",
+            "names": {
+                "long": "Schiedam Nieuwland",
+                "middle": "Nieuwland",
+                "short": "Nieuwland"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "50.856388092041",
+            "lon": "5.87222242355347",
+            "names": {
+                "long": "Schin op Geul",
+                "middle": "Schin op Geul",
+                "short": "Schin op G"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "50.9391670227051",
+            "lon": "5.87444448471069",
+            "names": {
+                "long": "Schinnen",
+                "middle": "Schinnen",
+                "short": "Schinnen"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.3094444274902",
+            "lon": "4.76194429397583",
+            "names": {
+                "long": "Schiphol Airport",
+                "middle": "Schiphol Airport",
+                "short": "Schiphol"
+            },
+            "type": "megastation"
+        },
+        {
+            "lat": "50.8314750744184",
+            "lon": "5.97973823547363",
+            "names": {
+                "long": "Simpelveld",
+                "middle": "Simpelveld",
+                "short": "Simpelveld"
+            },
+            "type": "facultatiefStation"
+        },
+        {
+            "lat": "51.0016670227051",
+            "lon": "5.85861110687256",
+            "names": {
+                "long": "Sittard",
+                "middle": "Sittard",
+                "short": "Sittard"
+            },
+            "type": "knooppuntIntercitystation"
+        },
+        {
+            "lat": "51.8297233581543",
+            "lon": "4.77833318710327",
+            "names": {
+                "long": "Sliedrecht",
+                "middle": "Sliedrecht",
+                "short": "Sliedrecht"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.829722",
+            "lon": "4.743333",
+            "names": {
+                "long": "Sliedrecht Baanhoek",
+                "middle": "Baanhoek",
+                "short": "Baanhoek"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "53.0328688",
+            "lon": "5.6523969",
+            "names": {
+                "long": "Sneek",
+                "middle": "Sneek",
+                "short": "Sneek"
+            },
+            "type": "knooppuntStoptreinstation"
+        },
+        {
+            "lat": "53.0409319",
+            "lon": "5.6631808",
+            "names": {
+                "long": "Sneek Noord",
+                "middle": "Sneek Noord",
+                "short": "Sneek N"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.1733322143555",
+            "lon": "5.30999994277954",
+            "names": {
+                "long": "Soest",
+                "middle": "Soest",
+                "short": "Soest"
+            },
+            "type": "knooppuntStoptreinstation"
+        },
+        {
+            "lat": "52.1652793884277",
+            "lon": "5.30305576324463",
+            "names": {
+                "long": "Soest Zuid",
+                "middle": "Soest Zuid",
+                "short": "Soest Z"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.1836128234863",
+            "lon": "5.30000019073486",
+            "names": {
+                "long": "Soestdijk",
+                "middle": "Soestdijk",
+                "short": "Soestdijk"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "50.9430541992188",
+            "lon": "5.85166645050049",
+            "names": {
+                "long": "Spaubeek",
+                "middle": "Spaubeek",
+                "short": "Spaubeek"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "50.85355",
+            "lon": "6.02578",
+            "names": {
+                "long": "Spekholzerheide",
+                "middle": "Spekholzerheide",
+                "short": "Spekholzer"
+            },
+            "type": "facultatiefStation"
+        },
+        {
+            "lat": "52.8865535",
+            "lon": "5.3600212",
+            "names": {
+                "long": "Stavoren",
+                "middle": "Stavoren",
+                "short": "Stavoren"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "53.3262092",
+            "lon": "6.6875551",
+            "names": {
+                "long": "Stedum",
+                "middle": "Stedum",
+                "short": "Stedum"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.7915109924316",
+            "lon": "6.11455576324463",
+            "names": {
+                "long": "Steenwijk",
+                "middle": "Steenwijk",
+                "short": "Steenwijk"
+            },
+            "type": "intercitystation"
+        },
+        {
+            "lat": "51.0613899230957",
+            "lon": "5.86305570602417",
+            "names": {
+                "long": "Susteren",
+                "middle": "Susteren",
+                "short": "Susteren"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.23582",
+            "lon": "6.03228",
+            "names": {
+                "long": "Swalmen",
+                "middle": "Swalmen",
+                "short": "Swalmen"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.33894",
+            "lon": "6.14253",
+            "names": {
+                "long": "Tegelen",
+                "middle": "Tegelen",
+                "short": "Tegelen"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.9224549",
+            "lon": "6.3642466",
+            "names": {
+                "long": "Terborg",
+                "middle": "Terborg",
+                "short": "Terborg"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.8894462585449",
+            "lon": "5.42222213745117",
+            "names": {
+                "long": "Tiel",
+                "middle": "Tiel",
+                "short": "Tiel"
+            },
+            "type": "knooppuntStoptreinstation"
+        },
+        {
+            "lat": "51.8738899230957",
+            "lon": "5.39222240447998",
+            "names": {
+                "long": "Tiel Passewaaij",
+                "middle": "Tiel Passewaaij",
+                "short": "Passewaaij"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.5605545043945",
+            "lon": "5.08361101150513",
+            "names": {
+                "long": "Tilburg",
+                "middle": "Tilburg",
+                "short": "Tilburg"
+            },
+            "type": "knooppuntIntercitystation"
+        },
+        {
+            "lat": "51.5736122131348",
+            "lon": "4.99444437026978",
+            "names": {
+                "long": "Tilburg Reeshof",
+                "middle": "Tilburg Reeshof",
+                "short": "Reeshof"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.564998626709",
+            "lon": "5.05111122131348",
+            "names": {
+                "long": "Tilburg Universiteit",
+                "middle": "Tilburg Univers.",
+                "short": "Tilburg U"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.2377777099609",
+            "lon": "6.09861087799072",
+            "names": {
+                "long": "Twello",
+                "middle": "Twello",
+                "short": "Twello"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.5216674804687",
+            "lon": "4.70166683197022",
+            "names": {
+                "long": "Uitgeest",
+                "middle": "Uitgeest",
+                "short": "Uitgeest"
+            },
+            "type": "knooppuntStoptreinstation"
+        },
+        {
+            "lat": "53.4099568",
+            "lon": "6.6748869",
+            "names": {
+                "long": "Uithuizen",
+                "middle": "Uithuizen",
+                "short": "Uithuizen"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "53.4145845",
+            "lon": "6.7202975",
+            "names": {
+                "long": "Uithuizermeeden",
+                "middle": "Uithuizermeeden",
+                "short": "Uithuizerm"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "53.4014742",
+            "lon": "6.6093776",
+            "names": {
+                "long": "Usquert",
+                "middle": "Usquert",
+                "short": "Usquert"
+            },
+            "type": "stoptreinstation"
+        },
+        {
             "lat": "52.0888900756836",
             "lon": "5.11027765274048",
             "names": {
@@ -69,6 +3499,596 @@
                 "short": "Zuilen"
             },
             "type": "stoptreinstation"
+        },
+        {
+            "lat": "50.8697204589844",
+            "lon": "5.83222198486328",
+            "names": {
+                "long": "Valkenburg",
+                "middle": "Valkenburg",
+                "short": "Valkenburg"
+            },
+            "type": "knooppuntSneltreinstation"
+        },
+        {
+            "lat": "51.937257",
+            "lon": "6.458839",
+            "names": {
+                "long": "Varsseveld",
+                "middle": "Varsseveld",
+                "short": "Varsseveld"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "53.10324",
+            "lon": "6.88475",
+            "names": {
+                "long": "Veendam",
+                "middle": "Veendam",
+                "short": "Veendam"
+            },
+            "type": "knooppuntStoptreinstation"
+        },
+        {
+            "lat": "52.0200004577637",
+            "lon": "5.54861116409302",
+            "names": {
+                "long": "Veenendaal Centrum",
+                "middle": "Veenendaal C.",
+                "short": "Veenendl C"
+            },
+            "type": "knooppuntStoptreinstation"
+        },
+        {
+            "lat": "52.0280570983887",
+            "lon": "5.53138875961304",
+            "names": {
+                "long": "Veenendaal West",
+                "middle": "Veenendaal West",
+                "short": "Veenendl W"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.0458335876465",
+            "lon": "5.57388877868652",
+            "names": {
+                "long": "Veenendaal-De Klomp",
+                "middle": "De Klomp",
+                "short": "De Klomp"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.9947204589844",
+            "lon": "5.98027801513672",
+            "names": {
+                "long": "Velp",
+                "middle": "Velp",
+                "short": "Velp"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.3636093139648",
+            "lon": "6.17277765274048",
+            "names": {
+                "long": "Venlo",
+                "middle": "Venlo",
+                "short": "Venlo"
+            },
+            "type": "knooppuntIntercitystation"
+        },
+        {
+            "lat": "51.526568099007",
+            "lon": "6.01417779922485",
+            "names": {
+                "long": "Venray",
+                "middle": "Venray",
+                "short": "Venray"
+            },
+            "type": "knooppuntStoptreinstation"
+        },
+        {
+            "lat": "51.59193",
+            "lon": "5.99714",
+            "names": {
+                "long": "Vierlingsbeek",
+                "middle": "Vierlingsbeek",
+                "short": "Vierlingsb"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.9030570983887",
+            "lon": "4.34416675567627",
+            "names": {
+                "long": "Vlaardingen Centrum",
+                "middle": "Vlaardingen C.",
+                "short": "Vlaard C"
+            },
+            "type": "knooppuntStoptreinstation"
+        },
+        {
+            "lat": "51.9102783203125",
+            "lon": "4.36166667938232",
+            "names": {
+                "long": "Vlaardingen Oost",
+                "middle": "Vlaardingen Oost",
+                "short": "Vlaard O"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.904167175293",
+            "lon": "4.31305551528931",
+            "names": {
+                "long": "Vlaardingen West",
+                "middle": "Vlaardingen West",
+                "short": "Vlaard W"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.1030540466309",
+            "lon": "5.01083326339722",
+            "names": {
+                "long": "Vleuten",
+                "middle": "Vleuten",
+                "short": "Vleuten"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.4458351135254",
+            "lon": "3.59527778625488",
+            "names": {
+                "long": "Vlissingen",
+                "middle": "Vlissingen",
+                "short": "Vlissingen"
+            },
+            "type": "knooppuntIntercitystation"
+        },
+        {
+            "lat": "51.4647216796875",
+            "lon": "3.59527778625488",
+            "names": {
+                "long": "Vlissingen Souburg",
+                "middle": "Souburg",
+                "short": "Souburg"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "50.8872222900391",
+            "lon": "5.93027782440186",
+            "names": {
+                "long": "Voerendaal",
+                "middle": "Voerendaal",
+                "short": "Voerendaal"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.0666656494141",
+            "lon": "4.3594446182251",
+            "names": {
+                "long": "Voorburg",
+                "middle": "Voorburg",
+                "short": "Voorburg"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.2244453430176",
+            "lon": "4.4844446182251",
+            "names": {
+                "long": "Voorhout",
+                "middle": "Voorhout",
+                "short": "Voorhout"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.1252784729004",
+            "lon": "4.43249988555908",
+            "names": {
+                "long": "Voorschoten",
+                "middle": "Voorschoten",
+                "short": "Voorschtn"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.1575012207031",
+            "lon": "6.14361095428467",
+            "names": {
+                "long": "Voorst-Empe",
+                "middle": "Voorst-Empe",
+                "short": "Voorst-E"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.1071949",
+            "lon": "6.3170457",
+            "names": {
+                "long": "Vorden",
+                "middle": "Vorden",
+                "short": "Vorden"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.40203",
+            "lon": "6.60041",
+            "names": {
+                "long": "Vriezenveen",
+                "middle": "Vriezenveen",
+                "short": "Vriezenvn"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.4571921",
+            "lon": "6.5696679",
+            "names": {
+                "long": "Vroomshoop",
+                "middle": "Vroomshoop",
+                "short": "Vroomshoop"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.6555557250977",
+            "lon": "5.29194450378418",
+            "names": {
+                "long": "Vught",
+                "middle": "Vught",
+                "short": "Vught"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.0441665649414",
+            "lon": "4.6497220993042",
+            "names": {
+                "long": "Waddinxveen",
+                "middle": "Waddinxveen",
+                "short": "Waddinxv"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.0550003051758",
+            "lon": "4.64833354949951",
+            "names": {
+                "long": "Waddinxveen Noord",
+                "middle": "Waddinxveen N.",
+                "short": "Waddinxv N"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "53.3908431",
+            "lon": "6.5671364",
+            "names": {
+                "long": "Warffum",
+                "middle": "Warffum",
+                "short": "Warffum"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.2486114501953",
+            "lon": "5.70361089706421",
+            "names": {
+                "long": "Weert",
+                "middle": "Weert",
+                "short": "Weert"
+            },
+            "type": "intercitystation"
+        },
+        {
+            "lat": "52.3127784729004",
+            "lon": "5.04305553436279",
+            "names": {
+                "long": "Weesp",
+                "middle": "Weesp",
+                "short": "Weesp"
+            },
+            "type": "knooppuntStoptreinstation"
+        },
+        {
+            "lat": "51.9578065",
+            "lon": "6.213844",
+            "names": {
+                "long": "Wehl",
+                "middle": "Wehl",
+                "short": "Wehl"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.96286",
+            "lon": "5.9695",
+            "names": {
+                "long": "Westervoort",
+                "middle": "Westervoort",
+                "short": "Westervrt"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.4541664123535",
+            "lon": "6.00250005722046",
+            "names": {
+                "long": "Wezep",
+                "middle": "Wezep",
+                "short": "Wezep"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.3613891601562",
+            "lon": "6.59166669845581",
+            "names": {
+                "long": "Wierden",
+                "middle": "Wierden",
+                "short": "Wierden"
+            },
+            "type": "knooppuntStoptreinstation"
+        },
+        {
+            "lat": "51.8116683959961",
+            "lon": "5.73083353042603",
+            "names": {
+                "long": "Wijchen",
+                "middle": "Wijchen",
+                "short": "Wijchen"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.3902778625488",
+            "lon": "6.1405553817749",
+            "names": {
+                "long": "Wijhe",
+                "middle": "Wijhe",
+                "short": "Wijhe"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "53.1392377",
+            "lon": "7.035101",
+            "names": {
+                "long": "Winschoten",
+                "middle": "Winschoten",
+                "short": "Winschoten"
+            },
+            "type": "knooppuntStoptreinstation"
+        },
+        {
+            "lat": "53.3300994",
+            "lon": "6.5202905",
+            "names": {
+                "long": "Winsum",
+                "middle": "Winsum",
+                "short": "Winsum"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.9677307",
+            "lon": "6.7155181",
+            "names": {
+                "long": "Winterswijk",
+                "middle": "Winterswijk",
+                "short": "Winterswk"
+            },
+            "type": "knooppuntStoptreinstation"
+        },
+        {
+            "lat": "51.97453",
+            "lon": "6.70417",
+            "names": {
+                "long": "Winterswijk West",
+                "middle": "Winterswijk West",
+                "short": "Wintersw W"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.0849990844727",
+            "lon": "4.89361095428467",
+            "names": {
+                "long": "Woerden",
+                "middle": "Woerden",
+                "short": "Woerden"
+            },
+            "type": "knooppuntStoptreinstation"
+        },
+        {
+            "lat": "52.0055541992188",
+            "lon": "5.7936110496521",
+            "names": {
+                "long": "Wolfheze",
+                "middle": "Wolfheze",
+                "short": "Wolfheze"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.8808326721191",
+            "lon": "6.00361108779907",
+            "names": {
+                "long": "Wolvega",
+                "middle": "Wolvega",
+                "short": "Wolvega"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.9724864",
+            "lon": "5.4564285",
+            "names": {
+                "long": "Workum",
+                "middle": "Workum",
+                "short": "Workum"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.4891662597656",
+            "lon": "4.79222202301025",
+            "names": {
+                "long": "Wormerveer",
+                "middle": "Wormerveer",
+                "short": "Wormerveer"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.4388885498047",
+            "lon": "4.81361103057861",
+            "names": {
+                "long": "Zaandam",
+                "middle": "Zaandam",
+                "short": "Zaandam"
+            },
+            "type": "knooppuntIntercitystation"
+        },
+        {
+            "lat": "52.4566650390625",
+            "lon": "4.82027769088745",
+            "names": {
+                "long": "Zaandam Kogerveld",
+                "middle": "Kogerveld",
+                "short": "Kogerveld"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.8088874816895",
+            "lon": "5.26333332061768",
+            "names": {
+                "long": "Zaltbommel",
+                "middle": "Zaltbommel",
+                "short": "Zaltbommel"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.3752784729004",
+            "lon": "4.53277778625488",
+            "names": {
+                "long": "Zandvoort aan Zee",
+                "middle": "Zandvoort a Zee",
+                "short": "Zandvoort"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.920056",
+            "lon": "5.7228408",
+            "names": {
+                "long": "Zetten-Andelst",
+                "middle": "Zetten-Andelst",
+                "short": "Zetten-A"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "51.9230537414551",
+            "lon": "6.07194423675537",
+            "names": {
+                "long": "Zevenaar",
+                "middle": "Zevenaar",
+                "short": "Zevenaar"
+            },
+            "type": "knooppuntStoptreinstation"
+        },
+        {
+            "lat": "51.64042",
+            "lon": "4.60904",
+            "names": {
+                "long": "Zevenbergen",
+                "middle": "Zevenbergen",
+                "short": "Zevenbergn"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.0475006103516",
+            "lon": "4.47722244262695",
+            "names": {
+                "long": "Zoetermeer",
+                "middle": "Zoetermeer",
+                "short": "Zoetermeer"
+            },
+            "type": "knooppuntStoptreinstation"
+        },
+        {
+            "lat": "52.0463905334473",
+            "lon": "4.49277782440186",
+            "names": {
+                "long": "Zoetermeer Oost",
+                "middle": "Zoetermeer Oost",
+                "short": "Z'meer O"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "53.1596122800056",
+            "lon": "6.8679141998291",
+            "names": {
+                "long": "Zuidbroek",
+                "middle": "Zuidbroek",
+                "short": "Zuidbroek"
+            },
+            "type": "knooppuntStoptreinstation"
+        },
+        {
+            "lat": "53.2486292",
+            "lon": "6.4062361",
+            "names": {
+                "long": "Zuidhorn",
+                "middle": "Zuidhorn",
+                "short": "Zuidhorn"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.1452789306641",
+            "lon": "6.19416666030884",
+            "names": {
+                "long": "Zutphen",
+                "middle": "Zutphen",
+                "short": "Zutphen"
+            },
+            "type": "knooppuntIntercitystation"
+        },
+        {
+            "lat": "51.814998626709",
+            "lon": "4.64166688919067",
+            "names": {
+                "long": "Zwijndrecht",
+                "middle": "Zwijndrecht",
+                "short": "Zwijndrcht"
+            },
+            "type": "stoptreinstation"
+        },
+        {
+            "lat": "52.5047225952148",
+            "lon": "6.09194421768188",
+            "names": {
+                "long": "Zwolle",
+                "middle": "Zwolle",
+                "short": "Zwolle"
+            },
+            "type": "knooppuntIntercitystation"
         }
     ]
 }
