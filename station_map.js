@@ -33,7 +33,8 @@ $.getJSON("stations.json", function(json) {
 });
 
 
-var osmSource = new ol.source.OSM("OpenCycleMap - Grayscale");
+var osmSource = new ol.source.OSM("OpenCycleMap");
+osmSource.setUrl("http://a.tile.opencyclemap.org/transport/{z}/{x}/{y}.png ");
 var osmLayer = new ol.layer.Tile({source: osmSource});
 map.addLayer(osmLayer);
 
