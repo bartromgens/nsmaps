@@ -40,42 +40,33 @@ map.addLayer(osmLayer);
 
 function createStationLayers(typeScales, stations)
 {
-    var stationFeaturesMap = {};
-    for (var t in typeScales)
-    {
-        stationFeaturesMap[t] = [];
-    }
+    var stationFeatures = [];
 
-    for (var index in stations)
+    for (var i in stations)
     {
-        var station = stations[index];
+        var station = stations[i];
         var lat = parseFloat(station.lat);
         lat = lat + 90.0;
         var lonLat = [station.lon, lat.toString()];
 
-        var iconFeature = createStationFeature(station, lonLat);
-        stationFeaturesMap[station.type].push(iconFeature);
+        var stationFeature = createStationFeature(station, lonLat);
+        stationFeatures.push(stationFeature);
     }
 
-    for (var type in stationFeaturesMap)
+    for (var j in stationFeatures)
     {
-        var features = stationFeaturesMap[type];
-
-        for (var i in features)
-        {
-            features[i].setStyle(getStationStyle(features[i]))
-        }
-
-        var vectorSource = new ol.source.Vector({
-            features: features
-        });
-
-        var vectorLayer = new ol.layer.Vector({
-            source: vectorSource
-        });
-
-        map.addLayer(vectorLayer);
+        stationFeatures[j].setStyle(getStationStyle(stationFeatures[j]));
     }
+
+    var vectorSource = new ol.source.Vector({
+        features: stationFeatures
+    });
+
+    var vectorLayer = new ol.layer.Vector({
+        source: vectorSource
+    });
+
+    map.addLayer(vectorLayer);
 }
 
 
@@ -85,6 +76,7 @@ function getStationStyle(feature) {
         scale: typeScales[feature.get('type')] / 1.5,
         src: 'http://www.ns.nl/static/generic/1.21.1/images/nslogo.svg'
     }));
+
     var textStyle = new ol.style.Text({
         text: feature.get('text'),
         scale: typeScales[feature.get('type')] * 2.0,
