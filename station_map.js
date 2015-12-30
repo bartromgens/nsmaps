@@ -16,7 +16,7 @@ var typeScales = {'stoptreinstation': 0.5,
                   'intercitystation': 0.9,
                   'knooppuntStoptreinstation': 0.6,
                   'facultatiefStation': 0.4,
-                  'knooppuntSneltreinstation': 0.8,
+                  'knooppuntSneltreinstation': 0.8
                   };
 
 var map = new ol.Map({target: 'map'});
@@ -27,7 +27,7 @@ map.setView(view);
 $.getJSON("stations.json", function(json) {
     var lon = '5.1';
     var lat = '142.0';
-    view.setCenter(ol.proj.fromLonLat([lon, lat]))
+    view.setCenter(ol.proj.fromLonLat([lon, lat]));
 
     createStationLayers(typeScales, json.stations);
 });
@@ -42,13 +42,13 @@ function createStationLayers(typeScales, stations)
 {
     var stationFeaturesMap = {};
     var stationTitleFeaturesMap = {};
-    for (type in typeScales)
+    for (var t in typeScales)
     {
-        stationFeaturesMap[type] = [];
-        stationTitleFeaturesMap[type] = []
+        stationFeaturesMap[t] = [];
+        stationTitleFeaturesMap[t] = []
     }
 
-    for (index in stations)
+    for (var index in stations)
     {
         var station = stations[index];
         var lat = parseFloat(station.lat);
@@ -59,21 +59,21 @@ function createStationLayers(typeScales, stations)
         stationFeaturesMap[station.type].push(iconFeature);
     }
 
-    for (type in stationFeaturesMap)
+    for (var type in stationFeaturesMap)
     {
-        features = stationFeaturesMap[type];
+        var features = stationFeaturesMap[type];
 
-        for (index in features)
+        for (var i in features)
         {
-            features[index].setStyle(getStationStyle(features[index]))
+            features[i].setStyle(getStationStyle(features[i]))
         }
 
         var vectorSource = new ol.source.Vector({
-            features: features,
+            features: features
         });
 
         var vectorLayer = new ol.layer.Vector({
-            source: vectorSource,
+            source: vectorSource
         });
 
         map.addLayer(vectorLayer);
@@ -82,31 +82,29 @@ function createStationLayers(typeScales, stations)
 
 
 function getStationStyle(feature) {
-    var iconStyle = new ol.style.Style({
-        image: new ol.style.Icon(/** @type {olx.style.IconOptions} */ ({
+    return new ol.style.Style({
+        image: new ol.style.Icon(({
             opacity: 0.75,
-            scale: typeScales[type]/1.5,
-            src: 'http://www.ns.nl/static/generic/1.21.1/images/nslogo.svg',
+            scale: typeScales[feature.get('type')]/1.5,
+            src: 'http://www.ns.nl/static/generic/1.21.1/images/nslogo.svg'
         })),
         text: new ol.style.Text({
             text: feature.get('text'),
-            scale: typeScales[type]*2.0,
+            scale: typeScales[feature.get('type')]*2.0,
             offsetY: 20,
             fill: new ol.style.Fill({
-                color: '#000',
+                color: '#000'
             })
         })
     });
-    return iconStyle;
 }
 
 
 function createStationFeature(station, lonLat) {
-    var iconFeature = new ol.Feature({
+    return new ol.Feature({
         geometry: new ol.geom.Point( ol.proj.fromLonLat(lonLat) ),
         name: station.names.long,
         type: station.type,
-        text: station.names.long,
+        text: station.names.long
     });
-    return iconFeature;              // The function returns the product of p1 and p2
 }
