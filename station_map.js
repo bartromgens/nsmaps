@@ -41,11 +41,9 @@ map.addLayer(osmLayer);
 function createStationLayers(typeScales, stations)
 {
     var stationFeaturesMap = {};
-    var stationTitleFeaturesMap = {};
     for (var t in typeScales)
     {
         stationFeaturesMap[t] = [];
-        stationTitleFeaturesMap[t] = []
     }
 
     for (var index in stations)
@@ -82,20 +80,21 @@ function createStationLayers(typeScales, stations)
 
 
 function getStationStyle(feature) {
+    var iconStyle = new ol.style.Icon(({
+        opacity: 0.75,
+        scale: typeScales[feature.get('type')] / 1.5,
+        src: 'http://www.ns.nl/static/generic/1.21.1/images/nslogo.svg'
+    }));
+    var textStyle = new ol.style.Text({
+        text: feature.get('text'),
+        scale: typeScales[feature.get('type')] * 2.0,
+        offsetY: 20,
+        fill: new ol.style.Fill({color: '#123'})
+    });
+
     return new ol.style.Style({
-        image: new ol.style.Icon(({
-            opacity: 0.75,
-            scale: typeScales[feature.get('type')]/1.5,
-            src: 'http://www.ns.nl/static/generic/1.21.1/images/nslogo.svg'
-        })),
-        text: new ol.style.Text({
-            text: feature.get('text'),
-            scale: typeScales[feature.get('type')]*2.0,
-            offsetY: 20,
-            fill: new ol.style.Fill({
-                color: '#000'
-            })
-        })
+        image: iconStyle,
+        text: textStyle
     });
 }
 
