@@ -71,21 +71,26 @@ function createStationLayers(typeScales, stations)
 
 
 function getStationStyle(feature) {
-    var iconStyle = new ol.style.Icon(({
-        opacity: 0.75,
-        scale: typeScales[feature.get('type')] / 1.5,
-        src: 'http://www.ns.nl/static/generic/1.21.1/images/nslogo.svg'
+    //var iconStyle = new ol.style.Icon(({
+    //    opacity: 0.75,
+    //    scale: typeScales[feature.get('type')] / 1.5,
+    //    src: 'http://www.ns.nl/static/generic/1.21.1/images/nslogo.svg'
+    //}));
+
+    var circleStyle = new ol.style.Circle(({
+        fill: new ol.style.Fill({color: 'black'}),
+        radius: typeScales[feature.get('type')] * 5
     }));
 
     var textStyle = new ol.style.Text({
         text: feature.get('text'),
-        scale: typeScales[feature.get('type')] * 2.0,
+        scale: typeScales[feature.get('type')] * 1.0,
         offsetY: 20,
-        fill: new ol.style.Fill({color: '#123'})
+        fill: new ol.style.Fill({color: '#000'})
     });
 
     return new ol.style.Style({
-        image: iconStyle,
+        image: circleStyle,
         text: textStyle
     });
 }
@@ -96,6 +101,6 @@ function createStationFeature(station, lonLat) {
         geometry: new ol.geom.Point( ol.proj.fromLonLat(lonLat) ),
         name: station.names.long,
         type: station.type,
-        text: station.names.long
+        text: station.names.short
     });
 }
