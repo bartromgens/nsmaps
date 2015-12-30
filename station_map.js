@@ -23,26 +23,59 @@ var map = new ol.Map({target: 'map'});
 var view = new ol.View( {center: [0, 0], zoom: 12, projection: 'EPSG:3857'} );
 map.setView(view);
 
+var osmSource = new ol.source.OSM("OpenCycleMap");
+osmSource.setUrl("http://a.tile.opencyclemap.org/transport/{z}/{x}/{y}.png ");
+var osmLayer = new ol.layer.Tile({source: osmSource});
+
+map.addLayer(osmLayer);
+
+var stationFeatures = [];
+
 
 $.getJSON("stations.json", function(json) {
     var lon = '5.1';
     var lat = '142.0';
     view.setCenter(ol.proj.fromLonLat([lon, lat]));
 
-    createStationLayers(typeScales, json.stations);
+    createStationLayer(typeScales, json.stations);
+
+    addTravelTimeColoring();
 });
 
 
-var osmSource = new ol.source.OSM("OpenCycleMap");
-osmSource.setUrl("http://a.tile.opencyclemap.org/transport/{z}/{x}/{y}.png ");
-var osmLayer = new ol.layer.Tile({source: osmSource});
-map.addLayer(osmLayer);
-
-
-function createStationLayers(typeScales, stations)
+function addTravelTimeColoring()
 {
-    var stationFeatures = [];
+    $.getJSON("traveltimes_from_utrecht.json", function(json) {
+        var stations = json.stations;
+        for (var i in stations)
+        {
+            station = stations[i];
+            for (var j in stationFeatures)
+            {
+                var feature = stationFeatures[j];
+                if (station.name == feature.get('name'))
+                {
+                    var score = station.travel_time_min*4;
+                    var red = 0;
+                    var green = 255 - score;
+                    var blue = 0;
+                    if (score > 255)
+                    {
+                        green = 0;
+                        red = score-255;
+                    }
+                    var color = jQuery.Color( red, green, blue );
+                    feature.set('text', station.travel_time_planned);
+                    feature.setStyle( getStationStyle(feature, color.toHexString()) );
+                }
+            }
+        }
+    });
+}
 
+
+function createStationLayer(typeScales, stations)
+{
     for (var i in stations)
     {
         var station = stations[i];
@@ -56,7 +89,7 @@ function createStationLayers(typeScales, stations)
 
     for (var j in stationFeatures)
     {
-        stationFeatures[j].setStyle(getStationStyle(stationFeatures[j]));
+        stationFeatures[j].setStyle(getStationStyle(stationFeatures[j], 'black'));
     }
 
     var vectorSource = new ol.source.Vector({
@@ -71,7 +104,7 @@ function createStationLayers(typeScales, stations)
 }
 
 
-function getStationStyle(feature) {
+function getStationStyle(feature, circleColor) {
     //var iconStyle = new ol.style.Icon(({
     //    opacity: 0.75,
     //    scale: typeScales[feature.get('type')] / 1.5,
@@ -79,13 +112,13 @@ function getStationStyle(feature) {
     //}));
 
     var circleStyle = new ol.style.Circle(({
-        fill: new ol.style.Fill({color: 'black'}),
-        radius: typeScales[feature.get('type')] * 5
+        fill: new ol.style.Fill({color: circleColor}),
+        radius: typeScales[feature.get('type')] * 10
     }));
 
     var textStyle = new ol.style.Text({
         text: feature.get('text'),
-        scale: typeScales[feature.get('type')] * 1.0,
+        scale: typeScales[feature.get('type')] * 2.0,
         offsetY: 20,
         fill: new ol.style.Fill({color: '#000'})
     });
