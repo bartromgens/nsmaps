@@ -20,7 +20,7 @@ var typeScales = {'stoptreinstation': 0.5,
                   };
 
 var map = new ol.Map({target: 'map'});
-var view = new ol.View( {center: [0, 0], zoom: 12, projection: 'EPSG:3857'} );
+var view = new ol.View( {center: [0, 0], zoom: 10, projection: 'EPSG:3857'} );
 map.setView(view);
 
 var osmSource = new ol.source.OSM("OpenCycleMap");
@@ -39,7 +39,7 @@ $.getJSON("./data/stations.json", function(json) {
 
     createStationLayer(typeScales, json.stations);
 
-    addTravelTimeColoring();
+    //addTravelTimeColoring();
     addContours();
 });
 
@@ -168,10 +168,12 @@ function createContoursLayer(contours, name) {
                 markers.push(ol.proj.fromLonLat(lonLat));
             }
 
+            color = [paths[j].linecolor[0]*255, paths[j].linecolor[1]*255, paths[j].linecolor[2]*255, 0.8]
+
             var lineStyle = new ol.style.Style({
                 stroke: new ol.style.Stroke({
-                    color: rgbToHex( parseInt(paths[j].linecolor[0]*255), parseInt(paths[j].linecolor[1]*255), parseInt(paths[j].linecolor[2]*255) ),
-                    width: 3
+                    color: color,
+                    width: 5
                 })
             });
 
