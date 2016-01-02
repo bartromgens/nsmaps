@@ -23,13 +23,13 @@ def create_trip_data_from_station(station_from):
         trips = []
         try:
             trips = nsapi.get_trips(timestamp, station_from, via, destination)
-        except :
+        except:
             continue
 
         if not trips:
             continue
 
-        shortest_trip = trips[0];
+        shortest_trip = trips[0]
         for trip in trips:
             travel_time = datetime.strptime(trip.travel_time_planned, "%H:%M").time()
             trip.travel_time_min = travel_time.hour * 60 + travel_time.minute

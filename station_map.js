@@ -32,7 +32,7 @@ map.addLayer(osmLayer);
 var stationFeatures = [];
 
 
-$.getJSON("stations.json", function(json) {
+$.getJSON("./data/stations.json", function(json) {
     var lon = '5.1';
     var lat = '142.0';
     view.setCenter(ol.proj.fromLonLat([lon, lat]));
@@ -40,16 +40,17 @@ $.getJSON("stations.json", function(json) {
     createStationLayer(typeScales, json.stations);
 
     addTravelTimeColoring();
+    addContours();
 });
 
 
 function addTravelTimeColoring()
 {
-    $.getJSON("traveltimes_from_utrecht.json", function(json) {
+    $.getJSON("./data/traveltimes_from_utrecht.json", function(json) {
         var stations = json.stations;
         for (var i in stations)
         {
-            station = stations[i];
+            var station = stations[i];
             for (var j in stationFeatures)
             {
                 var feature = stationFeatures[j];
@@ -70,6 +71,16 @@ function addTravelTimeColoring()
                 }
             }
         }
+    });
+}
+
+
+function addContours()
+{
+    $.getJSON("./data/contours.json", function(json) {
+        var contours = json.contours;
+        //console.log(contours);
+        createContoursLayer(contours, "Travel time");
     });
 }
 
@@ -137,4 +148,54 @@ function createStationFeature(station, lonLat) {
         type: station.type,
         text: station.names.short
     });
+}
+
+
+function createContoursLayer(contours, name) {
+    console.log('create new contour layers');
+    console.log(contours.length + ' contours');
+
+    // each contour can have multiple (including zero) paths.
+    for (var k = 0; k < contours.length; ++k)
+    {
+        var paths = contours[k].paths;
+        for (var j = 0; j < paths.length; ++j)
+        {
+            var markers = [];
+            for (var i = 0; i < paths[j].x.length; ++i)
+            {
+                var lonLat = [paths[j].x[i], paths[j].y[i]];
+                markers.push(ol.proj.fromLonLat(lonLat));
+            }
+
+            var lineStyle = new ol.style.Style({
+                stroke: new ol.style.Stroke({
+                    color: rgbToHex( parseInt(paths[j].linecolor[0]*255), parseInt(paths[j].linecolor[1]*255), parseInt(paths[j].linecolor[2]*255) ),
+                    width: 3
+                })
+            });
+
+            var layerLines = new ol.layer.Vector({
+                source: new ol.source.Vector({
+                    features: [new ol.Feature({
+                        geometry: new ol.geom.LineString(markers, 'XY'),
+                        name: 'Line'
+                    })]
+                }),
+                style: lineStyle
+            });
+            map.addLayer(layerLines);
+        }
+    }
+}
+
+
+function componentToHex(comp) {
+    var hex = comp.toString(16);
+    return hex.length == 1 ? "0" + hex : hex;
+}
+
+
+function rgbToHex(r, g, b) {
+    return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
 }
