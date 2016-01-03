@@ -4,7 +4,6 @@ import json
 import numpy as np
 import matplotlib.pyplot as plt
 import utilgeo
-from scipy.interpolate import Rbf
 from scipy.spatial import KDTree
 
 from contour_to_json import contour_to_json
@@ -50,8 +49,8 @@ class Station(object):
 def create_contour_plot(stations, filename):
     np.set_printoptions(3, threshold=100, suppress=True)  # .3f
 
-    delta = 0.01
-    n_contours = 30
+    delta = 0.005
+    n_contours = 41
 
     delta_deg = 6
     lonmin = 3.0
@@ -60,7 +59,7 @@ def create_contour_plot(stations, filename):
     latmax = latmin + delta_deg / 2
 
     cycle_speed_kmh = 18.0
-    n_nearest = 20  # check N nearest stations as best start for cycle route
+    n_nearest = 15  # check N nearest stations as best start for cycle route
 
     print('starting spatial interpolation')
 
@@ -96,11 +95,12 @@ def create_contour_plot(stations, filename):
     print('finished spatial interpolation')
 
     figure = plt.figure()
-    levels = np.linspace(0, 170, num=n_contours)
+    ax = figure.add_subplot(111)
+    levels = np.linspace(0, 160, num=n_contours)
     # contours = plt.contourf(lonrange, latrange, Z, levels=levels, cmap=plt.cm.plasma)
-    contours = plt.contour(lonrange, latrange, Z, levels=levels, cmap=plt.cm.jet)
-    plt.colorbar(contours, format='%.1f')
-    plt.savefig('./data/contour_example.png', dpi=100)
+    contours = ax.contour(lonrange, latrange, Z, levels=levels, cmap=plt.cm.jet)
+    cbar = figure.colorbar(contours, format='%.1f')
+    plt.savefig('./data/contour_example.png', dpi=150)
     contour_to_json(contours, filename)
 
 
