@@ -168,12 +168,17 @@ function createContoursLayer(contours, name) {
                 markers.push(ol.proj.fromLonLat(lonLat));
             }
 
-            color = [paths[j].linecolor[0]*255, paths[j].linecolor[1]*255, paths[j].linecolor[2]*255, 0.8]
+            var color = [paths[j].linecolor[0]*255, paths[j].linecolor[1]*255, paths[j].linecolor[2]*255, 0.8];
+            var lineWidth = 3;
+            if (k % 5 == 1)
+            {
+                lineWidth = 7;
+            }
 
             var lineStyle = new ol.style.Style({
                 stroke: new ol.style.Stroke({
                     color: color,
-                    width: 5
+                    width: lineWidth
                 })
             });
 
