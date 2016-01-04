@@ -1,5 +1,6 @@
 import json
-from datetime import datetime, time
+from datetime import datetime
+import time
 
 from ns_api import Station, NSAPI
 from local_settings import USERNAME, APIKEY
@@ -10,7 +11,7 @@ def create_trip_data_from_station(station_from):
     stations = nsapi.get_stations()
     data = {'stations': []}
 
-    timestamp = "30-12-2015 15:50"
+    timestamp = "12-01-2016 08:00"
     via = ""
 
     for station in stations:
@@ -40,12 +41,13 @@ def create_trip_data_from_station(station_from):
         data['stations'].append({'name': shortest_trip.destination,
                                  'travel_time_min': shortest_trip.travel_time_min,
                                  'travel_time_planned': shortest_trip.travel_time_planned})
+        time.sleep(1)  # balance the load on the NS server
 
     json_data = json.dumps(data, indent=4, sort_keys=True)
-    with open('traveltimes_from_utrecht.json', 'w') as fileout:
+    with open('./data/traveltimes_from_' + station_from +'.json', 'w') as fileout:
         fileout.write(json_data)
 
 
 if __name__ == "__main__":
-    station_from = "Utrecht"
+    station_from = "utrecht"
     create_trip_data_from_station(station_from)
