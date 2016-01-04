@@ -1,4 +1,6 @@
 
+var station_name = "delft";
+
 // http://stackoverflow.com/a/4234006
 $.ajaxSetup({beforeSend: function(xhr){
   if (xhr.overrideMimeType)
@@ -46,7 +48,7 @@ $.getJSON("./data/stations.json", function(json) {
 
 function addTravelTimeColoring()
 {
-    $.getJSON("./data/traveltimes_from_utrecht.json", function(json) {
+    $.getJSON("./data/traveltimes_from_" + station_name + ".json", function(json) {
         var stations = json.stations;
         for (var i in stations)
         {
@@ -77,7 +79,7 @@ function addTravelTimeColoring()
 
 function addContours()
 {
-    $.getJSON("./data/contours.json", function(json) {
+    $.getJSON("./data/contours_" + station_name + ".json", function(json) {
         var contours = json.contours;
         //console.log(contours);
         createContoursLayer(contours, "Travel time");
