@@ -81,7 +81,6 @@ function addContours()
 {
     $.getJSON("./data/contours_" + station_name + ".json", function(json) {
         var contours = json.contours;
-        //console.log(contours);
         createContoursLayer(contours, "Travel time");
     });
 }
