@@ -14,11 +14,13 @@ def create_trip_data_from_station(station_from):
     timestamp = "12-01-2016 08:00"
     via = ""
 
+    data['stations'].append({'name': station_from,
+                         'travel_time_min': 0,
+                         'travel_time_planned': "0:00"})
+
     for station in stations:
         if station.country != "NL":
             continue
-        # if "Utrecht" not in station.names['long']:
-        #     continue
 
         destination = station.names['long']
         trips = []
