@@ -10,7 +10,7 @@ from contour_to_json import contour_to_json
 
 
 class Station(object):
-    def __init__(self, name, lon, lat, travel_time_min=0.0):
+    def __init__(self, name, lon, lat, travel_time_min=-1.0):
         self.name = name
         self.lon = float(lon)
         self.lat = float(lat)
@@ -85,7 +85,7 @@ def create_contour_plot(stations, filename):
             distances, indexes = tree.query([x, y, z], n_nearest)
             min_travel_time = sys.float_info.max
             for distance, index in zip(distances, indexes):
-                if stations[index].travel_time_min == 0:
+                if stations[index].travel_time_min < 0.0:
                     continue
                 travel_time = stations[index].travel_time_min + distance / 1000.0 / cycle_speed_kmh * 60.0
                 if travel_time < min_travel_time:
@@ -96,7 +96,7 @@ def create_contour_plot(stations, filename):
 
     figure = plt.figure()
     ax = figure.add_subplot(111)
-    levels = np.linspace(0, 160, num=n_contours)
+    levels = np.linspace(0, 200, num=n_contours)
     # contours = plt.contourf(lonrange, latrange, Z, levels=levels, cmap=plt.cm.plasma)
     contours = ax.contour(lonrange, latrange, Z, levels=levels, cmap=plt.cm.jet)
     cbar = figure.colorbar(contours, format='%.1f')
@@ -106,7 +106,7 @@ def create_contour_plot(stations, filename):
 
 if __name__ == "__main__":
     stations = Station.from_json('./data/stations.json')
-    Station.travel_times_from_json(stations, './data/traveltimes_from_utrecht.json')
+    Station.travel_times_from_json(stations, './data/traveltimes_from_delft.json')
 
     # stations = []
     # stations.append(Station('Utrecht Centraal', 5.11027765274048, 52.0888900756836, 100))
@@ -116,4 +116,4 @@ if __name__ == "__main__":
 
     for station in stations:
         print(station)
-    create_contour_plot(stations, './data/contours.json')
+    create_contour_plot(stations, './data/contours_delft.json')
