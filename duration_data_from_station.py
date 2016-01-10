@@ -45,7 +45,7 @@ def create_trip_data_from_station(station_from):
                                  'travel_time_planned': shortest_trip.travel_time_planned})
         time.sleep(1)  # balance the load on the NS server
 
-    json_data = json.dumps(data, indent=4, sort_keys=True)
+    json_data = json.dumps(data, indent=4, sort_keys=True, ensure_ascii=False)
     with open('./data/traveltimes_from_' + station_from +'.json', 'w') as fileout:
         fileout.write(json_data)
 
