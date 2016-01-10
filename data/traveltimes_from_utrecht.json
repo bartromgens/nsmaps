@@ -1,6 +1,11 @@
 {
     "stations": [
         {
+            "name": "Utrecht Centraal",
+            "travel_time_min": 0,
+            "travel_time_planned": "0:00"
+        },
+        {
             "name": "'s-Hertogenbosch",
             "travel_time_min": 27,
             "travel_time_planned": "0:27"
@@ -17,13 +22,13 @@
         },
         {
             "name": "Aalten",
-            "travel_time_min": 96,
-            "travel_time_planned": "1:36"
+            "travel_time_min": 95,
+            "travel_time_planned": "1:35"
         },
         {
             "name": "Abcoude",
-            "travel_time_min": 19,
-            "travel_time_planned": "0:19"
+            "travel_time_min": 21,
+            "travel_time_planned": "0:21"
         },
         {
             "name": "Akkrum",
@@ -32,8 +37,8 @@
         },
         {
             "name": "Alkmaar",
-            "travel_time_min": 67,
-            "travel_time_planned": "1:07"
+            "travel_time_min": 68,
+            "travel_time_planned": "1:08"
         },
         {
             "name": "Alkmaar Noord",
@@ -117,8 +122,8 @@
         },
         {
             "name": "Amsterdam Holendrecht",
-            "travel_time_min": 22,
-            "travel_time_planned": "0:22"
+            "travel_time_min": 24,
+            "travel_time_planned": "0:24"
         },
         {
             "name": "Amsterdam Lelylaan",
@@ -187,8 +192,8 @@
         },
         {
             "name": "Arnhem",
-            "travel_time_min": 33,
-            "travel_time_planned": "0:33"
+            "travel_time_min": 35,
+            "travel_time_planned": "0:35"
         },
         {
             "name": "Arnhem Presikhaaf",
@@ -197,8 +202,8 @@
         },
         {
             "name": "Arnhem Velperpoort",
-            "travel_time_min": 42,
-            "travel_time_planned": "0:42"
+            "travel_time_min": 45,
+            "travel_time_planned": "0:45"
         },
         {
             "name": "Arnhem Zuid",
@@ -277,8 +282,8 @@
         },
         {
             "name": "Beverwijk",
-            "travel_time_min": 74,
-            "travel_time_planned": "1:14"
+            "travel_time_min": 75,
+            "travel_time_planned": "1:15"
         },
         {
             "name": "Bilthoven",
@@ -312,8 +317,8 @@
         },
         {
             "name": "Boven-Hardinxveld",
-            "travel_time_min": 59,
-            "travel_time_planned": "0:59"
+            "travel_time_min": 57,
+            "travel_time_planned": "0:57"
         },
         {
             "name": "Bovenkarspel Flora",
@@ -437,8 +442,8 @@
         },
         {
             "name": "Delden",
-            "travel_time_min": 104,
-            "travel_time_planned": "1:44"
+            "travel_time_min": 95,
+            "travel_time_planned": "1:35"
         },
         {
             "name": "Delft",
@@ -522,8 +527,8 @@
         },
         {
             "name": "Didam",
-            "travel_time_min": 59,
-            "travel_time_planned": "0:59"
+            "travel_time_min": 65,
+            "travel_time_planned": "1:05"
         },
         {
             "name": "Diemen",
@@ -537,18 +542,18 @@
         },
         {
             "name": "Dieren",
-            "travel_time_min": 58,
-            "travel_time_planned": "0:58"
+            "travel_time_min": 49,
+            "travel_time_planned": "0:49"
         },
         {
             "name": "Doetinchem",
-            "travel_time_min": 74,
-            "travel_time_planned": "1:14"
+            "travel_time_min": 80,
+            "travel_time_planned": "1:20"
         },
         {
             "name": "Doetinchem De Huet",
-            "travel_time_min": 70,
-            "travel_time_planned": "1:10"
+            "travel_time_min": 76,
+            "travel_time_planned": "1:16"
         },
         {
             "name": "Dordrecht",
@@ -587,8 +592,8 @@
         },
         {
             "name": "Duiven",
-            "travel_time_min": 50,
-            "travel_time_planned": "0:50"
+            "travel_time_min": 53,
+            "travel_time_planned": "0:53"
         },
         {
             "name": "Duivendrecht",
@@ -602,8 +607,8 @@
         },
         {
             "name": "Ede Centrum",
-            "travel_time_min": 36,
-            "travel_time_planned": "0:36"
+            "travel_time_min": 35,
+            "travel_time_planned": "0:35"
         },
         {
             "name": "Ede-Wageningen",
@@ -692,8 +697,8 @@
         },
         {
             "name": "Gaanderen",
-            "travel_time_min": 79,
-            "travel_time_planned": "1:19"
+            "travel_time_min": 78,
+            "travel_time_planned": "1:18"
         },
         {
             "name": "Geerdijk",
@@ -737,8 +742,8 @@
         },
         {
             "name": "Goor",
-            "travel_time_min": 96,
-            "travel_time_planned": "1:36"
+            "travel_time_min": 87,
+            "travel_time_planned": "1:27"
         },
         {
             "name": "Gorinchem",
@@ -812,13 +817,13 @@
         },
         {
             "name": "Hardinxveld Blauwe Zoom",
-            "travel_time_min": 65,
-            "travel_time_planned": "1:05"
+            "travel_time_min": 63,
+            "travel_time_planned": "1:03"
         },
         {
             "name": "Hardinxveld-Giessendam",
-            "travel_time_min": 63,
-            "travel_time_planned": "1:03"
+            "travel_time_min": 61,
+            "travel_time_planned": "1:01"
         },
         {
             "name": "Haren",
@@ -849,11 +854,6 @@
             "name": "Heerenveen",
             "travel_time_min": 100,
             "travel_time_planned": "1:40"
-        },
-        {
-            "name": "Heerenveen IJsstadion",
-            "travel_time_min": 120,
-            "travel_time_planned": "2:00"
         },
         {
             "name": "Heerhugowaard",
@@ -922,8 +922,8 @@
         },
         {
             "name": "Hengelo Gezondheidspark",
-            "travel_time_min": 107,
-            "travel_time_planned": "1:47"
+            "travel_time_min": 98,
+            "travel_time_planned": "1:38"
         },
         {
             "name": "Hengelo Oost",
@@ -952,8 +952,8 @@
         },
         {
             "name": "Hindeloopen",
-            "travel_time_min": 160,
-            "travel_time_planned": "2:40"
+            "travel_time_min": 177,
+            "travel_time_planned": "2:57"
         },
         {
             "name": "Hoek van Holland Haven",
@@ -1042,8 +1042,8 @@
         },
         {
             "name": "IJlst",
-            "travel_time_min": 147,
-            "travel_time_planned": "2:27"
+            "travel_time_min": 164,
+            "travel_time_planned": "2:44"
         },
         {
             "name": "Kampen",
@@ -1087,13 +1087,13 @@
         },
         {
             "name": "Koog-Zaandijk",
-            "travel_time_min": 47,
-            "travel_time_planned": "0:47"
+            "travel_time_min": 52,
+            "travel_time_planned": "0:52"
         },
         {
             "name": "Koudum-Molkwerum",
-            "travel_time_min": 165,
-            "travel_time_planned": "2:45"
+            "travel_time_min": 182,
+            "travel_time_planned": "3:02"
         },
         {
             "name": "Krabbendijke",
@@ -1102,8 +1102,8 @@
         },
         {
             "name": "Krommenie-Assendelft",
-            "travel_time_min": 54,
-            "travel_time_planned": "0:54"
+            "travel_time_min": 59,
+            "travel_time_planned": "0:59"
         },
         {
             "name": "Kropswolde",
@@ -1162,13 +1162,13 @@
         },
         {
             "name": "Lichtenvoorde-Groenlo",
-            "travel_time_min": 97,
-            "travel_time_planned": "1:37"
+            "travel_time_min": 89,
+            "travel_time_planned": "1:29"
         },
         {
             "name": "Lochem",
-            "travel_time_min": 88,
-            "travel_time_planned": "1:28"
+            "travel_time_min": 79,
+            "travel_time_planned": "1:19"
         },
         {
             "name": "Loppersum",
@@ -1177,8 +1177,8 @@
         },
         {
             "name": "Lunteren",
-            "travel_time_min": 43,
-            "travel_time_planned": "0:43"
+            "travel_time_min": 42,
+            "travel_time_planned": "0:42"
         },
         {
             "name": "Maarheeze",
@@ -1224,6 +1224,11 @@
             "name": "Mantgum",
             "travel_time_min": 130,
             "travel_time_planned": "2:10"
+        },
+        {
+            "name": "Mariënberg",
+            "travel_time_min": 85,
+            "travel_time_planned": "1:25"
         },
         {
             "name": "Martenshoek",
@@ -1277,8 +1282,8 @@
         },
         {
             "name": "Nijmegen",
-            "travel_time_min": 53,
-            "travel_time_planned": "0:53"
+            "travel_time_min": 54,
+            "travel_time_planned": "0:54"
         },
         {
             "name": "Nijmegen Dukenburg",
@@ -1367,8 +1372,8 @@
         },
         {
             "name": "Overveen",
-            "travel_time_min": 62,
-            "travel_time_planned": "1:02"
+            "travel_time_min": 64,
+            "travel_time_planned": "1:04"
         },
         {
             "name": "Purmerend",
@@ -1442,8 +1447,8 @@
         },
         {
             "name": "Roosendaal",
-            "travel_time_min": 91,
-            "travel_time_planned": "1:31"
+            "travel_time_min": 88,
+            "travel_time_planned": "1:28"
         },
         {
             "name": "Rosmalen",
@@ -1476,14 +1481,19 @@
             "travel_time_planned": "0:41"
         },
         {
+            "name": "Rotterdam Stadion",
+            "travel_time_min": 53,
+            "travel_time_planned": "0:53"
+        },
+        {
             "name": "Rotterdam Zuid",
             "travel_time_min": 49,
             "travel_time_planned": "0:49"
         },
         {
             "name": "Ruurlo",
-            "travel_time_min": 89,
-            "travel_time_planned": "1:29"
+            "travel_time_min": 80,
+            "travel_time_planned": "1:20"
         },
         {
             "name": "Santpoort Noord",
@@ -1552,13 +1562,13 @@
         },
         {
             "name": "Sliedrecht",
-            "travel_time_min": 68,
-            "travel_time_planned": "1:08"
+            "travel_time_min": 66,
+            "travel_time_planned": "1:06"
         },
         {
             "name": "Sliedrecht Baanhoek",
-            "travel_time_min": 72,
-            "travel_time_planned": "1:12"
+            "travel_time_min": 70,
+            "travel_time_planned": "1:10"
         },
         {
             "name": "Sneek",
@@ -1592,8 +1602,8 @@
         },
         {
             "name": "Stavoren",
-            "travel_time_min": 169,
-            "travel_time_planned": "2:49"
+            "travel_time_min": 187,
+            "travel_time_planned": "3:07"
         },
         {
             "name": "Stedum",
@@ -1622,8 +1632,8 @@
         },
         {
             "name": "Terborg",
-            "travel_time_min": 81,
-            "travel_time_planned": "1:21"
+            "travel_time_min": 80,
+            "travel_time_planned": "1:20"
         },
         {
             "name": "Tiel",
@@ -1657,8 +1667,8 @@
         },
         {
             "name": "Uitgeest",
-            "travel_time_min": 59,
-            "travel_time_planned": "0:59"
+            "travel_time_min": 64,
+            "travel_time_planned": "1:04"
         },
         {
             "name": "Uithuizen",
@@ -1687,8 +1697,8 @@
         },
         {
             "name": "Utrecht Maliebaan",
-            "travel_time_min": 19,
-            "travel_time_planned": "0:19"
+            "travel_time_min": 7,
+            "travel_time_planned": "0:07"
         },
         {
             "name": "Utrecht Overvecht",
@@ -1712,8 +1722,8 @@
         },
         {
             "name": "Varsseveld",
-            "travel_time_min": 89,
-            "travel_time_planned": "1:29"
+            "travel_time_min": 88,
+            "travel_time_planned": "1:28"
         },
         {
             "name": "Veendam",
@@ -1732,8 +1742,8 @@
         },
         {
             "name": "Veenendaal-De Klomp",
-            "travel_time_min": 18,
-            "travel_time_planned": "0:18"
+            "travel_time_min": 17,
+            "travel_time_planned": "0:17"
         },
         {
             "name": "Velp",
@@ -1807,13 +1817,13 @@
         },
         {
             "name": "Voorst-Empe",
-            "travel_time_min": 60,
-            "travel_time_planned": "1:00"
+            "travel_time_min": 59,
+            "travel_time_planned": "0:59"
         },
         {
             "name": "Vorden",
-            "travel_time_min": 82,
-            "travel_time_planned": "1:22"
+            "travel_time_min": 73,
+            "travel_time_planned": "1:13"
         },
         {
             "name": "Vriezenveen",
@@ -1857,13 +1867,13 @@
         },
         {
             "name": "Wehl",
-            "travel_time_min": 65,
-            "travel_time_planned": "1:05"
+            "travel_time_min": 71,
+            "travel_time_planned": "1:11"
         },
         {
             "name": "Westervoort",
-            "travel_time_min": 46,
-            "travel_time_planned": "0:46"
+            "travel_time_min": 49,
+            "travel_time_planned": "0:49"
         },
         {
             "name": "Wezep",
@@ -1897,13 +1907,13 @@
         },
         {
             "name": "Winterswijk",
-            "travel_time_min": 107,
-            "travel_time_planned": "1:47"
+            "travel_time_min": 98,
+            "travel_time_planned": "1:38"
         },
         {
             "name": "Winterswijk West",
-            "travel_time_min": 104,
-            "travel_time_planned": "1:44"
+            "travel_time_min": 95,
+            "travel_time_planned": "1:35"
         },
         {
             "name": "Woerden",
@@ -1922,13 +1932,13 @@
         },
         {
             "name": "Workum",
-            "travel_time_min": 157,
-            "travel_time_planned": "2:37"
+            "travel_time_min": 174,
+            "travel_time_planned": "2:54"
         },
         {
             "name": "Wormerveer",
-            "travel_time_min": 51,
-            "travel_time_planned": "0:51"
+            "travel_time_min": 56,
+            "travel_time_planned": "0:56"
         },
         {
             "name": "Zaandam",
@@ -1947,8 +1957,8 @@
         },
         {
             "name": "Zandvoort aan Zee",
-            "travel_time_min": 69,
-            "travel_time_planned": "1:09"
+            "travel_time_min": 71,
+            "travel_time_planned": "1:11"
         },
         {
             "name": "Zetten-Andelst",
@@ -1957,8 +1967,8 @@
         },
         {
             "name": "Zevenaar",
-            "travel_time_min": 54,
-            "travel_time_planned": "0:54"
+            "travel_time_min": 58,
+            "travel_time_planned": "0:58"
         },
         {
             "name": "Zevenbergen",
@@ -1987,8 +1997,8 @@
         },
         {
             "name": "Zutphen",
-            "travel_time_min": 69,
-            "travel_time_planned": "1:09"
+            "travel_time_min": 60,
+            "travel_time_planned": "1:00"
         },
         {
             "name": "Zwijndrecht",
