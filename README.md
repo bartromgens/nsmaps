@@ -6,6 +6,10 @@ Uses [nsapi](https://github.com/aquatix/ns-api) to get the data, and [OpenLayers
 
 Note: This is a work in progess!
 
+### Demo
+
+http://bartromgens.github.io/ns-maps/
+
 ### Maps
 
 #### Contour travel times
