@@ -1,4 +1,4 @@
-?raw=true?raw=true## NS-Maps
+## NS-Maps
 
 Generate maps visualising Dutch railways (NS) travel information. 
 
