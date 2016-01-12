@@ -1,5 +1,5 @@
 
-var station_name = "delft";
+var station_name = "utrecht";
 
 // http://stackoverflow.com/a/4234006
 $.ajaxSetup({beforeSend: function(xhr){

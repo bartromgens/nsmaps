@@ -29,12 +29,12 @@ class ContourPlotConfig(object):
         self.lon_end = self.lon_start + self.delta_deg
         self.lat_end = self.lat_start + self.delta_deg / 2
         self.n_contours = 41
-        self.min_angle_between_segments = 3
+        self.min_angle_between_segments = 4
 
 
 class TestConfig(ContourPlotConfig):
     def __init__(self):
-        super()
+        super().__init__()
         self.stepsize_deg = 0.005
         self.n_processes = 4
         self.cycle_speed_kmh = 18.0
@@ -44,7 +44,7 @@ class TestConfig(ContourPlotConfig):
         self.lon_end = self.lon_start + self.delta_deg
         self.lat_end = self.lat_start + self.delta_deg / 2
         self.n_contours = 41
-        self.min_angle_between_segments = 3
+        self.min_angle_between_segments = 4
 
 
 def create_contour_plot(stations, filename, config):
@@ -96,7 +96,7 @@ def create_contour_plot(stations, filename, config):
     end = timer()
     print('finished spatial interpolation in ' + str(end - start) + ' [sec]')
 
-    # zoomFactor = 1
+    # zoomFactor = 2
     # Z = ndimage.zoom(Z, zoomFactor)
     # lonrange = ndimage.zoom(lonrange, zoomFactor)
     # latrange = ndimage.zoom(latrange, zoomFactor)
@@ -151,4 +151,4 @@ if __name__ == "__main__":
     filename = './data/contours_' + departure_station + '.json'
     default_config = ContourPlotConfig()
     test_config = TestConfig()
-    create_contour_plot(stations, filename, default_config)
+    create_contour_plot(stations, filename, test_config)
