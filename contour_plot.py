@@ -20,9 +20,10 @@ class ContourData:
 
 class ContourPlotConfig(object):
     def __init__(self):
-        self.stepsize_deg = 0.005
+        self.stepsize_deg = 0.01
         self.n_processes = 4
         self.cycle_speed_kmh = 18.0
+        self.n_nearest = 15
         self.lon_start = 3.0
         self.lat_start = 50.5
         self.delta_deg = 6
@@ -37,7 +38,6 @@ class TestConfig(ContourPlotConfig):
         super().__init__()
         self.stepsize_deg = 0.005
         self.n_processes = 4
-        self.cycle_speed_kmh = 18.0
         self.lon_start = 4.8
         self.lat_start = 52.0
         self.delta_deg = 1.0
@@ -51,11 +51,6 @@ def create_contour_plot(stations, filename, config):
     start = timer()
     numpy.set_printoptions(3, threshold=100, suppress=True)  # .3f
 
-    cycle_speed_kmh = 18.0
-    n_nearest = 15  # check N nearest stations as best start for cycle route
-
-    print('starting spatial interpolation')
-
     altitude = 0.0
     lonrange = numpy.arange(config.lon_start, config.lon_end, config.stepsize_deg)
     latrange = numpy.arange(config.lat_start, config.lat_end, config.stepsize_deg / 2.0)
@@ -67,6 +62,8 @@ def create_contour_plot(stations, filename, config):
         x, y, z = gps.lla2ecef([station.lat, station.lon, altitude])
         positions.append([x, y, z])
 
+    print('starting spatial interpolation')
+
     # tree to find nearest neighbors
     tree = KDTree(positions)
 
@@ -76,7 +73,8 @@ def create_contour_plot(stations, filename, config):
         begin = i * len(latrange)/config.n_processes
         end = (i+1)*len(latrange)/config.n_processes
         latrange_part = latrange[begin:end]
-        process = Process(target=interpolate_travel_time, args=(queue, i, tree, gps, latrange_part, lonrange, altitude, n_nearest, cycle_speed_kmh))
+        process = Process(target=interpolate_travel_time, args=(queue, i, tree, gps, latrange_part,
+                                                                lonrange, altitude, config.n_nearest, config.cycle_speed_kmh))
         processes.append(process)
 
     for process in processes:
@@ -112,6 +110,7 @@ def create_contour_plot(stations, filename, config):
 
 
 def interpolate_travel_time(q, position, kdtree, gps, latrange, lonrange, altitude, n_nearest, cycle_speed_kmh):
+    # n_nearest: check N nearest stations as best start for cycle route
     print('interpolate_travel_time')
     Z = numpy.zeros((int(latrange.shape[0]), int(lonrange.shape[0])))
     for i, lat in enumerate(latrange):
@@ -151,4 +150,6 @@ if __name__ == "__main__":
     filename = './data/contours_' + departure_station + '.json'
     default_config = ContourPlotConfig()
     test_config = TestConfig()
-    create_contour_plot(stations, filename, test_config)
+    default_config.cycle_speed_kmh = 50.0
+    default_config.n_nearest = 30
+    create_contour_plot(stations, filename, default_config)
