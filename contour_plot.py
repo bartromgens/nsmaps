@@ -1,14 +1,13 @@
-import math
 import sys
-
 from timeit import default_timer as timer
-import numpy as np
+from multiprocessing import Process, Queue
+
+import numpy
 import matplotlib.pyplot as plt
-from multiprocessing import Process, Queue, Pool
-import utilgeo
 from scipy.spatial import KDTree
 from scipy import ndimage
 
+import utilgeo
 from station import Station
 from contour_to_json import contour_to_json
 
@@ -21,7 +20,7 @@ class ContourData:
 
 def create_contour_plot(stations, filename):
     start = timer()
-    np.set_printoptions(3, threshold=100, suppress=True)  # .3f
+    numpy.set_printoptions(3, threshold=100, suppress=True)  # .3f
 
     n_processes = 4
 
@@ -42,9 +41,9 @@ def create_contour_plot(stations, filename):
     altitude = 0.0
     gps = utilgeo.GPS()
     positions = []
-    lonrange = np.arange(lonmin, lonmax, delta)
-    latrange = np.arange(latmin, latmax, delta / 2.0)
-    Z = np.zeros((int(lonrange.shape[0]), int(latrange.shape[0])))
+    lonrange = numpy.arange(lonmin, lonmax, delta)
+    latrange = numpy.arange(latmin, latmax, delta / 2.0)
+    Z = numpy.zeros((int(lonrange.shape[0]), int(latrange.shape[0])))
 
     for station in stations:
         x, y, z = gps.lla2ecef([station.lat, station.lon, altitude])
@@ -86,7 +85,7 @@ def create_contour_plot(stations, filename):
 
     figure = plt.figure()
     ax = figure.add_subplot(111)
-    levels = np.linspace(0, 200, num=n_contours)
+    levels = numpy.linspace(0, 200, num=n_contours)
     # contours = plt.contourf(lonrange, latrange, Z, levels=levels, cmap=plt.cm.plasma)
     contours = ax.contour(lonrange, latrange, Z, levels=levels, cmap=plt.cm.jet)
     cbar = figure.colorbar(contours, format='%.1f')
@@ -96,7 +95,7 @@ def create_contour_plot(stations, filename):
 
 def interpolate_travel_time(q, position, kdtree, gps, latrange, lonrange, altitude, n_nearest, cycle_speed_kmh):
     print('interpolate_travel_time')
-    Z = np.zeros((int(latrange.shape[0]), int(lonrange.shape[0])))
+    Z = numpy.zeros((int(latrange.shape[0]), int(lonrange.shape[0])))
     for i, lat in enumerate(latrange):
         if i % (len(latrange) / 10) == 0:
             print(str(int(i / len(latrange) * 100)) + '%')
