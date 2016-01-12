@@ -1,6 +1,7 @@
 import math
 import sys
 import json
+from timeit import default_timer as timer
 import numpy as np
 import matplotlib.pyplot as plt
 from multiprocessing import Process, Queue, Pool
@@ -55,9 +56,12 @@ class Station(object):
 
 
 def create_contour_plot(stations, filename):
+    start = timer()
     np.set_printoptions(3, threshold=100, suppress=True)  # .3f
 
-    delta = 0.005
+    n_processes = 4
+
+    delta = 0.01
     n_contours = 41
 
     delta_deg = 6
@@ -87,9 +91,9 @@ def create_contour_plot(stations, filename):
 
     queue = Queue()
     processes = []
-    for i in range(0, 4):
-        begin = i * len(latrange)/4
-        end = (i+1)*len(latrange)/4
+    for i in range(0, n_processes):
+        begin = i * len(latrange)/n_processes
+        end = (i+1)*len(latrange)/n_processes
         latrange_part = latrange[begin:end]
         process = Process(target=interpolate_travel_time, args=(queue, i, tree, gps, latrange_part, lonrange, altitude, n_nearest, cycle_speed_kmh))
         processes.append(process)
@@ -98,17 +102,18 @@ def create_contour_plot(stations, filename):
         process.start()
 
     # get from the queue and append the values
-    for i in range(0, 4):
+    for i in range(0, n_processes):
         data = queue.get()
         index_begin = data.index_begin
-        begin = index_begin*len(latrange)/4
-        end = (index_begin+1)*len(latrange)/4
+        begin = index_begin*len(latrange)/n_processes
+        end = (index_begin+1)*len(latrange)/n_processes
         Z[0:][begin:end] = data.Z
 
     for process in processes:
         process.join()
 
-    print('finished spatial interpolation')
+    end = timer()
+    print('finished spatial interpolation in ' + str(end - start) + ' [sec]')
 
     # zoomFactor = 1
     # Z = ndimage.zoom(Z, zoomFactor)
