@@ -18,20 +18,38 @@ class ContourData:
         self.index_begin = 0
 
 
-def create_contour_plot(stations, filename):
+class ContourPlotConfig(object):
+    def __init__(self):
+        self.stepsize_deg = 0.005
+        self.n_processes = 4
+        self.cycle_speed_kmh = 18.0
+        self.lon_start = 3.0
+        self.lat_start = 50.5
+        self.delta_deg = 6
+        self.lon_end = self.lon_start + self.delta_deg
+        self.lat_end = self.lat_start + self.delta_deg / 2
+        self.n_contours = 41
+        self.min_angle_between_segments = 3
+
+
+class TestConfig(ContourPlotConfig):
+    def __init__(self):
+        super()
+        self.stepsize_deg = 0.005
+        self.n_processes = 4
+        self.cycle_speed_kmh = 18.0
+        self.lon_start = 4.8
+        self.lat_start = 52.0
+        self.delta_deg = 1.0
+        self.lon_end = self.lon_start + self.delta_deg
+        self.lat_end = self.lat_start + self.delta_deg / 2
+        self.n_contours = 41
+        self.min_angle_between_segments = 3
+
+
+def create_contour_plot(stations, filename, config):
     start = timer()
     numpy.set_printoptions(3, threshold=100, suppress=True)  # .3f
-
-    n_processes = 4
-
-    delta = 0.01
-    n_contours = 41
-
-    delta_deg = 6
-    lonmin = 3.0
-    latmin = 50.5
-    lonmax = lonmin + delta_deg
-    latmax = latmin + delta_deg / 2
 
     cycle_speed_kmh = 18.0
     n_nearest = 15  # check N nearest stations as best start for cycle route
@@ -39,12 +57,12 @@ def create_contour_plot(stations, filename):
     print('starting spatial interpolation')
 
     altitude = 0.0
-    gps = utilgeo.GPS()
-    positions = []
-    lonrange = numpy.arange(lonmin, lonmax, delta)
-    latrange = numpy.arange(latmin, latmax, delta / 2.0)
+    lonrange = numpy.arange(config.lon_start, config.lon_end, config.stepsize_deg)
+    latrange = numpy.arange(config.lat_start, config.lat_end, config.stepsize_deg / 2.0)
     Z = numpy.zeros((int(lonrange.shape[0]), int(latrange.shape[0])))
+    gps = utilgeo.GPS()
 
+    positions = []
     for station in stations:
         x, y, z = gps.lla2ecef([station.lat, station.lon, altitude])
         positions.append([x, y, z])
@@ -54,9 +72,9 @@ def create_contour_plot(stations, filename):
 
     queue = Queue()
     processes = []
-    for i in range(0, n_processes):
-        begin = i * len(latrange)/n_processes
-        end = (i+1)*len(latrange)/n_processes
+    for i in range(0, config.n_processes):
+        begin = i * len(latrange)/config.n_processes
+        end = (i+1)*len(latrange)/config.n_processes
         latrange_part = latrange[begin:end]
         process = Process(target=interpolate_travel_time, args=(queue, i, tree, gps, latrange_part, lonrange, altitude, n_nearest, cycle_speed_kmh))
         processes.append(process)
@@ -65,11 +83,11 @@ def create_contour_plot(stations, filename):
         process.start()
 
     # get from the queue and append the values
-    for i in range(0, n_processes):
+    for i in range(0, config.n_processes):
         data = queue.get()
         index_begin = data.index_begin
-        begin = index_begin*len(latrange)/n_processes
-        end = (index_begin+1)*len(latrange)/n_processes
+        begin = index_begin*len(latrange)/config.n_processes
+        end = (index_begin+1)*len(latrange)/config.n_processes
         Z[0:][begin:end] = data.Z
 
     for process in processes:
@@ -85,12 +103,12 @@ def create_contour_plot(stations, filename):
 
     figure = plt.figure()
     ax = figure.add_subplot(111)
-    levels = numpy.linspace(0, 200, num=n_contours)
+    levels = numpy.linspace(0, 200, num=config.n_contours)
     # contours = plt.contourf(lonrange, latrange, Z, levels=levels, cmap=plt.cm.plasma)
     contours = ax.contour(lonrange, latrange, Z, levels=levels, cmap=plt.cm.jet)
     cbar = figure.colorbar(contours, format='%.1f')
     plt.savefig('./data/contour_example.png', dpi=150)
-    contour_to_json(contours, filename)
+    contour_to_json(contours, filename, config.min_angle_between_segments)
 
 
 def interpolate_travel_time(q, position, kdtree, gps, latrange, lonrange, altitude, n_nearest, cycle_speed_kmh):
@@ -130,6 +148,7 @@ if __name__ == "__main__":
     # stations.append(Station('Leeuwarden', 5.79222202301025, 53.1958351135254, 1))
     # stations.append(Station('test', 5.6, 51.8, 1))
 
-    for station in stations:
-        print(station)
-    create_contour_plot(stations, './data/contours_' + departure_station + '.json')
+    filename = './data/contours_' + departure_station + '.json'
+    default_config = ContourPlotConfig()
+    test_config = TestConfig()
+    create_contour_plot(stations, filename, default_config)
