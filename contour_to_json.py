@@ -15,6 +15,7 @@ def angle(v1, v2):
 
 
 def contour_to_json(contour, filename):
+    min_angle = 7  # only create a new line segment if the angle is larger than this angle, to compress output
     collections = contour.collections
     with open(filename, 'w') as fileout:
         total_points = 0
@@ -25,7 +26,6 @@ def contour_to_json(contour, filename):
             color = collection.get_edgecolor()
             paths_json = []
             for path in paths:
-                # print('writing path')
                 v = path.vertices
                 x = []
                 y = []
@@ -35,9 +35,7 @@ def contour_to_json(contour, filename):
                 for i in range(1, len(v) - 2):
                     v2 = v[i + 1] - v[i - 1]
                     diff_angle = math.fabs(angle(v1, v2) * 180.0 / math.pi)
-                    if diff_angle > 7.0:
-                        # print( str(v[i][0]) + ',' + str(v[i][1]) )
-                        # print( str(diffAngle) )
+                    if diff_angle > min_angle:
                         x.append(v[i][0])
                         y.append(v[i][1])
                         v1 = v[i] - v[i - 1]
