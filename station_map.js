@@ -1,6 +1,4 @@
 
-var station_name = "utrecht";
-
 // http://stackoverflow.com/a/4234006
 $.ajaxSetup({beforeSend: function(xhr){
   if (xhr.overrideMimeType)
@@ -32,6 +30,7 @@ var osmLayer = new ol.layer.Tile({source: osmSource});
 map.addLayer(osmLayer);
 
 var stationFeatures = [];
+var contourLayers = []
 
 
 $.getJSON("./data/stations.json", function(json) {
@@ -42,7 +41,7 @@ $.getJSON("./data/stations.json", function(json) {
     createStationLayer(typeScales, json.stations);
 
     //addTravelTimeColoring();
-    addContours();
+    addContours("utrecht");
 });
 
 
@@ -77,7 +76,7 @@ function addTravelTimeColoring()
 }
 
 
-function addContours()
+function addContours(station_name)
 {
     $.getJSON("./data/contours_" + station_name + ".json", function(json) {
         var contours = json.contours;
@@ -192,6 +191,7 @@ function createContoursLayer(contours, name) {
                 }),
                 style: lineStyle
             });
+            contourLayers.push(layerLines);
             map.addLayer(layerLines);
         }
     }
@@ -207,3 +207,21 @@ function componentToHex(comp) {
 function rgbToHex(r, g, b) {
     return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
 }
+
+
+var select = new ol.interaction.Select({
+    condition: ol.events.condition.click
+});
+
+select.on('select', function(evt) {
+    var featureName = evt.selected[0].get('name');
+    for (var i = 0; i < contourLayers.length; ++i)
+    {
+        var removedLayer = map.removeLayer(contourLayers[i]);
+    }
+    contourLayers.length = 0;
+    addContours(featureName);
+});
+
+map.addInteraction(select);
+
