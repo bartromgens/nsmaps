@@ -150,6 +150,6 @@ if __name__ == "__main__":
     filename = './data/contours_' + departure_station + '.json'
     default_config = ContourPlotConfig()
     test_config = TestConfig()
-    default_config.cycle_speed_kmh = 50.0
+    default_config.cycle_speed_kmh = 18.0
     default_config.n_nearest = 30
     create_contour_plot(stations, filename, default_config)
