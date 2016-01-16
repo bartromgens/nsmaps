@@ -1,10 +1,10 @@
 
 // http://stackoverflow.com/a/4234006
 $.ajaxSetup({beforeSend: function(xhr){
-  if (xhr.overrideMimeType)
-  {
-    xhr.overrideMimeType("application/json");
-  }
+    if (xhr.overrideMimeType)
+    {
+      xhr.overrideMimeType("application/json");
+    }
 }
 });
 
@@ -41,7 +41,7 @@ $.getJSON("./data/stations.json", function(json) {
     createStationLayer(typeScales, json.stations);
 
     //addTravelTimeColoring();
-    addContours("utrecht");
+    //addContours("Utrecht Centraal");
 });
 
 
@@ -93,6 +93,15 @@ function createStationLayer(typeScales, stations)
         var lat = parseFloat(station.lat);
         lat = lat + 90.0;
         var lonLat = [station.lon, lat.toString()];
+        // TODO: make variable depending on availability
+        if (station.names.long == 'Delft' || station.names.long == 'Utrecht Centraal')
+        {
+            station.selectable = true;
+        }
+        else
+        {
+            station.selectable = false;
+        }
 
         var stationFeature = createStationFeature(station, lonLat);
         stationFeatures.push(stationFeature);
@@ -111,6 +120,8 @@ function createStationLayer(typeScales, stations)
         source: vectorSource
     });
 
+    vectorLayer.setZIndex(0);
+
     map.addLayer(vectorLayer);
 }
 
@@ -122,9 +133,16 @@ function getStationStyle(feature, circleColor) {
     //    src: 'http://www.ns.nl/static/generic/1.21.1/images/nslogo.svg'
     //}));
 
+    var strokeColor = 'black';
+    if (feature.get('selectable'))
+    {
+        strokeColor = 'red';
+    }
+
     var circleStyle = new ol.style.Circle(({
         fill: new ol.style.Fill({color: circleColor}),
-        radius: typeScales[feature.get('type')] * 10
+        stroke: new ol.style.Stroke({color: strokeColor, width: 3}),
+        radius: typeScales[feature.get('type')] * 9
     }));
 
     var textStyle = new ol.style.Text({
@@ -146,7 +164,8 @@ function createStationFeature(station, lonLat) {
         geometry: new ol.geom.Point( ol.proj.fromLonLat(lonLat) ),
         name: station.names.long,
         type: station.type,
-        text: station.names.short
+        text: station.names.short,
+        selectable: station.selectable
     });
 }
 
