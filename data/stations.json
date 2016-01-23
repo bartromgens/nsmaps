@@ -1,6 +1,7 @@
 {
     "stations": [
         {
+            "id": "HT",
             "lat": "51.69048",
             "lon": "5.29362",
             "names": {
@@ -11,6 +12,7 @@
             "type": "knooppuntIntercitystation"
         },
         {
+            "id": "HTO",
             "lat": "51.700553894043",
             "lon": "5.3183331489563",
             "names": {
@@ -21,6 +23,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "HDE",
             "lat": "52.4091682",
             "lon": "5.893611",
             "names": {
@@ -31,6 +34,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "ATN",
             "lat": "51.9213265245505",
             "lon": "6.57862722873687",
             "names": {
@@ -41,6 +45,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "AC",
             "lat": "52.2785",
             "lon": "4.977",
             "names": {
@@ -51,6 +56,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "AKM",
             "lat": "53.0463905334473",
             "lon": "5.84361124038696",
             "names": {
@@ -61,6 +67,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "AMR",
             "lat": "52.6377792358398",
             "lon": "4.73972225189209",
             "names": {
@@ -71,6 +78,7 @@
             "type": "knooppuntIntercitystation"
         },
         {
+            "id": "AMRN",
             "lat": "52.6438903808594",
             "lon": "4.76416683197022",
             "names": {
@@ -81,6 +89,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "AML",
             "lat": "52.3580551147461",
             "lon": "6.65388870239258",
             "names": {
@@ -91,6 +100,7 @@
             "type": "knooppuntIntercitystation"
         },
         {
+            "id": "AMRI",
             "lat": "52.3419456481934",
             "lon": "6.66666650772095",
             "names": {
@@ -101,6 +111,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "ALMB",
             "lat": "52.3941650390625",
             "lon": "5.2780556678772",
             "names": {
@@ -111,6 +122,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "ALM",
             "lat": "52.37503",
             "lon": "5.21764",
             "names": {
@@ -121,6 +133,7 @@
             "type": "knooppuntIntercitystation"
         },
         {
+            "id": "ALMM",
             "lat": "52.3675003051758",
             "lon": "5.19027757644653",
             "names": {
@@ -131,6 +144,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "ALMO",
             "lat": "52.4033317565918",
             "lon": "5.30055570602417",
             "names": {
@@ -141,6 +155,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "ALMP",
             "lat": "52.3766670227051",
             "lon": "5.24472236633301",
             "names": {
@@ -151,6 +166,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "AMPO",
             "lat": "52.342778",
             "lon": "5.151944",
             "names": {
@@ -161,6 +177,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "APN",
             "lat": "52.1244430541992",
             "lon": "4.65777778625488",
             "names": {
@@ -171,6 +188,7 @@
             "type": "knooppuntIntercitystation"
         },
         {
+            "id": "AMF",
             "lat": "52.1538887023926",
             "lon": "5.37055540084839",
             "names": {
@@ -181,6 +199,7 @@
             "type": "knooppuntIntercitystation"
         },
         {
+            "id": "AMFS",
             "lat": "52.1748221374512",
             "lon": "5.40388870239258",
             "names": {
@@ -191,6 +210,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "AVAT",
             "lat": "52.1927795410156",
             "lon": "5.43388891220093",
             "names": {
@@ -201,6 +221,7 @@
             "type": "sneltreinstation"
         },
         {
+            "id": "ASA",
             "lat": "52.3466682434082",
             "lon": "4.91777801513672",
             "names": {
@@ -211,6 +232,7 @@
             "type": "intercitystation"
         },
         {
+            "id": "ASB",
             "lat": "52.3122215270996",
             "lon": "4.94694423675537",
             "names": {
@@ -221,6 +243,7 @@
             "type": "knooppuntStoptreinstation"
         },
         {
+            "id": "ASD",
             "lat": "52.3788871765137",
             "lon": "4.90027761459351",
             "names": {
@@ -231,6 +254,7 @@
             "type": "megastation"
         },
         {
+            "id": "ASHD",
             "lat": "52.29844",
             "lon": "4.95972",
             "names": {
@@ -241,6 +265,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "ASDL",
             "lat": "52.3577766418457",
             "lon": "4.83388900756836",
             "names": {
@@ -251,6 +276,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "ASDM",
             "lat": "52.3605537414551",
             "lon": "4.93111133575439",
             "names": {
@@ -261,6 +287,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "RAI",
             "lat": "52.3372230529785",
             "lon": "4.89027786254883",
             "names": {
@@ -271,6 +298,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "ASSP",
             "lat": "52.35526",
             "lon": "4.94651",
             "names": {
@@ -281,6 +309,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "ASS",
             "lat": "52.3888893127441",
             "lon": "4.83777761459351",
             "names": {
@@ -291,6 +320,7 @@
             "type": "knooppuntIntercitystation"
         },
         {
+            "id": "VMW",
             "lat": "52.330134",
             "lon": "4.92975",
             "names": {
@@ -301,6 +331,7 @@
             "type": "facultatiefStation"
         },
         {
+            "id": "ASDZ",
             "lat": "52.3388900756836",
             "lon": "4.871666431427",
             "names": {
@@ -311,6 +342,7 @@
             "type": "intercitystation"
         },
         {
+            "id": "ANA",
             "lat": "52.8672218322754",
             "lon": "4.81111097335815",
             "names": {
@@ -321,6 +353,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "APD",
             "lat": "52.2091674804687",
             "lon": "5.97027778625488",
             "names": {
@@ -331,6 +364,7 @@
             "type": "knooppuntIntercitystation"
         },
         {
+            "id": "APDM",
             "lat": "52.2052764892578",
             "lon": "6.00055551528931",
             "names": {
@@ -341,6 +375,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "APDO",
             "lat": "52.2152786254883",
             "lon": "6.00444459915161",
             "names": {
@@ -351,6 +386,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "APG",
             "lat": "53.3258135",
             "lon": "6.8619577",
             "names": {
@@ -361,6 +397,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "AKL",
             "lat": "51.8719444274902",
             "lon": "4.99277782440186",
             "names": {
@@ -371,6 +408,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "ARN",
             "lat": "51.5016670227051",
             "lon": "3.66916656494141",
             "names": {
@@ -381,6 +419,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "AH",
             "lat": "51.9850006103516",
             "lon": "5.89916658401489",
             "names": {
@@ -391,6 +430,7 @@
             "type": "knooppuntIntercitystation"
         },
         {
+            "id": "AHPR",
             "lat": "51.9880561828613",
             "lon": "5.94388866424561",
             "names": {
@@ -401,6 +441,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "AHP",
             "lat": "51.985279083252",
             "lon": "5.91944456100464",
             "names": {
@@ -411,6 +452,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "AHZ",
             "lat": "51.9550018310547",
             "lon": "5.85194444656372",
             "names": {
@@ -421,6 +463,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "ASN",
             "lat": "52.9916648864746",
             "lon": "6.57083320617676",
             "names": {
@@ -431,6 +474,7 @@
             "type": "knooppuntIntercitystation"
         },
         {
+            "id": "BRN",
             "lat": "52.2083320617676",
             "lon": "5.28083324432373",
             "names": {
@@ -441,6 +485,7 @@
             "type": "knooppuntStoptreinstation"
         },
         {
+            "id": "NSCH",
             "lat": "53.1844",
             "lon": "7.19937",
             "names": {
@@ -451,6 +496,7 @@
             "type": "knooppuntStoptreinstation"
         },
         {
+            "id": "BF",
             "lat": "53.3608969",
             "lon": "6.5185581",
             "names": {
@@ -461,6 +507,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "BRD",
             "lat": "51.8547210693359",
             "lon": "4.5533332824707",
             "names": {
@@ -471,6 +518,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "BNC",
             "lat": "52.1399993896484",
             "lon": "5.59027767181396",
             "names": {
@@ -481,6 +529,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "BNN",
             "lat": "52.1613883972168",
             "lon": "5.59805536270142",
             "names": {
@@ -491,6 +540,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "BNZ",
             "lat": "52.128853",
             "lon": "5.60246",
             "names": {
@@ -501,6 +551,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "BDM",
             "lat": "53.3068857",
             "lon": "6.593054",
             "names": {
@@ -511,6 +562,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "BK",
             "lat": "50.9474983215332",
             "lon": "5.78666687011719",
             "names": {
@@ -521,6 +573,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "BSD",
             "lat": "51.8994445800781",
             "lon": "5.19444465637207",
             "names": {
@@ -531,6 +584,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "BL",
             "lat": "52.8547210693359",
             "lon": "6.52111101150513",
             "names": {
@@ -541,6 +595,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "BGN",
             "lat": "51.4938888549805",
             "lon": "4.29611110687256",
             "names": {
@@ -551,6 +606,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "BET",
             "lat": "51.5099983215332",
             "lon": "5.38916683197022",
             "names": {
@@ -561,6 +617,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "BV",
             "lat": "52.4783325195313",
             "lon": "4.65666675567627",
             "names": {
@@ -571,6 +628,7 @@
             "type": "intercitystation"
         },
         {
+            "id": "BHV",
             "lat": "52.1300010681152",
             "lon": "5.20388889312744",
             "names": {
@@ -581,6 +639,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "BR",
             "lat": "51.372501373291",
             "lon": "6.15500020980835",
             "names": {
@@ -591,6 +650,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "BLL",
             "lat": "52.404167175293",
             "lon": "4.62750005722046",
             "names": {
@@ -601,6 +661,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "BDG",
             "lat": "52.0813903808594",
             "lon": "4.7461109161377",
             "names": {
@@ -611,6 +672,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "BN",
             "lat": "52.2988891601562",
             "lon": "6.74805545806885",
             "names": {
@@ -621,6 +683,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "BSK",
             "lat": "52.0777778625488",
             "lon": "4.64694452285767",
             "names": {
@@ -631,6 +694,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "BHDV",
             "lat": "51.832222",
             "lon": "4.878056",
             "names": {
@@ -641,6 +705,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "BKF",
             "lat": "52.6961097717285",
             "lon": "5.25277757644653",
             "names": {
@@ -651,6 +716,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "BKG",
             "lat": "52.6949996948242",
             "lon": "5.23777770996094",
             "names": {
@@ -661,6 +727,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "BMR",
             "lat": "51.6445217676531",
             "lon": "5.93903303146362",
             "names": {
@@ -671,6 +738,7 @@
             "type": "knooppuntStoptreinstation"
         },
         {
+            "id": "BTL",
             "lat": "51.58433",
             "lon": "5.31912",
             "names": {
@@ -681,6 +749,7 @@
             "type": "knooppuntStoptreinstation"
         },
         {
+            "id": "BD",
             "lat": "51.5955543518066",
             "lon": "4.78000020980835",
             "names": {
@@ -691,6 +760,7 @@
             "type": "knooppuntIntercitystation"
         },
         {
+            "id": "BDPB",
             "lat": "51.606388092041",
             "lon": "4.72083330154419",
             "names": {
@@ -701,6 +771,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "BKL",
             "lat": "52.17149",
             "lon": "4.9906",
             "names": {
@@ -711,6 +782,7 @@
             "type": "knooppuntStoptreinstation"
         },
         {
+            "id": "BMN",
             "lat": "52.0911102294922",
             "lon": "6.14694452285767",
             "names": {
@@ -721,6 +793,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "BP",
             "lat": "53.2564547",
             "lon": "6.1446496",
             "names": {
@@ -731,6 +804,7 @@
             "type": "knooppuntSneltreinstation"
         },
         {
+            "id": "BDE",
             "lat": "50.8969459533691",
             "lon": "5.73666667938232",
             "names": {
@@ -741,6 +815,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "BNK",
             "lat": "52.0630569458008",
             "lon": "5.19444465637207",
             "names": {
@@ -751,6 +826,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "BSMZ",
             "lat": "52.2658348083496",
             "lon": "5.16305541992188",
             "names": {
@@ -761,6 +837,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "CPS",
             "lat": "51.9541664123535",
             "lon": "4.58416652679443",
             "names": {
@@ -771,6 +848,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "CAS",
             "lat": "52.5458335876465",
             "lon": "4.65861129760742",
             "names": {
@@ -781,6 +859,7 @@
             "type": "intercitystation"
         },
         {
+            "id": "CVM",
             "lat": "50.8761100769043",
             "lon": "6.05972242355347",
             "names": {
@@ -791,6 +870,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "CO",
             "lat": "52.6636123657227",
             "lon": "6.73555564880371",
             "names": {
@@ -801,6 +881,7 @@
             "type": "knooppuntSneltreinstation"
         },
         {
+            "id": "CK",
             "lat": "51.7266825879048",
             "lon": "5.87429523468017",
             "names": {
@@ -811,6 +892,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "CL",
             "lat": "51.9466667175293",
             "lon": "5.22694444656372",
             "names": {
@@ -821,6 +903,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "DA",
             "lat": "52.4407702",
             "lon": "6.5759947",
             "names": {
@@ -831,6 +914,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "DLN",
             "lat": "52.6941680908203",
             "lon": "6.75805568695068",
             "names": {
@@ -841,6 +925,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "DL",
             "lat": "52.4983329772949",
             "lon": "6.25861120223999",
             "names": {
@@ -851,6 +936,7 @@
             "type": "sneltreinstation"
         },
         {
+            "id": "DVNK",
             "lat": "52.1472206115723",
             "lon": "4.4563889503479",
             "names": {
@@ -861,6 +947,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "DWE",
             "lat": "53.24817",
             "lon": "6.03463",
             "names": {
@@ -871,6 +958,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "DEI",
             "lat": "53.1888115",
             "lon": "5.7281572",
             "names": {
@@ -881,6 +969,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "DDN",
             "lat": "52.2599983215332",
             "lon": "6.7161111831665",
             "names": {
@@ -891,6 +980,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "DT",
             "lat": "52.0066680908203",
             "lon": "4.35638904571533",
             "names": {
@@ -901,6 +991,7 @@
             "type": "knooppuntIntercitystation"
         },
         {
+            "id": "DTZ",
             "lat": "51.9908332824707",
             "lon": "4.36472225189209",
             "names": {
@@ -911,6 +1002,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "DZ",
             "lat": "53.3336625",
             "lon": "6.9240797",
             "names": {
@@ -921,6 +1013,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "DZW",
             "lat": "53.3320834",
             "lon": "6.9069092",
             "names": {
@@ -931,6 +1024,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "DLD",
             "lat": "52.1402778625488",
             "lon": "5.24277782440186",
             "names": {
@@ -941,6 +1035,7 @@
             "type": "knooppuntStoptreinstation"
         },
         {
+            "id": "GVC",
             "lat": "52.0802764892578",
             "lon": "4.32499980926514",
             "names": {
@@ -951,6 +1046,7 @@
             "type": "megastation"
         },
         {
+            "id": "GV",
             "lat": "52.0697212219238",
             "lon": "4.32250022888184",
             "names": {
@@ -961,6 +1057,7 @@
             "type": "knooppuntIntercitystation"
         },
         {
+            "id": "LAA",
             "lat": "52.0786094665527",
             "lon": "4.34277772903442",
             "names": {
@@ -971,6 +1068,7 @@
             "type": "intercitystation"
         },
         {
+            "id": "GVM",
             "lat": "52.0905570983887",
             "lon": "4.36944437026978",
             "names": {
@@ -981,6 +1079,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "GVMW",
             "lat": "52.0538902282715",
             "lon": "4.3086109161377",
             "names": {
@@ -991,6 +1090,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "YPB",
             "lat": "52.0552787780762",
             "lon": "4.39222240447998",
             "names": {
@@ -1001,6 +1101,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "HDR",
             "lat": "52.9552764892578",
             "lon": "4.76111125946045",
             "names": {
@@ -1011,6 +1112,7 @@
             "type": "intercitystation"
         },
         {
+            "id": "HDRZ",
             "lat": "52.9324989318848",
             "lon": "4.76416683197022",
             "names": {
@@ -1021,6 +1123,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "DN",
             "lat": "51.4558334350586",
             "lon": "5.78888893127441",
             "names": {
@@ -1031,6 +1134,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "DV",
             "lat": "52.2574996948242",
             "lon": "6.16055536270142",
             "names": {
@@ -1041,6 +1145,7 @@
             "type": "knooppuntIntercitystation"
         },
         {
+            "id": "DVC",
             "lat": "52.2502784729004",
             "lon": "6.21444463729858",
             "names": {
@@ -1051,6 +1156,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "DID",
             "lat": "51.933502",
             "lon": "6.1324106",
             "names": {
@@ -1061,6 +1167,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "DMN",
             "lat": "52.345832824707",
             "lon": "4.9655556678772",
             "names": {
@@ -1071,6 +1178,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "DMNZ",
             "lat": "52.3302764892578",
             "lon": "4.95583343505859",
             "names": {
@@ -1081,6 +1189,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "DR",
             "lat": "52.0449981689453",
             "lon": "6.10305547714233",
             "names": {
@@ -1091,6 +1200,7 @@
             "type": "intercitystation"
         },
         {
+            "id": "DTC",
             "lat": "51.9585962",
             "lon": "6.2962148",
             "names": {
@@ -1101,6 +1211,7 @@
             "type": "knooppuntStoptreinstation"
         },
         {
+            "id": "DTCH",
             "lat": "51.9591413",
             "lon": "6.2598521",
             "names": {
@@ -1111,6 +1222,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "DDR",
             "lat": "51.8072204589844",
             "lon": "4.66833353042603",
             "names": {
@@ -1121,6 +1233,7 @@
             "type": "knooppuntIntercitystation"
         },
         {
+            "id": "DDRS",
             "lat": "51.801944732666",
             "lon": "4.71666669845581",
             "names": {
@@ -1131,6 +1244,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "DDZD",
             "lat": "51.7900009155273",
             "lon": "4.67138910293579",
             "names": {
@@ -1141,6 +1255,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "DB",
             "lat": "52.0652770996094",
             "lon": "5.25861120223999",
             "names": {
@@ -1151,6 +1266,7 @@
             "type": "knooppuntStoptreinstation"
         },
         {
+            "id": "DRH",
             "lat": "52.4425010681152",
             "lon": "4.63805532455444",
             "names": {
@@ -1161,6 +1277,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "DRP",
             "lat": "53.1778086",
             "lon": "5.6347411",
             "names": {
@@ -1171,6 +1288,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "DRON",
             "lat": "52.5344",
             "lon": "5.72089",
             "names": {
@@ -1181,6 +1299,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "DVN",
             "lat": "51.9433326721191",
             "lon": "6.01472234725952",
             "names": {
@@ -1191,6 +1310,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "DVD",
             "lat": "52.3233337402344",
             "lon": "4.93638896942139",
             "names": {
@@ -1201,6 +1321,7 @@
             "type": "knooppuntStoptreinstation"
         },
         {
+            "id": "EC",
             "lat": "51.1005554199219",
             "lon": "5.87888908386231",
             "names": {
@@ -1211,6 +1332,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "EDC",
             "lat": "52.0436096191406",
             "lon": "5.66833353042603",
             "names": {
@@ -1221,6 +1343,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "ED",
             "lat": "52.0277786254883",
             "lon": "5.67305564880371",
             "names": {
@@ -1231,6 +1354,7 @@
             "type": "knooppuntIntercitystation"
         },
         {
+            "id": "WTM",
             "lat": "50.82317",
             "lon": "5.92479",
             "names": {
@@ -1241,6 +1365,7 @@
             "type": "facultatiefStation"
         },
         {
+            "id": "EDN",
             "lat": "50.7719459533691",
             "lon": "5.71000003814697",
             "names": {
@@ -1251,6 +1376,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "EHV",
             "lat": "51.4433326721191",
             "lon": "5.48138904571533",
             "names": {
@@ -1261,6 +1387,7 @@
             "type": "knooppuntIntercitystation"
         },
         {
+            "id": "EHS",
             "lat": "51.4511108398438",
             "lon": "5.45583343505859",
             "names": {
@@ -1271,6 +1398,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "EST",
             "lat": "51.9169425964355",
             "lon": "5.85500001907349",
             "names": {
@@ -1281,6 +1409,7 @@
             "type": "knooppuntStoptreinstation"
         },
         {
+            "id": "EMN",
             "lat": "52.7900009155273",
             "lon": "6.89944458007812",
             "names": {
@@ -1291,6 +1420,7 @@
             "type": "sneltreinstation"
         },
         {
+            "id": "EMNZ",
             "lat": "52.7488663746914",
             "lon": "6.87478065490722",
             "names": {
@@ -1301,6 +1431,7 @@
             "type": "sneltreinstation"
         },
         {
+            "id": "EKZ",
             "lat": "52.6991653442383",
             "lon": "5.28638887405396",
             "names": {
@@ -1311,6 +1442,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "ES",
             "lat": "52.2224998474121",
             "lon": "6.8899998664856",
             "names": {
@@ -1321,6 +1453,7 @@
             "type": "knooppuntIntercitystation"
         },
         {
+            "id": "ESE",
             "lat": "52.2213897705078",
             "lon": "6.95111131668091",
             "names": {
@@ -1331,6 +1464,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "ESK",
             "lat": "52.2374992370605",
             "lon": "6.83888912200928",
             "names": {
@@ -1341,6 +1475,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "EML",
             "lat": "52.3016662597656",
             "lon": "5.61472225189209",
             "names": {
@@ -1351,6 +1486,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "ETN",
             "lat": "51.5750007629395",
             "lon": "4.63583326339722",
             "names": {
@@ -1361,6 +1497,7 @@
             "type": "intercitystation"
         },
         {
+            "id": "EGH",
             "lat": "50.8905563354492",
             "lon": "6.04500007629395",
             "names": {
@@ -1371,6 +1508,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "EGHM",
             "lat": "50.8960498196442",
             "lon": "6.0602474212646396",
             "names": {
@@ -1381,6 +1519,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "FWD",
             "lat": "53.2351834",
             "lon": "5.9886615",
             "names": {
@@ -1391,6 +1530,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "FN",
             "lat": "53.1824488",
             "lon": "5.5483094",
             "names": {
@@ -1401,6 +1541,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "GDR",
             "lat": "51.93074",
             "lon": "6.3486",
             "names": {
@@ -1411,6 +1552,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "GDK",
             "lat": "52.47625",
             "lon": "6.56674",
             "names": {
@@ -1421,6 +1563,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "GDM",
             "lat": "51.88301",
             "lon": "5.27127",
             "names": {
@@ -1431,6 +1574,7 @@
             "type": "knooppuntStoptreinstation"
         },
         {
+            "id": "GP",
             "lat": "51.4197235107422",
             "lon": "5.55055570602417",
             "names": {
@@ -1441,6 +1585,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "GLN",
             "lat": "50.9669456481934",
             "lon": "5.84305572509766",
             "names": {
@@ -1451,6 +1596,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "LUT",
             "lat": "50.9755554199219",
             "lon": "5.82472229003906",
             "names": {
@@ -1461,6 +1607,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "GZ",
             "lat": "51.583610534668",
             "lon": "4.92611122131348",
             "names": {
@@ -1471,6 +1618,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "GBR",
             "lat": "52.2186126708984",
             "lon": "6.97444438934326",
             "names": {
@@ -1481,6 +1629,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "GS",
             "lat": "51.4980545043945",
             "lon": "3.89055562019348",
             "names": {
@@ -1491,6 +1640,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "GO",
             "lat": "52.2302780151367",
             "lon": "6.58444452285767",
             "names": {
@@ -1501,6 +1651,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "GR",
             "lat": "51.8338890075684",
             "lon": "4.96833324432373",
             "names": {
@@ -1511,6 +1662,7 @@
             "type": "knooppuntStoptreinstation"
         },
         {
+            "id": "GD",
             "lat": "52.0175018310547",
             "lon": "4.70444440841675",
             "names": {
@@ -1521,6 +1673,7 @@
             "type": "knooppuntIntercitystation"
         },
         {
+            "id": "GDG",
             "lat": "52.0149993896484",
             "lon": "4.7408332824707",
             "names": {
@@ -1531,6 +1684,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "GBG",
             "lat": "52.6091651916504",
             "lon": "6.67583322525024",
             "names": {
@@ -1541,6 +1695,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "GK",
             "lat": "53.2557403255735",
             "lon": "6.30977869033813",
             "names": {
@@ -1551,6 +1706,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "GN",
             "lat": "53.2105560302734",
             "lon": "6.56472206115723",
             "names": {
@@ -1561,6 +1717,7 @@
             "type": "knooppuntIntercitystation"
         },
         {
+            "id": "GERP",
             "lat": "53.20480027",
             "lon": "6.5854178",
             "names": {
@@ -1571,6 +1728,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "GNN",
             "lat": "53.2301469",
             "lon": "6.5563172",
             "names": {
@@ -1581,6 +1739,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "GW",
             "lat": "53.0888900756836",
             "lon": "5.82250022888184",
             "names": {
@@ -1591,6 +1750,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "WIJ",
             "lat": "50.833056",
             "lon": "5.898056",
             "names": {
@@ -1601,6 +1761,7 @@
             "type": "facultatiefStation"
         },
         {
+            "id": "HLM",
             "lat": "52.3877792358398",
             "lon": "4.63833332061768",
             "names": {
@@ -1611,6 +1772,7 @@
             "type": "knooppuntIntercitystation"
         },
         {
+            "id": "HLMS",
             "lat": "52.3827781677246",
             "lon": "4.67305564880371",
             "names": {
@@ -1621,6 +1783,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "HWZB",
             "lat": "52.385935",
             "lon": "4.747165",
             "names": {
@@ -1631,6 +1794,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "HDB",
             "lat": "52.5727767944336",
             "lon": "6.62861108779907",
             "names": {
@@ -1641,6 +1805,7 @@
             "type": "sneltreinstation"
         },
         {
+            "id": "HD",
             "lat": "52.3375015258789",
             "lon": "5.61972236633301",
             "names": {
@@ -1651,6 +1816,7 @@
             "type": "knooppuntStoptreinstation"
         },
         {
+            "id": "HBZM",
             "lat": "51.82944",
             "lon": "4.81556",
             "names": {
@@ -1661,6 +1827,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "GND",
             "lat": "51.8305549621582",
             "lon": "4.83583354949951",
             "names": {
@@ -1671,6 +1838,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "HRN",
             "lat": "53.1761093139648",
             "lon": "6.61722230911255",
             "names": {
@@ -1681,6 +1849,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "HLG",
             "lat": "53.1704205",
             "lon": "5.4251932",
             "names": {
@@ -1691,6 +1860,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "HLGH",
             "lat": "53.174917",
             "lon": "5.4112885",
             "names": {
@@ -1701,6 +1871,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "HK",
             "lat": "52.4952774047852",
             "lon": "4.68694448471069",
             "names": {
@@ -1711,6 +1882,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "HAD",
             "lat": "52.3591651916504",
             "lon": "4.60666656494141",
             "names": {
@@ -1721,6 +1893,7 @@
             "type": "intercitystation"
         },
         {
+            "id": "HR",
             "lat": "52.9613876342773",
             "lon": "5.91416645050049",
             "names": {
@@ -1731,6 +1904,7 @@
             "type": "intercitystation"
         },
         {
+            "id": "HRY",
             "lat": "52.9352760314941",
             "lon": "5.94388866424561",
             "names": {
@@ -1741,6 +1915,7 @@
             "type": "facultatiefStation"
         },
         {
+            "id": "HWD",
             "lat": "52.6697235107422",
             "lon": "4.82277774810791",
             "names": {
@@ -1751,6 +1926,7 @@
             "type": "knooppuntStoptreinstation"
         },
         {
+            "id": "HRL",
             "lat": "50.8908348083496",
             "lon": "5.97499990463257",
             "names": {
@@ -1761,6 +1937,7 @@
             "type": "knooppuntIntercitystation"
         },
         {
+            "id": "HRLK",
             "lat": "50.8901689328708",
             "lon": "5.99334239959716",
             "names": {
@@ -1771,6 +1948,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "HRLW",
             "lat": "50.896667",
             "lon": "5.952222",
             "names": {
@@ -1781,6 +1959,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "HZE",
             "lat": "51.3849983215332",
             "lon": "5.56944465637207",
             "names": {
@@ -1791,6 +1970,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "HLO",
             "lat": "52.5994453430176",
             "lon": "4.70055532455444",
             "names": {
@@ -1801,6 +1981,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "HNO",
             "lat": "52.4272232055664",
             "lon": "6.22111129760742",
             "names": {
@@ -1811,6 +1992,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "HM",
             "lat": "51.4755554199219",
             "lon": "5.66194438934326",
             "names": {
@@ -1821,6 +2003,7 @@
             "type": "knooppuntIntercitystation"
         },
         {
+            "id": "HMH",
             "lat": "51.46794",
             "lon": "5.63085",
             "names": {
@@ -1831,6 +2014,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "HMBV",
             "lat": "51.4622230529785",
             "lon": "5.60722208023071",
             "names": {
@@ -1841,6 +2025,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "HMBH",
             "lat": "51.47068",
             "lon": "5.70177",
             "names": {
@@ -1851,6 +2036,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "HMN",
             "lat": "51.9222129",
             "lon": "5.6737254",
             "names": {
@@ -1861,6 +2047,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "HGL",
             "lat": "52.2616653442383",
             "lon": "6.79388904571533",
             "names": {
@@ -1871,6 +2058,7 @@
             "type": "knooppuntIntercitystation"
         },
         {
+            "id": "HGLG",
             "lat": "52.261667",
             "lon": "6.773611",
             "names": {
@@ -1881,6 +2069,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "HGLO",
             "lat": "52.2688903808594",
             "lon": "6.81944465637207",
             "names": {
@@ -1891,6 +2080,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "HIL",
             "lat": "52.3025016784668",
             "lon": "4.56555557250977",
             "names": {
@@ -1901,6 +2091,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "HVS",
             "lat": "52.2258338928223",
             "lon": "5.18194437026978",
             "names": {
@@ -1911,6 +2102,7 @@
             "type": "knooppuntIntercitystation"
         },
         {
+            "id": "HVSM",
             "lat": "52.2380561828613",
             "lon": "5.17388868331909",
             "names": {
@@ -1921,6 +2113,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "HVSP",
             "lat": "52.2161102294922",
             "lon": "5.18722200393677",
             "names": {
@@ -1931,6 +2124,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "HNP",
             "lat": "52.9464903",
             "lon": "5.423063",
             "names": {
@@ -1941,6 +2135,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "HLD",
             "lat": "51.9752769470215",
             "lon": "4.1288890838623",
             "names": {
@@ -1951,6 +2146,7 @@
             "type": "knooppuntStoptreinstation"
         },
         {
+            "id": "HLDS",
             "lat": "51.9816665649414",
             "lon": "4.11972236633301",
             "names": {
@@ -1961,6 +2157,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "HB",
             "lat": "50.9055557250977",
             "lon": "5.93055534362793",
             "names": {
@@ -1971,6 +2168,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "HVL",
             "lat": "52.16652",
             "lon": "5.45718",
             "names": {
@@ -1981,6 +2179,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "HOR",
             "lat": "52.1777763366699",
             "lon": "5.17916679382324",
             "names": {
@@ -1991,6 +2190,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "HON",
             "lat": "52.2838897705078",
             "lon": "6.42027759552002",
             "names": {
@@ -2001,6 +2201,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "HFD",
             "lat": "52.2933349609375",
             "lon": "4.70055532455444",
             "names": {
@@ -2011,6 +2212,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "HGV",
             "lat": "52.7338905334473",
             "lon": "6.47361087799072",
             "names": {
@@ -2021,6 +2223,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "HGZ",
             "lat": "53.1598181316756",
             "lon": "6.77075386047363",
             "names": {
@@ -2031,6 +2234,7 @@
             "type": "knooppuntStoptreinstation"
         },
         {
+            "id": "HKS",
             "lat": "52.6905555725098",
             "lon": "5.18388891220093",
             "names": {
@@ -2041,6 +2245,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "HN",
             "lat": "52.6447219848633",
             "lon": "5.05555534362793",
             "names": {
@@ -2051,6 +2256,7 @@
             "type": "knooppuntIntercitystation"
         },
         {
+            "id": "HNK",
             "lat": "52.6536102294922",
             "lon": "5.08555555343628",
             "names": {
@@ -2061,6 +2267,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "HRT",
             "lat": "51.4263877868652",
             "lon": "6.04222202301025",
             "names": {
@@ -2071,6 +2278,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "HTN",
             "lat": "52.03402",
             "lon": "5.16821",
             "names": {
@@ -2081,6 +2289,7 @@
             "type": "knooppuntStoptreinstation"
         },
         {
+            "id": "HTNC",
             "lat": "52.01701",
             "lon": "5.17949",
             "names": {
@@ -2091,6 +2300,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "SGL",
             "lat": "50.8733329772949",
             "lon": "5.79722213745117",
             "names": {
@@ -2101,6 +2311,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "HDG",
             "lat": "53.2187783",
             "lon": "5.934543",
             "names": {
@@ -2111,6 +2322,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "IJT",
             "lat": "53.0146614",
             "lon": "5.6160801",
             "names": {
@@ -2121,6 +2333,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "KPN",
             "lat": "52.5597229003906",
             "lon": "5.92166662216186",
             "names": {
@@ -2131,6 +2344,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "KPNZ",
             "lat": "52.5331",
             "lon": "5.91309",
             "names": {
@@ -2141,6 +2355,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "BZL",
             "lat": "51.4808349609375",
             "lon": "3.95611119270325",
             "names": {
@@ -2151,6 +2366,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "KRD",
             "lat": "50.8616676330566",
             "lon": "6.05749988555908",
             "names": {
@@ -2161,6 +2377,7 @@
             "type": "knooppuntStoptreinstation"
         },
         {
+            "id": "KRW",
             "lat": "50.85355",
             "lon": "6.02578",
             "names": {
@@ -2171,6 +2388,7 @@
             "type": "facultatiefStation"
         },
         {
+            "id": "KTR",
             "lat": "51.9313869",
             "lon": "5.5833465",
             "names": {
@@ -2181,6 +2399,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "KBK",
             "lat": "52.1780548095703",
             "lon": "6.08361101150513",
             "names": {
@@ -2191,6 +2410,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "KMR",
             "lat": "50.8663902282715",
             "lon": "5.8905553817749",
             "names": {
@@ -2201,6 +2421,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "KBW",
             "lat": "52.458610534668",
             "lon": "4.80555534362793",
             "names": {
@@ -2211,6 +2432,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "KZD",
             "lat": "52.469165802002",
             "lon": "4.80499982833862",
             "names": {
@@ -2221,6 +2443,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "KMW",
             "lat": "52.9028197",
             "lon": "5.4106913",
             "names": {
@@ -2231,6 +2454,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "KBD",
             "lat": "51.4333343505859",
             "lon": "4.11694431304932",
             "names": {
@@ -2241,6 +2465,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "KMA",
             "lat": "52.49511",
             "lon": "4.75417",
             "names": {
@@ -2251,6 +2476,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "KW",
             "lat": "53.1617362",
             "lon": "6.7220882",
             "names": {
@@ -2261,6 +2487,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "KRG",
             "lat": "51.4650001525879",
             "lon": "4.03722238540649",
             "names": {
@@ -2271,6 +2498,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "ZLW",
             "lat": "51.6911125183105",
             "lon": "4.66305541992188",
             "names": {
@@ -2281,6 +2509,7 @@
             "type": "knooppuntStoptreinstation"
         },
         {
+            "id": "LG",
             "lat": "50.8963890075684",
             "lon": "6.01916646957398",
             "names": {
@@ -2291,6 +2520,7 @@
             "type": "knooppuntStoptreinstation"
         },
         {
+            "id": "LDM",
             "lat": "51.8947219848633",
             "lon": "5.09138870239258",
             "names": {
@@ -2301,6 +2531,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "LW",
             "lat": "53.1958351135254",
             "lon": "5.79222202301025",
             "names": {
@@ -2311,6 +2542,7 @@
             "type": "knooppuntIntercitystation"
         },
         {
+            "id": "ADH",
             "lat": "53.19889",
             "lon": "5.81639",
             "names": {
@@ -2321,6 +2553,7 @@
             "type": "facultatiefStation"
         },
         {
+            "id": "LWC",
             "lat": "53.2021808",
             "lon": "5.8422968",
             "names": {
@@ -2331,6 +2564,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "LEDN",
             "lat": "52.1661109924316",
             "lon": "4.48166656494141",
             "names": {
@@ -2341,6 +2575,7 @@
             "type": "knooppuntIntercitystation"
         },
         {
+            "id": "LDL",
             "lat": "52.1469459533691",
             "lon": "4.49249982833862",
             "names": {
@@ -2351,6 +2586,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "LLS",
             "lat": "52.5077781677246",
             "lon": "5.47277784347534",
             "names": {
@@ -2361,6 +2597,7 @@
             "type": "knooppuntIntercitystation"
         },
         {
+            "id": "LTV",
             "lat": "52.01188",
             "lon": "6.59641",
             "names": {
@@ -2371,6 +2608,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "LC",
             "lat": "52.1666679382324",
             "lon": "6.42638874053955",
             "names": {
@@ -2381,6 +2619,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "LP",
             "lat": "53.3347145",
             "lon": "6.7472625",
             "names": {
@@ -2391,6 +2630,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "LTN",
             "lat": "52.085277557373",
             "lon": "5.62444448471069",
             "names": {
@@ -2401,6 +2641,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "MZ",
             "lat": "51.3037623603504",
             "lon": "5.63034296035766",
             "names": {
@@ -2411,6 +2652,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "MRN",
             "lat": "52.0641670227051",
             "lon": "5.36999988555908",
             "names": {
@@ -2421,6 +2663,7 @@
             "type": "knooppuntStoptreinstation"
         },
         {
+            "id": "MAS",
             "lat": "52.1352767944336",
             "lon": "5.03361129760742",
             "names": {
@@ -2431,6 +2674,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "MSS",
             "lat": "51.9161109924316",
             "lon": "4.25472211837769",
             "names": {
@@ -2441,6 +2685,7 @@
             "type": "knooppuntStoptreinstation"
         },
         {
+            "id": "MSW",
             "lat": "51.9258346557617",
             "lon": "4.23611116409302",
             "names": {
@@ -2451,6 +2696,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "MT",
             "lat": "50.8502769470215",
             "lon": "5.70555543899536",
             "names": {
@@ -2461,6 +2707,7 @@
             "type": "knooppuntIntercitystation"
         },
         {
+            "id": "MTN",
             "lat": "50.87087",
             "lon": "5.71774",
             "names": {
@@ -2471,6 +2718,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "MTR",
             "lat": "50.8386116027832",
             "lon": "5.71722221374512",
             "names": {
@@ -2481,6 +2729,7 @@
             "type": "knooppuntStoptreinstation"
         },
         {
+            "id": "MG",
             "lat": "53.1296368",
             "lon": "5.7131996",
             "names": {
@@ -2491,6 +2740,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "MRB",
             "lat": "52.5094451904297",
             "lon": "6.57527780532837",
             "names": {
@@ -2501,6 +2751,7 @@
             "type": "knooppuntSneltreinstation"
         },
         {
+            "id": "MTH",
             "lat": "53.1607232",
             "lon": "6.7402989",
             "names": {
@@ -2511,6 +2762,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "MES",
             "lat": "50.882879392551",
             "lon": "5.75099945068359",
             "names": {
@@ -2521,6 +2773,7 @@
             "type": "sneltreinstation"
         },
         {
+            "id": "MP",
             "lat": "52.6908340454102",
             "lon": "6.19750022888184",
             "names": {
@@ -2531,6 +2784,7 @@
             "type": "knooppuntStoptreinstation"
         },
         {
+            "id": "MDB",
             "lat": "51.4947204589844",
             "lon": "3.61722230911255",
             "names": {
@@ -2541,6 +2795,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "MMLH",
             "lat": "51.77158",
             "lon": "5.88145",
             "names": {
@@ -2551,6 +2806,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "NDB",
             "lat": "52.2802772521973",
             "lon": "5.15694427490234",
             "names": {
@@ -2561,6 +2817,7 @@
             "type": "knooppuntStoptreinstation"
         },
         {
+            "id": "NA",
             "lat": "52.7186126708984",
             "lon": "6.84861087799072",
             "names": {
@@ -2571,6 +2828,7 @@
             "type": "sneltreinstation"
         },
         {
+            "id": "NVP",
             "lat": "52.2588882446289",
             "lon": "4.64555549621582",
             "names": {
@@ -2581,6 +2839,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "NWK",
             "lat": "51.9652786254883",
             "lon": "4.61694431304932",
             "names": {
@@ -2591,6 +2850,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "NKK",
             "lat": "52.2222213745117",
             "lon": "5.49388885498047",
             "names": {
@@ -2601,6 +2861,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "NM",
             "lat": "51.8436126708984",
             "lon": "5.85222244262695",
             "names": {
@@ -2611,6 +2872,7 @@
             "type": "knooppuntIntercitystation"
         },
         {
+            "id": "NMD",
             "lat": "51.8241653442383",
             "lon": "5.79555559158325",
             "names": {
@@ -2621,6 +2883,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "NMGO",
             "lat": "51.8273",
             "lon": "5.822722",
             "names": {
@@ -2631,6 +2894,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "NMH",
             "lat": "51.8269462585449",
             "lon": "5.86749982833862",
             "names": {
@@ -2641,6 +2905,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "NML",
             "lat": "51.861811",
             "lon": "5.859686",
             "names": {
@@ -2651,6 +2916,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "NVD",
             "lat": "52.36555",
             "lon": "6.471111",
             "names": {
@@ -2661,6 +2927,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "NS",
             "lat": "52.3708343505859",
             "lon": "5.78527784347534",
             "names": {
@@ -2671,6 +2938,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "NH",
             "lat": "50.9194450378418",
             "lon": "5.89277791976929",
             "names": {
@@ -2681,6 +2949,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "OBD",
             "lat": "52.6780548095703",
             "lon": "4.90722227096558",
             "names": {
@@ -2691,6 +2960,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "OT",
             "lat": "51.5822219848633",
             "lon": "5.19416666030884",
             "names": {
@@ -2701,6 +2971,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "ODZ",
             "lat": "52.3063888549805",
             "lon": "6.93472242355347",
             "names": {
@@ -2711,6 +2982,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "OST",
             "lat": "52.3347206115723",
             "lon": "6.11305570602417",
             "names": {
@@ -2721,6 +2993,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "OMN",
             "lat": "52.5094451904297",
             "lon": "6.41583347320557",
             "names": {
@@ -2731,6 +3004,7 @@
             "type": "knooppuntSneltreinstation"
         },
         {
+            "id": "OTB",
             "lat": "51.9949989318848",
             "lon": "5.84000015258789",
             "names": {
@@ -2741,6 +3015,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "OP",
             "lat": "51.9261615",
             "lon": "5.6371145",
             "names": {
@@ -2751,6 +3026,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "O",
             "lat": "51.7655563354492",
             "lon": "5.53222227096558",
             "names": {
@@ -2761,6 +3037,7 @@
             "type": "knooppuntIntercitystation"
         },
         {
+            "id": "OW",
             "lat": "51.758056640625",
             "lon": "5.50555562973022",
             "names": {
@@ -2771,6 +3048,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "ODB",
             "lat": "51.587776184082",
             "lon": "4.53333330154419",
             "names": {
@@ -2781,6 +3059,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "OVN",
             "lat": "52.3911094665527",
             "lon": "4.6061110496521",
             "names": {
@@ -2791,6 +3070,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "PMR",
             "lat": "52.5030555725098",
             "lon": "4.95361089706421",
             "names": {
@@ -2801,6 +3081,7 @@
             "type": "knooppuntStoptreinstation"
         },
         {
+            "id": "PMO",
             "lat": "52.5113906860352",
             "lon": "4.96833324432373",
             "names": {
@@ -2811,6 +3092,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "PMW",
             "lat": "52.4965906325416",
             "lon": "4.93562936782836",
             "names": {
@@ -2821,6 +3103,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "PT",
             "lat": "52.2649993896484",
             "lon": "5.57527780532837",
             "names": {
@@ -2831,6 +3114,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "RAT",
             "lat": "52.3916664123535",
             "lon": "6.27750015258789",
             "names": {
@@ -2841,6 +3125,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "RVS",
             "lat": "51.7941665649414",
             "lon": "5.63583326339722",
             "names": {
@@ -2851,6 +3136,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "RV",
             "lat": "51.2832191665301",
             "lon": "6.07895851135253",
             "names": {
@@ -2861,6 +3147,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "RH",
             "lat": "52.0099983215332",
             "lon": "6.03055572509766",
             "names": {
@@ -2871,6 +3158,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "RHN",
             "lat": "51.958610534668",
             "lon": "5.57833337783814",
             "names": {
@@ -2881,6 +3169,7 @@
             "type": "knooppuntStoptreinstation"
         },
         {
+            "id": "RSN",
             "lat": "52.3122215270996",
             "lon": "6.52027797698975",
             "names": {
@@ -2891,6 +3180,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "RSW",
             "lat": "52.039722442627",
             "lon": "4.31916666030884",
             "names": {
@@ -2901,6 +3191,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "RB",
             "lat": "51.422779083252",
             "lon": "4.16111087799072",
             "names": {
@@ -2911,6 +3202,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "RM",
             "lat": "51.1930541992188",
             "lon": "5.9941668510437",
             "names": {
@@ -2921,6 +3213,7 @@
             "type": "knooppuntIntercitystation"
         },
         {
+            "id": "RD",
             "lat": "53.4192128",
             "lon": "6.7606167",
             "names": {
@@ -2931,6 +3224,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "RSD",
             "lat": "51.5402793884277",
             "lon": "4.45833349227905",
             "names": {
@@ -2941,6 +3235,7 @@
             "type": "knooppuntIntercitystation"
         },
         {
+            "id": "RS",
             "lat": "51.7147216796875",
             "lon": "5.36805534362793",
             "names": {
@@ -2951,6 +3246,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "RTA",
             "lat": "51.9519462585449",
             "lon": "4.55361127853394",
             "names": {
@@ -2961,6 +3257,7 @@
             "type": "intercitystation"
         },
         {
+            "id": "RTB",
             "lat": "51.9202766418457",
             "lon": "4.48888874053955",
             "names": {
@@ -2971,6 +3268,7 @@
             "type": "intercitystation"
         },
         {
+            "id": "RTD",
             "lat": "51.9249992370605",
             "lon": "4.46888875961304",
             "names": {
@@ -2981,6 +3279,7 @@
             "type": "megastation"
         },
         {
+            "id": "RLB",
             "lat": "51.8800010681152",
             "lon": "4.53138875961304",
             "names": {
@@ -2991,6 +3290,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "RTN",
             "lat": "51.9422225952148",
             "lon": "4.48166656494141",
             "names": {
@@ -3001,6 +3301,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "RTST",
             "lat": "51.8938903808594",
             "lon": "4.51972198486328",
             "names": {
@@ -3011,6 +3312,7 @@
             "type": "facultatiefStation"
         },
         {
+            "id": "RTZ",
             "lat": "51.9044456481934",
             "lon": "4.51027774810791",
             "names": {
@@ -3021,6 +3323,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "RL",
             "lat": "52.0810888",
             "lon": "6.4492656",
             "names": {
@@ -3031,6 +3334,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "SPTN",
             "lat": "52.4338874816895",
             "lon": "4.63250017166138",
             "names": {
@@ -3041,6 +3345,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "SPTZ",
             "lat": "52.4197235107422",
             "lon": "4.63138866424561",
             "names": {
@@ -3051,6 +3356,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "SPM",
             "lat": "53.1589183",
             "lon": "6.7955648",
             "names": {
@@ -3061,6 +3367,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "SSH",
             "lat": "52.215278",
             "lon": "4.517222",
             "names": {
@@ -3071,6 +3378,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "SWD",
             "lat": "53.29113",
             "lon": "6.5404",
             "names": {
@@ -3081,6 +3389,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "SGN",
             "lat": "52.7844429016113",
             "lon": "4.80527782440186",
             "names": {
@@ -3091,6 +3400,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "SDA",
             "lat": "53.1655362",
             "lon": "6.9777775",
             "names": {
@@ -3101,6 +3411,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "SDM",
             "lat": "51.9212438128032",
             "lon": "4.4089937210083",
             "names": {
@@ -3111,6 +3422,7 @@
             "type": "intercitystation"
         },
         {
+            "id": "NWL",
             "lat": "51.9222221374512",
             "lon": "4.38222217559814",
             "names": {
@@ -3121,6 +3433,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "SOG",
             "lat": "50.856388092041",
             "lon": "5.87222242355347",
             "names": {
@@ -3131,6 +3444,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "SN",
             "lat": "50.9391670227051",
             "lon": "5.87444448471069",
             "names": {
@@ -3141,6 +3455,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "SHL",
             "lat": "52.3094444274902",
             "lon": "4.76194429397583",
             "names": {
@@ -3151,6 +3466,7 @@
             "type": "megastation"
         },
         {
+            "id": "SPV",
             "lat": "50.8314750744184",
             "lon": "5.97973823547363",
             "names": {
@@ -3161,6 +3477,7 @@
             "type": "facultatiefStation"
         },
         {
+            "id": "STD",
             "lat": "51.0016670227051",
             "lon": "5.85861110687256",
             "names": {
@@ -3171,6 +3488,7 @@
             "type": "knooppuntIntercitystation"
         },
         {
+            "id": "SDT",
             "lat": "51.8297233581543",
             "lon": "4.77833318710327",
             "names": {
@@ -3181,6 +3499,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "SDTB",
             "lat": "51.829722",
             "lon": "4.743333",
             "names": {
@@ -3191,6 +3510,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "SK",
             "lat": "53.0328688",
             "lon": "5.6523969",
             "names": {
@@ -3201,6 +3521,7 @@
             "type": "knooppuntStoptreinstation"
         },
         {
+            "id": "SKND",
             "lat": "53.0409319",
             "lon": "5.6631808",
             "names": {
@@ -3211,6 +3532,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "ST",
             "lat": "52.1733322143555",
             "lon": "5.30999994277954",
             "names": {
@@ -3221,6 +3543,7 @@
             "type": "knooppuntStoptreinstation"
         },
         {
+            "id": "STZ",
             "lat": "52.1652793884277",
             "lon": "5.30305576324463",
             "names": {
@@ -3231,6 +3554,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "SD",
             "lat": "52.1836128234863",
             "lon": "5.30000019073486",
             "names": {
@@ -3241,6 +3565,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "SBK",
             "lat": "50.9430541992188",
             "lon": "5.85166645050049",
             "names": {
@@ -3251,6 +3576,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "SPH",
             "lat": "50.85355",
             "lon": "6.02578",
             "names": {
@@ -3261,6 +3587,7 @@
             "type": "facultatiefStation"
         },
         {
+            "id": "STV",
             "lat": "52.8865535",
             "lon": "5.3600212",
             "names": {
@@ -3271,6 +3598,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "STM",
             "lat": "53.3262092",
             "lon": "6.6875551",
             "names": {
@@ -3281,6 +3609,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "SWK",
             "lat": "52.7915109924316",
             "lon": "6.11455576324463",
             "names": {
@@ -3291,6 +3620,7 @@
             "type": "intercitystation"
         },
         {
+            "id": "SRN",
             "lat": "51.0613899230957",
             "lon": "5.86305570602417",
             "names": {
@@ -3301,6 +3631,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "SM",
             "lat": "51.23582",
             "lon": "6.03228",
             "names": {
@@ -3311,6 +3642,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "TG",
             "lat": "51.33894",
             "lon": "6.14253",
             "names": {
@@ -3321,6 +3653,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "TBG",
             "lat": "51.9224549",
             "lon": "6.3642466",
             "names": {
@@ -3331,6 +3664,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "TL",
             "lat": "51.8894462585449",
             "lon": "5.42222213745117",
             "names": {
@@ -3341,6 +3675,7 @@
             "type": "knooppuntStoptreinstation"
         },
         {
+            "id": "TPSW",
             "lat": "51.8738899230957",
             "lon": "5.39222240447998",
             "names": {
@@ -3351,6 +3686,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "TB",
             "lat": "51.5605545043945",
             "lon": "5.08361101150513",
             "names": {
@@ -3361,6 +3697,7 @@
             "type": "knooppuntIntercitystation"
         },
         {
+            "id": "TBR",
             "lat": "51.5736122131348",
             "lon": "4.99444437026978",
             "names": {
@@ -3371,6 +3708,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "TBU",
             "lat": "51.564998626709",
             "lon": "5.05111122131348",
             "names": {
@@ -3381,6 +3719,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "TWL",
             "lat": "52.2377777099609",
             "lon": "6.09861087799072",
             "names": {
@@ -3391,6 +3730,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "UTG",
             "lat": "52.5216674804687",
             "lon": "4.70166683197022",
             "names": {
@@ -3401,6 +3741,7 @@
             "type": "knooppuntStoptreinstation"
         },
         {
+            "id": "UHZ",
             "lat": "53.4099568",
             "lon": "6.6748869",
             "names": {
@@ -3411,6 +3752,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "UHM",
             "lat": "53.4145845",
             "lon": "6.7202975",
             "names": {
@@ -3421,6 +3763,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "UST",
             "lat": "53.4014742",
             "lon": "6.6093776",
             "names": {
@@ -3431,6 +3774,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "UT",
             "lat": "52.0888900756836",
             "lon": "5.11027765274048",
             "names": {
@@ -3441,6 +3785,7 @@
             "type": "megastation"
         },
         {
+            "id": "UTLR",
             "lat": "52.09896",
             "lon": "5.06523",
             "names": {
@@ -3451,6 +3796,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "UTL",
             "lat": "52.0655555725098",
             "lon": "5.14416646957397",
             "names": {
@@ -3461,6 +3807,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "UTM",
             "lat": "52.087776184082",
             "lon": "5.13138866424561",
             "names": {
@@ -3471,6 +3818,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "UTO",
             "lat": "52.1100006103516",
             "lon": "5.12472200393677",
             "names": {
@@ -3481,6 +3829,7 @@
             "type": "knooppuntStoptreinstation"
         },
         {
+            "id": "UTT",
             "lat": "52.1005554199219",
             "lon": "5.04166650772095",
             "names": {
@@ -3491,6 +3840,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "UTZL",
             "lat": "52.103055",
             "lon": "5.09",
             "names": {
@@ -3501,6 +3851,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "VK",
             "lat": "50.8697204589844",
             "lon": "5.83222198486328",
             "names": {
@@ -3511,6 +3862,7 @@
             "type": "knooppuntSneltreinstation"
         },
         {
+            "id": "VSV",
             "lat": "51.937257",
             "lon": "6.458839",
             "names": {
@@ -3521,6 +3873,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "VDM",
             "lat": "53.10324",
             "lon": "6.88475",
             "names": {
@@ -3531,6 +3884,7 @@
             "type": "knooppuntStoptreinstation"
         },
         {
+            "id": "VNDC",
             "lat": "52.0200004577637",
             "lon": "5.54861116409302",
             "names": {
@@ -3541,6 +3895,7 @@
             "type": "knooppuntStoptreinstation"
         },
         {
+            "id": "VNDW",
             "lat": "52.0280570983887",
             "lon": "5.53138875961304",
             "names": {
@@ -3551,6 +3906,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "KLP",
             "lat": "52.0458335876465",
             "lon": "5.57388877868652",
             "names": {
@@ -3561,6 +3917,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "VP",
             "lat": "51.9947204589844",
             "lon": "5.98027801513672",
             "names": {
@@ -3571,6 +3928,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "VL",
             "lat": "51.3636093139648",
             "lon": "6.17277765274048",
             "names": {
@@ -3581,6 +3939,7 @@
             "type": "knooppuntIntercitystation"
         },
         {
+            "id": "VRY",
             "lat": "51.526568099007",
             "lon": "6.01417779922485",
             "names": {
@@ -3591,6 +3950,7 @@
             "type": "knooppuntStoptreinstation"
         },
         {
+            "id": "VLB",
             "lat": "51.59193",
             "lon": "5.99714",
             "names": {
@@ -3601,6 +3961,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "VDG",
             "lat": "51.9030570983887",
             "lon": "4.34416675567627",
             "names": {
@@ -3611,6 +3972,7 @@
             "type": "knooppuntStoptreinstation"
         },
         {
+            "id": "VDO",
             "lat": "51.9102783203125",
             "lon": "4.36166667938232",
             "names": {
@@ -3621,6 +3983,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "VDW",
             "lat": "51.904167175293",
             "lon": "4.31305551528931",
             "names": {
@@ -3631,6 +3994,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "VTN",
             "lat": "52.1030540466309",
             "lon": "5.01083326339722",
             "names": {
@@ -3641,6 +4005,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "VS",
             "lat": "51.4458351135254",
             "lon": "3.59527778625488",
             "names": {
@@ -3651,6 +4016,7 @@
             "type": "knooppuntIntercitystation"
         },
         {
+            "id": "VSS",
             "lat": "51.4647216796875",
             "lon": "3.59527778625488",
             "names": {
@@ -3661,6 +4027,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "VDL",
             "lat": "50.8872222900391",
             "lon": "5.93027782440186",
             "names": {
@@ -3671,6 +4038,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "VB",
             "lat": "52.0666656494141",
             "lon": "4.3594446182251",
             "names": {
@@ -3681,6 +4049,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "VH",
             "lat": "52.2244453430176",
             "lon": "4.4844446182251",
             "names": {
@@ -3691,6 +4060,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "VST",
             "lat": "52.1252784729004",
             "lon": "4.43249988555908",
             "names": {
@@ -3701,6 +4071,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "VEM",
             "lat": "52.1575012207031",
             "lon": "6.14361095428467",
             "names": {
@@ -3711,6 +4082,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "VD",
             "lat": "52.1071949",
             "lon": "6.3170457",
             "names": {
@@ -3721,6 +4093,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "VZ",
             "lat": "52.40203",
             "lon": "6.60041",
             "names": {
@@ -3731,6 +4104,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "VHP",
             "lat": "52.4571921",
             "lon": "6.5696679",
             "names": {
@@ -3741,6 +4115,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "VG",
             "lat": "51.6555557250977",
             "lon": "5.29194450378418",
             "names": {
@@ -3751,6 +4126,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "WAD",
             "lat": "52.0441665649414",
             "lon": "4.6497220993042",
             "names": {
@@ -3761,6 +4137,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "WADN",
             "lat": "52.0550003051758",
             "lon": "4.64833354949951",
             "names": {
@@ -3771,6 +4148,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "WFM",
             "lat": "53.3908431",
             "lon": "6.5671364",
             "names": {
@@ -3781,6 +4159,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "WT",
             "lat": "51.2486114501953",
             "lon": "5.70361089706421",
             "names": {
@@ -3791,6 +4170,7 @@
             "type": "intercitystation"
         },
         {
+            "id": "WP",
             "lat": "52.3127784729004",
             "lon": "5.04305553436279",
             "names": {
@@ -3801,6 +4181,7 @@
             "type": "knooppuntStoptreinstation"
         },
         {
+            "id": "WL",
             "lat": "51.9578065",
             "lon": "6.213844",
             "names": {
@@ -3811,6 +4192,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "WTV",
             "lat": "51.96286",
             "lon": "5.9695",
             "names": {
@@ -3821,6 +4203,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "WZ",
             "lat": "52.4541664123535",
             "lon": "6.00250005722046",
             "names": {
@@ -3831,6 +4214,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "WDN",
             "lat": "52.3613891601562",
             "lon": "6.59166669845581",
             "names": {
@@ -3841,6 +4225,7 @@
             "type": "knooppuntStoptreinstation"
         },
         {
+            "id": "WC",
             "lat": "51.8116683959961",
             "lon": "5.73083353042603",
             "names": {
@@ -3851,6 +4236,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "WH",
             "lat": "52.3902778625488",
             "lon": "6.1405553817749",
             "names": {
@@ -3861,6 +4247,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "WS",
             "lat": "53.1392377",
             "lon": "7.035101",
             "names": {
@@ -3871,6 +4258,7 @@
             "type": "knooppuntStoptreinstation"
         },
         {
+            "id": "WSM",
             "lat": "53.3300994",
             "lon": "6.5202905",
             "names": {
@@ -3881,6 +4269,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "WW",
             "lat": "51.9677307",
             "lon": "6.7155181",
             "names": {
@@ -3891,6 +4280,7 @@
             "type": "knooppuntStoptreinstation"
         },
         {
+            "id": "WWW",
             "lat": "51.97453",
             "lon": "6.70417",
             "names": {
@@ -3901,6 +4291,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "WD",
             "lat": "52.0849990844727",
             "lon": "4.89361095428467",
             "names": {
@@ -3911,6 +4302,7 @@
             "type": "knooppuntStoptreinstation"
         },
         {
+            "id": "WF",
             "lat": "52.0055541992188",
             "lon": "5.7936110496521",
             "names": {
@@ -3921,6 +4313,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "WV",
             "lat": "52.8808326721191",
             "lon": "6.00361108779907",
             "names": {
@@ -3931,6 +4324,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "WK",
             "lat": "52.9724864",
             "lon": "5.4564285",
             "names": {
@@ -3941,6 +4335,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "WM",
             "lat": "52.4891662597656",
             "lon": "4.79222202301025",
             "names": {
@@ -3951,6 +4346,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "ZD",
             "lat": "52.4388885498047",
             "lon": "4.81361103057861",
             "names": {
@@ -3961,6 +4357,7 @@
             "type": "knooppuntIntercitystation"
         },
         {
+            "id": "ZDK",
             "lat": "52.4566650390625",
             "lon": "4.82027769088745",
             "names": {
@@ -3971,6 +4368,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "ZBM",
             "lat": "51.8088874816895",
             "lon": "5.26333332061768",
             "names": {
@@ -3981,6 +4379,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "ZVT",
             "lat": "52.3752784729004",
             "lon": "4.53277778625488",
             "names": {
@@ -3991,6 +4390,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "ZA",
             "lat": "51.920056",
             "lon": "5.7228408",
             "names": {
@@ -4001,6 +4401,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "ZV",
             "lat": "51.9230537414551",
             "lon": "6.07194423675537",
             "names": {
@@ -4011,6 +4412,7 @@
             "type": "knooppuntStoptreinstation"
         },
         {
+            "id": "ZVB",
             "lat": "51.64042",
             "lon": "4.60904",
             "names": {
@@ -4021,6 +4423,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "ZTM",
             "lat": "52.0475006103516",
             "lon": "4.47722244262695",
             "names": {
@@ -4031,6 +4434,7 @@
             "type": "knooppuntStoptreinstation"
         },
         {
+            "id": "ZTMO",
             "lat": "52.0463905334473",
             "lon": "4.49277782440186",
             "names": {
@@ -4041,6 +4445,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "ZB",
             "lat": "53.1596122800056",
             "lon": "6.8679141998291",
             "names": {
@@ -4051,6 +4456,7 @@
             "type": "knooppuntStoptreinstation"
         },
         {
+            "id": "ZH",
             "lat": "53.2486292",
             "lon": "6.4062361",
             "names": {
@@ -4061,6 +4467,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "ZP",
             "lat": "52.1452789306641",
             "lon": "6.19416666030884",
             "names": {
@@ -4071,6 +4478,7 @@
             "type": "knooppuntIntercitystation"
         },
         {
+            "id": "ZWD",
             "lat": "51.814998626709",
             "lon": "4.64166688919067",
             "names": {
@@ -4081,6 +4489,7 @@
             "type": "stoptreinstation"
         },
         {
+            "id": "ZL",
             "lat": "52.5047225952148",
             "lon": "6.09194421768188",
             "names": {
