@@ -2,7 +2,7 @@ import json
 from datetime import datetime
 import time
 
-from ns_api import Station, NSAPI
+from ns_api import NSAPI
 from local_settings import USERNAME, APIKEY
 
 
@@ -15,8 +15,8 @@ def create_trip_data_from_station(station_from):
     via = ""
 
     data['stations'].append({'name': station_from,
-                         'travel_time_min': 0,
-                         'travel_time_planned': "0:00"})
+                             'travel_time_min': 0,
+                             'travel_time_planned': "0:00"})
 
     for station in stations:
         if station.country != "NL":
