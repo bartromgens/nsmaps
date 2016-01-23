@@ -1,32 +1,46 @@
 import json
 from datetime import datetime
 import time
+import sys
 
-from ns_api import NSAPI
+import ns_api
+
 from local_settings import USERNAME, APIKEY
+from station import Station, StationType
+
+
+def get_station_id(station_name, stations):
+    for station in stations:
+        if station.names['long'] == station_name:
+            return station.code
+    return None
 
 
 def create_trip_data_from_station(station_from):
-    nsapi = NSAPI(USERNAME, APIKEY)
+    nsapi = ns_api.NSAPI(USERNAME, APIKEY)
     stations = nsapi.get_stations()
     data = {'stations': []}
 
     timestamp = "12-01-2016 08:00"
     via = ""
 
-    data['stations'].append({'name': station_from,
+    data['stations'].append({'name': station_from.names['long'],
+                             'id': station_from.code,
                              'travel_time_min': 0,
                              'travel_time_planned': "0:00"})
 
     for station in stations:
         if station.country != "NL":
             continue
-
         destination = station.names['long']
+        if station.code == station_from.code:
+            continue
         trips = []
         try:
-            trips = nsapi.get_trips(timestamp, station_from, via, destination)
-        except:
+            trips = nsapi.get_trips(timestamp, station_from.code, via, destination)
+        except TypeError as error:
+            # this is a bug in ns-api, should return empty trips in case there are no results
+            print('Error while trying to get trips for destination: ' + destination + ', from: ' + station_from.names['long'])
             continue
 
         if not trips:
@@ -41,15 +55,32 @@ def create_trip_data_from_station(station_from):
 
         print(shortest_trip.departure + ' - ' + shortest_trip.destination)
         data['stations'].append({'name': shortest_trip.destination,
+                                 'id': get_station_id(shortest_trip.destination, stations),
                                  'travel_time_min': shortest_trip.travel_time_min,
                                  'travel_time_planned': shortest_trip.travel_time_planned})
-        time.sleep(1)  # balance the load on the NS server
+        time.sleep(0.5)  # balance load on the NS server
 
     json_data = json.dumps(data, indent=4, sort_keys=True, ensure_ascii=False)
-    with open('./data/traveltimes_from_' + station_from +'.json', 'w') as fileout:
+    with open('./data/traveltimes_from_' + station_from.code + '.json', 'w') as fileout:
         fileout.write(json_data)
 
 
 if __name__ == "__main__":
-    station_from = "utrecht"
-    create_trip_data_from_station(station_from)
+    nsapi = ns_api.NSAPI(USERNAME, APIKEY)
+    stations = nsapi.get_stations()
+    major_stations = []
+    major_station_types = (StationType.intercitystation,
+                           StationType.knooppuntIntercitystation,
+                           StationType.megastation)
+    for station in stations:
+        if station.country != "NL":
+            continue
+        for station_type in major_station_types:
+            if station.stationtype == station_type.name:
+                major_stations.append(station)
+
+    for major_station in major_stations:
+        create_trip_data_from_station(major_station)
+
+    # station_from_id = "UT"  # example: Utrecht Centraal
+    # create_trip_data_from_station(station_from_id)
