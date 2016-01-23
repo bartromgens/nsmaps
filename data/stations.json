@@ -9,6 +9,7 @@
                 "middle": "'s-Hertogenbosch",
                 "short": "Den Bosch"
             },
+            "travel_times_available": true,
             "type": "knooppuntIntercitystation"
         },
         {
@@ -20,6 +21,7 @@
                 "middle": "Hertogenbosch O.",
                 "short": "H'bosch O"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -31,6 +33,7 @@
                 "middle": "'t Harde",
                 "short": "'t Harde"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -42,6 +45,7 @@
                 "middle": "Aalten",
                 "short": "Aalten"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -53,6 +57,7 @@
                 "middle": "Abcoude",
                 "short": "Abcoude"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -64,6 +69,7 @@
                 "middle": "Akkrum",
                 "short": "Akkrum"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -75,6 +81,7 @@
                 "middle": "Alkmaar",
                 "short": "Alkmaar"
             },
+            "travel_times_available": true,
             "type": "knooppuntIntercitystation"
         },
         {
@@ -86,6 +93,7 @@
                 "middle": "Alkmaar Noord",
                 "short": "Alkmaar N"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -97,6 +105,7 @@
                 "middle": "Almelo",
                 "short": "Almelo"
             },
+            "travel_times_available": true,
             "type": "knooppuntIntercitystation"
         },
         {
@@ -108,6 +117,7 @@
                 "middle": "Almelo de Riet",
                 "short": "de Riet"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -119,6 +129,7 @@
                 "middle": "Almere Buiten",
                 "short": "Buiten"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -130,6 +141,7 @@
                 "middle": "Almere C.",
                 "short": "Almere C"
             },
+            "travel_times_available": true,
             "type": "knooppuntIntercitystation"
         },
         {
@@ -141,6 +153,7 @@
                 "middle": "Muziekwijk",
                 "short": "Muziekwijk"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -152,6 +165,7 @@
                 "middle": "Oostvaarders",
                 "short": "Oostvaard"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -163,6 +177,7 @@
                 "middle": "Almere Parkwijk",
                 "short": "Parkwijk"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -174,6 +189,7 @@
                 "middle": "Almere Poort",
                 "short": "Almere P"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -185,6 +201,7 @@
                 "middle": "Alphen a/d Rijn",
                 "short": "Alphen"
             },
+            "travel_times_available": true,
             "type": "knooppuntIntercitystation"
         },
         {
@@ -196,6 +213,7 @@
                 "middle": "Amersfoort",
                 "short": "Amersfoort"
             },
+            "travel_times_available": true,
             "type": "knooppuntIntercitystation"
         },
         {
@@ -207,6 +225,7 @@
                 "middle": "Schothorst",
                 "short": "Schothorst"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -218,6 +237,7 @@
                 "middle": "Vathorst",
                 "short": "Vathorst"
             },
+            "travel_times_available": false,
             "type": "sneltreinstation"
         },
         {
@@ -229,6 +249,7 @@
                 "middle": "Amsterdam Amstel",
                 "short": "Amstel"
             },
+            "travel_times_available": true,
             "type": "intercitystation"
         },
         {
@@ -240,6 +261,7 @@
                 "middle": "Bijlmer ArenA",
                 "short": "Bijlmer A"
             },
+            "travel_times_available": false,
             "type": "knooppuntStoptreinstation"
         },
         {
@@ -251,6 +273,7 @@
                 "middle": "Amsterdam C.",
                 "short": "A'dam C"
             },
+            "travel_times_available": true,
             "type": "megastation"
         },
         {
@@ -262,6 +285,7 @@
                 "middle": "Holendrecht",
                 "short": "Holendrcht"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -273,6 +297,7 @@
                 "middle": "Lelylaan",
                 "short": "Lelylaan"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -284,6 +309,7 @@
                 "middle": "Muiderpoort",
                 "short": "Muiderprt"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -295,6 +321,7 @@
                 "middle": "Amsterdam RAI",
                 "short": "A'dam RAI"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -306,6 +333,7 @@
                 "middle": "Science Park",
                 "short": "Scienceprk"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -317,6 +345,7 @@
                 "middle": "Sloterdijk",
                 "short": "Sloterdijk"
             },
+            "travel_times_available": true,
             "type": "knooppuntIntercitystation"
         },
         {
@@ -328,6 +357,7 @@
                 "middle": "Van der Madeweg",
                 "short": "vd Madeweg"
             },
+            "travel_times_available": false,
             "type": "facultatiefStation"
         },
         {
@@ -339,6 +369,7 @@
                 "middle": "Amsterdam Zuid",
                 "short": "A'dam Z"
             },
+            "travel_times_available": true,
             "type": "intercitystation"
         },
         {
@@ -350,6 +381,7 @@
                 "middle": "Anna Paulowna",
                 "short": "Anna Paulo"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -361,6 +393,7 @@
                 "middle": "Apeldoorn",
                 "short": "Apeldoorn"
             },
+            "travel_times_available": true,
             "type": "knooppuntIntercitystation"
         },
         {
@@ -372,6 +405,7 @@
                 "middle": "De Maten",
                 "short": "De Maten"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -383,6 +417,7 @@
                 "middle": "Osseveld",
                 "short": "Osseveld"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -394,6 +429,7 @@
                 "middle": "Appingedam",
                 "short": "Appingedam"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -405,6 +441,7 @@
                 "middle": "Arkel",
                 "short": "Arkel"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -416,6 +453,7 @@
                 "middle": "Arnemuiden",
                 "short": "Arnemuiden"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -427,6 +465,7 @@
                 "middle": "Arnhem",
                 "short": "Arnhem"
             },
+            "travel_times_available": true,
             "type": "knooppuntIntercitystation"
         },
         {
@@ -438,6 +477,7 @@
                 "middle": "Presikhaaf",
                 "short": "Presikhaaf"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -449,6 +489,7 @@
                 "middle": "Velperpoort",
                 "short": "Velperprt"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -460,6 +501,7 @@
                 "middle": "Arnhem Zuid",
                 "short": "Arnhem Z"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -471,6 +513,7 @@
                 "middle": "Assen",
                 "short": "Assen"
             },
+            "travel_times_available": true,
             "type": "knooppuntIntercitystation"
         },
         {
@@ -482,6 +525,7 @@
                 "middle": "Baarn",
                 "short": "Baarn"
             },
+            "travel_times_available": false,
             "type": "knooppuntStoptreinstation"
         },
         {
@@ -493,6 +537,7 @@
                 "middle": "Bad Nieuweschans",
                 "short": "Nweschans"
             },
+            "travel_times_available": false,
             "type": "knooppuntStoptreinstation"
         },
         {
@@ -504,6 +549,7 @@
                 "middle": "Baflo",
                 "short": "Baflo"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -515,6 +561,7 @@
                 "middle": "Barendrecht",
                 "short": "Barendrcht"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -526,6 +573,7 @@
                 "middle": "Barneveld C.",
                 "short": "Barnevld C"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -537,6 +585,7 @@
                 "middle": "Barneveld Noord",
                 "short": "Barnevld N"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -548,6 +597,7 @@
                 "middle": "Barneveld Zuid",
                 "short": "Barnevld Z"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -559,6 +609,7 @@
                 "middle": "Bedum",
                 "short": "Bedum"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -570,6 +621,7 @@
                 "middle": "Beek-Elsloo",
                 "short": "Beek-E"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -581,6 +633,7 @@
                 "middle": "Beesd",
                 "short": "Beesd"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -592,6 +645,7 @@
                 "middle": "Beilen",
                 "short": "Beilen"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -603,6 +657,7 @@
                 "middle": "Bergen op Zoom",
                 "short": "Bergen opZ"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -614,6 +669,7 @@
                 "middle": "Best",
                 "short": "Best"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -625,6 +681,7 @@
                 "middle": "Beverwijk",
                 "short": "Beverwijk"
             },
+            "travel_times_available": true,
             "type": "intercitystation"
         },
         {
@@ -636,6 +693,7 @@
                 "middle": "Bilthoven",
                 "short": "Bilthoven"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -647,6 +705,7 @@
                 "middle": "Blerick",
                 "short": "Blerick"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -658,6 +717,7 @@
                 "middle": "Bloemendaal",
                 "short": "Bloemendl"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -669,6 +729,7 @@
                 "middle": "Bodegraven",
                 "short": "Bodegraven"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -680,6 +741,7 @@
                 "middle": "Borne",
                 "short": "Borne"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -691,6 +753,7 @@
                 "middle": "Boskoop",
                 "short": "Boskoop"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -702,6 +765,7 @@
                 "middle": "Boven-Hardinxv.",
                 "short": "Boven-H."
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -713,6 +777,7 @@
                 "middle": "Bovenkarspel Fl.",
                 "short": "Bovenk Flo"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -724,6 +789,7 @@
                 "middle": "Bovenkarspel-Gr.",
                 "short": "Bovenk-Gr"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -735,6 +801,7 @@
                 "middle": "Boxmeer",
                 "short": "Boxmeer"
             },
+            "travel_times_available": false,
             "type": "knooppuntStoptreinstation"
         },
         {
@@ -746,6 +813,7 @@
                 "middle": "Boxtel",
                 "short": "Boxtel"
             },
+            "travel_times_available": false,
             "type": "knooppuntStoptreinstation"
         },
         {
@@ -757,6 +825,7 @@
                 "middle": "Breda",
                 "short": "Breda"
             },
+            "travel_times_available": true,
             "type": "knooppuntIntercitystation"
         },
         {
@@ -768,6 +837,7 @@
                 "middle": "Prinsenbeek",
                 "short": "Prinsenbk"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -779,6 +849,7 @@
                 "middle": "Breukelen",
                 "short": "Breukelen"
             },
+            "travel_times_available": false,
             "type": "knooppuntStoptreinstation"
         },
         {
@@ -790,6 +861,7 @@
                 "middle": "Brummen",
                 "short": "Brummen"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -801,6 +873,7 @@
                 "middle": "Buitenpost",
                 "short": "Buitenpost"
             },
+            "travel_times_available": false,
             "type": "knooppuntSneltreinstation"
         },
         {
@@ -812,6 +885,7 @@
                 "middle": "Bunde",
                 "short": "Bunde"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -823,6 +897,7 @@
                 "middle": "Bunnik",
                 "short": "Bunnik"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -834,6 +909,7 @@
                 "middle": "Bussum Zuid",
                 "short": "Bussum Z"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -845,6 +921,7 @@
                 "middle": "Schollevaar",
                 "short": "Schollevr"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -856,6 +933,7 @@
                 "middle": "Castricum",
                 "short": "Castricum"
             },
+            "travel_times_available": true,
             "type": "intercitystation"
         },
         {
@@ -867,6 +945,7 @@
                 "middle": "Chevremont",
                 "short": "Chevremont"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -878,6 +957,7 @@
                 "middle": "Coevorden",
                 "short": "Coevorden"
             },
+            "travel_times_available": false,
             "type": "knooppuntSneltreinstation"
         },
         {
@@ -889,6 +969,7 @@
                 "middle": "Cuijk",
                 "short": "Cuijk"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -900,6 +981,7 @@
                 "middle": "Culemborg",
                 "short": "Culemborg"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -911,6 +993,7 @@
                 "middle": "Daarlerveen",
                 "short": "Daarlervn"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -922,6 +1005,7 @@
                 "middle": "Dalen",
                 "short": "Dalen"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -933,6 +1017,7 @@
                 "middle": "Dalfsen",
                 "short": "Dalfsen"
             },
+            "travel_times_available": false,
             "type": "sneltreinstation"
         },
         {
@@ -944,6 +1029,7 @@
                 "middle": "De Vink",
                 "short": "De Vink"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -955,6 +1041,7 @@
                 "middle": "De Westereen",
                 "short": "Westereen"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -966,6 +1053,7 @@
                 "middle": "Deinum",
                 "short": "Deinum"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -977,6 +1065,7 @@
                 "middle": "Delden",
                 "short": "Delden"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -988,6 +1077,7 @@
                 "middle": "Delft",
                 "short": "Delft"
             },
+            "travel_times_available": true,
             "type": "knooppuntIntercitystation"
         },
         {
@@ -999,6 +1089,7 @@
                 "middle": "Delft Zuid",
                 "short": "Delft Z"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -1010,6 +1101,7 @@
                 "middle": "Delfzijl",
                 "short": "Delfzijl"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -1021,6 +1113,7 @@
                 "middle": "Delfzijl West",
                 "short": "Delfzijl W"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -1032,6 +1125,7 @@
                 "middle": "Den Dolder",
                 "short": "Den Dolder"
             },
+            "travel_times_available": false,
             "type": "knooppuntStoptreinstation"
         },
         {
@@ -1043,6 +1137,7 @@
                 "middle": "Den Haag C.",
                 "short": "Den Haag C"
             },
+            "travel_times_available": true,
             "type": "megastation"
         },
         {
@@ -1054,6 +1149,7 @@
                 "middle": "Den Haag HS",
                 "short": "Dn Haag HS"
             },
+            "travel_times_available": true,
             "type": "knooppuntIntercitystation"
         },
         {
@@ -1065,6 +1161,7 @@
                 "middle": "Laan v NOI",
                 "short": "Laan v NOI"
             },
+            "travel_times_available": true,
             "type": "intercitystation"
         },
         {
@@ -1076,6 +1173,7 @@
                 "middle": "Mariahoeve",
                 "short": "Mariahoeve"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -1087,6 +1185,7 @@
                 "middle": "Moerwijk",
                 "short": "Moerwijk"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -1098,6 +1197,7 @@
                 "middle": "Ypenburg",
                 "short": "Ypenburg"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -1109,6 +1209,7 @@
                 "middle": "Den Helder",
                 "short": "Den Helder"
             },
+            "travel_times_available": true,
             "type": "intercitystation"
         },
         {
@@ -1120,6 +1221,7 @@
                 "middle": "Den Helder Zuid",
                 "short": "Dn Heldr Z"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -1131,6 +1233,7 @@
                 "middle": "Deurne",
                 "short": "Deurne"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -1142,6 +1245,7 @@
                 "middle": "Deventer",
                 "short": "Deventer"
             },
+            "travel_times_available": false,
             "type": "knooppuntIntercitystation"
         },
         {
@@ -1153,6 +1257,7 @@
                 "middle": "Colmschate",
                 "short": "Colmschate"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -1164,6 +1269,7 @@
                 "middle": "Didam",
                 "short": "Didam"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -1175,6 +1281,7 @@
                 "middle": "Diemen",
                 "short": "Diemen"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -1186,6 +1293,7 @@
                 "middle": "Diemen Zuid",
                 "short": "Diemen Z"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -1197,6 +1305,7 @@
                 "middle": "Dieren",
                 "short": "Dieren"
             },
+            "travel_times_available": false,
             "type": "intercitystation"
         },
         {
@@ -1208,6 +1317,7 @@
                 "middle": "Doetinchem",
                 "short": "Doetinchem"
             },
+            "travel_times_available": false,
             "type": "knooppuntStoptreinstation"
         },
         {
@@ -1219,6 +1329,7 @@
                 "middle": "De Huet",
                 "short": "De Huet"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -1230,6 +1341,7 @@
                 "middle": "Dordrecht",
                 "short": "Dordrecht"
             },
+            "travel_times_available": false,
             "type": "knooppuntIntercitystation"
         },
         {
@@ -1241,6 +1353,7 @@
                 "middle": "Stadspolders",
                 "short": "Stadspldrs"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -1252,6 +1365,7 @@
                 "middle": "Dordrecht Zuid",
                 "short": "Dordrcht Z"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -1263,6 +1377,7 @@
                 "middle": "Driebergen-Zeist",
                 "short": "Driebergen"
             },
+            "travel_times_available": false,
             "type": "knooppuntStoptreinstation"
         },
         {
@@ -1274,6 +1389,7 @@
                 "middle": "Driehuis",
                 "short": "Driehuis"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -1285,6 +1401,7 @@
                 "middle": "Dronryp",
                 "short": "Dronryp"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -1296,6 +1413,7 @@
                 "middle": "Dronten",
                 "short": "Dronten"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -1307,6 +1425,7 @@
                 "middle": "Duiven",
                 "short": "Duiven"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -1318,6 +1437,7 @@
                 "middle": "Duivendrecht",
                 "short": "Duivendt"
             },
+            "travel_times_available": false,
             "type": "knooppuntStoptreinstation"
         },
         {
@@ -1329,6 +1449,7 @@
                 "middle": "Echt",
                 "short": "Echt"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -1340,6 +1461,7 @@
                 "middle": "Ede C.",
                 "short": "Ede C"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -1351,6 +1473,7 @@
                 "middle": "Ede-Wageningen",
                 "short": "Ede-Wag"
             },
+            "travel_times_available": false,
             "type": "knooppuntIntercitystation"
         },
         {
@@ -1362,6 +1485,7 @@
                 "middle": "Eijs-Wittem",
                 "short": "Eijs-Witt"
             },
+            "travel_times_available": false,
             "type": "facultatiefStation"
         },
         {
@@ -1373,6 +1497,7 @@
                 "middle": "Eijsden",
                 "short": "Eijsden"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -1384,6 +1509,7 @@
                 "middle": "Eindhoven",
                 "short": "Eindhoven"
             },
+            "travel_times_available": false,
             "type": "knooppuntIntercitystation"
         },
         {
@@ -1395,6 +1521,7 @@
                 "middle": "Strijp-S",
                 "short": "Strijp-S"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -1406,6 +1533,7 @@
                 "middle": "Elst",
                 "short": "Elst"
             },
+            "travel_times_available": false,
             "type": "knooppuntStoptreinstation"
         },
         {
@@ -1417,6 +1545,7 @@
                 "middle": "Emmen",
                 "short": "Emmen"
             },
+            "travel_times_available": false,
             "type": "sneltreinstation"
         },
         {
@@ -1428,6 +1557,7 @@
                 "middle": "Emmen Zuid",
                 "short": "Emmen Z"
             },
+            "travel_times_available": false,
             "type": "sneltreinstation"
         },
         {
@@ -1439,6 +1569,7 @@
                 "middle": "Enkhuizen",
                 "short": "Enkhuizen"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -1450,6 +1581,7 @@
                 "middle": "Enschede",
                 "short": "Enschede"
             },
+            "travel_times_available": false,
             "type": "knooppuntIntercitystation"
         },
         {
@@ -1461,6 +1593,7 @@
                 "middle": "De Eschmarke",
                 "short": "Eschmarke"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -1472,6 +1605,7 @@
                 "middle": "Kennispark",
                 "short": "Kennispark"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -1483,6 +1617,7 @@
                 "middle": "Ermelo",
                 "short": "Ermelo"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -1494,6 +1629,7 @@
                 "middle": "Etten-Leur",
                 "short": "Etten-Leur"
             },
+            "travel_times_available": false,
             "type": "intercitystation"
         },
         {
@@ -1505,6 +1641,7 @@
                 "middle": "Eygelshoven",
                 "short": "Eygelshov"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -1516,6 +1653,7 @@
                 "middle": "Eygelshoven Mrkt",
                 "short": "Eygelsh M"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -1527,6 +1665,7 @@
                 "middle": "Feanwalden",
                 "short": "Feanwalden"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -1538,6 +1677,7 @@
                 "middle": "Franeker",
                 "short": "Franeker"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -1549,6 +1689,7 @@
                 "middle": "Gaanderen",
                 "short": "Gaanderen"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -1560,6 +1701,7 @@
                 "middle": "Geerdijk",
                 "short": "Geerdijk"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -1571,6 +1713,7 @@
                 "middle": "Geldermalsen",
                 "short": "G'malsen"
             },
+            "travel_times_available": false,
             "type": "knooppuntStoptreinstation"
         },
         {
@@ -1582,6 +1725,7 @@
                 "middle": "Geldrop",
                 "short": "Geldrop"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -1593,6 +1737,7 @@
                 "middle": "Geleen Oost",
                 "short": "Geleen O"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -1604,6 +1749,7 @@
                 "middle": "Geleen-Lutterade",
                 "short": "Geleen-Lut"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -1615,6 +1761,7 @@
                 "middle": "Gilze-Rijen",
                 "short": "Gilze-Rij"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -1626,6 +1773,7 @@
                 "middle": "Glanerbrug",
                 "short": "Glanerbrug"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -1637,6 +1785,7 @@
                 "middle": "Goes",
                 "short": "Goes"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -1648,6 +1797,7 @@
                 "middle": "Goor",
                 "short": "Goor"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -1659,6 +1809,7 @@
                 "middle": "Gorinchem",
                 "short": "Gorinchem"
             },
+            "travel_times_available": false,
             "type": "knooppuntStoptreinstation"
         },
         {
@@ -1670,6 +1821,7 @@
                 "middle": "Gouda",
                 "short": "Gouda"
             },
+            "travel_times_available": false,
             "type": "knooppuntIntercitystation"
         },
         {
@@ -1681,6 +1833,7 @@
                 "middle": "Gouda Goverwelle",
                 "short": "Goverwelle"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -1692,6 +1845,7 @@
                 "middle": "Gramsbergen",
                 "short": "Gramsbergn"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -1703,6 +1857,7 @@
                 "middle": "Grijpskerk",
                 "short": "Grijpskerk"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -1714,6 +1869,7 @@
                 "middle": "Groningen",
                 "short": "Groningen"
             },
+            "travel_times_available": false,
             "type": "knooppuntIntercitystation"
         },
         {
@@ -1725,6 +1881,7 @@
                 "middle": "Europapark",
                 "short": "Europapark"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -1736,6 +1893,7 @@
                 "middle": "Groningen Noord",
                 "short": "Groning N"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -1747,6 +1905,7 @@
                 "middle": "Grou-Jirnsum",
                 "short": "Grou-Jirns"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -1758,6 +1917,7 @@
                 "middle": "Gulpen-Wijlre",
                 "short": "Gulpen-W"
             },
+            "travel_times_available": false,
             "type": "facultatiefStation"
         },
         {
@@ -1769,6 +1929,7 @@
                 "middle": "Haarlem",
                 "short": "Haarlem"
             },
+            "travel_times_available": false,
             "type": "knooppuntIntercitystation"
         },
         {
@@ -1780,6 +1941,7 @@
                 "middle": "Spaarnwoude",
                 "short": "Spaarnwde"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -1791,6 +1953,7 @@
                 "middle": "Halfweg-Zwanenb.",
                 "short": "Halfweg-Zw"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -1802,6 +1965,7 @@
                 "middle": "Hardenberg",
                 "short": "Hardenberg"
             },
+            "travel_times_available": false,
             "type": "sneltreinstation"
         },
         {
@@ -1813,6 +1977,7 @@
                 "middle": "Harderwijk",
                 "short": "Harderwijk"
             },
+            "travel_times_available": false,
             "type": "knooppuntStoptreinstation"
         },
         {
@@ -1824,6 +1989,7 @@
                 "middle": "Blauwe Zoom",
                 "short": "Blauwe Z"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -1835,6 +2001,7 @@
                 "middle": "Hardinxveld-G.",
                 "short": "Hardinxvld"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -1846,6 +2013,7 @@
                 "middle": "Haren",
                 "short": "Haren"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -1857,6 +2025,7 @@
                 "middle": "Harlingen",
                 "short": "Harlingen"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -1868,6 +2037,7 @@
                 "middle": "Harlingen Haven",
                 "short": "Harl Haven"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -1879,6 +2049,7 @@
                 "middle": "Heemskerk",
                 "short": "Heemskerk"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -1890,6 +2061,7 @@
                 "middle": "Heemstede-A.",
                 "short": "Heemstede"
             },
+            "travel_times_available": false,
             "type": "intercitystation"
         },
         {
@@ -1901,6 +2073,7 @@
                 "middle": "Heerenveen",
                 "short": "Heerenveen"
             },
+            "travel_times_available": false,
             "type": "intercitystation"
         },
         {
@@ -1912,6 +2085,7 @@
                 "middle": "IJsstadion",
                 "short": "H'veen IJs"
             },
+            "travel_times_available": false,
             "type": "facultatiefStation"
         },
         {
@@ -1923,6 +2097,7 @@
                 "middle": "Heerhugowaard",
                 "short": "Heerhugow"
             },
+            "travel_times_available": false,
             "type": "knooppuntStoptreinstation"
         },
         {
@@ -1934,6 +2109,7 @@
                 "middle": "Heerlen",
                 "short": "Heerlen"
             },
+            "travel_times_available": false,
             "type": "knooppuntIntercitystation"
         },
         {
@@ -1945,6 +2121,7 @@
                 "middle": "Hrl De Kissel",
                 "short": "De Kissel"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -1956,6 +2133,7 @@
                 "middle": "Hrl Woonblvd",
                 "short": "Heerlen W"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -1967,6 +2145,7 @@
                 "middle": "Heeze",
                 "short": "Heeze"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -1978,6 +2157,7 @@
                 "middle": "Heiloo",
                 "short": "Heiloo"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -1989,6 +2169,7 @@
                 "middle": "Heino",
                 "short": "Heino"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2000,6 +2181,7 @@
                 "middle": "Helmond",
                 "short": "Helmond"
             },
+            "travel_times_available": false,
             "type": "knooppuntIntercitystation"
         },
         {
@@ -2011,6 +2193,7 @@
                 "middle": "Helmond 't Hout",
                 "short": "'t Hout"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2022,6 +2205,7 @@
                 "middle": "Brandevoort",
                 "short": "Brandevrt"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2033,6 +2217,7 @@
                 "middle": "Brouwhuis",
                 "short": "Brouwhuis"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2044,6 +2229,7 @@
                 "middle": "Hemmen-Dodewaard",
                 "short": "Hemmen-D"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2055,6 +2241,7 @@
                 "middle": "Hengelo",
                 "short": "Hengelo"
             },
+            "travel_times_available": false,
             "type": "knooppuntIntercitystation"
         },
         {
@@ -2066,6 +2253,7 @@
                 "middle": "Hengelo Gezondh.",
                 "short": "Hengelo G"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2077,6 +2265,7 @@
                 "middle": "Hengelo Oost",
                 "short": "Hengelo O"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2088,6 +2277,7 @@
                 "middle": "Hillegom",
                 "short": "Hillegom"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2099,6 +2289,7 @@
                 "middle": "Hilversum",
                 "short": "Hilversum"
             },
+            "travel_times_available": false,
             "type": "knooppuntIntercitystation"
         },
         {
@@ -2110,6 +2301,7 @@
                 "middle": "Media Park",
                 "short": "Media Park"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2121,6 +2313,7 @@
                 "middle": "Sportpark",
                 "short": "Sportpark"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2132,6 +2325,7 @@
                 "middle": "Hindeloopen",
                 "short": "Hindeloopn"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2143,6 +2337,7 @@
                 "middle": "Hoek v H. Haven",
                 "short": "HvH Haven"
             },
+            "travel_times_available": false,
             "type": "knooppuntStoptreinstation"
         },
         {
@@ -2154,6 +2349,7 @@
                 "middle": "Hoek v H. Strand",
                 "short": "HvH Strand"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2165,6 +2361,7 @@
                 "middle": "Hoensbroek",
                 "short": "Hoensbroek"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2176,6 +2373,7 @@
                 "middle": "Hoevelaken",
                 "short": "Hoevelaken"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2187,6 +2385,7 @@
                 "middle": "Holl. Rading",
                 "short": "Hol Rading"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2198,6 +2397,7 @@
                 "middle": "Holten",
                 "short": "Holten"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2209,6 +2409,7 @@
                 "middle": "Hoofddorp",
                 "short": "Hoofddorp"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2220,6 +2421,7 @@
                 "middle": "Hoogeveen",
                 "short": "Hoogeveen"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2231,6 +2433,7 @@
                 "middle": "Hoogezand-Sap.",
                 "short": "Hoogezand"
             },
+            "travel_times_available": false,
             "type": "knooppuntStoptreinstation"
         },
         {
@@ -2242,6 +2445,7 @@
                 "middle": "Hoogkarspel",
                 "short": "Hoogkrspl"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2253,6 +2457,7 @@
                 "middle": "Hoorn",
                 "short": "Hoorn"
             },
+            "travel_times_available": false,
             "type": "knooppuntIntercitystation"
         },
         {
@@ -2264,6 +2469,7 @@
                 "middle": "Kersenboogerd",
                 "short": "Hoorn Kers"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2275,6 +2481,7 @@
                 "middle": "Horst-Sevenum",
                 "short": "Horst-Sev"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2286,6 +2493,7 @@
                 "middle": "Houten",
                 "short": "Houten"
             },
+            "travel_times_available": false,
             "type": "knooppuntStoptreinstation"
         },
         {
@@ -2297,6 +2505,7 @@
                 "middle": "Castellum",
                 "short": "Houten C"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2308,6 +2517,7 @@
                 "middle": "Houthem-St Gerl.",
                 "short": "Houthem-St"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2319,6 +2529,7 @@
                 "middle": "Hurdegaryp",
                 "short": "Hurdegaryp"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2330,6 +2541,7 @@
                 "middle": "IJlst",
                 "short": "IJlst"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2341,6 +2553,7 @@
                 "middle": "Kampen",
                 "short": "Kampen"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2352,6 +2565,7 @@
                 "middle": "Kampen Zuid",
                 "short": "Kampen Z"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2363,6 +2577,7 @@
                 "middle": "Kapelle-Biezel.",
                 "short": "Kapelle-B"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2374,6 +2589,7 @@
                 "middle": "Kerkrade C.",
                 "short": "Kerkrade"
             },
+            "travel_times_available": false,
             "type": "knooppuntStoptreinstation"
         },
         {
@@ -2385,6 +2601,7 @@
                 "middle": "Kerkrade West",
                 "short": "Kerkrade W"
             },
+            "travel_times_available": false,
             "type": "facultatiefStation"
         },
         {
@@ -2396,6 +2613,7 @@
                 "middle": "Kesteren",
                 "short": "Kesteren"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2407,6 +2625,7 @@
                 "middle": "Klarenbeek",
                 "short": "Klarenbk"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2418,6 +2637,7 @@
                 "middle": "Klimmen-Ransdaal",
                 "short": "Klimmen-R"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2429,6 +2649,7 @@
                 "middle": "Koog Bloemwijk",
                 "short": "Koog Bloem"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2440,6 +2661,7 @@
                 "middle": "Koog-Zaandijk",
                 "short": "Koog Zaand"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2451,6 +2673,7 @@
                 "middle": "Koudum-Molkwerum",
                 "short": "Koudum-M"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2462,6 +2685,7 @@
                 "middle": "Krabbendijke",
                 "short": "Krabbendke"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2473,6 +2697,7 @@
                 "middle": "Krommenie-Ass.",
                 "short": "Krommenie"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2484,6 +2709,7 @@
                 "middle": "Kropswolde",
                 "short": "Kropswolde"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2495,6 +2721,7 @@
                 "middle": "Kruiningen-Y.",
                 "short": "Kruiningen"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2506,6 +2733,7 @@
                 "middle": "Lage Zwaluwe",
                 "short": "Lage Zwalu"
             },
+            "travel_times_available": false,
             "type": "knooppuntStoptreinstation"
         },
         {
@@ -2517,6 +2745,7 @@
                 "middle": "Landgraaf",
                 "short": "Landgraaf"
             },
+            "travel_times_available": false,
             "type": "knooppuntStoptreinstation"
         },
         {
@@ -2528,6 +2757,7 @@
                 "middle": "Leerdam",
                 "short": "Leerdam"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2539,6 +2769,7 @@
                 "middle": "Leeuwarden",
                 "short": "Leeuwarden"
             },
+            "travel_times_available": false,
             "type": "knooppuntIntercitystation"
         },
         {
@@ -2550,6 +2781,7 @@
                 "middle": "Achter de Hoven",
                 "short": "Achter d.H"
             },
+            "travel_times_available": false,
             "type": "facultatiefStation"
         },
         {
@@ -2561,6 +2793,7 @@
                 "middle": "Camminghaburen",
                 "short": "Camminghab"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2572,6 +2805,7 @@
                 "middle": "Leiden C.",
                 "short": "Leiden C"
             },
+            "travel_times_available": false,
             "type": "knooppuntIntercitystation"
         },
         {
@@ -2583,6 +2817,7 @@
                 "middle": "Lammenschans",
                 "short": "Leiden Lam"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2594,6 +2829,7 @@
                 "middle": "Lelystad C.",
                 "short": "Lelystad"
             },
+            "travel_times_available": false,
             "type": "knooppuntIntercitystation"
         },
         {
@@ -2605,6 +2841,7 @@
                 "middle": "Lichtenvoorde-G.",
                 "short": "Lichtenv-G"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2616,6 +2853,7 @@
                 "middle": "Lochem",
                 "short": "Lochem"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2627,6 +2865,7 @@
                 "middle": "Loppersum",
                 "short": "Loppersum"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2638,6 +2877,7 @@
                 "middle": "Lunteren",
                 "short": "Lunteren"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2649,6 +2889,7 @@
                 "middle": "Maarheeze",
                 "short": "Maarheeze"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2660,6 +2901,7 @@
                 "middle": "Maarn",
                 "short": "Maarn"
             },
+            "travel_times_available": false,
             "type": "knooppuntStoptreinstation"
         },
         {
@@ -2671,6 +2913,7 @@
                 "middle": "Maarssen",
                 "short": "Maarssen"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2682,6 +2925,7 @@
                 "middle": "Maassluis",
                 "short": "Maassluis"
             },
+            "travel_times_available": false,
             "type": "knooppuntStoptreinstation"
         },
         {
@@ -2693,6 +2937,7 @@
                 "middle": "Maassluis West",
                 "short": "Maassl W"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2704,6 +2949,7 @@
                 "middle": "Maastricht",
                 "short": "Maastricht"
             },
+            "travel_times_available": false,
             "type": "knooppuntIntercitystation"
         },
         {
@@ -2715,6 +2961,7 @@
                 "middle": "Maastricht Noord",
                 "short": "Maastr N"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2726,6 +2973,7 @@
                 "middle": "Maastricht Randw",
                 "short": "Maastr Rw"
             },
+            "travel_times_available": false,
             "type": "knooppuntStoptreinstation"
         },
         {
@@ -2737,6 +2985,7 @@
                 "middle": "Mantgum",
                 "short": "Mantgum"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2748,6 +2997,7 @@
                 "middle": "Mariënberg",
                 "short": "Mariënberg"
             },
+            "travel_times_available": false,
             "type": "knooppuntSneltreinstation"
         },
         {
@@ -2759,6 +3009,7 @@
                 "middle": "Martenshoek",
                 "short": "Martensh"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2770,6 +3021,7 @@
                 "middle": "Meerssen",
                 "short": "Meerssen"
             },
+            "travel_times_available": false,
             "type": "sneltreinstation"
         },
         {
@@ -2781,6 +3033,7 @@
                 "middle": "Meppel",
                 "short": "Meppel"
             },
+            "travel_times_available": false,
             "type": "knooppuntStoptreinstation"
         },
         {
@@ -2792,6 +3045,7 @@
                 "middle": "Middelburg",
                 "short": "Middelburg"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2803,6 +3057,7 @@
                 "middle": "Molenhoek",
                 "short": "Mook Molen"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2814,6 +3069,7 @@
                 "middle": "Naarden-Bussum",
                 "short": "Naarden-B"
             },
+            "travel_times_available": false,
             "type": "knooppuntStoptreinstation"
         },
         {
@@ -2825,6 +3081,7 @@
                 "middle": "Nieuw Amsterdam",
                 "short": "Nw A'dam"
             },
+            "travel_times_available": false,
             "type": "sneltreinstation"
         },
         {
@@ -2836,6 +3093,7 @@
                 "middle": "Nieuw Vennep",
                 "short": "Nw Vennep"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2847,6 +3105,7 @@
                 "middle": "Nieuwerkerk",
                 "short": "Nieuwerkrk"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2858,6 +3117,7 @@
                 "middle": "Nijkerk",
                 "short": "Nijkerk"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2869,6 +3129,7 @@
                 "middle": "Nijmegen",
                 "short": "Nijmegen"
             },
+            "travel_times_available": false,
             "type": "knooppuntIntercitystation"
         },
         {
@@ -2880,6 +3141,7 @@
                 "middle": "Dukenburg",
                 "short": "Dukenburg"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2891,6 +3153,7 @@
                 "middle": "Nijmegen Goffert",
                 "short": "Goffert"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2902,6 +3165,7 @@
                 "middle": "Nm Heyendaal",
                 "short": "Heyendaal"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2913,6 +3177,7 @@
                 "middle": "Nijmegen Lent",
                 "short": "Lent"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2924,6 +3189,7 @@
                 "middle": "Nijverdal",
                 "short": "Nijverdal"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2935,6 +3201,7 @@
                 "middle": "Nunspeet",
                 "short": "Nunspeet"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2946,6 +3213,7 @@
                 "middle": "Nuth",
                 "short": "Nuth"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2957,6 +3225,7 @@
                 "middle": "Obdam",
                 "short": "Obdam"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2968,6 +3237,7 @@
                 "middle": "Oisterwijk",
                 "short": "Oisterwijk"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2979,6 +3249,7 @@
                 "middle": "Oldenzaal",
                 "short": "Oldenzaal"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -2990,6 +3261,7 @@
                 "middle": "Olst",
                 "short": "Olst"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3001,6 +3273,7 @@
                 "middle": "Ommen",
                 "short": "Ommen"
             },
+            "travel_times_available": false,
             "type": "knooppuntSneltreinstation"
         },
         {
@@ -3012,6 +3285,7 @@
                 "middle": "Oosterbeek",
                 "short": "Oosterbeek"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3023,6 +3297,7 @@
                 "middle": "Opheusden",
                 "short": "Opheusden"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3034,6 +3309,7 @@
                 "middle": "Oss",
                 "short": "Oss"
             },
+            "travel_times_available": false,
             "type": "knooppuntIntercitystation"
         },
         {
@@ -3045,6 +3321,7 @@
                 "middle": "Oss West",
                 "short": "Oss W"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3056,6 +3333,7 @@
                 "middle": "Oudenbosch",
                 "short": "Oudenbosch"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3067,6 +3345,7 @@
                 "middle": "Overveen",
                 "short": "Overveen"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3078,6 +3357,7 @@
                 "middle": "Purmerend",
                 "short": "Purmerend"
             },
+            "travel_times_available": false,
             "type": "knooppuntStoptreinstation"
         },
         {
@@ -3089,6 +3369,7 @@
                 "middle": "Overwhere",
                 "short": "Overwhere"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3100,6 +3381,7 @@
                 "middle": "Weidevenne",
                 "short": "Weidevenne"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3111,6 +3393,7 @@
                 "middle": "Putten",
                 "short": "Putten"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3122,6 +3405,7 @@
                 "middle": "Raalte",
                 "short": "Raalte"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3133,6 +3417,7 @@
                 "middle": "Ravenstein",
                 "short": "Ravenstein"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3144,6 +3429,7 @@
                 "middle": "Reuver",
                 "short": "Reuver"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3155,6 +3441,7 @@
                 "middle": "Rheden",
                 "short": "Rheden"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3166,6 +3453,7 @@
                 "middle": "Rhenen",
                 "short": "Rhenen"
             },
+            "travel_times_available": false,
             "type": "knooppuntStoptreinstation"
         },
         {
@@ -3177,6 +3465,7 @@
                 "middle": "Rijssen",
                 "short": "Rijssen"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3188,6 +3477,7 @@
                 "middle": "Rijswijk",
                 "short": "Rijswijk"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3199,6 +3489,7 @@
                 "middle": "Rilland-Bath",
                 "short": "Rilland-B"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3210,6 +3501,7 @@
                 "middle": "Roermond",
                 "short": "Roermond"
             },
+            "travel_times_available": false,
             "type": "knooppuntIntercitystation"
         },
         {
@@ -3221,6 +3513,7 @@
                 "middle": "Roodeschool",
                 "short": "Roodesch"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3232,6 +3525,7 @@
                 "middle": "Roosendaal",
                 "short": "Roosendaal"
             },
+            "travel_times_available": false,
             "type": "knooppuntIntercitystation"
         },
         {
@@ -3243,6 +3537,7 @@
                 "middle": "Rosmalen",
                 "short": "Rosmalen"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3254,6 +3549,7 @@
                 "middle": "Alexander",
                 "short": "Alexander"
             },
+            "travel_times_available": false,
             "type": "intercitystation"
         },
         {
@@ -3265,6 +3561,7 @@
                 "middle": "Rotterdam Blaak",
                 "short": "Blaak"
             },
+            "travel_times_available": false,
             "type": "intercitystation"
         },
         {
@@ -3276,6 +3573,7 @@
                 "middle": "Rotterdam C.",
                 "short": "R'dam C"
             },
+            "travel_times_available": false,
             "type": "megastation"
         },
         {
@@ -3287,6 +3585,7 @@
                 "middle": "Lombardijen",
                 "short": "Lombardije"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3298,6 +3597,7 @@
                 "middle": "Rotterdam Noord",
                 "short": "R'dam N"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3309,6 +3609,7 @@
                 "middle": "R'dam Stadion",
                 "short": "R'dam Sta"
             },
+            "travel_times_available": false,
             "type": "facultatiefStation"
         },
         {
@@ -3320,6 +3621,7 @@
                 "middle": "Rotterdam Zuid",
                 "short": "R'dam Z"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3331,6 +3633,7 @@
                 "middle": "Ruurlo",
                 "short": "Ruurlo"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3342,6 +3645,7 @@
                 "middle": "Santpoort Noord",
                 "short": "Santprt N"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3353,6 +3657,7 @@
                 "middle": "Santpoort Zuid",
                 "short": "Santprt Z"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3364,6 +3669,7 @@
                 "middle": "Sappemeer Oost",
                 "short": "Sappemr O"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3375,6 +3681,7 @@
                 "middle": "Sassenheim",
                 "short": "Sassenheim"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3386,6 +3693,7 @@
                 "middle": "Sauwerd",
                 "short": "Sauwerd"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3397,6 +3705,7 @@
                 "middle": "Schagen",
                 "short": "Schagen"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3408,6 +3717,7 @@
                 "middle": "Scheemda",
                 "short": "Scheemda"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3419,6 +3729,7 @@
                 "middle": "Schiedam C.",
                 "short": "Schiedam C"
             },
+            "travel_times_available": false,
             "type": "intercitystation"
         },
         {
@@ -3430,6 +3741,7 @@
                 "middle": "Nieuwland",
                 "short": "Nieuwland"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3441,6 +3753,7 @@
                 "middle": "Schin op Geul",
                 "short": "Schin op G"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3452,6 +3765,7 @@
                 "middle": "Schinnen",
                 "short": "Schinnen"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3463,6 +3777,7 @@
                 "middle": "Schiphol Airport",
                 "short": "Schiphol"
             },
+            "travel_times_available": false,
             "type": "megastation"
         },
         {
@@ -3474,6 +3789,7 @@
                 "middle": "Simpelveld",
                 "short": "Simpelveld"
             },
+            "travel_times_available": false,
             "type": "facultatiefStation"
         },
         {
@@ -3485,6 +3801,7 @@
                 "middle": "Sittard",
                 "short": "Sittard"
             },
+            "travel_times_available": false,
             "type": "knooppuntIntercitystation"
         },
         {
@@ -3496,6 +3813,7 @@
                 "middle": "Sliedrecht",
                 "short": "Sliedrecht"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3507,6 +3825,7 @@
                 "middle": "Baanhoek",
                 "short": "Baanhoek"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3518,6 +3837,7 @@
                 "middle": "Sneek",
                 "short": "Sneek"
             },
+            "travel_times_available": false,
             "type": "knooppuntStoptreinstation"
         },
         {
@@ -3529,6 +3849,7 @@
                 "middle": "Sneek Noord",
                 "short": "Sneek N"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3540,6 +3861,7 @@
                 "middle": "Soest",
                 "short": "Soest"
             },
+            "travel_times_available": false,
             "type": "knooppuntStoptreinstation"
         },
         {
@@ -3551,6 +3873,7 @@
                 "middle": "Soest Zuid",
                 "short": "Soest Z"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3562,6 +3885,7 @@
                 "middle": "Soestdijk",
                 "short": "Soestdijk"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3573,6 +3897,7 @@
                 "middle": "Spaubeek",
                 "short": "Spaubeek"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3584,6 +3909,7 @@
                 "middle": "Spekholzerheide",
                 "short": "Spekholzer"
             },
+            "travel_times_available": false,
             "type": "facultatiefStation"
         },
         {
@@ -3595,6 +3921,7 @@
                 "middle": "Stavoren",
                 "short": "Stavoren"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3606,6 +3933,7 @@
                 "middle": "Stedum",
                 "short": "Stedum"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3617,6 +3945,7 @@
                 "middle": "Steenwijk",
                 "short": "Steenwijk"
             },
+            "travel_times_available": false,
             "type": "intercitystation"
         },
         {
@@ -3628,6 +3957,7 @@
                 "middle": "Susteren",
                 "short": "Susteren"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3639,6 +3969,7 @@
                 "middle": "Swalmen",
                 "short": "Swalmen"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3650,6 +3981,7 @@
                 "middle": "Tegelen",
                 "short": "Tegelen"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3661,6 +3993,7 @@
                 "middle": "Terborg",
                 "short": "Terborg"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3672,6 +4005,7 @@
                 "middle": "Tiel",
                 "short": "Tiel"
             },
+            "travel_times_available": false,
             "type": "knooppuntStoptreinstation"
         },
         {
@@ -3683,6 +4017,7 @@
                 "middle": "Tiel Passewaaij",
                 "short": "Passewaaij"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3694,6 +4029,7 @@
                 "middle": "Tilburg",
                 "short": "Tilburg"
             },
+            "travel_times_available": false,
             "type": "knooppuntIntercitystation"
         },
         {
@@ -3705,6 +4041,7 @@
                 "middle": "Tilburg Reeshof",
                 "short": "Reeshof"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3716,6 +4053,7 @@
                 "middle": "Tilburg Univers.",
                 "short": "Tilburg U"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3727,6 +4065,7 @@
                 "middle": "Twello",
                 "short": "Twello"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3738,6 +4077,7 @@
                 "middle": "Uitgeest",
                 "short": "Uitgeest"
             },
+            "travel_times_available": false,
             "type": "knooppuntStoptreinstation"
         },
         {
@@ -3749,6 +4089,7 @@
                 "middle": "Uithuizen",
                 "short": "Uithuizen"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3760,6 +4101,7 @@
                 "middle": "Uithuizermeeden",
                 "short": "Uithuizerm"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3771,6 +4113,7 @@
                 "middle": "Usquert",
                 "short": "Usquert"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3782,6 +4125,7 @@
                 "middle": "Utrecht C.",
                 "short": "Utrecht C"
             },
+            "travel_times_available": false,
             "type": "megastation"
         },
         {
@@ -3793,6 +4137,7 @@
                 "middle": "Leidsche Rijn",
                 "short": "Leidsche R"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3804,6 +4149,7 @@
                 "middle": "Utrecht Lunetten",
                 "short": "Lunetten"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3815,6 +4161,7 @@
                 "middle": "Maliebaan",
                 "short": "Maliebaan"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3826,6 +4173,7 @@
                 "middle": "Overvecht",
                 "short": "Overvecht"
             },
+            "travel_times_available": false,
             "type": "knooppuntStoptreinstation"
         },
         {
@@ -3837,6 +4185,7 @@
                 "middle": "Utrecht Terwijde",
                 "short": "Terwijde"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3848,6 +4197,7 @@
                 "middle": "Utrecht Zuilen",
                 "short": "Zuilen"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3859,6 +4209,7 @@
                 "middle": "Valkenburg",
                 "short": "Valkenburg"
             },
+            "travel_times_available": false,
             "type": "knooppuntSneltreinstation"
         },
         {
@@ -3870,6 +4221,7 @@
                 "middle": "Varsseveld",
                 "short": "Varsseveld"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3881,6 +4233,7 @@
                 "middle": "Veendam",
                 "short": "Veendam"
             },
+            "travel_times_available": false,
             "type": "knooppuntStoptreinstation"
         },
         {
@@ -3892,6 +4245,7 @@
                 "middle": "Veenendaal C.",
                 "short": "Veenendl C"
             },
+            "travel_times_available": false,
             "type": "knooppuntStoptreinstation"
         },
         {
@@ -3903,6 +4257,7 @@
                 "middle": "Veenendaal West",
                 "short": "Veenendl W"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3914,6 +4269,7 @@
                 "middle": "De Klomp",
                 "short": "De Klomp"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3925,6 +4281,7 @@
                 "middle": "Velp",
                 "short": "Velp"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3936,6 +4293,7 @@
                 "middle": "Venlo",
                 "short": "Venlo"
             },
+            "travel_times_available": false,
             "type": "knooppuntIntercitystation"
         },
         {
@@ -3947,6 +4305,7 @@
                 "middle": "Venray",
                 "short": "Venray"
             },
+            "travel_times_available": false,
             "type": "knooppuntStoptreinstation"
         },
         {
@@ -3958,6 +4317,7 @@
                 "middle": "Vierlingsbeek",
                 "short": "Vierlingsb"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3969,6 +4329,7 @@
                 "middle": "Vlaardingen C.",
                 "short": "Vlaard C"
             },
+            "travel_times_available": false,
             "type": "knooppuntStoptreinstation"
         },
         {
@@ -3980,6 +4341,7 @@
                 "middle": "Vlaardingen Oost",
                 "short": "Vlaard O"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -3991,6 +4353,7 @@
                 "middle": "Vlaardingen West",
                 "short": "Vlaard W"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -4002,6 +4365,7 @@
                 "middle": "Vleuten",
                 "short": "Vleuten"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -4013,6 +4377,7 @@
                 "middle": "Vlissingen",
                 "short": "Vlissingen"
             },
+            "travel_times_available": false,
             "type": "knooppuntIntercitystation"
         },
         {
@@ -4024,6 +4389,7 @@
                 "middle": "Souburg",
                 "short": "Souburg"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -4035,6 +4401,7 @@
                 "middle": "Voerendaal",
                 "short": "Voerendaal"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -4046,6 +4413,7 @@
                 "middle": "Voorburg",
                 "short": "Voorburg"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -4057,6 +4425,7 @@
                 "middle": "Voorhout",
                 "short": "Voorhout"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -4068,6 +4437,7 @@
                 "middle": "Voorschoten",
                 "short": "Voorschtn"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -4079,6 +4449,7 @@
                 "middle": "Voorst-Empe",
                 "short": "Voorst-E"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -4090,6 +4461,7 @@
                 "middle": "Vorden",
                 "short": "Vorden"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -4101,6 +4473,7 @@
                 "middle": "Vriezenveen",
                 "short": "Vriezenvn"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -4112,6 +4485,7 @@
                 "middle": "Vroomshoop",
                 "short": "Vroomshoop"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -4123,6 +4497,7 @@
                 "middle": "Vught",
                 "short": "Vught"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -4134,6 +4509,7 @@
                 "middle": "Waddinxveen",
                 "short": "Waddinxv"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -4145,6 +4521,7 @@
                 "middle": "Waddinxveen N.",
                 "short": "Waddinxv N"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -4156,6 +4533,7 @@
                 "middle": "Warffum",
                 "short": "Warffum"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -4167,6 +4545,7 @@
                 "middle": "Weert",
                 "short": "Weert"
             },
+            "travel_times_available": false,
             "type": "intercitystation"
         },
         {
@@ -4178,6 +4557,7 @@
                 "middle": "Weesp",
                 "short": "Weesp"
             },
+            "travel_times_available": false,
             "type": "knooppuntStoptreinstation"
         },
         {
@@ -4189,6 +4569,7 @@
                 "middle": "Wehl",
                 "short": "Wehl"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -4200,6 +4581,7 @@
                 "middle": "Westervoort",
                 "short": "Westervrt"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -4211,6 +4593,7 @@
                 "middle": "Wezep",
                 "short": "Wezep"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -4222,6 +4605,7 @@
                 "middle": "Wierden",
                 "short": "Wierden"
             },
+            "travel_times_available": false,
             "type": "knooppuntStoptreinstation"
         },
         {
@@ -4233,6 +4617,7 @@
                 "middle": "Wijchen",
                 "short": "Wijchen"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -4244,6 +4629,7 @@
                 "middle": "Wijhe",
                 "short": "Wijhe"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -4255,6 +4641,7 @@
                 "middle": "Winschoten",
                 "short": "Winschoten"
             },
+            "travel_times_available": false,
             "type": "knooppuntStoptreinstation"
         },
         {
@@ -4266,6 +4653,7 @@
                 "middle": "Winsum",
                 "short": "Winsum"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -4277,6 +4665,7 @@
                 "middle": "Winterswijk",
                 "short": "Winterswk"
             },
+            "travel_times_available": false,
             "type": "knooppuntStoptreinstation"
         },
         {
@@ -4288,6 +4677,7 @@
                 "middle": "Winterswijk West",
                 "short": "Wintersw W"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -4299,6 +4689,7 @@
                 "middle": "Woerden",
                 "short": "Woerden"
             },
+            "travel_times_available": false,
             "type": "knooppuntStoptreinstation"
         },
         {
@@ -4310,6 +4701,7 @@
                 "middle": "Wolfheze",
                 "short": "Wolfheze"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -4321,6 +4713,7 @@
                 "middle": "Wolvega",
                 "short": "Wolvega"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -4332,6 +4725,7 @@
                 "middle": "Workum",
                 "short": "Workum"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -4343,6 +4737,7 @@
                 "middle": "Wormerveer",
                 "short": "Wormerveer"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -4354,6 +4749,7 @@
                 "middle": "Zaandam",
                 "short": "Zaandam"
             },
+            "travel_times_available": false,
             "type": "knooppuntIntercitystation"
         },
         {
@@ -4365,6 +4761,7 @@
                 "middle": "Kogerveld",
                 "short": "Kogerveld"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -4376,6 +4773,7 @@
                 "middle": "Zaltbommel",
                 "short": "Zaltbommel"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -4387,6 +4785,7 @@
                 "middle": "Zandvoort a Zee",
                 "short": "Zandvoort"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -4398,6 +4797,7 @@
                 "middle": "Zetten-Andelst",
                 "short": "Zetten-A"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -4409,6 +4809,7 @@
                 "middle": "Zevenaar",
                 "short": "Zevenaar"
             },
+            "travel_times_available": false,
             "type": "knooppuntStoptreinstation"
         },
         {
@@ -4420,6 +4821,7 @@
                 "middle": "Zevenbergen",
                 "short": "Zevenbergn"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -4431,6 +4833,7 @@
                 "middle": "Zoetermeer",
                 "short": "Zoetermeer"
             },
+            "travel_times_available": false,
             "type": "knooppuntStoptreinstation"
         },
         {
@@ -4442,6 +4845,7 @@
                 "middle": "Zoetermeer Oost",
                 "short": "Z'meer O"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -4453,6 +4857,7 @@
                 "middle": "Zuidbroek",
                 "short": "Zuidbroek"
             },
+            "travel_times_available": false,
             "type": "knooppuntStoptreinstation"
         },
         {
@@ -4464,6 +4869,7 @@
                 "middle": "Zuidhorn",
                 "short": "Zuidhorn"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -4475,6 +4881,7 @@
                 "middle": "Zutphen",
                 "short": "Zutphen"
             },
+            "travel_times_available": false,
             "type": "knooppuntIntercitystation"
         },
         {
@@ -4486,6 +4893,7 @@
                 "middle": "Zwijndrecht",
                 "short": "Zwijndrcht"
             },
+            "travel_times_available": false,
             "type": "stoptreinstation"
         },
         {
@@ -4497,6 +4905,7 @@
                 "middle": "Zwolle",
                 "short": "Zwolle"
             },
+            "travel_times_available": false,
             "type": "knooppuntIntercitystation"
         }
     ]

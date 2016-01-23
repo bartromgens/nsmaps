@@ -40,12 +40,12 @@ $.getJSON("./data/stations.json", function(json) {
 
     createStationLayer(typeScales, json.stations);
 
-    //addTravelTimeColoring();
+    //addTravelTimeColoring(station_name);
     //addContours("Utrecht Centraal");
 });
 
 
-function addTravelTimeColoring()
+function addTravelTimeColoring(station_name)
 {
     $.getJSON("./data/traveltimes_from_" + station_name + ".json", function(json) {
         var stations = json.stations;
@@ -76,9 +76,9 @@ function addTravelTimeColoring()
 }
 
 
-function addContours(station_name)
+function addContours(station_code)
 {
-    $.getJSON("./data/contours_" + station_name + ".json", function(json) {
+    $.getJSON("./data/contours_" + station_code + ".json", function(json) {
         var contours = json.contours;
         createContoursLayer(contours, "Travel time");
     });
@@ -93,16 +93,7 @@ function createStationLayer(typeScales, stations)
         var lat = parseFloat(station.lat);
         lat = lat + 90.0;
         var lonLat = [station.lon, lat.toString()];
-        // TODO: make variable depending on availability
-        if (station.names.long == 'Delft' || station.names.long == 'Utrecht Centraal')
-        {
-            station.selectable = true;
-        }
-        else
-        {
-            station.selectable = false;
-        }
-
+        station.selectable = station.travel_times_available;
         var stationFeature = createStationFeature(station, lonLat);
         stationFeatures.push(stationFeature);
     }
@@ -163,6 +154,7 @@ function createStationFeature(station, lonLat) {
     return new ol.Feature({
         geometry: new ol.geom.Point( ol.proj.fromLonLat(lonLat) ),
         name: station.names.long,
+        id: station.id,
         type: station.type,
         text: station.names.short,
         selectable: station.selectable
@@ -233,13 +225,13 @@ var select = new ol.interaction.Select({
 });
 
 select.on('select', function(evt) {
-    var featureName = evt.selected[0].get('name');
+    var station_id = evt.selected[0].get('id');
     for (var i = 0; i < contourLayers.length; ++i)
     {
         var removedLayer = map.removeLayer(contourLayers[i]);
     }
     contourLayers.length = 0;
-    addContours(featureName);
+    addContours(station_id);
 });
 
 map.addInteraction(select);
