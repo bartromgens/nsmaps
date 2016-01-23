@@ -1,4 +1,16 @@
 import json
+from enum import Enum
+
+
+class StationType(Enum):
+    stoptreinstation = 1
+    megastation = 2
+    knooppuntIntercitystation = 3
+    sneltreinstation = 4
+    intercitystation = 5
+    knooppuntStoptreinstation = 6
+    facultatiefStation = 7
+    knooppuntSneltreinstation = 8
 
 
 class Station(object):
