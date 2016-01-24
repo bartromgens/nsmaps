@@ -219,12 +219,18 @@ function rgbToHex(r, g, b) {
     return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
 }
 
+// Select features
 
 var select = new ol.interaction.Select({
     condition: ol.events.condition.click
 });
 
 select.on('select', function(evt) {
+    if (!evt.selected[0])
+    {
+        retun;
+    }
+    current_station_control_label.element.children[0].innerHTML = evt.selected[0].get('name');
     var station_id = evt.selected[0].get('id');
     for (var i = 0; i < contourLayers.length; ++i)
     {
@@ -236,3 +242,24 @@ select.on('select', function(evt) {
 
 map.addInteraction(select);
 
+// Controls
+
+StationNameLabel = function(opt_options) {
+  var options = opt_options || {};
+
+  var button = document.createElement('a');
+  button.innerHTML = 'Click on a station';
+
+  var element = document.createElement('div');
+  element.className = 'station-name ol-control';
+  element.appendChild(button);
+
+  ol.control.Control.call(this, {
+    element: element
+  });
+
+};
+ol.inherits(StationNameLabel, ol.control.Control);
+
+var current_station_control_label = new StationNameLabel()
+map.addControl(current_station_control_label);
