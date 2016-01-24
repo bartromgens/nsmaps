@@ -40,14 +40,14 @@ $.getJSON("./data/stations.json", function(json) {
 
     createStationLayer(typeScales, json.stations);
 
-    //addTravelTimeColoring(station_name);
+    //addTravelTimeColoring(station_id);
     //addContours("Utrecht Centraal");
 });
 
 
-function addTravelTimeColoring(station_name)
+function addTravelTimeColoring(station_id)
 {
-    $.getJSON("./data/traveltimes_from_" + station_name + ".json", function(json) {
+    $.getJSON("./data/traveltimes_from_" + station_id + ".json", function(json) {
         var stations = json.stations;
         for (var i in stations)
         {
@@ -76,9 +76,9 @@ function addTravelTimeColoring(station_name)
 }
 
 
-function addContours(station_code)
+function addContours(station_id)
 {
-    $.getJSON("./data/contours_" + station_code + ".json", function(json) {
+    $.getJSON("./data/contours_" + station_id + ".json", function(json) {
         var contours = json.contours;
         createContoursLayer(contours, "Travel time");
     });
