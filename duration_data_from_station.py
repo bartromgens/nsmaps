@@ -11,6 +11,14 @@ from station import Station, StationType
 from logger import logger
 
 
+def main():
+    nsapi = ns_api.NSAPI(USERNAME, APIKEY)
+    stations = nsapi.get_stations()
+    major_stations = get_major_stations(stations)
+    for major_station in major_stations:
+        create_trip_data_from_station(major_station, stations)
+
+
 def get_station_id(station_name, stations):
     for station in stations:
         if station.names['long'] == station_name:
@@ -34,6 +42,7 @@ def create_trip_data_from_station(station_from, stations):
         logger.warning('File ' + filename_out + ' already exists. Will not overwrite by default. Return.')
         return
 
+    nsapi = ns_api.NSAPI(USERNAME, APIKEY)
     for station in stations:
         if station.country != "NL":
             continue
@@ -73,9 +82,7 @@ def create_trip_data_from_station(station_from, stations):
         fileout.write(json_data)
 
 
-if __name__ == "__main__":
-    nsapi = ns_api.NSAPI(USERNAME, APIKEY)
-    stations = nsapi.get_stations()
+def get_major_stations(stations):
     major_stations = []
     major_station_types = (StationType.intercitystation,
                            StationType.knooppuntIntercitystation,
@@ -86,9 +93,11 @@ if __name__ == "__main__":
         for station_type in major_station_types:
             if station.stationtype == station_type.name:
                 major_stations.append(station)
+    return major_stations
 
-    for major_station in major_stations:
-        create_trip_data_from_station(major_station, stations)
+
+if __name__ == "__main__":
+    main()
 
     # station_from_id = "UT"  # example: Utrecht Centraal
     # create_trip_data_from_station(station_from_id)
