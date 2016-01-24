@@ -1,4 +1,5 @@
 import sys
+import os.path
 from timeit import default_timer as timer
 from multiprocessing import Process, Queue
 
@@ -136,20 +137,35 @@ def interpolate_travel_time(q, position, kdtree, gps, latrange, lonrange, altitu
     return
 
 
-if __name__ == "__main__":
-    departure_station = 'utrecht'
+def test():
+    departure_station_name = 'Utrecht Centraal'
     stations = Station.from_json('./data/stations.json')
-    Station.travel_times_from_json(stations, './data/traveltimes_from_' + departure_station + '.json')
+    departure_station = Station.find_station(departure_station_name, stations)
+    Station.travel_times_from_json(stations, './data/traveltimes_from_' + departure_station.id + '.json')
+    filename = './data/contours_' + departure_station.id + '.json'
+    default_config = ContourPlotConfig()
+    test_config = TestConfig()
+    default_config.cycle_speed_kmh = 18.0
+    default_config.n_nearest = 30
+    create_contour_plot(stations, filename, default_config)
+
+
+if __name__ == "__main__":
+    stations = Station.from_json('./data/stations.json')
+    for station in stations:
+        filename_traveltimes = './data/traveltimes_from_' + station.id + '.json'
+        if os.path.exists(filename_traveltimes):
+            Station.travel_times_from_json(stations, './data/traveltimes_from_' + station.id + '.json')
+            filename = './data/contours_' + station.id + '.json'
+            default_config = ContourPlotConfig()
+            default_config.cycle_speed_kmh = 18.0
+            default_config.n_nearest = 30
+            create_contour_plot(stations, filename, default_config)
+        else:
+            print(filename_traveltimes)
 
     # stations = []
     # stations.append(Station('Utrecht Centraal', 5.11027765274048, 52.0888900756836, 100))
     # stations.append(Station('Rotterdam Centraal', 4.46888875961304, 51.9249992370605, 500))
     # stations.append(Station('Leeuwarden', 5.79222202301025, 53.1958351135254, 1))
     # stations.append(Station('test', 5.6, 51.8, 1))
-
-    filename = './data/contours_' + departure_station + '.json'
-    default_config = ContourPlotConfig()
-    test_config = TestConfig()
-    default_config.cycle_speed_kmh = 50.0
-    default_config.n_nearest = 30
-    create_contour_plot(stations, filename, default_config)

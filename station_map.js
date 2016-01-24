@@ -1,12 +1,10 @@
 
-var station_name = "utrecht";
-
 // http://stackoverflow.com/a/4234006
 $.ajaxSetup({beforeSend: function(xhr){
-  if (xhr.overrideMimeType)
-  {
-    xhr.overrideMimeType("application/json");
-  }
+    if (xhr.overrideMimeType)
+    {
+      xhr.overrideMimeType("application/json");
+    }
 }
 });
 
@@ -32,6 +30,7 @@ var osmLayer = new ol.layer.Tile({source: osmSource});
 map.addLayer(osmLayer);
 
 var stationFeatures = [];
+var contourLayers = []
 
 
 $.getJSON("./data/stations.json", function(json) {
@@ -41,12 +40,12 @@ $.getJSON("./data/stations.json", function(json) {
 
     createStationLayer(typeScales, json.stations);
 
-    //addTravelTimeColoring();
-    addContours();
+    //addTravelTimeColoring(station_name);
+    //addContours("Utrecht Centraal");
 });
 
 
-function addTravelTimeColoring()
+function addTravelTimeColoring(station_name)
 {
     $.getJSON("./data/traveltimes_from_" + station_name + ".json", function(json) {
         var stations = json.stations;
@@ -77,9 +76,9 @@ function addTravelTimeColoring()
 }
 
 
-function addContours()
+function addContours(station_code)
 {
-    $.getJSON("./data/contours_" + station_name + ".json", function(json) {
+    $.getJSON("./data/contours_" + station_code + ".json", function(json) {
         var contours = json.contours;
         createContoursLayer(contours, "Travel time");
     });
@@ -94,7 +93,7 @@ function createStationLayer(typeScales, stations)
         var lat = parseFloat(station.lat);
         lat = lat + 90.0;
         var lonLat = [station.lon, lat.toString()];
-
+        station.selectable = station.travel_times_available;
         var stationFeature = createStationFeature(station, lonLat);
         stationFeatures.push(stationFeature);
     }
@@ -112,6 +111,8 @@ function createStationLayer(typeScales, stations)
         source: vectorSource
     });
 
+    vectorLayer.setZIndex(0);
+
     map.addLayer(vectorLayer);
 }
 
@@ -123,9 +124,16 @@ function getStationStyle(feature, circleColor) {
     //    src: 'http://www.ns.nl/static/generic/1.21.1/images/nslogo.svg'
     //}));
 
+    var strokeColor = 'black';
+    if (feature.get('selectable'))
+    {
+        strokeColor = 'red';
+    }
+
     var circleStyle = new ol.style.Circle(({
         fill: new ol.style.Fill({color: circleColor}),
-        radius: typeScales[feature.get('type')] * 10
+        stroke: new ol.style.Stroke({color: strokeColor, width: 3}),
+        radius: typeScales[feature.get('type')] * 9
     }));
 
     var textStyle = new ol.style.Text({
@@ -146,8 +154,10 @@ function createStationFeature(station, lonLat) {
     return new ol.Feature({
         geometry: new ol.geom.Point( ol.proj.fromLonLat(lonLat) ),
         name: station.names.long,
+        id: station.id,
         type: station.type,
-        text: station.names.short
+        text: station.names.short,
+        selectable: station.selectable
     });
 }
 
@@ -192,6 +202,7 @@ function createContoursLayer(contours, name) {
                 }),
                 style: lineStyle
             });
+            contourLayers.push(layerLines);
             map.addLayer(layerLines);
         }
     }
@@ -207,3 +218,21 @@ function componentToHex(comp) {
 function rgbToHex(r, g, b) {
     return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
 }
+
+
+var select = new ol.interaction.Select({
+    condition: ol.events.condition.click
+});
+
+select.on('select', function(evt) {
+    var station_id = evt.selected[0].get('id');
+    for (var i = 0; i < contourLayers.length; ++i)
+    {
+        var removedLayer = map.removeLayer(contourLayers[i]);
+    }
+    contourLayers.length = 0;
+    addContours(station_id);
+});
+
+map.addInteraction(select);
+
