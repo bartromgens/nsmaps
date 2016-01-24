@@ -40,14 +40,14 @@ $.getJSON("./data/stations.json", function(json) {
 
     createStationLayer(typeScales, json.stations);
 
-    //addTravelTimeColoring(station_name);
+    //addTravelTimeColoring(station_id);
     //addContours("Utrecht Centraal");
 });
 
 
-function addTravelTimeColoring(station_name)
+function addTravelTimeColoring(station_id)
 {
-    $.getJSON("./data/traveltimes_from_" + station_name + ".json", function(json) {
+    $.getJSON("./data/traveltimes_from_" + station_id + ".json", function(json) {
         var stations = json.stations;
         for (var i in stations)
         {
@@ -76,9 +76,9 @@ function addTravelTimeColoring(station_name)
 }
 
 
-function addContours(station_code)
+function addContours(station_id)
 {
-    $.getJSON("./data/contours_" + station_code + ".json", function(json) {
+    $.getJSON("./data/contours_" + station_id + ".json", function(json) {
         var contours = json.contours;
         createContoursLayer(contours, "Travel time");
     });
@@ -219,12 +219,18 @@ function rgbToHex(r, g, b) {
     return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
 }
 
+// Select features
 
 var select = new ol.interaction.Select({
     condition: ol.events.condition.click
 });
 
 select.on('select', function(evt) {
+    if (!evt.selected[0])
+    {
+        retun;
+    }
+    current_station_control_label.element.children[0].innerHTML = evt.selected[0].get('name');
     var station_id = evt.selected[0].get('id');
     for (var i = 0; i < contourLayers.length; ++i)
     {
@@ -236,3 +242,24 @@ select.on('select', function(evt) {
 
 map.addInteraction(select);
 
+// Controls
+
+StationNameLabel = function(opt_options) {
+  var options = opt_options || {};
+
+  var button = document.createElement('a');
+  button.innerHTML = 'Click on a station';
+
+  var element = document.createElement('div');
+  element.className = 'station-name ol-control';
+  element.appendChild(button);
+
+  ol.control.Control.call(this, {
+    element: element
+  });
+
+};
+ol.inherits(StationNameLabel, ol.control.Control);
+
+var current_station_control_label = new StationNameLabel()
+map.addControl(current_station_control_label);
