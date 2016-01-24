@@ -3,6 +3,7 @@ from datetime import datetime
 import time
 import sys
 
+import requests
 import ns_api
 
 from local_settings import USERNAME, APIKEY
@@ -32,15 +33,18 @@ def create_trip_data_from_station(station_from):
     for station in stations:
         if station.country != "NL":
             continue
-        destination = station.names['long']
         if station.code == station_from.code:
             continue
         trips = []
         try:
-            trips = nsapi.get_trips(timestamp, station_from.code, via, destination)
+            trips = nsapi.get_trips(timestamp, station_from.code, via, station.code)
         except TypeError as error:
             # this is a bug in ns-api, should return empty trips in case there are no results
-            print('Error while trying to get trips for destination: ' + destination + ', from: ' + station_from.names['long'])
+            print('Error while trying to get trips for destination: ' + station.names['long'] + ', from: ' + station_from.names['long'])
+            continue
+        except requests.exceptions.HTTPError as error:
+            # 500: Internal Server Error does always happen for some stations (example are Eijs-Wittem and Kerkrade-West)
+            print('HTTP Error while trying to get trips for destination: ' + station.names['long'] + ', from: ' + station_from.names['long'])
             continue
 
         if not trips:
@@ -58,7 +62,7 @@ def create_trip_data_from_station(station_from):
                                  'id': get_station_id(shortest_trip.destination, stations),
                                  'travel_time_min': shortest_trip.travel_time_min,
                                  'travel_time_planned': shortest_trip.travel_time_planned})
-        time.sleep(0.5)  # balance load on the NS server
+        time.sleep(0.3)  # balance load on the NS server
 
     json_data = json.dumps(data, indent=4, sort_keys=True, ensure_ascii=False)
     with open('./data/traveltimes_from_' + station_from.code + '.json', 'w') as fileout:
