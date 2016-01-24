@@ -1,7 +1,7 @@
 import json
 from datetime import datetime
 import time
-import sys
+import os
 
 import requests
 import ns_api
@@ -29,6 +29,11 @@ def create_trip_data_from_station(station_from):
                              'id': station_from.code,
                              'travel_time_min': 0,
                              'travel_time_planned': "0:00"})
+
+    filename_out = './data/traveltimes_from_' + station_from.code + '.json'
+    if os.path.exists(filename_out):
+        print('File ' + filename_out + ' already exists. Will not overwrite by default. Return.')
+        return
 
     for station in stations:
         if station.country != "NL":
@@ -65,7 +70,7 @@ def create_trip_data_from_station(station_from):
         time.sleep(0.3)  # balance load on the NS server
 
     json_data = json.dumps(data, indent=4, sort_keys=True, ensure_ascii=False)
-    with open('./data/traveltimes_from_' + station_from.code + '.json', 'w') as fileout:
+    with open(filename_out, 'w') as fileout:
         fileout.write(json_data)
 
 
