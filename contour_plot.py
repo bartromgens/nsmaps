@@ -162,7 +162,7 @@ if __name__ == "__main__":
             default_config.n_nearest = 30
             create_contour_plot(stations, filename, default_config)
         else:
-            print(filename_traveltimes)
+            print('Input file ' + filename_traveltimes + ' not found. Skipping station.')
 
     # stations = []
     # stations.append(Station('Utrecht Centraal', 5.11027765274048, 52.0888900756836, 100))
