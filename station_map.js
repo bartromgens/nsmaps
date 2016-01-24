@@ -263,3 +263,4 @@ ol.inherits(StationNameLabel, ol.control.Control);
 
 var current_station_control_label = new StationNameLabel()
 map.addControl(current_station_control_label);
+map.addControl(new ol.control.FullScreen());
