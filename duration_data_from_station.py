@@ -18,9 +18,7 @@ def get_station_id(station_name, stations):
     return None
 
 
-def create_trip_data_from_station(station_from):
-    nsapi = ns_api.NSAPI(USERNAME, APIKEY)
-    stations = nsapi.get_stations()
+def create_trip_data_from_station(station_from, stations):
     data = {'stations': []}
 
     timestamp = "12-01-2016 08:00"
@@ -90,7 +88,7 @@ if __name__ == "__main__":
                 major_stations.append(station)
 
     for major_station in major_stations:
-        create_trip_data_from_station(major_station)
+        create_trip_data_from_station(major_station, stations)
 
     # station_from_id = "UT"  # example: Utrecht Centraal
     # create_trip_data_from_station(station_from_id)
