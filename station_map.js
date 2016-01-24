@@ -87,6 +87,9 @@ function addContours(station_id)
 
 function createStationLayer(typeScales, stations)
 {
+    var stationFeaturesUnselectable = [];
+    var stationFeaturesSelectable = [];
+    
     for (var i in stations)
     {
         var station = stations[i];
@@ -96,6 +99,14 @@ function createStationLayer(typeScales, stations)
         station.selectable = station.travel_times_available;
         var stationFeature = createStationFeature(station, lonLat);
         stationFeatures.push(stationFeature);
+        if (station.selectable)
+        {
+            stationFeaturesSelectable.push(stationFeature);
+        }
+        else
+        {
+            stationFeaturesUnselectable.push(stationFeature);
+        }
     }
 
     for (var j in stationFeatures)
@@ -103,17 +114,27 @@ function createStationLayer(typeScales, stations)
         stationFeatures[j].setStyle(getStationStyle(stationFeatures[j], 'black'));
     }
 
-    var vectorSource = new ol.source.Vector({
-        features: stationFeatures
+    var stationSelectableSource = new ol.source.Vector({
+        features: stationFeaturesSelectable
     });
 
-    var vectorLayer = new ol.layer.Vector({
-        source: vectorSource
+    var stationUnselectableSource = new ol.source.Vector({
+        features: stationFeaturesUnselectable
     });
 
-    vectorLayer.setZIndex(0);
+    var stationsSelectableLayer = new ol.layer.Vector({
+        source: stationSelectableSource
+    });
 
-    map.addLayer(vectorLayer);
+    var stationsUnselectableLayer = new ol.layer.Vector({
+        source: stationUnselectableSource
+    });
+
+    stationsSelectableLayer.setZIndex(99);
+    stationsUnselectableLayer.setZIndex(0);
+
+    map.addLayer(stationsSelectableLayer);
+    map.addLayer(stationsUnselectableLayer);
 }
 
 
