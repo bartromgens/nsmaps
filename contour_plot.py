@@ -13,6 +13,14 @@ from station import Station
 from contour_to_json import contour_to_json
 
 
+stations = Station.from_json('./data/stations.json')
+
+
+def main():
+    for station in stations:
+        create_contour_plot_json(stations, station)
+
+
 class ContourData:
     def __init__(self):
         self.Z = None
@@ -150,22 +158,27 @@ def test():
     create_contour_plot(stations, filename, default_config)
 
 
-if __name__ == "__main__":
-    stations = Station.from_json('./data/stations.json')
-    for station in stations:
-        filename_traveltimes = './data/traveltimes_from_' + station.id + '.json'
-        if os.path.exists(filename_traveltimes):
-            Station.travel_times_from_json(stations, './data/traveltimes_from_' + station.id + '.json')
-            filename = './data/contours_' + station.id + '.json'
-            default_config = ContourPlotConfig()
-            default_config.cycle_speed_kmh = 18.0
-            default_config.n_nearest = 30
-            create_contour_plot(stations, filename, default_config)
-        else:
-            print('Input file ' + filename_traveltimes + ' not found. Skipping station.')
+def create_contour_plot_json(stations, departure_station):
+    filename_traveltimes = './data/traveltimes_from_' + departure_station.id + '.json'
+    if os.path.exists(filename_traveltimes):
+        Station.travel_times_from_json(stations, './data/traveltimes_from_' + departure_station.id + '.json')
+        filename = './data/contours_' + departure_station.id + '.json'
+        if os.path.exists(filename):
+            print('Output file ' + filename + ' already exists. Will not override.')
+            return
+        default_config = ContourPlotConfig()
+        default_config.cycle_speed_kmh = 18.0
+        default_config.n_nearest = 15
+        create_contour_plot(stations, filename, default_config)
+    else:
+        print('Input file ' + filename_traveltimes + ' not found. Skipping station.')
 
-    # stations = []
-    # stations.append(Station('Utrecht Centraal', 5.11027765274048, 52.0888900756836, 100))
-    # stations.append(Station('Rotterdam Centraal', 4.46888875961304, 51.9249992370605, 500))
-    # stations.append(Station('Leeuwarden', 5.79222202301025, 53.1958351135254, 1))
-    # stations.append(Station('test', 5.6, 51.8, 1))
+        # stations = []
+        # stations.append(Station('Utrecht Centraal', 5.11027765274048, 52.0888900756836, 100))
+        # stations.append(Station('Rotterdam Centraal', 4.46888875961304, 51.9249992370605, 500))
+        # stations.append(Station('Leeuwarden', 5.79222202301025, 53.1958351135254, 1))
+        # stations.append(Station('test', 5.6, 51.8, 1))
+
+
+if __name__ == "__main__":
+    main()
