@@ -11,6 +11,7 @@ from scipy import ndimage
 import utilgeo
 from station import Station
 from contour_to_json import contour_to_json
+from logger import logger
 
 
 stations = Station.from_json('./data/stations.json')
@@ -71,7 +72,7 @@ def create_contour_plot(stations, filename, config):
         x, y, z = gps.lla2ecef([station.lat, station.lon, altitude])
         positions.append([x, y, z])
 
-    print('starting spatial interpolation')
+    logger.info('starting spatial interpolation')
 
     # tree to find nearest neighbors
     tree = KDTree(positions)
@@ -101,7 +102,7 @@ def create_contour_plot(stations, filename, config):
         process.join()
 
     end = timer()
-    print('finished spatial interpolation in ' + str(end - start) + ' [sec]')
+    logger.info('finished spatial interpolation in ' + str(end - start) + ' [sec]')
 
     # zoomFactor = 2
     # Z = ndimage.zoom(Z, zoomFactor)
@@ -120,11 +121,11 @@ def create_contour_plot(stations, filename, config):
 
 def interpolate_travel_time(q, position, kdtree, gps, latrange, lonrange, altitude, n_nearest, cycle_speed_kmh):
     # n_nearest: check N nearest stations as best start for cycle route
-    print('interpolate_travel_time')
+    logger.info('interpolate_travel_time')
     Z = numpy.zeros((int(latrange.shape[0]), int(lonrange.shape[0])))
     for i, lat in enumerate(latrange):
         if i % (len(latrange) / 10) == 0:
-            print(str(int(i / len(latrange) * 100)) + '%')
+            logger.debug(str(int(i / len(latrange) * 100)) + '%')
 
         for j, lon in enumerate(lonrange):
             x, y, z = gps.lla2ecef([lat, lon, altitude])
@@ -141,7 +142,7 @@ def interpolate_travel_time(q, position, kdtree, gps, latrange, lonrange, altitu
     data.index_begin = position
     data.Z = Z
     q.put(data)
-    print('end interpolate_travel_time')
+    logger.info('end interpolate_travel_time')
     return
 
 
@@ -164,14 +165,14 @@ def create_contour_plot_json(stations, departure_station):
         Station.travel_times_from_json(stations, './data/traveltimes_from_' + departure_station.id + '.json')
         filename = './data/contours_' + departure_station.id + '.json'
         if os.path.exists(filename):
-            print('Output file ' + filename + ' already exists. Will not override.')
+            logger.warning('Output file ' + filename + ' already exists. Will not override.')
             return
         default_config = ContourPlotConfig()
         default_config.cycle_speed_kmh = 18.0
         default_config.n_nearest = 15
         create_contour_plot(stations, filename, default_config)
     else:
-        print('Input file ' + filename_traveltimes + ' not found. Skipping station.')
+        logger.warning('Input file ' + filename_traveltimes + ' not found. Skipping station.')
 
         # stations = []
         # stations.append(Station('Utrecht Centraal', 5.11027765274048, 52.0888900756836, 100))

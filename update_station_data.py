@@ -1,10 +1,14 @@
 import json
 import os.path
+
 from ns_api import Station, NSAPI
+
 from local_settings import USERNAME, APIKEY
+from logger import logger
 
 
 def update_station_data():
+    logger.debug("start")
     nsapi = NSAPI(USERNAME, APIKEY)
     stations = nsapi.get_stations()
 

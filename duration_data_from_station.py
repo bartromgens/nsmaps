@@ -8,6 +8,7 @@ import ns_api
 
 from local_settings import USERNAME, APIKEY
 from station import Station, StationType
+from logger import logger
 
 
 def get_station_id(station_name, stations):
@@ -32,7 +33,7 @@ def create_trip_data_from_station(station_from):
 
     filename_out = './data/traveltimes_from_' + station_from.code + '.json'
     if os.path.exists(filename_out):
-        print('File ' + filename_out + ' already exists. Will not overwrite by default. Return.')
+        logger.warning('File ' + filename_out + ' already exists. Will not overwrite by default. Return.')
         return
 
     for station in stations:
@@ -45,11 +46,11 @@ def create_trip_data_from_station(station_from):
             trips = nsapi.get_trips(timestamp, station_from.code, via, station.code)
         except TypeError as error:
             # this is a bug in ns-api, should return empty trips in case there are no results
-            print('Error while trying to get trips for destination: ' + station.names['long'] + ', from: ' + station_from.names['long'])
+            logger.error('Error while trying to get trips for destination: ' + station.names['long'] + ', from: ' + station_from.names['long'])
             continue
         except requests.exceptions.HTTPError as error:
             # 500: Internal Server Error does always happen for some stations (example are Eijs-Wittem and Kerkrade-West)
-            print('HTTP Error while trying to get trips for destination: ' + station.names['long'] + ', from: ' + station_from.names['long'])
+            logger.error('HTTP Error while trying to get trips for destination: ' + station.names['long'] + ', from: ' + station_from.names['long'])
             continue
 
         if not trips:
@@ -62,7 +63,7 @@ def create_trip_data_from_station(station_from):
             if trip.travel_time_min < shortest_trip.travel_time_min:
                 shortest_trip = trip
 
-        print(shortest_trip.departure + ' - ' + shortest_trip.destination)
+        logger.info(shortest_trip.departure + ' - ' + shortest_trip.destination)
         data['stations'].append({'name': shortest_trip.destination,
                                  'id': get_station_id(shortest_trip.destination, stations),
                                  'travel_time_min': shortest_trip.travel_time_min,

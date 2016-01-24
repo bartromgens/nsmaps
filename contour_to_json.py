@@ -1,6 +1,8 @@
 import json
 import math
 
+from logger import logger
+
 
 def dotproduct(v1, v2):
     return sum((a * b) for a, b in zip(v1, v2))
@@ -53,6 +55,5 @@ def contour_to_json(contour, filename, min_angle=2):
         collections_json_f = {}
         collections_json_f[u"contours"] = collections_json
         fileout.write(json.dumps(collections_json_f))  # indent=2)
-        print(str(total_points_original))
-        print('total points: ' + str(total_points) + ', compression: ' + str(
+        logger.info('total points: ' + str(total_points) + ', compression: ' + str(
             int((1.0 - total_points / total_points_original) * 100)) + '%')
