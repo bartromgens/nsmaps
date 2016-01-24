@@ -1,9 +1,11 @@
-/env/*
-/env2/*
+env/*
+env2/*
+data/contours_*.json
+data/traveltimes_from_*.json
 
 *.pyc
 
-/.idea/*
+.idea/*
 
 local_settings.py
 *.sqlite
