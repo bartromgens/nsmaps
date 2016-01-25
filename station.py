@@ -14,7 +14,7 @@ class StationType(Enum):
 
 
 class Station(object):
-    def __init__(self, id, name, lon, lat, travel_time_min=-1.0):
+    def __init__(self, id, name, lon, lat, travel_time_min=None):
         self.id = id
         self.name = name
         self.lon = float(lon)
@@ -22,10 +22,10 @@ class Station(object):
         self.travel_time_min = travel_time_min
 
     def __str__(self):
-        return self.name + ' (' + str(self.lon) + ', ' + str(self.lat) + ')' + ', travel time: ' + str(self.travel_time_min)
+        return self.name + ' (' +  self.id + ')' + ', travel time: ' + str(self.travel_time_min)
 
     @staticmethod
-    def from_json(filename):
+    def from_json(filename='./data/stations.json'):
         stations_new = []
         with open(filename) as file:
             stations = json.load(file)['stations']
