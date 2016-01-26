@@ -30,10 +30,10 @@ class ContourData:
 
 class ContourPlotConfig(object):
     def __init__(self):
-        self.stepsize_deg = 0.01
+        self.stepsize_deg = 0.005
         self.n_processes = 4
         self.cycle_speed_kmh = 18.0
-        self.n_nearest = 15
+        self.n_nearest = 20
         self.lon_start = 3.0
         self.lat_start = 50.5
         self.delta_deg = 6
@@ -83,7 +83,7 @@ def create_contour_plot(stations, filename, config):
         begin = i * len(latrange)/config.n_processes
         end = (i+1)*len(latrange)/config.n_processes
         latrange_part = latrange[begin:end]
-        process = Process(target=interpolate_travel_time, args=(queue, i, tree, gps, latrange_part,
+        process = Process(target=interpolate_travel_time, args=(queue, i, stations, tree, gps, latrange_part,
                                                                 lonrange, altitude, config.n_nearest, config.cycle_speed_kmh))
         processes.append(process)
 
@@ -114,12 +114,12 @@ def create_contour_plot(stations, filename, config):
     levels = numpy.linspace(0, 200, num=config.n_contours)
     # contours = plt.contourf(lonrange, latrange, Z, levels=levels, cmap=plt.cm.plasma)
     contours = ax.contour(lonrange, latrange, Z, levels=levels, cmap=plt.cm.jet)
-    cbar = figure.colorbar(contours, format='%.1f')
-    plt.savefig('./data/contour_example.png', dpi=150)
+    # cbar = figure.colorbar(contours, format='%.1f')
+    # plt.savefig('./data/contour_example.png', dpi=150)
     contour_to_json(contours, filename, config.min_angle_between_segments)
 
 
-def interpolate_travel_time(q, position, kdtree, gps, latrange, lonrange, altitude, n_nearest, cycle_speed_kmh):
+def interpolate_travel_time(q, position, stations, kdtree, gps, latrange, lonrange, altitude, n_nearest, cycle_speed_kmh):
     # n_nearest: check N nearest stations as best start for cycle route
     logger.info('interpolate_travel_time')
     Z = numpy.zeros((int(latrange.shape[0]), int(lonrange.shape[0])))
@@ -132,7 +132,7 @@ def interpolate_travel_time(q, position, kdtree, gps, latrange, lonrange, altitu
             distances, indexes = kdtree.query([x, y, z], n_nearest)
             min_travel_time = sys.float_info.max
             for distance, index in zip(distances, indexes):
-                if stations[index].travel_time_min < 0.0:
+                if stations[index].travel_time_min is None:
                     continue
                 travel_time = stations[index].travel_time_min + distance / 1000.0 / cycle_speed_kmh * 60.0
                 if travel_time < min_travel_time:
