@@ -25,7 +25,7 @@ def main():
             fileout.write(json_data)
 
 
-def recreate_missing_destinations():
+def recreate_missing_destinations(dry_run):
     nsapi = ns_api.NSAPI(USERNAME, APIKEY)
     stations = nsapi.get_stations()
     ignore_station_ids = ['HRY', 'WTM', 'KRW', 'VMW', 'RTST', 'WIJ', 'SPV', 'SPH']
@@ -33,13 +33,15 @@ def recreate_missing_destinations():
         filename = './data/traveltimes_from_' + station.code + '.json'
         if not os.path.exists(filename):
             continue
+        # if station.code != "ZL":
+        #     continue
         stations_missing = get_missing_destinations(filename, stations)
         stations_missing_filtered = []
         for station_missing in stations_missing:
             if station_missing.id not in ignore_station_ids:
                 stations_missing_filtered.append(stations_missing)
-                logger.info('Missing station: ' + station_missing.name)
-        if stations_missing_filtered:
+                logger.info(station.names['long'] + ' has missing station: ' + station_missing.name)
+        if stations_missing_filtered and not dry_run:
             json_data = create_trip_data_from_station(station, stations)
             with open(filename, 'w') as fileout:
                 fileout.write(json_data)
@@ -71,6 +73,8 @@ def create_trip_data_from_station(station_from, stations):
             continue
         if station.code == station_from.code:
             continue
+        # if station.code != 'AMF':
+        #     continue
         trips = []
         try:
             trips = nsapi.get_trips(timestamp, station_from.code, via, station.code)
@@ -129,8 +133,9 @@ def get_missing_destinations(filename_json, stations):
 
 
 if __name__ == "__main__":
-    # recreate_missing_destinations()
-    main()
+    dry_run = False
+    recreate_missing_destinations(dry_run)
+    # main()
 
     # station_from_id = "UT"  # example: Utrecht Centraal
     # create_trip_data_from_station(station_from_id)
