@@ -285,3 +285,35 @@ ol.inherits(StationNameLabel, ol.control.Control);
 var current_station_control_label = new StationNameLabel()
 map.addControl(current_station_control_label);
 map.addControl(new ol.control.FullScreen());
+
+
+// Tooltip
+//$("#info").tooltip();
+
+var info = $('#info');
+
+var displayFeatureInfo = function(pixel) {
+  info.css({
+    left: pixel[0] + 'px',
+    top: (pixel[1] - 40) + 'px'
+  });
+
+  var feature = map.forEachFeatureAtPixel(pixel, function(feature, layer) {
+    return feature;
+  });
+
+  if (feature) {
+//    info.attr('title', feature.get('name'));
+    info.text(feature.get('name'));
+  } else {
+    // TODO: hide the tooltip
+  }
+};
+
+map.on('pointermove', function(evt) {
+  if (evt.dragging) {
+    // TODO: hide the tooltip
+    return;
+  }
+  displayFeatureInfo(map.getEventPixel(evt.originalEvent));
+});
