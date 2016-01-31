@@ -288,7 +288,6 @@ map.addControl(new ol.control.FullScreen());
 
 
 // Tooltip
-//$("#info").tooltip();
 
 var info = $('#info');
 
@@ -303,10 +302,10 @@ var displayFeatureInfo = function(pixel) {
   });
 
   if (feature) {
-//    info.attr('title', feature.get('name'));
     info.text(feature.get('name'));
+    info.show();
   } else {
-    // TODO: hide the tooltip
+    info.hide();
   }
 };
 
