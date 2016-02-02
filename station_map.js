@@ -252,7 +252,7 @@ var select = new ol.interaction.Select({
 select.on('select', function(evt) {
     if (!evt.selected[0])
     {
-        retun;
+        return;
     }
     current_station_control_label.element.children[0].innerHTML = evt.selected[0].get('name');
     var station_id = evt.selected[0].get('id');
