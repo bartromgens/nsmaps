@@ -9,14 +9,15 @@ $.ajaxSetup({beforeSend: function(xhr){
 });
 
 
-var typeScales = {'stoptreinstation': 0.5,
-                  'megastation': 1.1,
-                  'knooppuntIntercitystation': 0.9,
-                  'sneltreinstation': 0.8,
-                  'intercitystation': 0.9,
-                  'knooppuntStoptreinstation': 0.6,
-                  'facultatiefStation': 0.4,
-                  'knooppuntSneltreinstation': 0.8
+var typeScales = {
+                  'megastation': 9,
+                  'intercitystation': 7,
+                  'knooppuntIntercitystation': 7,
+                  'sneltreinstation': 5,
+                  'knooppuntSneltreinstation': 5,
+                  'knooppuntStoptreinstation': 4,
+                  'stoptreinstation': 4,
+                  'facultatiefStation': 4,
                   };
 
 var map = new ol.Map({target: 'map'});
@@ -146,15 +147,17 @@ function getStationStyle(feature, circleColor) {
     //}));
 
     var strokeColor = 'black';
+    circleColor = 'yellow'
     if (feature.get('selectable'))
     {
-        strokeColor = 'red';
+        strokeColor = 'black';
+        circleColor = '#2293ff'
     }
 
     var circleStyle = new ol.style.Circle(({
         fill: new ol.style.Fill({color: circleColor}),
         stroke: new ol.style.Stroke({color: strokeColor, width: 3}),
-        radius: typeScales[feature.get('type')] * 9
+        radius: typeScales[feature.get('type')]
     }));
 
     var textStyle = new ol.style.Text({
@@ -166,7 +169,7 @@ function getStationStyle(feature, circleColor) {
 
     return new ol.style.Style({
         image: circleStyle,
-        text: textStyle
+//        text: textStyle
     });
 }
 
