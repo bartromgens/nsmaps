@@ -1,5 +1,18 @@
-.station-name
-{
+#map {
+    height: 80vh;
+    width: 100%;
+}
+
+.station-name {
     top: 10px;
     left: 3em;
+}
+
+#info {
+    position: absolute;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    padding: 5px;
+    z-index: 100;
 }

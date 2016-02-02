@@ -9,14 +9,15 @@ $.ajaxSetup({beforeSend: function(xhr){
 });
 
 
-var typeScales = {'stoptreinstation': 0.5,
-                  'megastation': 1.1,
-                  'knooppuntIntercitystation': 0.9,
-                  'sneltreinstation': 0.8,
-                  'intercitystation': 0.9,
-                  'knooppuntStoptreinstation': 0.6,
-                  'facultatiefStation': 0.4,
-                  'knooppuntSneltreinstation': 0.8
+var typeScales = {
+                  'megastation': 9,
+                  'intercitystation': 7,
+                  'knooppuntIntercitystation': 7,
+                  'sneltreinstation': 5,
+                  'knooppuntSneltreinstation': 5,
+                  'knooppuntStoptreinstation': 4,
+                  'stoptreinstation': 4,
+                  'facultatiefStation': 4,
                   };
 
 var map = new ol.Map({target: 'map'});
@@ -146,15 +147,17 @@ function getStationStyle(feature, circleColor) {
     //}));
 
     var strokeColor = 'black';
+    circleColor = 'yellow'
     if (feature.get('selectable'))
     {
-        strokeColor = 'red';
+        strokeColor = 'black';
+        circleColor = '#2293ff'
     }
 
     var circleStyle = new ol.style.Circle(({
         fill: new ol.style.Fill({color: circleColor}),
         stroke: new ol.style.Stroke({color: strokeColor, width: 3}),
-        radius: typeScales[feature.get('type')] * 9
+        radius: typeScales[feature.get('type')]
     }));
 
     var textStyle = new ol.style.Text({
@@ -166,7 +169,7 @@ function getStationStyle(feature, circleColor) {
 
     return new ol.style.Style({
         image: circleStyle,
-        text: textStyle
+//        text: textStyle
     });
 }
 
@@ -202,9 +205,9 @@ function createContoursLayer(contours, name) {
 
             var color = [paths[j].linecolor[0]*255, paths[j].linecolor[1]*255, paths[j].linecolor[2]*255, 0.8];
             var lineWidth = 3;
-            if (k % 5 == 1)
+            if ((k+1) % 6 == 0)
             {
-                lineWidth = 7;
+                lineWidth = 8;
             }
 
             var lineStyle = new ol.style.Style({
@@ -218,7 +221,7 @@ function createContoursLayer(contours, name) {
                 source: new ol.source.Vector({
                     features: [new ol.Feature({
                         geometry: new ol.geom.LineString(markers, 'XY'),
-                        name: 'Line'
+                        name: paths[j].label
                     })]
                 }),
                 style: lineStyle
@@ -249,7 +252,7 @@ var select = new ol.interaction.Select({
 select.on('select', function(evt) {
     if (!evt.selected[0])
     {
-        retun;
+        return;
     }
     current_station_control_label.element.children[0].innerHTML = evt.selected[0].get('name');
     var station_id = evt.selected[0].get('id');
@@ -285,3 +288,34 @@ ol.inherits(StationNameLabel, ol.control.Control);
 var current_station_control_label = new StationNameLabel()
 map.addControl(current_station_control_label);
 map.addControl(new ol.control.FullScreen());
+
+
+// Tooltip
+
+var info = $('#info');
+
+var displayFeatureInfo = function(pixel) {
+  info.css({
+    left: pixel[0] + 'px',
+    top: (pixel[1] - 40) + 'px'
+  });
+
+  var feature = map.forEachFeatureAtPixel(pixel, function(feature, layer) {
+    return feature;
+  });
+
+  if (feature) {
+    info.text(feature.get('name'));
+    info.show();
+  } else {
+    info.hide();
+  }
+};
+
+map.on('pointermove', function(evt) {
+  if (evt.dragging) {
+    // TODO: hide the tooltip
+    return;
+  }
+  displayFeatureInfo(map.getEventPixel(evt.originalEvent));
+});
