@@ -218,7 +218,7 @@ function createContoursLayer(contours, name) {
                 source: new ol.source.Vector({
                     features: [new ol.Feature({
                         geometry: new ol.geom.LineString(markers, 'XY'),
-                        name: 'Line'
+                        name: paths[j].label
                     })]
                 }),
                 style: lineStyle

@@ -16,13 +16,15 @@ def angle(v1, v2):
     return math.acos(dotproduct(v1, v2) / (length(v1) * length(v2)))
 
 
-def contour_to_json(contour, filename, min_angle=2):
+def contour_to_json(contour, filename, contour_labels, min_angle=2):
     # min_angle: only create a new line segment if the angle is larger than this angle, to compress output
     collections = contour.collections
     with open(filename, 'w') as fileout:
         total_points = 0
         total_points_original = 0
         collections_json = []
+        contour_index = 0
+        assert len(contour_labels) == len(collections)
         for collection in collections:
             paths = collection.get_paths()
             color = collection.get_edgecolor()
@@ -48,12 +50,12 @@ def contour_to_json(contour, filename, min_angle=2):
 
                 # x = v[:,0].tolist()
                 # y = v[:,1].tolist()
-                paths_json.append({u"x": x, u"y": y, u"linecolor": color[0].tolist()})
+                paths_json.append({u"x": x, u"y": y, u"linecolor": color[0].tolist(), u"label": str(int(contour_labels[contour_index])) + ' min'})
+            contour_index += 1
 
             if paths_json:
                 collections_json.append({u"paths": paths_json})
         collections_json_f = {}
         collections_json_f[u"contours"] = collections_json
         fileout.write(json.dumps(collections_json_f))  # indent=2)
-        logger.info('total points: ' + str(total_points) + ', compression: ' + str(
-            int((1.0 - total_points / total_points_original) * 100)) + '%')
+        logger.info('total points: ' + str(total_points) + ', compression: ' + str(int((1.0 - total_points / total_points_original) * 100)) + '%')

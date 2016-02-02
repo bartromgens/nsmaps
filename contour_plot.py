@@ -116,7 +116,7 @@ def create_contour_plot(stations, filename, config):
     contours = ax.contour(lonrange, latrange, Z, levels=levels, cmap=plt.cm.jet)
     # cbar = figure.colorbar(contours, format='%.1f')
     # plt.savefig('./data/contour_example.png', dpi=150)
-    contour_to_json(contours, filename, config.min_angle_between_segments)
+    contour_to_json(contours, filename, levels, config.min_angle_between_segments)
 
 
 def interpolate_travel_time(q, position, stations, kdtree, gps, latrange, lonrange, altitude, n_nearest, cycle_speed_kmh):
@@ -149,14 +149,14 @@ def interpolate_travel_time(q, position, stations, kdtree, gps, latrange, lonran
 def test():
     departure_station_name = 'Utrecht Centraal'
     stations = Station.from_json('./data/stations.json')
-    departure_station = Station.find_station(departure_station_name, stations)
+    departure_station = Station.find_station(stations, departure_station_name)
     Station.travel_times_from_json(stations, './data/traveltimes_from_' + departure_station.id + '.json')
     filename = './data/contours_' + departure_station.id + '.json'
     default_config = ContourPlotConfig()
     test_config = TestConfig()
     default_config.cycle_speed_kmh = 18.0
     default_config.n_nearest = 30
-    create_contour_plot(stations, filename, default_config)
+    create_contour_plot(stations, filename, test_config)
 
 
 def create_contour_plot_json(stations, departure_station):
@@ -169,7 +169,6 @@ def create_contour_plot_json(stations, departure_station):
             return
         default_config = ContourPlotConfig()
         default_config.cycle_speed_kmh = 18.0
-        default_config.n_nearest = 15
         create_contour_plot(stations, filename, default_config)
     else:
         logger.warning('Input file ' + filename_traveltimes + ' not found. Skipping station.')
@@ -183,3 +182,4 @@ def create_contour_plot_json(stations, departure_station):
 
 if __name__ == "__main__":
     main()
+    # test()
