@@ -314,7 +314,7 @@ var displayFeatureInfo = function(pixel) {
 
 map.on('pointermove', function(evt) {
   if (evt.dragging) {
-    // TODO: hide the tooltip
+    info.hide();
     return;
   }
   displayFeatureInfo(map.getEventPixel(evt.originalEvent));
