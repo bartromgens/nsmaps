@@ -254,14 +254,16 @@ select.on('select', function(evt) {
     {
         return;
     }
-    current_station_control_label.element.children[0].innerHTML = evt.selected[0].get('name');
-    var station_id = evt.selected[0].get('id');
     for (var i = 0; i < contourLayers.length; ++i)
     {
         var removedLayer = map.removeLayer(contourLayers[i]);
     }
     contourLayers.length = 0;
+    var station_id = evt.selected[0].get('id');
+    var selected_station_name = evt.selected[0].get('name')
+    current_station_control_label.setText("Loading...");
     addContours(station_id);
+    current_station_control_label.setText(selected_station_name);
 });
 
 map.addInteraction(select);
@@ -271,16 +273,20 @@ map.addInteraction(select);
 StationNameLabel = function(opt_options) {
   var options = opt_options || {};
 
-  var button = document.createElement('a');
-  button.innerHTML = 'Click on a station';
+  var station_label = document.createElement('a');
+  station_label.innerHTML = 'Click on a station';
 
   var element = document.createElement('div');
   element.className = 'station-name ol-control';
-  element.appendChild(button);
+  element.appendChild(station_label);
 
   ol.control.Control.call(this, {
     element: element
   });
+
+  this.setText = function (text) {
+    station_label.innerHTML = text;
+  }
 
 };
 ol.inherits(StationNameLabel, ol.control.Control);
