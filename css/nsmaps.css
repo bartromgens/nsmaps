@@ -1,5 +1,17 @@
+html {
+    height:100%;
+}
+
+body {
+    height:100%;
+}
+
+#map-container {
+    height:80%;
+}
+
 #map {
-    height: 80vh;
+    height: 100%;
     width: 100%;
 }
 
