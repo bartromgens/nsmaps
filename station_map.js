@@ -202,9 +202,9 @@ function createContoursLayer(contours, name) {
 
             var color = [paths[j].linecolor[0]*255, paths[j].linecolor[1]*255, paths[j].linecolor[2]*255, 0.8];
             var lineWidth = 3;
-            if (k % 5 == 1)
+            if ((k+1) % 6 == 0)
             {
-                lineWidth = 7;
+                lineWidth = 8;
             }
 
             var lineStyle = new ol.style.Style({
