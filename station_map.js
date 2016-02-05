@@ -41,40 +41,8 @@ $.getJSON("./data/stations.json", function(json) {
 
     createStationLayer(typeScales, json.stations);
 
-    //addTravelTimeColoring(station_id);
     addContours("UT");  // initial contours of Utrecht Centraal
 });
-
-
-function addTravelTimeColoring(station_id)
-{
-    $.getJSON("./data/traveltimes_from_" + station_id + ".json", function(json) {
-        var stations = json.stations;
-        for (var i in stations)
-        {
-            var station = stations[i];
-            for (var j in stationFeatures)
-            {
-                var feature = stationFeatures[j];
-                if (station.name == feature.get('name'))
-                {
-                    var score = station.travel_time_min*4;
-                    var red = 0;
-                    var green = 255 - score;
-                    var blue = 0;
-                    if (score > 255)
-                    {
-                        green = 0;
-                        red = score-255;
-                    }
-                    var color = jQuery.Color( red, green, blue );
-                    feature.set('text', station.travel_time_planned);
-                    feature.setStyle( getStationStyle(feature, color.toHexString()) );
-                }
-            }
-        }
-    });
-}
 
 
 function addContours(station_id)
