@@ -42,7 +42,7 @@ $.getJSON("./data/stations.json", function(json) {
     createStationLayer(typeScales, json.stations);
 
     //addTravelTimeColoring(station_id);
-    //addContours("Utrecht Centraal");
+    addContours("UT");  // initial contours of Utrecht Centraal
 });
 
 
