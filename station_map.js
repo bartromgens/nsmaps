@@ -302,8 +302,8 @@ var info = $('#info');
 
 var displayFeatureInfo = function(pixel) {
   info.css({
-    left: pixel[0] + 'px',
-    top: (pixel[1] - 40) + 'px'
+    left: (pixel[0] + 10) + 'px',
+    top: (pixel[1] - 50) + 'px'
   });
 
   var feature = map.forEachFeatureAtPixel(pixel, function(feature, layer) {

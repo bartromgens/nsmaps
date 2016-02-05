@@ -7,6 +7,7 @@ body {
 }
 
 #map-container {
+    position: relative;
     height:80%;
 }
 
@@ -25,6 +26,6 @@ body {
     border-radius: 5px;
     background-color: black;
     color: white;
-    padding: 5px;
-    z-index: 100;
+    padding: 7px;
+    z-index: 1;
 }
