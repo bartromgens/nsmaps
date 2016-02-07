@@ -4,6 +4,8 @@ import unittest
 import hashlib
 
 import numpy
+import matplotlib as mpl
+mpl.use('Agg')  # create plots without running X-server
 import matplotlib.pyplot as plt
 import matplotlib.mlab as mlab
 
