@@ -17,7 +17,7 @@ before_install:
   - conda update --yes conda
 install:
   - conda install --yes python=$TRAVIS_PYTHON_VERSION pip numpy scipy matplotlib
-  - pip install --ignore-installed -r requirements.txt
+  - pip install --ignore-installed -r requirements_travis.txt
 script: python test.py
 notifications:
   email: false
