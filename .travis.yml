@@ -1,17 +1,23 @@
-language: python
+cache: apt
 sudo: false
+language: python
 python:
   - "2.7"
-  - "3.4"
   - "3.5"
-# command to install dependencies
 addons:
   apt:
     packages:
     - libblas-dev
     - liblapack-dev
     - gfortran
-install: "pip install -r requirements.txt"
+before_install:
+  - wget http://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh -O miniconda.sh
+  - bash miniconda.sh -b -p $HOME/miniconda
+  - export PATH="$HOME/miniconda/bin:$PATH"
+  - conda update --yes conda
+install:
+  - conda install --yes python=$TRAVIS_PYTHON_VERSION pip numpy scipy matplotlib
+  - pip install --ignore-installed -r requirements.txt
 # command to run tests
 script: python test.py
 # notifications
