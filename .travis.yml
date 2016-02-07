@@ -2,8 +2,8 @@ cache: apt
 sudo: false
 language: python
 python:
-  - "2.7"
-  - "3.5"
+- '2.7'
+- '3.5'
 addons:
   apt:
     packages:
@@ -11,13 +11,15 @@ addons:
     - liblapack-dev
     - gfortran
 before_install:
-  - wget http://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh -O miniconda.sh
-  - bash miniconda.sh -b -p $HOME/miniconda
-  - export PATH="$HOME/miniconda/bin:$PATH"
-  - conda update --yes conda
+- openssl aes-256-cbc -K $encrypted_cd97de21217c_key -iv $encrypted_cd97de21217c_iv
+  -in local_settings.py.enc -out local_settings.py -d
+- wget http://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh -O miniconda.sh
+- bash miniconda.sh -b -p $HOME/miniconda
+- export PATH="$HOME/miniconda/bin:$PATH"
+- conda update --yes conda
 install:
-  - conda install --yes python=$TRAVIS_PYTHON_VERSION pip numpy scipy matplotlib
-  - pip install -r requirements_travis.txt
+- conda install --yes python=$TRAVIS_PYTHON_VERSION pip numpy scipy matplotlib
+- pip install -r requirements_travis.txt
 script: python test.py
 notifications:
   email: false
