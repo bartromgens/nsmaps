@@ -5,7 +5,7 @@ Generate maps visualising Dutch railways (NS) travel information.
 
 Uses [nsapi](https://github.com/aquatix/ns-api) to get the data, and [OpenLayers 3](https://github.com/openlayers/ol3) to create the maps. 
 
-Note: This is a work in progress!
+Python 3.4+
 
 ### Demo
 
