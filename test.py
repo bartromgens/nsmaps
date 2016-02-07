@@ -65,7 +65,9 @@ class TestContourToJSON(unittest.TestCase):
         cls.contour_plot = ax.contour(X, Y, Z, levels=cls.levels, cmap=plt.cm.jet)
 
     def test_create_json(self):
-        contour_to_json(self.contour_plot, self.filename_out, self.levels, 10)
+        min_angle = 10
+        ndigits = 5
+        contour_to_json(self.contour_plot, self.filename_out, self.levels, min_angle, ndigits)
         self.assertTrue(os.path.exists(self.filename_out))
         with open(self.filename_out, 'rb') as jsonfile:
             checksum = hashlib.md5(jsonfile.read()).hexdigest()

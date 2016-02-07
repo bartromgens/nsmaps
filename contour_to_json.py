@@ -16,9 +16,8 @@ def angle(v1, v2):
     return math.acos(dotproduct(v1, v2) / (length(v1) * length(v2)))
 
 
-def contour_to_json(contour, filename, contour_labels, min_angle=2):
+def contour_to_json(contour, filename, contour_labels, min_angle=2, ndigits=5):
     # min_angle: only create a new line segment if the angle is larger than this angle, to compress output
-    ndigits = 5
     collections = contour.collections
     with open(filename, 'w') as fileout:
         total_points = 0

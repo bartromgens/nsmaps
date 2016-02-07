@@ -116,7 +116,8 @@ def create_contour_plot(stations, filename, config):
     contours = ax.contour(lonrange, latrange, Z, levels=levels, cmap=plt.cm.jet)
     # cbar = figure.colorbar(contours, format='%.1f')
     # plt.savefig('./data/contour_example.png', dpi=150)
-    contour_to_json(contours, filename, levels, config.min_angle_between_segments)
+    ndigits = len(str(int(1.0/config.stepsize_deg)))+1
+    contour_to_json(contours, filename, levels, config.min_angle_between_segments, ndigits)
 
 
 def interpolate_travel_time(q, position, stations, kdtree, gps, latrange, lonrange, altitude, n_nearest, cycle_speed_kmh):
