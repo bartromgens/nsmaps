@@ -1,5 +1,9 @@
 import unittest
 
+import numpy
+import matplotlib.pyplot as plt
+from scipy.spatial import KDTree
+
 import ns_api
 
 from local_settings import USERNAME, APIKEY

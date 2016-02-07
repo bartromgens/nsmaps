@@ -17,8 +17,6 @@ before_install:
   - conda update --yes conda
 install:
   - conda install --yes python=$TRAVIS_PYTHON_VERSION pip numpy scipy matplotlib
-# command to run tests
 script: python test.py
-# notifications
 notifications:
   email: false
