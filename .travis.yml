@@ -20,6 +20,6 @@ before_install:
 install:
 - conda install --yes python=$TRAVIS_PYTHON_VERSION pip numpy scipy matplotlib
 - pip install -r requirements_travis.txt
-script: python test.py
+script: python nsmaps/test.py
 notifications:
   email: false
