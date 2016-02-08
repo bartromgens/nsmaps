@@ -47,7 +47,7 @@ class TestContourToJSON(unittest.TestCase):
     checksum = '39d2ff2f5cbc9a768e816109f41b3288'
 
     @classmethod
-    def setUpClass(cls, ):
+    def setUpClass(cls):
         if os.path.exists(cls.filename_out):
             os.remove(cls.filename_out)  # remove file from any previous tests
         # taken from http://matplotlib.org/examples/pylab_examples/contour_demo.html
@@ -63,6 +63,11 @@ class TestContourToJSON(unittest.TestCase):
         Z = 10.0 * (Z2 - Z1)
         cls.levels = numpy.linspace(0, 100, num=10)
         cls.contour_plot = ax.contour(X, Y, Z, levels=cls.levels, cmap=plt.cm.jet)
+
+    @classmethod
+    def tearDownClass(cls):
+        if os.path.exists(cls.filename_out):
+            os.remove(cls.filename_out)  # remove file from any previous tests
 
     def test_create_json(self):
         min_angle = 10
