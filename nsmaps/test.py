@@ -13,8 +13,6 @@ import ns_api
 
 from local_settings import USERNAME, APIKEY
 from contour_to_json import contour_to_json
-import contour_plot
-from logger import logger
 
 
 class TestNSApi(unittest.TestCase):
@@ -22,6 +20,10 @@ class TestNSApi(unittest.TestCase):
 
     def setUp(self):
         self.nsapi = ns_api.NSAPI(USERNAME, APIKEY)
+
+    def test_get_station_info(self):
+        stations = self.nsapi.get_stations()
+        self.assertEqual(len(stations), 620)
 
     # def test_trip_stop_without(self):
     #     """ Tests https://github.com/aquatix/ns-api/issues/14 """
@@ -59,7 +61,6 @@ class TestContourToJSON(unittest.TestCase):
         X, Y = numpy.meshgrid(x, y)
         Z1 = mlab.bivariate_normal(X, Y, 1.0, 1.0, 0.0, 0.0)
         Z2 = mlab.bivariate_normal(X, Y, 1.5, 0.5, 1, 1)
-        # difference of Gaussians
         Z = 10.0 * (Z2 - Z1)
         cls.levels = numpy.linspace(0, 100, num=10)
         cls.contour_plot = ax.contour(X, Y, Z, levels=cls.levels, cmap=plt.cm.jet)
