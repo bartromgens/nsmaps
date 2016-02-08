@@ -1,6 +1,6 @@
 ## nsmaps
 
-[![Build Status](https://travis-ci.org/bartromgens/nsmaps.svg?branch=master)](https://travis-ci.org/bartromgens/nsmaps) [![Dependency Status](https://gemnasium.com/bartromgens/nsmaps.svg)](https://gemnasium.com/bartromgens/ns-maps)  
+[![Build Status](https://travis-ci.org/bartromgens/nsmaps.svg?branch=master)](https://travis-ci.org/bartromgens/nsmaps) [![Dependency Status](https://gemnasium.com/bartromgens/nsmaps.svg)](https://gemnasium.com/bartromgens/nsmaps)  
 Generate maps visualising Dutch railways (NS) travel information. 
 
 Uses [nsapi](https://github.com/aquatix/ns-api) to get the data, and [OpenLayers 3](https://github.com/openlayers/ol3) to create the maps. 
@@ -9,7 +9,7 @@ Python 3.4+
 
 ### Demo
 
-http://bartromgens.github.io/ns-maps/
+[nsmaps.romgens.com](http://nsmaps.romgens.com)
 
 ### Maps
 
