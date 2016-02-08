@@ -13,6 +13,7 @@ import ns_api
 
 from local_settings import USERNAME, APIKEY
 from contour_to_json import contour_to_json
+from station import update_station_data
 
 
 class TestNSApi(unittest.TestCase):
@@ -41,6 +42,16 @@ class TestNSApi(unittest.TestCase):
     #     destination = "Amsterdam Van der Madeweg"
     #     trips = self.nsapi.get_trips(timestamp, start, via, destination)
     #     self.assertEqual(trips, None)
+
+
+class TestStationData(unittest.TestCase):
+    """ Test case for nsmaps station data """
+
+    def test_update_stations(self):
+        fileout = 'test_stations.json'
+        update_station_data(fileout)
+        self.assertTrue(os.path.exists(fileout))
+        os.remove(fileout)
 
 
 class TestContourToJSON(unittest.TestCase):
