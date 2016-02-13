@@ -1,7 +1,7 @@
 import json
 import math
 
-from logger import logger
+from nsmaps.logger import logger
 
 
 def dotproduct(v1, v2):

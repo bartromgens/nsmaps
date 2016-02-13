@@ -4,8 +4,8 @@ import json
 
 from ns_api import NSAPI
 
-from local_settings import USERNAME, APIKEY
-from logger import logger
+from nsmaps.local_settings import USERNAME, APIKEY
+from nsmaps.logger import logger
 
 
 class StationType(Enum):
@@ -31,7 +31,7 @@ class Station(object):
         return self.name + ' (' +  self.id + ')' + ', travel time: ' + str(self.travel_time_min)
 
     @staticmethod
-    def from_json(filename='./data/stations.json'):
+    def from_json(filename):
         stations_new = []
         with open(filename) as file:
             stations = json.load(file)['stations']
@@ -57,7 +57,7 @@ class Station(object):
         return None
 
 
-def update_station_data(filename_out='stations.json'):
+def update_station_data(data_dir, filename_out):
     nsapi = NSAPI(USERNAME, APIKEY)
     stations = nsapi.get_stations()
 
@@ -65,15 +65,15 @@ def update_station_data(filename_out='stations.json'):
     for station in stations:
         # if station.country == "NL" and "Utrecht" in station.names['long']:
         if station.country == "NL":
-            travel_times_available = os.path.exists('./data/traveltimes_from_' + station.code + '.json')
-            contour_avaiable = os.path.exists('./data/contours_' + station.code + '.json')
+            travel_times_available = os.path.exists(os.path.join(data_dir, 'traveltimes_from_' + station.code + '.json'))
+            contour_available = os.path.exists(os.path.join(data_dir, 'contours_' + station.code + '.json'))
             data['stations'].append({'names': station.names,
                                      'id': station.code,
                                      'lon': station.lon,
                                      'lat': station.lat,
                                      'type': station.stationtype,
-                                     'travel_times_available': travel_times_available and contour_avaiable})
+                                     'travel_times_available': travel_times_available and contour_available})
 
     json_data = json.dumps(data, indent=4, sort_keys=True, ensure_ascii=False)
-    with open(filename_out, 'w') as fileout:
+    with open(os.path.join(data_dir, filename_out), 'w') as fileout:
         fileout.write(json_data)

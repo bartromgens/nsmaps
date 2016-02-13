@@ -6,9 +6,9 @@ import os
 import requests
 import ns_api
 
-from local_settings import USERNAME, APIKEY
-from station import Station, StationType
-from logger import logger
+from nsmaps.local_settings import USERNAME, APIKEY
+from nsmaps.station import Station, StationType
+from nsmaps.logger import logger
 
 
 def main():

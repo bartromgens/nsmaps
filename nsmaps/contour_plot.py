@@ -6,20 +6,11 @@ from multiprocessing import Process, Queue
 import numpy
 import matplotlib.pyplot as plt
 from scipy.spatial import KDTree
-from scipy import ndimage
 
-import utilgeo
-from station import Station
-from contour_to_json import contour_to_json
-from logger import logger
-
-
-stations = Station.from_json('./data/stations.json')
-
-
-def main():
-    for station in stations:
-        create_contour_plot_json(stations, station)
+import nsmaps.utilgeo
+from nsmaps.station import Station
+from nsmaps.contour_to_json import contour_to_json
+from nsmaps.logger import logger
 
 
 class ContourData:
@@ -57,7 +48,17 @@ class TestConfig(ContourPlotConfig):
         self.min_angle_between_segments = 4
 
 
-def create_contour_plot(stations, filename, config):
+def create_contour_plot(departure_station, stations, config, data_dir, filepath):
+    filepath_traveltimes = os.path.join(data_dir, 'traveltimes_from_' + departure_station.id + '.json')
+    if os.path.exists(filepath_traveltimes):
+        Station.travel_times_from_json(stations, filepath_traveltimes)
+        if os.path.exists(filepath):
+            logger.warning('Output file ' + filepath + ' already exists. Will not override.')
+            return
+    else:
+        logger.warning('Input file ' + filepath_traveltimes + ' not found. Skipping station.')
+
+
     start = timer()
     numpy.set_printoptions(3, threshold=100, suppress=True)  # .3f
 
@@ -65,7 +66,7 @@ def create_contour_plot(stations, filename, config):
     lonrange = numpy.arange(config.lon_start, config.lon_end, config.stepsize_deg)
     latrange = numpy.arange(config.lat_start, config.lat_end, config.stepsize_deg / 2.0)
     Z = numpy.zeros((int(lonrange.shape[0]), int(latrange.shape[0])))
-    gps = utilgeo.GPS()
+    gps = nsmaps.utilgeo.GPS()
 
     positions = []
     for station in stations:
@@ -117,7 +118,7 @@ def create_contour_plot(stations, filename, config):
     # cbar = figure.colorbar(contours, format='%.1f')
     # plt.savefig('./data/contour_example.png', dpi=150)
     ndigits = len(str(int(1.0/config.stepsize_deg)))+1
-    contour_to_json(contours, filename, levels, config.min_angle_between_segments, ndigits)
+    contour_to_json(contours, filepath, levels, config.min_angle_between_segments, ndigits)
 
 
 def interpolate_travel_time(q, position, stations, kdtree, gps, latrange, lonrange, altitude, n_nearest, cycle_speed_kmh):
@@ -145,42 +146,3 @@ def interpolate_travel_time(q, position, stations, kdtree, gps, latrange, lonran
     q.put(data)
     logger.info('end interpolate_travel_time')
     return
-
-
-def test():
-    departure_station_name = 'Utrecht Centraal'
-    stations = Station.from_json('./data/stations.json')
-    departure_station = Station.find_station(stations, departure_station_name)
-    Station.travel_times_from_json(stations, './data/traveltimes_from_' + departure_station.id + '.json')
-    filename = './data/contours_' + departure_station.id + '.json'
-    default_config = ContourPlotConfig()
-    test_config = TestConfig()
-    default_config.cycle_speed_kmh = 18.0
-    default_config.n_nearest = 30
-    create_contour_plot(stations, filename, test_config)
-
-
-def create_contour_plot_json(stations, departure_station):
-    filename_traveltimes = './data/traveltimes_from_' + departure_station.id + '.json'
-    if os.path.exists(filename_traveltimes):
-        Station.travel_times_from_json(stations, './data/traveltimes_from_' + departure_station.id + '.json')
-        filename = './data/contours_' + departure_station.id + '.json'
-        if os.path.exists(filename):
-            logger.warning('Output file ' + filename + ' already exists. Will not override.')
-            return
-        default_config = ContourPlotConfig()
-        default_config.cycle_speed_kmh = 18.0
-        create_contour_plot(stations, filename, default_config)
-    else:
-        logger.warning('Input file ' + filename_traveltimes + ' not found. Skipping station.')
-
-        # stations = []
-        # stations.append(Station('Utrecht Centraal', 5.11027765274048, 52.0888900756836, 100))
-        # stations.append(Station('Rotterdam Centraal', 4.46888875961304, 51.9249992370605, 500))
-        # stations.append(Station('Leeuwarden', 5.79222202301025, 53.1958351135254, 1))
-        # stations.append(Station('test', 5.6, 51.8, 1))
-
-
-if __name__ == "__main__":
-    main()
-    # test()

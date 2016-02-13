@@ -1,7 +1,7 @@
 env/*
 env2/*
-data/contours_*.json
-data/traveltimes_from_*.json
+website/data/contours_*.json
+website/data/traveltimes_from_*.json
 
 *.pyc
 
