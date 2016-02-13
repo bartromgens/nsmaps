@@ -11,31 +11,28 @@ from nsmaps.station import Station, StationType
 from nsmaps.logger import logger
 
 
-def main():
+def create_traveltimes_data(stations_from, data_dir):
     nsapi = ns_api.NSAPI(USERNAME, APIKEY)
     stations = nsapi.get_stations()
-    major_stations = get_major_stations(stations)
-    for major_station in major_stations:
-        filename_out = './data/traveltimes_from_' + major_station.code + '.json'
+    for station_from in stations_from:
+        filename_out = os.path.join(data_dir, 'traveltimes_from_' + station_from.code + '.json')
         if os.path.exists(filename_out):
-            logger.warning('File ' + filename_out + ' already exists. Will not overwrite by default. Return.')
+            logger.warning('File ' + filename_out + ' already exists. Will not overwrite. Return.')
             continue
-        json_data = create_trip_data_from_station(major_station, stations)
+        json_data = create_trip_data_from_station(station_from, stations)
         with open(filename_out, 'w') as fileout:
             fileout.write(json_data)
 
 
-def recreate_missing_destinations(dry_run):
+def recreate_missing_destinations(data_dir, dry_run):
     nsapi = ns_api.NSAPI(USERNAME, APIKEY)
     stations = nsapi.get_stations()
     ignore_station_ids = ['HRY', 'WTM', 'KRW', 'VMW', 'RTST', 'WIJ', 'SPV', 'SPH']
     for station in stations:
-        filename = './data/traveltimes_from_' + station.code + '.json'
+        filename = os.path.join(data_dir, 'traveltimes_from_' + station.code + '.json')
         if not os.path.exists(filename):
             continue
-        # if station.code != "ZL":
-        #     continue
-        stations_missing = get_missing_destinations(filename, stations)
+        stations_missing = get_missing_destinations(filename, stations, data_dir)
         stations_missing_filtered = []
         for station_missing in stations_missing:
             if station_missing.id not in ignore_station_ids:
@@ -122,8 +119,8 @@ def get_major_stations(stations):
     return major_stations
 
 
-def get_missing_destinations(filename_json, stations):
-    stations = Station.from_json()
+def get_missing_destinations(filename_json, stations, data_dir):
+    stations = Station.from_json(os.path.join(data_dir, 'stations.json'))
     Station.travel_times_from_json(stations,  filename_json)
     missing_stations = []
     for station in stations:
@@ -131,11 +128,3 @@ def get_missing_destinations(filename_json, stations):
             missing_stations.append(station)
     return missing_stations
 
-
-if __name__ == "__main__":
-    dry_run = False
-    recreate_missing_destinations(dry_run)
-    # main()
-
-    # station_from_id = "UT"  # example: Utrecht Centraal
-    # create_trip_data_from_station(station_from_id)
