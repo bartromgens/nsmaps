@@ -22,9 +22,10 @@ class StationType(Enum):
 
 
 class Station(object):
-    def __init__(self, nsstation, travel_time_min=None):
-        self.travel_time_min = travel_time_min
+    def __init__(self, nsstation, data_dir, travel_time_min=None):
         self.nsstation = nsstation
+        self.data_dir = data_dir
+        self.travel_time_min = travel_time_min
 
     def get_name(self):
         return self.nsstation.names['long']
@@ -41,17 +42,24 @@ class Station(object):
     def get_lon(self):
         return float(self.nsstation.lon)
 
+    def get_filepath_json(self):
+        return os.path.join(self.data_dir, 'traveltimes_from_' + self.get_code() + '.json')
+
+    def has_travel_time_data(self):
+        return os.path.exists(self.get_filepath_json())
+
     def __str__(self):
         return self.get_name() + ' (' +  self.get_code() + ')' + ', travel time: ' + str(self.travel_time_min)
 
 
 class Stations(object):
-    def __init__(self):
+    def __init__(self, data_dir):
+        self.data_dir = data_dir
         self.stations = []
         nsapi = ns_api.NSAPI(USERNAME, APIKEY)
         nsapi_stations = nsapi.get_stations()
         for nsapi_station in nsapi_stations:
-            station = Station(nsapi_station)
+            station = Station(nsapi_station, data_dir)
             self.stations.append(station)
 
     def __iter__(self):
@@ -80,13 +88,13 @@ class Stations(object):
                 if station:
                     station.travel_time_min = int(travel_time['travel_time_min'])
 
-    def update_station_data(self, data_dir, filename_out):
+    def update_station_data(self, filename_out):
         data = {'stations': []}
         for station in self.stations:
             # if station.country == "NL" and "Utrecht" in station.names['long']:
             if station.get_country_code() == "NL":
-                travel_times_available = os.path.exists(os.path.join(data_dir, 'traveltimes_from_' + station.get_code() + '.json'))
-                contour_available = os.path.exists(os.path.join(data_dir, 'contours_' + station.get_code() + '.json'))
+                travel_times_available = station.has_travel_time_data()
+                contour_available = os.path.exists(os.path.join(self.data_dir, 'contours_' + station.get_code() + '.json'))
                 data['stations'].append({'names': station.nsstation.names,
                                          'id': station.get_code(),
                                          'lon': station.get_lon(),
@@ -94,7 +102,7 @@ class Stations(object):
                                          'type': station.nsstation.stationtype,
                                          'travel_times_available': travel_times_available and contour_available})
         json_data = json.dumps(data, indent=4, sort_keys=True, ensure_ascii=False)
-        with open(os.path.join(data_dir, filename_out), 'w') as fileout:
+        with open(os.path.join(self.data_dir, filename_out), 'w') as fileout:
             fileout.write(json_data)
 
     def get_stations_for_types(self, station_types):
@@ -107,9 +115,9 @@ class Stations(object):
                     selected_stations.append(station)
         return selected_stations
 
-    def create_traveltimes_data(self, stations_from, data_dir):
+    def create_traveltimes_data(self, stations_from):
         for station_from in stations_from:
-            filename_out = os.path.join(data_dir, 'traveltimes_from_' + station_from.get_code() + '.json')
+            filename_out = station_from.get_filepath_json()
             if os.path.exists(filename_out):
                 logger.warning('File ' + filename_out + ' already exists. Will not overwrite. Return.')
                 continue
@@ -120,10 +128,9 @@ class Stations(object):
     def recreate_missing_destinations(self, data_dir, dry_run):
         ignore_station_ids = ['HRY', 'WTM', 'KRW', 'VMW', 'RTST', 'WIJ', 'SPV', 'SPH']
         for station in self.stations:
-            filename = os.path.join(data_dir, 'traveltimes_from_' + station.get_code() + '.json')
-            if not os.path.exists(filename):
+            if not station.has_travel_time_data():
                 continue
-            stations_missing = self.get_missing_destinations(filename, data_dir)
+            stations_missing = self.get_missing_destinations(station.get_filepath_json())
             stations_missing_filtered = []
             for station_missing in stations_missing:
                 if station_missing.get_code() not in ignore_station_ids:
@@ -131,7 +138,7 @@ class Stations(object):
                     logger.info(station.get_name() + ' has missing station: ' + station_missing.get_name())
             if stations_missing_filtered and not dry_run:
                 json_data = self.create_trip_data_from_station(station)
-                with open(filename, 'w') as fileout:
+                with open(station.get_filepath_json(), 'w') as fileout:
                     fileout.write(json_data)
             else:
                 logger.info('No missing destinations for ' + station.get_name() + ' with ' + str(len(ignore_station_ids)) + ' ignored.')
@@ -187,7 +194,7 @@ class Stations(object):
         json_data = json.dumps(data, indent=4, sort_keys=True, ensure_ascii=False)
         return json_data
 
-    def get_missing_destinations(self, filename_json, data_dir):
+    def get_missing_destinations(self, filename_json):
         self.travel_times_from_json(filename_json)
         missing_stations = []
         for station in self.stations:

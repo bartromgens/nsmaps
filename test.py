@@ -49,8 +49,8 @@ class TestStationData(unittest.TestCase):
     def test_update_stations(self):
         fileout = 'test_stations.json'
         data_dir = '.'
-        stations = nsmaps.station.Stations()
-        stations.update_station_data(data_dir, fileout)
+        stations = nsmaps.station.Stations(data_dir)
+        stations.update_station_data(fileout)
         self.assertTrue(os.path.exists(fileout))
         os.remove(fileout)
 

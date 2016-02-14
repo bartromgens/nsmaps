@@ -13,7 +13,7 @@ DATA_DIR = './website/data'
 
 def main():
     os.path
-    stations = nsmaps.station.Stations()
+    stations = nsmaps.station.Stations(DATA_DIR)
     major_station_types = (
         StationType.intercitystation,
         StationType.knooppuntIntercitystation,
@@ -22,7 +22,7 @@ def main():
         # StationType.sneltreinstation,
     )
     major_stations = stations.get_stations_for_types(major_station_types)
-    stations.create_traveltimes_data(major_stations, DATA_DIR)
+    stations.create_traveltimes_data(major_stations)
     stations.recreate_missing_destinations(DATA_DIR, False)
 
 

@@ -12,8 +12,8 @@ DATA_DIR = './website/data'
 
 
 def main():
-    stations = nsmaps.station.Stations()
-    stations.update_station_data(DATA_DIR, 'stations.json')
+    stations = nsmaps.station.Stations(DATA_DIR)
+    stations.update_station_data('stations.json')
 
 
 if __name__ == "__main__":

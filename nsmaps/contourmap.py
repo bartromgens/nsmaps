@@ -67,14 +67,13 @@ class Contour(object):
         self.data_dir = data_dir
 
     def create_contour_data(self, filepath):
-        filepath_traveltimes = os.path.join(self.data_dir, 'traveltimes_from_' + self.departure_station.get_code() + '.json')
-        if os.path.exists(filepath_traveltimes):
-            self.stations.travel_times_from_json(filepath_traveltimes)
+        if self.departure_station.has_travel_time_data():
+            self.stations.travel_times_from_json(self.departure_station.get_filepath_json())
             if os.path.exists(filepath):
                 logger.warning('Output file ' + filepath + ' already exists. Will not override.')
                 return
         else:
-            logger.warning('Input file ' + filepath_traveltimes + ' not found. Skipping station.')
+            logger.warning('Input file ' + self.departure_station.get_filepath_json() + ' not found. Skipping station.')
 
         start = timer()
         numpy.set_printoptions(3, threshold=100, suppress=True)  # .3f
