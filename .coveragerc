@@ -1,0 +1,7 @@
+[run]
+source = nsmaps
+
+[report]
+omit =
+    nsmaps/local_settings_example.py
+    nsmaps/local_settings.py
