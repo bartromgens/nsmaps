@@ -67,7 +67,7 @@ class Contour(object):
         self.data_dir = data_dir
 
     def create_contour_data(self, filepath):
-        filepath_traveltimes = os.path.join(self.data_dir, 'traveltimes_from_' + self.departure_station.id + '.json')
+        filepath_traveltimes = os.path.join(self.data_dir, 'traveltimes_from_' + self.departure_station.get_code() + '.json')
         if os.path.exists(filepath_traveltimes):
             self.stations.travel_times_from_json(filepath_traveltimes)
             if os.path.exists(filepath):
@@ -87,7 +87,7 @@ class Contour(object):
 
         positions = []
         for station in self.stations:
-            x, y, z = gps.lla2ecef([station.lat, station.lon, altitude])
+            x, y, z = gps.lla2ecef([station.get_lat(), station.get_lon(), altitude])
             positions.append([x, y, z])
 
         logger.info('starting spatial interpolation')
@@ -101,7 +101,7 @@ class Contour(object):
             begin = i * len(latrange)/self.config.n_processes
             end = (i+1)*len(latrange)/self.config.n_processes
             latrange_part = latrange[begin:end]
-            process = Process(target=self.interpolate_travel_time, args=(queue, i, self.stations, tree, gps, latrange_part,
+            process = Process(target=self.interpolate_travel_time, args=(queue, i, self.stations.stations, tree, gps, latrange_part,
                                                                          lonrange, altitude, self.config.n_nearest, self.config.cycle_speed_kmh))
             processes.append(process)
 

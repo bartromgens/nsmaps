@@ -6,8 +6,6 @@ import os
 sys.path.append('../nsmaps')
 
 import nsmaps
-from nsmaps.station import Station
-from nsmaps.contourmap import TestConfig
 
 
 DATA_DIR = './website/data'
@@ -15,10 +13,10 @@ DATA_DIR = './website/data'
 
 def test():
     departure_station_name = 'Utrecht Centraal'
-    stations = Station.from_json(os.path.join(DATA_DIR, 'stations.json'))
-    departure_station = Station.find_station(stations, departure_station_name)
-    filepath_out = os.path.join(DATA_DIR, 'contours_' + departure_station.id + '.json')
-    test_config = TestConfig()
+    stations = nsmaps.station.Stations()
+    departure_station = stations.find_station(departure_station_name)
+    filepath_out = os.path.join(DATA_DIR, 'contours_' + departure_station.get_code() + '.json')
+    test_config = nsmaps.contourmap.TestConfig()
     contourmap = nsmaps.contourmap.Contour(departure_station, stations, test_config, DATA_DIR)
     contourmap.create_contour_data(filepath_out)
 
