@@ -17,10 +17,6 @@ Python 3.4+
 
 Color contours showing travel times from station A to any location in the Netherlands using a bicycle for the last leg of the trip. 
 
-![Contour travel times demo. Detailed view.](/images/demo/contour_travel_times_utrecht_detail.jpg?raw=true)
-
-![Contour travel times demo. Overview.](/images/demo/contour_travel_times_utrecht_overview.jpg?raw=true)
-
 #### NS API key 
 
 You need to set an API username and key in `local_settings.py`. 
