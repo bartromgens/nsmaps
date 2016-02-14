@@ -54,6 +54,9 @@ class Stations(object):
             station = Station(nsapi_station)
             self.stations.append(station)
 
+    def __iter__(self):
+        return self.stations.__iter__()
+
     # def from_json(self, filename):
     #     stations_new = []
     #     with open(filename) as file:
