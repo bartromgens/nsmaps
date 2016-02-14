@@ -5,13 +5,14 @@ import os
 
 sys.path.append('../nsmaps')
 
-import nsmaps.station
+import nsmaps
 from nsmaps.station import StationType
 
 DATA_DIR = './website/data'
 
 
 def main():
+    os.path
     stations = nsmaps.station.Stations()
     major_station_types = (
         StationType.intercitystation,

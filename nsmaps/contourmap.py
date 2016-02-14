@@ -10,8 +10,7 @@ import numpy
 import matplotlib.pyplot as plt
 from scipy.spatial import KDTree
 
-import nsmaps.utilgeo
-from nsmaps.station import Station
+import nsmaps
 from nsmaps.logger import logger
 
 

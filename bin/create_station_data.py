@@ -5,7 +5,7 @@ import os
 
 sys.path.append('../nsmaps')
 
-import nsmaps.station
+import nsmaps
 
 
 DATA_DIR = './website/data'

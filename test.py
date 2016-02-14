@@ -11,8 +11,7 @@ import matplotlib.mlab as mlab
 
 import ns_api
 
-import nsmaps.contourmap
-import nsmaps.station
+import nsmaps
 from nsmaps.local_settings import USERNAME, APIKEY
 
 

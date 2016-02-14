@@ -5,9 +5,10 @@ import os
 
 sys.path.append('../nsmaps')
 
+import nsmaps
 from nsmaps.station import Station
 from nsmaps.contourmap import TestConfig
-import nsmaps.contourmap
+
 
 DATA_DIR = './website/data'
 
