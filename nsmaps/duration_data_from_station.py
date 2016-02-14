@@ -127,4 +127,3 @@ def get_missing_destinations(filename_json, stations, data_dir):
         if station.travel_time_min == None:
             missing_stations.append(station)
     return missing_stations
-

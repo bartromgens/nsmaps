@@ -11,8 +11,8 @@ import matplotlib.mlab as mlab
 
 import ns_api
 
+import nsmaps.contourmap
 from nsmaps.local_settings import USERNAME, APIKEY
-from nsmaps.contour_to_json import contour_to_json
 from nsmaps.station import update_station_data
 
 
@@ -85,7 +85,7 @@ class TestContourToJSON(unittest.TestCase):
     def test_create_json(self):
         min_angle = 10
         ndigits = 5
-        contour_to_json(self.contour_plot, self.filename_out, self.levels, min_angle, ndigits)
+        nsmaps.contourmap.contour_to_json(self.contour_plot, self.filename_out, self.levels, min_angle, ndigits)
         self.assertTrue(os.path.exists(self.filename_out))
         with open(self.filename_out, 'rb') as jsonfile:
             checksum = hashlib.md5(jsonfile.read()).hexdigest()

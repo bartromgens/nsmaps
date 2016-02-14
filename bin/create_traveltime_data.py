@@ -3,7 +3,7 @@
 import sys
 import os
 
-sys.path.insert(1, '../nsmaps')
+sys.path.append('../nsmaps')
 
 import ns_api
 

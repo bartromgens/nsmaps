@@ -3,12 +3,11 @@
 import sys
 import os
 
-sys.path.insert(1, '../nsmaps')
+sys.path.append('../nsmaps')
 
 from nsmaps.station import Station
-from nsmaps.contour_plot import TestConfig
-from nsmaps.contour_plot import create_contour_plot
-
+from nsmaps.contourmap import TestConfig
+import nsmaps.contourmap
 
 DATA_DIR = './website/data'
 
@@ -19,13 +18,13 @@ def test():
     departure_station = Station.find_station(stations, departure_station_name)
     filepath_out = os.path.join(DATA_DIR, 'contours_' + departure_station.id + '.json')
     test_config = TestConfig()
-    create_contour_plot(departure_station, stations, test_config, DATA_DIR, filepath_out)
+    nsmaps.contourmap.create_contour_plot(departure_station, stations, test_config, DATA_DIR, filepath_out)
 
 
 def create_all():
     stations = Station.from_json('./data/stations.json')
     for station in stations:
-        create_contour_plot(stations, station)  # TODO: fix config
+        nsmaps.contourmap.create_contour_plot(stations, station)  # TODO: fix config
 
 
 if __name__ == "__main__":
