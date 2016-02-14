@@ -70,7 +70,7 @@ class Contour(object):
     def create_contour_data(self, filepath):
         filepath_traveltimes = os.path.join(self.data_dir, 'traveltimes_from_' + self.departure_station.id + '.json')
         if os.path.exists(filepath_traveltimes):
-            Station.travel_times_from_json(self.stations, filepath_traveltimes)
+            self.stations.travel_times_from_json(filepath_traveltimes)
             if os.path.exists(filepath):
                 logger.warning('Output file ' + filepath + ' already exists. Will not override.')
                 return

@@ -12,8 +12,8 @@ import matplotlib.mlab as mlab
 import ns_api
 
 import nsmaps.contourmap
+import nsmaps.station
 from nsmaps.local_settings import USERNAME, APIKEY
-from nsmaps.station import update_station_data
 
 
 class TestNSApi(unittest.TestCase):
@@ -50,7 +50,8 @@ class TestStationData(unittest.TestCase):
     def test_update_stations(self):
         fileout = 'test_stations.json'
         data_dir = '.'
-        update_station_data(data_dir, fileout)
+        stations = nsmaps.station.Stations()
+        stations.update_station_data(data_dir, fileout)
         self.assertTrue(os.path.exists(fileout))
         os.remove(fileout)
 

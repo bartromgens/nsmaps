@@ -5,20 +5,24 @@ import os
 
 sys.path.append('../nsmaps')
 
-import ns_api
-
-from nsmaps.local_settings import USERNAME, APIKEY
 import nsmaps.station
+from nsmaps.station import StationType
 
 DATA_DIR = './website/data'
 
 
 def main():
-    nsapi = ns_api.NSAPI(USERNAME, APIKEY)
-    stations = nsapi.get_stations()
-    major_stations = nsmaps.station.get_major_stations(stations)
-    nsmaps.station.create_traveltimes_data(major_stations, DATA_DIR)
-    nsmaps.station.recreate_missing_destinations(DATA_DIR, False)
+    stations = nsmaps.station.Stations()
+    major_station_types = (
+        StationType.intercitystation,
+        StationType.knooppuntIntercitystation,
+        StationType.megastation,
+        # StationType.knooppuntSneltreinstation,
+        # StationType.sneltreinstation,
+    )
+    major_stations = stations.get_stations_for_types(major_station_types)
+    stations.create_traveltimes_data(major_stations, DATA_DIR)
+    stations.recreate_missing_destinations(DATA_DIR, False)
 
 
 if __name__ == "__main__":
