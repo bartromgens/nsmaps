@@ -15,7 +15,17 @@ from nsmaps.station import Station
 from nsmaps.logger import logger
 
 
-class ContourData:
+def dotproduct(v1, v2):
+    return sum((a * b) for a, b in zip(v1, v2))
+
+def length(v):
+    return math.sqrt(dotproduct(v, v))
+
+def angle(v1, v2):
+    return math.acos(dotproduct(v1, v2) / (length(v1) * length(v2)))
+
+
+class ContourData(object):
     def __init__(self):
         self.Z = None
         self.index_begin = 0
@@ -50,116 +60,105 @@ class TestConfig(ContourPlotConfig):
         self.min_angle_between_segments = 4
 
 
-def create_contour_plot(departure_station, stations, config, data_dir, filepath):
-    filepath_traveltimes = os.path.join(data_dir, 'traveltimes_from_' + departure_station.id + '.json')
-    if os.path.exists(filepath_traveltimes):
-        Station.travel_times_from_json(stations, filepath_traveltimes)
-        if os.path.exists(filepath):
-            logger.warning('Output file ' + filepath + ' already exists. Will not override.')
-            return
-    else:
-        logger.warning('Input file ' + filepath_traveltimes + ' not found. Skipping station.')
+class Contour(object):
+    def __init__(self, departure_station, stations, config, data_dir):
+        self.departure_station = departure_station
+        self.stations = stations
+        self.config = config
+        self.data_dir = data_dir
 
+    def create_contour_data(self, filepath):
+        filepath_traveltimes = os.path.join(self.data_dir, 'traveltimes_from_' + self.departure_station.id + '.json')
+        if os.path.exists(filepath_traveltimes):
+            Station.travel_times_from_json(self.stations, filepath_traveltimes)
+            if os.path.exists(filepath):
+                logger.warning('Output file ' + filepath + ' already exists. Will not override.')
+                return
+        else:
+            logger.warning('Input file ' + filepath_traveltimes + ' not found. Skipping station.')
 
-    start = timer()
-    numpy.set_printoptions(3, threshold=100, suppress=True)  # .3f
+        start = timer()
+        numpy.set_printoptions(3, threshold=100, suppress=True)  # .3f
 
-    altitude = 0.0
-    lonrange = numpy.arange(config.lon_start, config.lon_end, config.stepsize_deg)
-    latrange = numpy.arange(config.lat_start, config.lat_end, config.stepsize_deg / 2.0)
-    Z = numpy.zeros((int(lonrange.shape[0]), int(latrange.shape[0])))
-    gps = nsmaps.utilgeo.GPS()
+        altitude = 0.0
+        lonrange = numpy.arange(self.config.lon_start, self.config.lon_end, self.config.stepsize_deg)
+        latrange = numpy.arange(self.config.lat_start, self.config.lat_end, self.config.stepsize_deg / 2.0)
+        Z = numpy.zeros((int(lonrange.shape[0]), int(latrange.shape[0])))
+        gps = nsmaps.utilgeo.GPS()
 
-    positions = []
-    for station in stations:
-        x, y, z = gps.lla2ecef([station.lat, station.lon, altitude])
-        positions.append([x, y, z])
+        positions = []
+        for station in self.stations:
+            x, y, z = gps.lla2ecef([station.lat, station.lon, altitude])
+            positions.append([x, y, z])
 
-    logger.info('starting spatial interpolation')
+        logger.info('starting spatial interpolation')
 
-    # tree to find nearest neighbors
-    tree = KDTree(positions)
+        # tree to find nearest neighbors
+        tree = KDTree(positions)
 
-    queue = Queue()
-    processes = []
-    for i in range(0, config.n_processes):
-        begin = i * len(latrange)/config.n_processes
-        end = (i+1)*len(latrange)/config.n_processes
-        latrange_part = latrange[begin:end]
-        process = Process(target=interpolate_travel_time, args=(queue, i, stations, tree, gps, latrange_part,
-                                                                lonrange, altitude, config.n_nearest, config.cycle_speed_kmh))
-        processes.append(process)
+        queue = Queue()
+        processes = []
+        for i in range(0, self.config.n_processes):
+            begin = i * len(latrange)/self.config.n_processes
+            end = (i+1)*len(latrange)/self.config.n_processes
+            latrange_part = latrange[begin:end]
+            process = Process(target=self.interpolate_travel_time, args=(queue, i, self.stations, tree, gps, latrange_part,
+                                                                         lonrange, altitude, self.config.n_nearest, self.config.cycle_speed_kmh))
+            processes.append(process)
 
-    for process in processes:
-        process.start()
+        for process in processes:
+            process.start()
 
-    # get from the queue and append the values
-    for i in range(0, config.n_processes):
-        data = queue.get()
-        index_begin = data.index_begin
-        begin = index_begin*len(latrange)/config.n_processes
-        end = (index_begin+1)*len(latrange)/config.n_processes
-        Z[0:][begin:end] = data.Z
+        # get from the queue and append the values
+        for i in range(0, self.config.n_processes):
+            data = queue.get()
+            index_begin = data.index_begin
+            begin = index_begin*len(latrange)/self.config.n_processes
+            end = (index_begin+1)*len(latrange)/self.config.n_processes
+            Z[0:][begin:end] = data.Z
 
-    for process in processes:
-        process.join()
+        for process in processes:
+            process.join()
 
-    end = timer()
-    logger.info('finished spatial interpolation in ' + str(end - start) + ' [sec]')
+        end = timer()
+        logger.info('finished spatial interpolation in ' + str(end - start) + ' [sec]')
 
-    # zoomFactor = 2
-    # Z = ndimage.zoom(Z, zoomFactor)
-    # lonrange = ndimage.zoom(lonrange, zoomFactor)
-    # latrange = ndimage.zoom(latrange, zoomFactor)
+        figure = plt.figure()
+        ax = figure.add_subplot(111)
+        levels = numpy.linspace(0, 200, num=self.config.n_contours)
+        # contours = plt.contourf(lonrange, latrange, Z, levels=levels, cmap=plt.cm.plasma)
+        contours = ax.contour(lonrange, latrange, Z, levels=levels, cmap=plt.cm.jet)
+        # cbar = figure.colorbar(contours, format='%.1f')
+        # plt.savefig('contour_example.png', dpi=150)
+        ndigits = len(str(int(1.0/self.config.stepsize_deg)))+1
+        contour_to_json(contours, filepath, levels, self.config.min_angle_between_segments, ndigits)
 
-    figure = plt.figure()
-    ax = figure.add_subplot(111)
-    levels = numpy.linspace(0, 200, num=config.n_contours)
-    # contours = plt.contourf(lonrange, latrange, Z, levels=levels, cmap=plt.cm.plasma)
-    contours = ax.contour(lonrange, latrange, Z, levels=levels, cmap=plt.cm.jet)
-    # cbar = figure.colorbar(contours, format='%.1f')
-    # plt.savefig('contour_example.png', dpi=150)
-    ndigits = len(str(int(1.0/config.stepsize_deg)))+1
-    contour_to_json(contours, filepath, levels, config.min_angle_between_segments, ndigits)
+    @staticmethod
+    def interpolate_travel_time(q, position, stations, kdtree, gps, latrange, lonrange, altitude, n_nearest, cycle_speed_kmh):
+        # n_nearest: check N nearest stations as best start for cycle route
+        logger.info('interpolate_travel_time')
+        Z = numpy.zeros((int(latrange.shape[0]), int(lonrange.shape[0])))
+        for i, lat in enumerate(latrange):
+            if i % (len(latrange) / 10) == 0:
+                logger.debug(str(int(i / len(latrange) * 100)) + '%')
 
-
-def interpolate_travel_time(q, position, stations, kdtree, gps, latrange, lonrange, altitude, n_nearest, cycle_speed_kmh):
-    # n_nearest: check N nearest stations as best start for cycle route
-    logger.info('interpolate_travel_time')
-    Z = numpy.zeros((int(latrange.shape[0]), int(lonrange.shape[0])))
-    for i, lat in enumerate(latrange):
-        if i % (len(latrange) / 10) == 0:
-            logger.debug(str(int(i / len(latrange) * 100)) + '%')
-
-        for j, lon in enumerate(lonrange):
-            x, y, z = gps.lla2ecef([lat, lon, altitude])
-            distances, indexes = kdtree.query([x, y, z], n_nearest)
-            min_travel_time = sys.float_info.max
-            for distance, index in zip(distances, indexes):
-                if stations[index].travel_time_min is None:
-                    continue
-                travel_time = stations[index].travel_time_min + distance / 1000.0 / cycle_speed_kmh * 60.0
-                if travel_time < min_travel_time:
-                    min_travel_time = travel_time
-            Z[i][j] = min_travel_time
-    data = ContourData()
-    data.index_begin = position
-    data.Z = Z
-    q.put(data)
-    logger.info('end interpolate_travel_time')
-    return
-
-
-def dotproduct(v1, v2):
-    return sum((a * b) for a, b in zip(v1, v2))
-
-
-def length(v):
-    return math.sqrt(dotproduct(v, v))
-
-
-def angle(v1, v2):
-    return math.acos(dotproduct(v1, v2) / (length(v1) * length(v2)))
+            for j, lon in enumerate(lonrange):
+                x, y, z = gps.lla2ecef([lat, lon, altitude])
+                distances, indexes = kdtree.query([x, y, z], n_nearest)
+                min_travel_time = sys.float_info.max
+                for distance, index in zip(distances, indexes):
+                    if stations[index].travel_time_min is None:
+                        continue
+                    travel_time = stations[index].travel_time_min + distance / 1000.0 / cycle_speed_kmh * 60.0
+                    if travel_time < min_travel_time:
+                        min_travel_time = travel_time
+                Z[i][j] = min_travel_time
+        data = ContourData()
+        data.index_begin = position
+        data.Z = Z
+        q.put(data)
+        logger.info('end interpolate_travel_time')
+        return
 
 
 def contour_to_json(contour, filename, contour_labels, min_angle=2, ndigits=5):

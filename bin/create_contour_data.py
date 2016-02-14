@@ -18,7 +18,8 @@ def test():
     departure_station = Station.find_station(stations, departure_station_name)
     filepath_out = os.path.join(DATA_DIR, 'contours_' + departure_station.id + '.json')
     test_config = TestConfig()
-    nsmaps.contourmap.create_contour_plot(departure_station, stations, test_config, DATA_DIR, filepath_out)
+    contourmap = nsmaps.contourmap.Contour(departure_station, stations, test_config, DATA_DIR)
+    contourmap.create_contour_data(filepath_out)
 
 
 def create_all():
