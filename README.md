@@ -1,6 +1,8 @@
 ## nsmaps
 
-[![Build Status](https://travis-ci.org/bartromgens/nsmaps.svg?branch=master)](https://travis-ci.org/bartromgens/nsmaps) [![Dependency Status](https://gemnasium.com/bartromgens/nsmaps.svg)](https://gemnasium.com/bartromgens/nsmaps)  
+[![Build Status](https://travis-ci.org/bartromgens/nsmaps.svg?branch=master)](https://travis-ci.org/bartromgens/nsmaps)
+[![Coverage Status](https://coveralls.io/repos/github/bartromgens/nsmaps/badge.svg?branch=master)](https://coveralls.io/github/bartromgens/nsmaps?branch=master)
+[![Dependency Status](https://gemnasium.com/bartromgens/nsmaps.svg)](https://gemnasium.com/bartromgens/nsmaps)  
 Generate maps visualising Dutch railways (NS) travel information. 
 
 Uses [nsapi](https://github.com/aquatix/ns-api) to get the data, and [OpenLayers 3](https://github.com/openlayers/ol3) to create the maps. 
