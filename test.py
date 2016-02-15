@@ -51,8 +51,40 @@ class TestStationData(unittest.TestCase):
         data_dir = '.'
         stations = nsmaps.station.Stations(data_dir)
         stations.update_station_data(fileout)
+        for station in stations:
+            str(station)
         self.assertTrue(os.path.exists(fileout))
         os.remove(fileout)
+
+
+class TestStations(unittest.TestCase):
+
+    @classmethod
+    def setUpClass(cls):
+        cls.stations = nsmaps.station.Stations('.')
+
+    def test_create_stations(self):
+        stations = nsmaps.station.Stations('.')
+        self.assertTrue(len(stations.stations) > 0)
+
+    def test_iterate_stations(self):
+        for station in self.stations:
+            station.has_travel_time_data()
+            str(station)
+
+    def test_find_station(self):
+        for station in self.stations:
+            station_found = self.stations.find_station(station.get_name())
+            self.assertTrue(station_found)
+            self.assertEqual(station.get_code(), station_found.get_code())
+
+    def test_get_station_for_types(self):
+        types = (
+            nsmaps.station.StationType.intercitystation,
+            nsmaps.station.StationType.sneltreinstation,
+        )
+        stations_of_type = self.stations.get_stations_for_types(types)
+        self.assertTrue(stations_of_type)
 
 
 class TestContourToJSON(unittest.TestCase):
