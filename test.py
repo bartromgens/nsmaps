@@ -108,6 +108,7 @@ class TestStations(unittest.TestCase):
             self.assertNotEqual(station.travel_time_min, None)
             if station.get_code() != "UT":
                 self.assertTrue(station.travel_time_min > 0)
+        self.stations.recreate_missing_destinations()
         os.remove(utrecht.get_travel_time_filepath())
         self.assertFalse(utrecht.has_travel_time_data())
 

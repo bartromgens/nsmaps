@@ -126,24 +126,6 @@ class Stations(object):
             with open(filename_out, 'w') as fileout:
                 fileout.write(json_data)
 
-    def recreate_missing_destinations(self, data_dir, dry_run):
-        ignore_station_ids = ['HRY', 'WTM', 'KRW', 'VMW', 'RTST', 'WIJ', 'SPV', 'SPH']
-        for station in self.stations:
-            if not station.has_travel_time_data():
-                continue
-            stations_missing = self.get_missing_destinations(station.get_travel_time_filepath())
-            stations_missing_filtered = []
-            for station_missing in stations_missing:
-                if station_missing.get_code() not in ignore_station_ids:
-                    stations_missing_filtered.append(stations_missing)
-                    logger.info(station.get_name() + ' has missing station: ' + station_missing.get_name())
-            if stations_missing_filtered and not dry_run:
-                json_data = self.create_trip_data_from_station(station)
-                with open(station.get_travel_time_filepath(), 'w') as fileout:
-                    fileout.write(json_data)
-            else:
-                logger.info('No missing destinations for ' + station.get_name() + ' with ' + str(len(ignore_station_ids)) + ' ignored.')
-
     def get_station_code(self, station_name):
         for station in self.stations:
             if station.get_name() == station_name:
@@ -197,6 +179,25 @@ class Stations(object):
         self.travel_times_from_json(filename_json)
         missing_stations = []
         for station in self.stations:
-            if station.travel_time_min is None and station.get_country_code() == "NL":
+            if station.travel_time_min is None:
                 missing_stations.append(station)
         return missing_stations
+
+    def recreate_missing_destinations(self, dry_run=False):
+        ignore_station_ids = ['HRY', 'WTM', 'KRW', 'VMW', 'RTST', 'WIJ', 'SPV', 'SPH']
+        for station in self.stations:
+            if not station.has_travel_time_data():
+                continue
+            stations_missing = self.get_missing_destinations(station.get_travel_time_filepath())
+            stations_missing_filtered = []
+            for station_missing in stations_missing:
+                if station_missing.get_code() not in ignore_station_ids:
+                    stations_missing_filtered.append(stations_missing)
+                    logger.info(station.get_name() + ' has missing station: ' + station_missing.get_name())
+            if stations_missing_filtered and not dry_run:
+                json_data = self.create_trip_data_from_station(station)
+                with open(station.get_travel_time_filepath(), 'w') as fileout:
+                    fileout.write(json_data)
+            else:
+                logger.info('No missing destinations for ' + station.get_name() + ' with ' + str(len(ignore_station_ids)) + ' ignored.')
+
