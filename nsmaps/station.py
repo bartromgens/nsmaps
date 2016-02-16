@@ -61,6 +61,8 @@ class Stations(object):
         for i, nsapi_station in enumerate(nsapi_stations):
             if test and i > 5 and nsapi_station.code != 'UT':
                 continue
+            if nsapi_station.country != 'NL':
+                continue
             station = Station(nsapi_station, data_dir)
             self.stations.append(station)
 
@@ -94,15 +96,14 @@ class Stations(object):
         data = {'stations': []}
         for station in self.stations:
             # if station.country == "NL" and "Utrecht" in station.names['long']:
-            if station.get_country_code() == "NL":
-                travel_times_available = station.has_travel_time_data()
-                contour_available = os.path.exists(os.path.join(self.data_dir, 'contours_' + station.get_code() + '.json'))
-                data['stations'].append({'names': station.nsstation.names,
-                                         'id': station.get_code(),
-                                         'lon': station.get_lon(),
-                                         'lat': station.get_lat(),
-                                         'type': station.nsstation.stationtype,
-                                         'travel_times_available': travel_times_available and contour_available})
+            travel_times_available = station.has_travel_time_data()
+            contour_available = os.path.exists(os.path.join(self.data_dir, 'contours_' + station.get_code() + '.json'))
+            data['stations'].append({'names': station.nsstation.names,
+                                     'id': station.get_code(),
+                                     'lon': station.get_lon(),
+                                     'lat': station.get_lat(),
+                                     'type': station.nsstation.stationtype,
+                                     'travel_times_available': travel_times_available and contour_available})
         json_data = json.dumps(data, indent=4, sort_keys=True, ensure_ascii=False)
         with open(os.path.join(self.data_dir, filename_out), 'w') as fileout:
             fileout.write(json_data)
@@ -110,8 +111,6 @@ class Stations(object):
     def get_stations_for_types(self, station_types):
         selected_stations = []
         for station in self.stations:
-            if station.get_country_code() != "NL":
-                continue
             for station_type in station_types:
                 if station.nsstation.stationtype == station_type.name:
                     selected_stations.append(station)
@@ -161,8 +160,6 @@ class Stations(object):
                                  'travel_time_planned': "0:00"})
         nsapi = ns_api.NSAPI(USERNAME, APIKEY)
         for station in self.stations:
-            if station.get_country_code() != "NL":
-                continue
             if station.get_code() == station_from.get_code():
                 continue
             trips = []

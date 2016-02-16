@@ -1,5 +1,6 @@
 import sys
 import os
+import shutil
 import unittest
 import hashlib
 
@@ -70,7 +71,7 @@ class TestStations(unittest.TestCase):
 
     @classmethod
     def tearDownClass(cls):
-        os.rmdir(cls.testdir)
+        shutil.rmtree(cls.testdir)
 
     def test_create_stations(self):
         stations = nsmaps.station.Stations('.')
@@ -102,6 +103,11 @@ class TestStations(unittest.TestCase):
         self.stations.create_traveltimes_data([utrecht])
         self.assertTrue(os.path.exists(utrecht.get_travel_time_filepath()))
         self.assertTrue(utrecht.has_travel_time_data())
+        self.stations.travel_times_from_json(utrecht.get_travel_time_filepath())
+        for station in self.stations:
+            self.assertNotEqual(station.travel_time_min, None)
+            if station.get_code() != "UT":
+                self.assertTrue(station.travel_time_min > 0)
         os.remove(utrecht.get_travel_time_filepath())
         self.assertFalse(utrecht.has_travel_time_data())
 
