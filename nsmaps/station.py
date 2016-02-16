@@ -53,12 +53,14 @@ class Station(object):
 
 
 class Stations(object):
-    def __init__(self, data_dir):
+    def __init__(self, data_dir, test=False):
         self.data_dir = data_dir
         self.stations = []
         nsapi = ns_api.NSAPI(USERNAME, APIKEY)
         nsapi_stations = nsapi.get_stations()
-        for nsapi_station in nsapi_stations:
+        for i, nsapi_station in enumerate(nsapi_stations):
+            if test and i > 5 and nsapi_station.code != 'UT':
+                continue
             station = Station(nsapi_station, data_dir)
             self.stations.append(station)
 

@@ -61,7 +61,16 @@ class TestStations(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.stations = nsmaps.station.Stations('.')
+        cls.testdir = './test/'
+        os.mkdir(cls.testdir)
+        cls.stations = nsmaps.station.Stations(cls.testdir, test=True)
+        utrecht = cls.stations.find_station("Utrecht Centraal")
+        if os.path.exists(utrecht.get_travel_time_filepath()):
+            os.remove(utrecht.get_travel_time_filepath())
+
+    @classmethod
+    def tearDownClass(cls):
+        os.rmdir(cls.testdir)
 
     def test_create_stations(self):
         stations = nsmaps.station.Stations('.')
@@ -82,9 +91,19 @@ class TestStations(unittest.TestCase):
         types = (
             nsmaps.station.StationType.intercitystation,
             nsmaps.station.StationType.sneltreinstation,
+            nsmaps.station.StationType.stoptreinstation,
         )
         stations_of_type = self.stations.get_stations_for_types(types)
         self.assertTrue(stations_of_type)
+
+    def test_create_travel_times_data(self):
+        utrecht = self.stations.find_station("Utrecht Centraal")
+        self.assertTrue(utrecht)
+        self.stations.create_traveltimes_data([utrecht])
+        self.assertTrue(os.path.exists(utrecht.get_travel_time_filepath()))
+        self.assertTrue(utrecht.has_travel_time_data())
+        os.remove(utrecht.get_travel_time_filepath())
+        self.assertFalse(utrecht.has_travel_time_data())
 
 
 class TestContourToJSON(unittest.TestCase):
