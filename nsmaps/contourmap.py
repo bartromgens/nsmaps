@@ -96,6 +96,8 @@ class Contour(object):
 
         queue = Queue()
         processes = []
+        if self.config.n_nearest > len(self.stations):
+            self.config.n_nearest = len(self.stations)
         for i in range(0, self.config.n_processes):
             begin = i * len(latrange)/self.config.n_processes
             end = (i+1)*len(latrange)/self.config.n_processes
@@ -111,8 +113,8 @@ class Contour(object):
         for i in range(0, self.config.n_processes):
             data = queue.get()
             index_begin = data.index_begin
-            begin = index_begin*len(latrange)/self.config.n_processes
-            end = (index_begin+1)*len(latrange)/self.config.n_processes
+            begin = int(index_begin*len(latrange)/self.config.n_processes)
+            end = int((index_begin+1)*len(latrange)/self.config.n_processes)
             Z[0:][begin:end] = data.Z
 
         for process in processes:

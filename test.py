@@ -113,10 +113,11 @@ class TestStations(unittest.TestCase):
         self.assertFalse(utrecht.has_travel_time_data())
 
 
-class TestContourToJSON(unittest.TestCase):
+class TestContourMap(unittest.TestCase):
     """ Test case for writing a contour to JSON. """
     filename_out = 'test_contour.json'
     checksum = '39d2ff2f5cbc9a768e816109f41b3288'
+    data_dir = './test/'
 
     @classmethod
     def setUpClass(cls):
@@ -148,6 +149,19 @@ class TestContourToJSON(unittest.TestCase):
         with open(self.filename_out, 'rb') as jsonfile:
             checksum = hashlib.md5(jsonfile.read()).hexdigest()
             self.assertEqual(checksum, self.checksum)
+
+    def test_contour(self):
+        os.mkdir(self.data_dir)
+        stations = nsmaps.station.Stations(self.data_dir, test=True)
+        utrecht = stations.find_station('Utrecht Centraal')
+        stations.create_traveltimes_data([utrecht])
+        config = nsmaps.contourmap.ContourPlotConfig()
+        config = nsmaps.contourmap.TestConfig()
+        contour = nsmaps.contourmap.Contour(utrecht, stations, config, self.data_dir)
+        contour_filepath = os.path.join(self.data_dir, self.filename_out)
+        contour.create_contour_data(contour_filepath)
+        self.assertTrue(os.path.exists(contour_filepath))
+        shutil.rmtree(self.data_dir)
 
 
 class TestUtilGeo(unittest.TestCase):

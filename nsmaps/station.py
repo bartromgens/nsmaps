@@ -69,6 +69,9 @@ class Stations(object):
     def __iter__(self):
         return self.stations.__iter__()
 
+    def __len__(self):
+        return self.stations.__len__()
+
     # def from_json(self, filename):
     #     stations_new = []
     #     with open(filename) as file:
