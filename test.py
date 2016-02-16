@@ -150,5 +150,30 @@ class TestContourToJSON(unittest.TestCase):
             self.assertEqual(checksum, self.checksum)
 
 
+class TestUtilGeo(unittest.TestCase):
+    """ Test case for utilgeo functions. """
+
+    def test_lla2ecef_and_ecef2lla(self):
+        gps = nsmaps.utilgeo.GPS()
+
+        lla = (0, 0, 0)
+        ecef = gps.lla2ecef(lla)
+        self.assertAlmostEqual(ecef[0], 6378137.0)
+        self.assertAlmostEqual(ecef[1], 0.0)
+        self.assertAlmostEqual(ecef[2], 0.0)
+        lla_out = gps.ecef2lla(ecef)
+        self.assertAlmostEqual(lla, lla_out, 6)
+
+        lla = (5.1, 52.0, 0)
+        ecef = gps.lla2ecef(lla)
+        self.assertAlmostEqual(ecef[0], 3911330.8535259487)
+        self.assertAlmostEqual(ecef[1], 5006275.196709151)
+        self.assertAlmostEqual(ecef[2], 563199.3212360762)
+        lla_out = gps.ecef2lla(ecef)
+        self.assertAlmostEqual(lla[0], lla_out[0], 6)
+        self.assertAlmostEqual(lla[1], lla_out[1], 6)
+        self.assertAlmostEqual(lla[2], lla_out[2], 6)
+
+
 if __name__ == '__main__':
     unittest.main()
