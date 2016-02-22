@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/bartromgens/nsmaps.svg?branch=master)](https://travis-ci.org/bartromgens/nsmaps)
 [![Coverage Status](https://coveralls.io/repos/github/bartromgens/nsmaps/badge.svg?branch=master)](https://coveralls.io/github/bartromgens/nsmaps?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/bartromgens/nsmaps/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/bartromgens/nsmaps/?branch=master)
 [![Dependency Status](https://gemnasium.com/bartromgens/nsmaps.svg)](https://gemnasium.com/bartromgens/nsmaps)  
 Generate maps visualising Dutch railways (NS) travel information. 
 
