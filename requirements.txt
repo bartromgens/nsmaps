@@ -4,4 +4,4 @@ xmltodict==0.9.2
 numpy==1.10.4
 matplotlib==1.5.1
 scipy==0.17.0
--e git+https://github.com/bartromgens/ns-api3@python3-compatibility#egg=ns-api
+nsapi==2.7.4
