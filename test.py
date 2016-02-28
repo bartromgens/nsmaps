@@ -99,8 +99,9 @@ class TestStations(unittest.TestCase):
 
     def test_create_travel_times_data(self):
         utrecht = self.stations.find_station("Utrecht Centraal")
+        departure_timestamp = "19-04-2016 08:00"
         self.assertTrue(utrecht)
-        self.stations.create_traveltimes_data([utrecht])
+        self.stations.create_traveltimes_data([utrecht], departure_timestamp)
         self.assertTrue(os.path.exists(utrecht.get_travel_time_filepath()))
         self.assertTrue(utrecht.has_travel_time_data())
         self.stations.travel_times_from_json(utrecht.get_travel_time_filepath())
@@ -108,7 +109,7 @@ class TestStations(unittest.TestCase):
             self.assertNotEqual(station.travel_time_min, None)
             if station.get_code() != "UT":
                 self.assertTrue(station.travel_time_min > 0)
-        self.stations.recreate_missing_destinations()
+        self.stations.recreate_missing_destinations(departure_timestamp)
         os.remove(utrecht.get_travel_time_filepath())
         self.assertFalse(utrecht.has_travel_time_data())
 
@@ -121,6 +122,7 @@ class TestContourMap(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
+        os.mkdir(cls.data_dir)
         if os.path.exists(cls.filename_out):
             os.remove(cls.filename_out)  # remove file from any previous tests
         # taken from http://matplotlib.org/examples/pylab_examples/contour_demo.html
@@ -138,8 +140,7 @@ class TestContourMap(unittest.TestCase):
 
     @classmethod
     def tearDownClass(cls):
-        if os.path.exists(cls.filename_out):
-            os.remove(cls.filename_out)  # remove file from any previous tests
+        shutil.rmtree(cls.data_dir)
 
     def test_create_json(self):
         min_angle = 10
@@ -151,17 +152,16 @@ class TestContourMap(unittest.TestCase):
             self.assertEqual(checksum, self.checksum)
 
     def test_contour(self):
-        os.mkdir(self.data_dir)
         stations = nsmaps.station.Stations(self.data_dir, test=True)
         utrecht = stations.find_station('Utrecht Centraal')
-        stations.create_traveltimes_data([utrecht])
+        departure_timestamp = "19-04-2016 08:00"
+        stations.create_traveltimes_data([utrecht], departure_timestamp)
         config = nsmaps.contourmap.ContourPlotConfig()
         config = nsmaps.contourmap.TestConfig()
         contour = nsmaps.contourmap.Contour(utrecht, stations, config, self.data_dir)
         contour_filepath = os.path.join(self.data_dir, self.filename_out)
         contour.create_contour_data(contour_filepath)
         self.assertTrue(os.path.exists(contour_filepath))
-        shutil.rmtree(self.data_dir)
 
 
 class TestUtilGeo(unittest.TestCase):

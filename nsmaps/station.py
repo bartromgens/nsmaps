@@ -119,13 +119,14 @@ class Stations(object):
                     selected_stations.append(station)
         return selected_stations
 
-    def create_traveltimes_data(self, stations_from):
+    def create_traveltimes_data(self, stations_from, timestamp):
+        """ timestamp format: DD-MM-YYYY hh:mm """
         for station_from in stations_from:
             filename_out = station_from.get_travel_time_filepath()
             if os.path.exists(filename_out):
                 logger.warning('File ' + filename_out + ' already exists. Will not overwrite. Return.')
                 continue
-            json_data = self.create_trip_data_from_station(station_from)
+            json_data = self.create_trip_data_from_station(station_from, timestamp)
             with open(filename_out, 'w') as fileout:
                 fileout.write(json_data)
 
@@ -135,8 +136,8 @@ class Stations(object):
                 return station.get_code()
         return None
 
-    def create_trip_data_from_station(self, station_from):
-        timestamp = "13-01-2016 08:00"
+    def create_trip_data_from_station(self, station_from, timestamp):
+        """ timestamp format: DD-MM-YYYY hh:mm """
         via = ""
         data = {'stations': []}
         data['stations'].append({'name': station_from.get_name(),
@@ -186,7 +187,7 @@ class Stations(object):
                 missing_stations.append(station)
         return missing_stations
 
-    def recreate_missing_destinations(self, dry_run=False):
+    def recreate_missing_destinations(self, departure_timestamp, dry_run=False):
         ignore_station_ids = ['HRY', 'WTM', 'KRW', 'VMW', 'RTST', 'WIJ', 'SPV', 'SPH']
         for station in self.stations:
             if not station.has_travel_time_data():
@@ -198,7 +199,7 @@ class Stations(object):
                     stations_missing_filtered.append(stations_missing)
                     logger.info(station.get_name() + ' has missing station: ' + station_missing.get_name())
             if stations_missing_filtered and not dry_run:
-                json_data = self.create_trip_data_from_station(station)
+                json_data = self.create_trip_data_from_station(station, departure_timestamp)
                 with open(station.get_travel_time_filepath(), 'w') as fileout:
                     fileout.write(json_data)
             else:
