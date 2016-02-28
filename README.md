@@ -23,4 +23,5 @@ Color contours showing travel times from station A to any location in the Nether
 #### NS API key 
 
 You need to set an API username and key in `local_settings.py`. 
-You can request a [here](http://www.ns.nl/en/travel-information/ns-api).
+Request one [here](http://www.ns.nl/en/travel-information/ns-api).
+Please note that the NS offers a limited number of requests per day. 
