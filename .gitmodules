@@ -1,0 +1,3 @@
+[submodule "website/nsmaps-data"]
+	path = website/nsmaps-data
+	url = https://github.com/bartromgens/nsmaps-data.git
