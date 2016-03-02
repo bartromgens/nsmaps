@@ -8,6 +8,7 @@ $.ajaxSetup({beforeSend: function(xhr){
 }
 });
 
+var dataDir = "./nsmaps-data/"
 
 var typeScales = {
                   'megastation': 9,
@@ -47,7 +48,7 @@ $.getJSON("./data/stations.json", function(json) {
 
 function addContours(station_id)
 {
-    $.getJSON("./data/contours_" + station_id + ".json", function(json) {
+    $.getJSON("./nsmaps-data/contours/contours_" + station_id + ".json", function(json) {
         var contours = json.contours;
         createContoursLayer(contours, "Travel time");
     });

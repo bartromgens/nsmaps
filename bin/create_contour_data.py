@@ -8,7 +8,7 @@ sys.path.append('../nsmaps')
 import nsmaps
 
 
-DATA_DIR = './website/data'
+DATA_DIR = './website/nsmaps-data'
 
 
 def test():

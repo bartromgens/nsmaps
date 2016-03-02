@@ -43,7 +43,7 @@ class Station(object):
         return float(self.nsstation.lon)
 
     def get_travel_time_filepath(self):
-        return os.path.join(self.data_dir, 'traveltimes_from_' + self.get_code() + '.json')
+        return os.path.join(self.data_dir, 'traveltimes/traveltimes_from_' + self.get_code() + '.json')
 
     def has_travel_time_data(self):
         return os.path.exists(self.get_travel_time_filepath())

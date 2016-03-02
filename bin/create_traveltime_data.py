@@ -8,7 +8,7 @@ sys.path.append('../nsmaps')
 import nsmaps
 from nsmaps.station import StationType
 
-DATA_DIR = './website/data'
+DATA_DIR = './website/nsmaps-data'
 
 MAX_STATIONS = 60
 
@@ -33,6 +33,7 @@ def main():
         if n_stations >= MAX_STATIONS:
             break
         if not station.has_travel_time_data() and station.get_country_code() == 'NL':
+            print(station.get_travel_time_filepath())
             stations_todo.append(station)
             n_stations += 1
             print(station)
