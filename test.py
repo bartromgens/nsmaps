@@ -63,7 +63,9 @@ class TestStations(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.testdir = './test/'
+        traveltimes_dir = os.path.join(cls.testdir, 'traveltimes')
         os.mkdir(cls.testdir)
+        os.mkdir(traveltimes_dir)
         cls.stations = nsmaps.station.Stations(cls.testdir, test=True)
         utrecht = cls.stations.find_station("Utrecht Centraal")
         if os.path.exists(utrecht.get_travel_time_filepath()):
@@ -122,7 +124,9 @@ class TestContourMap(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
+        traveltimes_dir = os.path.join(cls.data_dir, 'traveltimes')
         os.mkdir(cls.data_dir)
+        os.mkdir(traveltimes_dir)
         if os.path.exists(cls.filename_out):
             os.remove(cls.filename_out)  # remove file from any previous tests
         # taken from http://matplotlib.org/examples/pylab_examples/contour_demo.html
