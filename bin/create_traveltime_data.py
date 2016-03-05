@@ -40,7 +40,7 @@ def main():
 
     timestamp = "19-04-2016 08:00"
     stations.create_traveltimes_data(stations_todo, timestamp)
-    stations.recreate_missing_destinations(DATA_DIR, timestamp, False)
+    stations.recreate_missing_destinations(timestamp, False)
 
 
 if __name__ == "__main__":
