@@ -38,18 +38,17 @@ class ContourData(object):
 
 
 class ContourPlotConfig(object):
-    def __init__(self, n_contours=41):
+    def __init__(self):
         self.stepsize_deg = 0.005
         self.n_processes = 4
         self.cycle_speed_kmh = 18.0
         self.n_nearest = 20
         self.lon_start = 3.0
         self.lat_start = 50.5
-        self.delta_deg = 6
+        self.delta_deg = 6.0
         self.lon_end = self.lon_start + self.delta_deg
         self.lat_end = self.lat_start + self.delta_deg / 2.0
-        self.n_contours = n_contours
-        self.min_angle_between_segments = 4
+        self.min_angle_between_segments = 7
 
     def print_bounding_box(self):
         print(
@@ -62,8 +61,8 @@ class ContourPlotConfig(object):
 
 
 class TestConfig(ContourPlotConfig):
-    def __init__(self, n_contours=41):
-        super().__init__(n_contours=n_contours)
+    def __init__(self):
+        super().__init__()
         self.stepsize_deg = 0.005
         self.n_processes = 4
         self.lon_start = 4.8
@@ -71,7 +70,10 @@ class TestConfig(ContourPlotConfig):
         self.delta_deg = 1.0
         self.lon_end = self.lon_start + self.delta_deg
         self.lat_end = self.lat_start + self.delta_deg / 2.0
-        self.min_angle_between_segments = 4
+        self.min_angle_between_segments = 7
+        self.latrange = []
+        self.lonrange = []
+        self.Z = [[]]
 
 
 class Contour(object):
@@ -81,12 +83,12 @@ class Contour(object):
         self.config = config
         self.data_dir = data_dir
 
-    def create_contour_data(self, filepath, min_zoom=0, max_zoom=12, stroke_width=1):
+    def create_contour_data(self, filepath):
         if self.departure_station.has_travel_time_data():
             self.stations.travel_times_from_json(self.departure_station.get_travel_time_filepath())
             if os.path.exists(filepath):
                 logger.error('Output file ' + filepath + ' already exists. Will not override.')
-                return
+                # return
         else:
             logger.error('Input file ' + self.departure_station.get_travel_time_filepath() + ' not found. Skipping station.')
 
@@ -94,9 +96,9 @@ class Contour(object):
         numpy.set_printoptions(3, threshold=100, suppress=True)  # .3f
 
         altitude = 0.0
-        lonrange = numpy.arange(self.config.lon_start, self.config.lon_end, self.config.stepsize_deg)
-        latrange = numpy.arange(self.config.lat_start, self.config.lat_end, self.config.stepsize_deg / 2.0)
-        Z = numpy.zeros((int(lonrange.shape[0]), int(latrange.shape[0])))
+        self.lonrange = numpy.arange(self.config.lon_start, self.config.lon_end, self.config.stepsize_deg)
+        self.latrange = numpy.arange(self.config.lat_start, self.config.lat_end, self.config.stepsize_deg / 2.0)
+        self.Z = numpy.zeros((int(self.lonrange.shape[0]), int(self.latrange.shape[0])))
         gps = nsmaps.utilgeo.GPS()
 
         positions = []
@@ -114,11 +116,11 @@ class Contour(object):
         if self.config.n_nearest > len(self.stations):
             self.config.n_nearest = len(self.stations)
         for i in range(0, self.config.n_processes):
-            begin = i * len(latrange)/self.config.n_processes
-            end = (i+1)*len(latrange)/self.config.n_processes
-            latrange_part = latrange[begin:end]
+            begin = i * len(self.latrange)/self.config.n_processes
+            end = (i+1)*len(self.latrange)/self.config.n_processes
+            latrange_part = self.latrange[begin:end]
             process = Process(target=self.interpolate_travel_time, args=(queue, i, self.stations.stations, tree, gps, latrange_part,
-                                                                         lonrange, altitude, self.config.n_nearest, self.config.cycle_speed_kmh))
+                                                                         self.lonrange, altitude, self.config.n_nearest, self.config.cycle_speed_kmh))
             processes.append(process)
 
         for process in processes:
@@ -128,9 +130,9 @@ class Contour(object):
         for i in range(0, self.config.n_processes):
             data = queue.get()
             index_begin = data.index_begin
-            begin = int(index_begin*len(latrange)/self.config.n_processes)
-            end = int((index_begin+1)*len(latrange)/self.config.n_processes)
-            Z[0:][begin:end] = data.Z
+            begin = int(index_begin*len(self.latrange)/self.config.n_processes)
+            end = int((index_begin+1)*len(self.latrange)/self.config.n_processes)
+            self.Z[0:][begin:end] = data.Z
 
         for process in processes:
             process.join()
@@ -138,15 +140,17 @@ class Contour(object):
         end = timer()
         logger.info('finished spatial interpolation in ' + str(end - start) + ' [sec]')
 
+        # self.create_geojson(filepath, max_zoom, min_zoom, stroke_width)
+
+    def create_geojson(self, filepath, min_zoom=0, max_zoom=12, stroke_width=1, n_contours=41):
         figure = plt.figure()
         ax = figure.add_subplot(111)
-        levels = numpy.linspace(0, 200, num=self.config.n_contours)
+        levels = numpy.linspace(0, 200, num=n_contours)
         # contours = plt.contourf(lonrange, latrange, Z, levels=levels, cmap=plt.cm.plasma)
-        contours = ax.contour(lonrange, latrange, Z, levels=levels, cmap=plt.cm.jet)
+        contours = ax.contour(self.lonrange, self.latrange, self.Z, levels=levels, cmap=plt.cm.jet)
         # cbar = figure.colorbar(contours, format='%.1f')
         # plt.savefig('contour_example.png', dpi=150)
-        ndigits = len(str(int(1.0/self.config.stepsize_deg)))+1
-
+        ndigits = len(str(int(1.0 / self.config.stepsize_deg))) + 1
         logger.info('converting contour to geojson file: ' + filepath)
         geojsoncontour.contour_to_geojson(
             contour=contours,
@@ -157,8 +161,6 @@ class Contour(object):
             unit='min',
             stroke_width=stroke_width
         )
-
-        feature_collection = None
         with open(filepath, 'r') as jsonfile:
             feature_collection = geojson.load(jsonfile)
             for feature in feature_collection['features']:
@@ -170,7 +172,7 @@ class Contour(object):
     def create_geojson_tiles(self, filepaths, tile_dir, min_zoom=0, max_zoom=12):
         bound_box_filepath = os.path.join(self.data_dir, 'bounding_box.geojson')
         assert os.path.exists(bound_box_filepath)
-        filepaths.append('bounding_box.geojson')
+        filepaths.append(bound_box_filepath)
         togeojsontiles.geojson_to_mbtiles(
             filepaths=filepaths,
             tippecanoe_dir=TIPPECANOE_DIR,
@@ -178,8 +180,8 @@ class Contour(object):
             minzoom=min_zoom,
             maxzoom=max_zoom,
             full_detail=10,
-            lower_detail=8,
-            min_detail=5
+            lower_detail=9,
+            min_detail=7
         )
         logger.info('converting mbtiles to geojson-tiles')
         togeojsontiles.mbtiles_to_geojsontiles(
