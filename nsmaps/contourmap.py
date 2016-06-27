@@ -46,9 +46,18 @@ class ContourPlotConfig(object):
         self.lat_start = 50.5
         self.delta_deg = 6
         self.lon_end = self.lon_start + self.delta_deg
-        self.lat_end = self.lat_start + self.delta_deg / 2
+        self.lat_end = self.lat_start + self.delta_deg / 2.0
         self.n_contours = 41
         self.min_angle_between_segments = 4
+
+    def print_bounding_box(self):
+        print(
+            '[[' + str(self.lon_start) + ',' + str(self.lat_start) + '],' \
+            '[' + str(self.lon_start) + ',' + str(self.lat_end) + '],' \
+            '[' + str(self.lon_end) + ',' + str(self.lat_end) + '],' \
+            '[' + str(self.lon_end) + ',' + str(self.lat_start) + '],' \
+            '[' + str(self.lon_start) + ',' + str(self.lat_start) + ']]' \
+        )
 
 
 class TestConfig(ContourPlotConfig):
@@ -60,7 +69,7 @@ class TestConfig(ContourPlotConfig):
         self.lat_start = 52.0
         self.delta_deg = 1.0
         self.lon_end = self.lon_start + self.delta_deg
-        self.lat_end = self.lat_start + self.delta_deg / 2
+        self.lat_end = self.lat_start + self.delta_deg / 2.0
         self.n_contours = 41
         self.min_angle_between_segments = 4
 
@@ -149,13 +158,19 @@ class Contour(object):
             stroke_width=1
         )
 
+    def create_geojson_tiles(self, filepath):
+        bound_box_filepath = os.path.join(self.data_dir, 'bounding_box.geojson')
+        assert os.path.exists(bound_box_filepath)
         togeojsontiles.geojson_to_mbtiles(
-            filepaths=[filepath],
+            filepaths=[filepath, bound_box_filepath],
             tippecanoe_dir=TIPPECANOE_DIR,
             mbtiles_file='out.mbtiles',
-            maxzoom=14
+            minzoom=0,
+            maxzoom=12,
+            full_detail=10,
+            lower_detail=8,
+            min_detail=5
         )
-
         logger.info('converting mbtiles to geojson-tiles')
         togeojsontiles.mbtiles_to_geojsontiles(
             tippecanoe_dir=TIPPECANOE_DIR,
@@ -163,8 +178,6 @@ class Contour(object):
             mbtiles_file='out.mbtiles',
         )
         logger.info('DONE: create contour json tiles')
-
-        # contour_to_json(contours, filepath, levels, self.config.min_angle_between_segments, ndigits)
 
     @staticmethod
     def interpolate_travel_time(q, position, stations, kdtree, gps, latrange, lonrange, altitude, n_nearest, cycle_speed_kmh):
