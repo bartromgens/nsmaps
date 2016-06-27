@@ -35,7 +35,7 @@ var stationFeatures = [];
 var contourLayers = []
 
 
-$.getJSON("./data/stations.json", function(json) {
+$.getJSON(dataDir + "stations.json", function(json) {
     var lon = '5.1';
     var lat = '142.0';
     view.setCenter(ol.proj.fromLonLat([lon, lat]));
@@ -166,7 +166,9 @@ var lineStyleFunction = function(feature, resolution) {
 };
 
 function createContoursLayer(stationId) {
-    var tilespath = "./nsmaps-data/contours_" + stationId + '/tiles/{z}/{x}/{y}.geojson';
+    var tilespath = dataDir + "contours/" + stationId + '/tiles/{z}/{x}/{y}.geojson';
+//    var extent = ol.extent.applyTransform([2.0, 49.5, 10.0, 54.5], ol.proj.getTransform("EPSG:4326", "EPSG:3857"));
+//    console.log(extent);
 
     var contourLayer = new ol.layer.VectorTile({
         source: new ol.source.VectorTile({
@@ -174,7 +176,8 @@ function createContoursLayer(stationId) {
             format: new ol.format.GeoJSON(),
             projection: 'EPSG:3857',
             tileGrid: ol.tilegrid.createXYZ({
-                maxZoom: 14,
+//                extent: extent,
+                maxZoom: 12,
                 minZoom: 1,
                 tileSize: [256, 256]
             }),
