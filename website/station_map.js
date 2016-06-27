@@ -154,11 +154,11 @@ function createStationFeature(station, lonLat) {
 
 var lineStyleFunction = function(feature, resolution) {
     var scaleForPixelDensity = 1.0; //TODO: get device pixel density
-//    var lineWidth = 3;
+    var lineWidth = feature.get('stroke-width')/200.0 * scaleForPixelDensity * Math.pow(map.getView().getZoom(), 2.0)
     var lineStyle = new ol.style.Style({
         stroke: new ol.style.Stroke({
             color: feature.get('stroke'),
-            width: feature.get('stroke-width'),
+            width: lineWidth,
             opacity: 0.0 //feature.get('opacity')
         })
     });
@@ -187,53 +187,12 @@ function createContoursLayer(stationId) {
 
 //    contourLayer.setZIndex(99);
     map.addLayer(contourLayer);
-}
 
-//function createContoursLayer(contours, name) {
-//    console.log('create new contour layers');
-//    console.log(contours.length + ' contours');
-//
-//    // each contour can have multiple (including zero) paths.
-//    for (var k = 0; k < contours.length; ++k)
-//    {
-//        var paths = contours[k].paths;
-//        for (var j = 0; j < paths.length; ++j)
-//        {
-//            var markers = [];
-//            for (var i = 0; i < paths[j].x.length; ++i)
-//            {
-//                var lonLat = [paths[j].x[i], paths[j].y[i]];
-//                markers.push(ol.proj.fromLonLat(lonLat));
-//            }
-//
-//            var color = [paths[j].linecolor[0]*255, paths[j].linecolor[1]*255, paths[j].linecolor[2]*255, 0.8];
-//            var lineWidth = 3;
-//            if ((k+1) % 6 == 0)
-//            {
-//                lineWidth = 8;
-//            }
-//
-//            var lineStyle = new ol.style.Style({
-//                stroke: new ol.style.Stroke({
-//                    color: color,
-//                    width: lineWidth
-//                })
-//            });
-//
-//            var layerLines = new ol.layer.Vector({
-//                source: new ol.source.Vector({
-//                    features: [new ol.Feature({
-//                        geometry: new ol.geom.LineString(markers, 'XY'),
-//                        name: paths[j].label
-//                    })]
-//                }),
-//                style: lineStyle
-//            });
-//            contourLayers.push(layerLines);
-//            map.addLayer(layerLines);
-//        }
-//    }
-//}
+    // increase contour line width when zooming
+    map.getView().on('change:resolution', function(evt) {
+        contourLayer.setStyle(lineStyleFunction);
+    });
+}
 
 
 function componentToHex(comp) {
@@ -314,8 +273,13 @@ var displayFeatureInfo = function(pixel) {
   });
 
   if (feature) {
-    info.text(feature.get('name'));
-    info.show();
+    var tooltipText = feature.get('title');
+    if (tooltipText != "") {
+      info.text(tooltipText);
+      info.show();
+    } else {
+      info.hide();
+    }
   } else {
     info.hide();
   }
