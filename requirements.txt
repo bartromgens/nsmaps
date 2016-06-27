@@ -5,5 +5,6 @@ numpy==1.10.4
 matplotlib==1.5.1
 scipy==0.17.0
 nsapi==2.7.4
-togeojsontiles==0.1.2
+#togeojsontiles==0.1.2
 geojsoncontour==0.1.1
+git+https://github.com/bartromgens/togeojsontiles.git
