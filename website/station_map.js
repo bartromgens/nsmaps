@@ -223,7 +223,6 @@ select.on('select', function(evt) {
     contourLayers.length = 0;
     var station_id = evt.selected[0].get('id');
     var selected_station_name = evt.selected[0].get('name')
-    current_station_control_label.setText("Loading...");
     addContours(station_id);
     current_station_control_label.setText(selected_station_name);
 });
