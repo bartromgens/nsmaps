@@ -154,11 +154,11 @@ function createStationFeature(station, lonLat) {
 
 var lineStyleFunction = function(feature, resolution) {
     var scaleForPixelDensity = 1.0; //TODO: get device pixel density
-    var lineWidth = 3;
+//    var lineWidth = 3;
     var lineStyle = new ol.style.Style({
         stroke: new ol.style.Stroke({
             color: feature.get('stroke'),
-            width: lineWidth,
+            width: feature.get('stroke-width'),
             opacity: 0.0 //feature.get('opacity')
         })
     });
@@ -185,7 +185,7 @@ function createContoursLayer(stationId) {
         style: lineStyleFunction
     });
 
-    contourLayer.setZIndex(99);
+//    contourLayer.setZIndex(99);
     map.addLayer(contourLayer);
 }
 
