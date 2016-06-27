@@ -16,12 +16,14 @@ def test():
 
     departure_station_name = 'Utrecht Centraal'
     departure_station = stations.find_station(departure_station_name)
-    filepath_out = os.path.join(DATA_DIR, 'contours_' + departure_station.get_code() + '.geojson')
+    assert os.path.exists(os.path.join(DATA_DIR, 'contours/'))
+    filepath_out = os.path.join(DATA_DIR, 'contours/' + departure_station.get_code() + '.geojson')
     test_config = nsmaps.contourmap.ContourPlotConfig()
+    test_config.print_bounding_box()
 
     contourmap = nsmaps.contourmap.Contour(departure_station, stations, test_config, DATA_DIR)
-    contourmap.create_contour_data(filepath_out)
-
+    # contourmap.create_contour_data(filepath_out)
+    contourmap.create_geojson_tiles(filepath_out)
 
 def create_all():
     stations = nsmaps.station.Stations(DATA_DIR)
@@ -33,6 +35,7 @@ def create_all():
         if station.has_travel_time_data():
             contourmap = nsmaps.contourmap.Contour(station, stations, config, DATA_DIR)
             contourmap.create_contour_data(filepath_out)
+            contourmap.create_geojson_tiles(filepath_out)
 
 
 if __name__ == "__main__":
