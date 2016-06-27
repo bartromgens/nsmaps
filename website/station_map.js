@@ -48,10 +48,7 @@ $.getJSON("./data/stations.json", function(json) {
 
 function addContours(station_id)
 {
-    $.getJSON("./nsmaps-data/contours/contours_" + station_id + ".json", function(json) {
-        var contours = json.contours;
-        createContoursLayer(contours, "Travel time");
-    });
+    createContoursLayer(station_id);
 }
 
 
@@ -155,51 +152,85 @@ function createStationFeature(station, lonLat) {
 }
 
 
-function createContoursLayer(contours, name) {
-    console.log('create new contour layers');
-    console.log(contours.length + ' contours');
+var lineStyleFunction = function(feature, resolution) {
+    var scaleForPixelDensity = 1.0; //TODO: get device pixel density
+    var lineWidth = 3;
+    var lineStyle = new ol.style.Style({
+        stroke: new ol.style.Stroke({
+            color: feature.get('stroke'),
+            width: lineWidth,
+            opacity: 0.0 //feature.get('opacity')
+        })
+    });
+    return lineStyle;
+};
 
-    // each contour can have multiple (including zero) paths.
-    for (var k = 0; k < contours.length; ++k)
-    {
-        var paths = contours[k].paths;
-        for (var j = 0; j < paths.length; ++j)
-        {
-            var markers = [];
-            for (var i = 0; i < paths[j].x.length; ++i)
-            {
-                var lonLat = [paths[j].x[i], paths[j].y[i]];
-                markers.push(ol.proj.fromLonLat(lonLat));
-            }
+function createContoursLayer(stationId) {
+    var tilespath = "./nsmaps-data/contours_" + stationId + '/tiles/{z}/{x}/{y}.geojson';
 
-            var color = [paths[j].linecolor[0]*255, paths[j].linecolor[1]*255, paths[j].linecolor[2]*255, 0.8];
-            var lineWidth = 3;
-            if ((k+1) % 6 == 0)
-            {
-                lineWidth = 8;
-            }
+    var contourLayer = new ol.layer.VectorTile({
+        source: new ol.source.VectorTile({
+            url: tilespath,
+            format: new ol.format.GeoJSON(),
+            projection: 'EPSG:3857',
+            tileGrid: ol.tilegrid.createXYZ({
+                maxZoom: 14,
+                minZoom: 1,
+                tileSize: [256, 256]
+            }),
+        }),
+        style: lineStyleFunction
+    });
 
-            var lineStyle = new ol.style.Style({
-                stroke: new ol.style.Stroke({
-                    color: color,
-                    width: lineWidth
-                })
-            });
-
-            var layerLines = new ol.layer.Vector({
-                source: new ol.source.Vector({
-                    features: [new ol.Feature({
-                        geometry: new ol.geom.LineString(markers, 'XY'),
-                        name: paths[j].label
-                    })]
-                }),
-                style: lineStyle
-            });
-            contourLayers.push(layerLines);
-            map.addLayer(layerLines);
-        }
-    }
+    contourLayer.setZIndex(99);
+    map.addLayer(contourLayer);
 }
+
+//function createContoursLayer(contours, name) {
+//    console.log('create new contour layers');
+//    console.log(contours.length + ' contours');
+//
+//    // each contour can have multiple (including zero) paths.
+//    for (var k = 0; k < contours.length; ++k)
+//    {
+//        var paths = contours[k].paths;
+//        for (var j = 0; j < paths.length; ++j)
+//        {
+//            var markers = [];
+//            for (var i = 0; i < paths[j].x.length; ++i)
+//            {
+//                var lonLat = [paths[j].x[i], paths[j].y[i]];
+//                markers.push(ol.proj.fromLonLat(lonLat));
+//            }
+//
+//            var color = [paths[j].linecolor[0]*255, paths[j].linecolor[1]*255, paths[j].linecolor[2]*255, 0.8];
+//            var lineWidth = 3;
+//            if ((k+1) % 6 == 0)
+//            {
+//                lineWidth = 8;
+//            }
+//
+//            var lineStyle = new ol.style.Style({
+//                stroke: new ol.style.Stroke({
+//                    color: color,
+//                    width: lineWidth
+//                })
+//            });
+//
+//            var layerLines = new ol.layer.Vector({
+//                source: new ol.source.Vector({
+//                    features: [new ol.Feature({
+//                        geometry: new ol.geom.LineString(markers, 'XY'),
+//                        name: paths[j].label
+//                    })]
+//                }),
+//                style: lineStyle
+//            });
+//            contourLayers.push(layerLines);
+//            map.addLayer(layerLines);
+//        }
+//    }
+//}
 
 
 function componentToHex(comp) {

@@ -16,8 +16,8 @@ def test():
 
     departure_station_name = 'Utrecht Centraal'
     departure_station = stations.find_station(departure_station_name)
-    filepath_out = os.path.join(DATA_DIR, 'contours_' + departure_station.get_code() + '.json')
-    test_config = nsmaps.contourmap.TestConfig()
+    filepath_out = os.path.join(DATA_DIR, 'contours_' + departure_station.get_code() + '.geojson')
+    test_config = nsmaps.contourmap.ContourPlotConfig()
 
     contourmap = nsmaps.contourmap.Contour(departure_station, stations, test_config, DATA_DIR)
     contourmap.create_contour_data(filepath_out)

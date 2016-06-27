@@ -10,8 +10,14 @@ import numpy
 import matplotlib.pyplot as plt
 from scipy.spatial import KDTree
 
+import geojsoncontour
+import togeojsontiles
+
 import nsmaps
 from nsmaps.logger import logger
+
+
+TIPPECANOE_DIR = '/usr/local/bin/'
 
 
 def dotproduct(v1, v2):
@@ -131,7 +137,34 @@ class Contour(object):
         # cbar = figure.colorbar(contours, format='%.1f')
         # plt.savefig('contour_example.png', dpi=150)
         ndigits = len(str(int(1.0/self.config.stepsize_deg)))+1
-        contour_to_json(contours, filepath, levels, self.config.min_angle_between_segments, ndigits)
+
+        logger.info('converting contour to geojson file: ' + filepath)
+        geojsoncontour.contour_to_geojson(
+            contour=contours,
+            geojson_filepath=filepath,
+            contour_levels=levels,
+            min_angle_deg=self.config.min_angle_between_segments,
+            ndigits=ndigits,
+            unit='min',
+            stroke_width=1
+        )
+
+        togeojsontiles.geojson_to_mbtiles(
+            filepaths=[filepath],
+            tippecanoe_dir=TIPPECANOE_DIR,
+            mbtiles_file='out.mbtiles',
+            maxzoom=14
+        )
+
+        logger.info('converting mbtiles to geojson-tiles')
+        togeojsontiles.mbtiles_to_geojsontiles(
+            tippecanoe_dir=TIPPECANOE_DIR,
+            tile_dir=os.path.join(filepath.replace('.geojson', ''), 'tiles/'),
+            mbtiles_file='out.mbtiles',
+        )
+        logger.info('DONE: create contour json tiles')
+
+        # contour_to_json(contours, filepath, levels, self.config.min_angle_between_segments, ndigits)
 
     @staticmethod
     def interpolate_travel_time(q, position, stations, kdtree, gps, latrange, lonrange, altitude, n_nearest, cycle_speed_kmh):
@@ -161,46 +194,46 @@ class Contour(object):
         return
 
 
-def contour_to_json(contour, filename, contour_labels, min_angle=2, ndigits=5):
-    # min_angle: only create a new line segment if the angle is larger than this angle, to compress output
-    collections = contour.collections
-    with open(filename, 'w') as fileout:
-        total_points = 0
-        total_points_original = 0
-        collections_json = []
-        contour_index = 0
-        assert len(contour_labels) == len(collections)
-        for collection in collections:
-            paths = collection.get_paths()
-            color = collection.get_edgecolor()
-            paths_json = []
-            for path in paths:
-                v = path.vertices
-                x = []
-                y = []
-                v1 = v[1] - v[0]
-                x.append(round(v[0][0], ndigits))
-                y.append(round(v[0][1], ndigits))
-                for i in range(1, len(v) - 2):
-                    v2 = v[i + 1] - v[i - 1]
-                    diff_angle = math.fabs(angle(v1, v2) * 180.0 / math.pi)
-                    if diff_angle > min_angle:
-                        x.append(round(v[i][0], ndigits))
-                        y.append(round(v[i][1], ndigits))
-                        v1 = v[i] - v[i - 1]
-                x.append(round(v[-1][0], ndigits))
-                y.append(round(v[-1][1], ndigits))
-                total_points += len(x)
-                total_points_original += len(v)
-
-                # x = v[:,0].tolist()
-                # y = v[:,1].tolist()
-                paths_json.append({u"x": x, u"y": y, u"linecolor": color[0].tolist(), u"label": str(int(contour_labels[contour_index])) + ' min'})
-            contour_index += 1
-
-            if paths_json:
-                collections_json.append({u"paths": paths_json})
-        collections_json_f = {}
-        collections_json_f[u"contours"] = collections_json
-        fileout.write(json.dumps(collections_json_f, sort_keys=True))  # indent=2)
-        logger.info('total points: ' + str(total_points) + ', compression: ' + str(int((1.0 - total_points / total_points_original) * 100)) + '%')
+# def contour_to_json(contour, filename, contour_labels, min_angle=2, ndigits=5):
+#     # min_angle: only create a new line segment if the angle is larger than this angle, to compress output
+#     collections = contour.collections
+#     with open(filename, 'w') as fileout:
+#         total_points = 0
+#         total_points_original = 0
+#         collections_json = []
+#         contour_index = 0
+#         assert len(contour_labels) == len(collections)
+#         for collection in collections:
+#             paths = collection.get_paths()
+#             color = collection.get_edgecolor()
+#             paths_json = []
+#             for path in paths:
+#                 v = path.vertices
+#                 x = []
+#                 y = []
+#                 v1 = v[1] - v[0]
+#                 x.append(round(v[0][0], ndigits))
+#                 y.append(round(v[0][1], ndigits))
+#                 for i in range(1, len(v) - 2):
+#                     v2 = v[i + 1] - v[i - 1]
+#                     diff_angle = math.fabs(angle(v1, v2) * 180.0 / math.pi)
+#                     if diff_angle > min_angle:
+#                         x.append(round(v[i][0], ndigits))
+#                         y.append(round(v[i][1], ndigits))
+#                         v1 = v[i] - v[i - 1]
+#                 x.append(round(v[-1][0], ndigits))
+#                 y.append(round(v[-1][1], ndigits))
+#                 total_points += len(x)
+#                 total_points_original += len(v)
+#
+#                 # x = v[:,0].tolist()
+#                 # y = v[:,1].tolist()
+#                 paths_json.append({u"x": x, u"y": y, u"linecolor": color[0].tolist(), u"label": str(int(contour_labels[contour_index])) + ' min'})
+#             contour_index += 1
+#
+#             if paths_json:
+#                 collections_json.append({u"paths": paths_json})
+#         collections_json_f = {}
+#         collections_json_f[u"contours"] = collections_json
+#         fileout.write(json.dumps(collections_json_f, sort_keys=True))  # indent=2)
+#         logger.info('total points: ' + str(total_points) + ', compression: ' + str(int((1.0 - total_points / total_points_original) * 100)) + '%')
