@@ -211,7 +211,15 @@ function createContoursLayer(stationId) {
     map.getView().on('change:resolution', function(evt) {
         contourLayer.setStyle(lineStyleFunction);
     });
+
+    updateColorBarLegend(stationId);
 }
+
+var updateColorBarLegend = function(stationId) {
+    var colorBarImage = document.getElementById('colorbar-image');
+    var imageUrl = dataDir + "contours/" + stationId + "_major_colorbar.png";
+    colorBarImage.setAttribute("src", imageUrl);
+};
 
 
 function componentToHex(comp) {

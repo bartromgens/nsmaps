@@ -28,3 +28,23 @@ body {
     padding: 7px;
     z-index: 1;
 }
+
+#colorbar-legend-container {
+    position: absolute;
+    left:0;
+    right:0;
+    bottom: 1%;
+    max-width: 600px;
+    margin: auto;
+    padding: 0.5em 0.5em 0.5em 0.5em;
+    font-weight: bold;
+    background-color: white;
+    border-radius: 5px;
+    z-index: 1;
+    opacity: 0.95;
+}
+
+#colorbar-image {
+    width: 100%;
+    margin: 0 auto;
+}

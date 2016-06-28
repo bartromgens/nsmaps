@@ -150,7 +150,7 @@ class Contour(object):
         ax = figure.add_subplot(111)
         levels = numpy.linspace(0, 200, num=n_contours)
         # contours = plt.contourf(lonrange, latrange, Z, levels=levels, cmap=plt.cm.plasma)
-        contours = ax.contour(self.lonrange, self.latrange, self.Z, levels=levels, cmap=plt.cm.jet)
+        contours = ax.contour(self.lonrange, self.latrange, self.Z, levels=levels, cmap=plt.cm.jet, linewidths=3)
         # cbar = figure.colorbar(contours, format='%.1f')
         # plt.savefig('contour_example.png', dpi=150)
         ndigits = len(str(int(1.0 / self.config.stepsize_deg))) + 1
@@ -171,6 +171,18 @@ class Contour(object):
         dump = geojson.dumps(feature_collection, sort_keys=True)
         with open(filepath, 'w') as fileout:
             fileout.write(dump)
+
+        cbar = figure.colorbar(contours, format='%d', orientation='horizontal')
+        cbar.set_label('Travel time [minutes]')
+        # cbar.set_ticks(self.config.colorbar_ticks)
+        ax.set_visible(False)
+        figure.savefig(
+            filepath.replace('.geojson', '') + "_colorbar.png",
+            dpi=90,
+            bbox_inches='tight',
+            pad_inches=0,
+            transparent=True,
+        )
 
     def create_geojson_tiles(self, filepaths, tile_dir, min_zoom=0, max_zoom=12):
         bound_box_filepath = os.path.join(self.data_dir, 'bounding_box.geojson')
