@@ -18,25 +18,26 @@ def test():
     departure_station = stations.find_station(departure_station_name)
     assert os.path.exists(os.path.join(DATA_DIR, 'contours/'))
 
-    filepaths = []
-
     test_config = nsmaps.contourmap.ContourPlotConfig()
     # test_config = nsmaps.contourmap.TestConfig()
-    test_config.print_bounding_box()
+    # test_config.print_bounding_box()
 
-    contourmap = nsmaps.contourmap.Contour(departure_station, stations, test_config, DATA_DIR)
+    create_contour_tiles_for_station(departure_station, stations, test_config)
 
+
+def create_contour_tiles_for_station(departure_station, stations, config):
+    max_zoom = 12
+    filepaths = []
+    contourmap = nsmaps.contourmap.Contour(departure_station, stations, config, DATA_DIR)
     filepath = os.path.join(DATA_DIR, 'contours/' + departure_station.get_code() + '_major.geojson')
     filepaths.append(filepath)
     contourmap.create_contour_data(filepath)
-    contourmap.create_geojson(filepath, min_zoom=0, max_zoom=12, stroke_width=9, n_contours=11)
-
+    contourmap.create_geojson(filepath, min_zoom=0, max_zoom=max_zoom, stroke_width=9, n_contours=21)
     filepath = os.path.join(DATA_DIR, 'contours/' + departure_station.get_code() + '_minor.geojson')
     filepaths.append(filepath)
-    contourmap.create_geojson(filepath, min_zoom=10, max_zoom=12, stroke_width=3, n_contours=51)
-
+    contourmap.create_geojson(filepath, min_zoom=max_zoom - 1, max_zoom=max_zoom, stroke_width=3, n_contours=41)
     tile_dir = os.path.join(DATA_DIR, 'contours/' + departure_station.get_code() + '/tiles/')
-    contourmap.create_geojson_tiles(filepaths, tile_dir=tile_dir, min_zoom=0, max_zoom=12)
+    contourmap.create_geojson_tiles(filepaths, tile_dir=tile_dir, min_zoom=0, max_zoom=max_zoom)
 
 
 def create_all():
@@ -45,11 +46,9 @@ def create_all():
     # test_config = nsmaps.contourmap.TestConfig()
     config = nsmaps.contourmap.ContourPlotConfig()
 
-    for station in stations:
-        if station.has_travel_time_data():
-            contourmap = nsmaps.contourmap.Contour(station, stations, config, DATA_DIR)
-            contourmap.create_contour_data(filepath_out)
-            contourmap.create_geojson_tiles(filepath_out)
+    for departure_station in stations:
+        if departure_station.has_travel_time_data():
+            create_contour_tiles_for_station(departure_station, stations, config)
 
 
 if __name__ == "__main__":
