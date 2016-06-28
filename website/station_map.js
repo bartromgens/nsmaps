@@ -102,6 +102,30 @@ function createStationLayer(typeScales, stations)
 
     map.addLayer(stationsSelectableLayer);
     map.addLayer(stationsUnselectableLayer);
+
+    // Select features
+    var select = new ol.interaction.Select({
+        layers: [stationsSelectableLayer],
+        condition: ol.events.condition.click
+    });
+
+    select.on('select', function(evt) {
+        if (!evt.selected[0])
+        {
+            return;
+        }
+        for (var i = 0; i < contourLayers.length; ++i)
+        {
+            var removedLayer = map.removeLayer(contourLayers[i]);
+        }
+        contourLayers.length = 0;
+        var station_id = evt.selected[0].get('id');
+        var selected_station_name = evt.selected[0].get('title')
+        addContours(station_id);
+        current_station_control_label.setText(selected_station_name);
+    });
+
+    map.addInteraction(select);
 }
 
 
@@ -200,29 +224,6 @@ function rgbToHex(r, g, b) {
     return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
 }
 
-// Select features
-
-var select = new ol.interaction.Select({
-    condition: ol.events.condition.click
-});
-
-select.on('select', function(evt) {
-    if (!evt.selected[0])
-    {
-        return;
-    }
-    for (var i = 0; i < contourLayers.length; ++i)
-    {
-        var removedLayer = map.removeLayer(contourLayers[i]);
-    }
-    contourLayers.length = 0;
-    var station_id = evt.selected[0].get('id');
-    var selected_station_name = evt.selected[0].get('title')
-    addContours(station_id);
-    current_station_control_label.setText(selected_station_name);
-});
-
-map.addInteraction(select);
 
 // Controls
 
