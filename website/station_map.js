@@ -11,15 +11,15 @@ $.ajaxSetup({beforeSend: function(xhr){
 var dataDir = "./nsmaps-data/"
 
 var typeScales = {
-                  'megastation': 9,
-                  'intercitystation': 7,
-                  'knooppuntIntercitystation': 7,
-                  'sneltreinstation': 5,
-                  'knooppuntSneltreinstation': 5,
-                  'knooppuntStoptreinstation': 4,
-                  'stoptreinstation': 4,
-                  'facultatiefStation': 4,
-                  };
+    'megastation': 9,
+    'intercitystation': 7,
+    'knooppuntIntercitystation': 7,
+    'sneltreinstation': 5,
+    'knooppuntSneltreinstation': 5,
+    'knooppuntStoptreinstation': 4,
+    'stoptreinstation': 4,
+    'facultatiefStation': 4,
+};
 
 var map = new ol.Map({target: 'map'});
 var view = new ol.View( {center: [0, 0], zoom: 10, projection: 'EPSG:3857'} );
