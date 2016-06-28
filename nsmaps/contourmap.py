@@ -45,7 +45,7 @@ class ContourPlotConfig(object):
         self.n_nearest = 20
         self.lon_start = 3.0
         self.lat_start = 50.5
-        self.delta_deg = 6.0
+        self.delta_deg = 6.5
         self.lon_end = self.lon_start + self.delta_deg
         self.lat_end = self.lat_start + self.delta_deg / 2.0
         self.min_angle_between_segments = 7
@@ -88,7 +88,7 @@ class Contour(object):
             self.stations.travel_times_from_json(self.departure_station.get_travel_time_filepath())
             if os.path.exists(filepath):
                 logger.error('Output file ' + filepath + ' already exists. Will not override.')
-                # return
+                return
         else:
             logger.error('Input file ' + self.departure_station.get_travel_time_filepath() + ' not found. Skipping station.')
 
