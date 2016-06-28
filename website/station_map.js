@@ -106,12 +106,6 @@ function createStationLayer(typeScales, stations)
 
 
 function getStationStyle(feature, circleColor) {
-    //var iconStyle = new ol.style.Icon(({
-    //    opacity: 0.75,
-    //    scale: typeScales[feature.get('type')] / 1.5,
-    //    src: 'http://www.ns.nl/static/generic/1.21.1/images/nslogo.svg'
-    //}));
-
     var strokeColor = 'black';
     circleColor = 'yellow'
     if (feature.get('selectable'))
@@ -232,24 +226,24 @@ map.addInteraction(select);
 // Controls
 
 StationNameLabel = function(opt_options) {
-  var options = opt_options || {};
+    var options = opt_options || {};
 
-  var station_label = document.createElement('a');
-  station_label.innerHTML = 'Click on a station';
+    var station_label = document.createElement('a');
+    station_label.innerHTML = 'Click on a station';
 
-  var element = document.createElement('div');
-  element.className = 'station-name ol-control';
-  element.appendChild(station_label);
+    var element = document.createElement('div');
+    element.className = 'station-name ol-control';
+    element.appendChild(station_label);
 
-  ol.control.Control.call(this, {
-    element: element
-  });
+    ol.control.Control.call(this, {
+        element: element
+    });
 
-  this.setText = function (text) {
-    station_label.innerHTML = text;
-  }
-
+    this.setText = function (text) {
+        station_label.innerHTML = text;
+    }
 };
+
 ol.inherits(StationNameLabel, ol.control.Control);
 
 var current_station_control_label = new StationNameLabel()
@@ -258,36 +252,35 @@ map.addControl(new ol.control.FullScreen());
 
 
 // Tooltip
-
 var info = $('#info');
 
 var displayFeatureInfo = function(pixel) {
-  info.css({
-    left: (pixel[0] + 10) + 'px',
-    top: (pixel[1] - 50) + 'px'
-  });
+    info.css({
+        left: (pixel[0] + 10) + 'px',
+        top: (pixel[1] - 50) + 'px'
+    });
 
-  var feature = map.forEachFeatureAtPixel(pixel, function(feature, layer) {
-    return feature;
-  });
+    var feature = map.forEachFeatureAtPixel(pixel, function(feature, layer) {
+        return feature;
+    });
 
-  if (feature) {
-    var tooltipText = feature.get('title');
-    if (tooltipText != "") {
-      info.text(tooltipText);
-      info.show();
+    if (feature) {
+        var tooltipText = feature.get('title');
+        if (tooltipText != "") {
+            info.text(tooltipText);
+            info.show();
+        } else {
+            info.hide();
+        }
     } else {
-      info.hide();
+        info.hide();
     }
-  } else {
-    info.hide();
-  }
 };
 
 map.on('pointermove', function(evt) {
-  if (evt.dragging) {
-    info.hide();
-    return;
-  }
-  displayFeatureInfo(map.getEventPixel(evt.originalEvent));
+    if (evt.dragging) {
+        info.hide();
+        return;
+    }
+    displayFeatureInfo(map.getEventPixel(evt.originalEvent));
 });
