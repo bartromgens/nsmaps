@@ -137,7 +137,7 @@ function getStationStyle(feature, circleColor) {
 function createStationFeature(station, lonLat) {
     return new ol.Feature({
         geometry: new ol.geom.Point( ol.proj.fromLonLat(lonLat) ),
-        name: station.names.long,
+        title: station.names.long,
         id: station.id,
         type: station.type,
         text: station.names.short,
@@ -181,6 +181,7 @@ function createContoursLayer(stationId) {
 
 //    contourLayer.setZIndex(99);
     map.addLayer(contourLayer);
+    contourLayers.push(contourLayer);
 
     // increase contour line width when zooming
     map.getView().on('change:resolution', function(evt) {
@@ -216,7 +217,7 @@ select.on('select', function(evt) {
     }
     contourLayers.length = 0;
     var station_id = evt.selected[0].get('id');
-    var selected_station_name = evt.selected[0].get('name')
+    var selected_station_name = evt.selected[0].get('title')
     addContours(station_id);
     current_station_control_label.setText(selected_station_name);
 });
