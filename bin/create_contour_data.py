@@ -30,6 +30,9 @@ def create_contour_tiles_for_station(departure_station, stations, config):
     filepaths = []
     contourmap = nsmaps.contourmap.Contour(departure_station, stations, config, DATA_DIR)
     filepath = os.path.join(DATA_DIR, 'contours/' + departure_station.get_code() + '_major.geojson')
+    if os.path.exists(filepath):
+        print('WARNING: skipping station ' + departure_station.get_code() + ', files already exist.')
+        return
     filepaths.append(filepath)
     contourmap.create_contour_data(filepath)
     contourmap.create_geojson(filepath, min_zoom=0, max_zoom=max_zoom, stroke_width=9, n_contours=21)
@@ -52,5 +55,5 @@ def create_all():
 
 
 if __name__ == "__main__":
-    test()
-    # create_all()
+    # test()
+    create_all()
