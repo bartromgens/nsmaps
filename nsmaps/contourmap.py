@@ -1,14 +1,16 @@
 import sys
 import os
-import json
 import math
 
 from timeit import default_timer as timer
 from multiprocessing import Process, Queue
 
 import numpy
-import matplotlib.pyplot as plt
 from scipy.spatial import KDTree
+
+import matplotlib.pyplot as plt
+from matplotlib.figure import Figure
+from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 
 import geojson
 import geojsoncontour
@@ -143,7 +145,8 @@ class Contour(object):
         # self.create_geojson(filepath, max_zoom, min_zoom, stroke_width)
 
     def create_geojson(self, filepath, min_zoom=0, max_zoom=12, stroke_width=1, n_contours=41):
-        figure = plt.figure()
+        figure = Figure(frameon=False)
+        FigureCanvas(figure)
         ax = figure.add_subplot(111)
         levels = numpy.linspace(0, 200, num=n_contours)
         # contours = plt.contourf(lonrange, latrange, Z, levels=levels, cmap=plt.cm.plasma)
