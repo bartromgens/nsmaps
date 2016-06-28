@@ -10,8 +10,15 @@ import numpy
 import matplotlib.pyplot as plt
 from scipy.spatial import KDTree
 
+import geojson
+import geojsoncontour
+import togeojsontiles
+
 import nsmaps
 from nsmaps.logger import logger
+
+
+TIPPECANOE_DIR = '/usr/local/bin/'
 
 
 def dotproduct(v1, v2):
@@ -38,11 +45,19 @@ class ContourPlotConfig(object):
         self.n_nearest = 20
         self.lon_start = 3.0
         self.lat_start = 50.5
-        self.delta_deg = 6
+        self.delta_deg = 6.5
         self.lon_end = self.lon_start + self.delta_deg
-        self.lat_end = self.lat_start + self.delta_deg / 2
-        self.n_contours = 41
-        self.min_angle_between_segments = 4
+        self.lat_end = self.lat_start + self.delta_deg / 2.0
+        self.min_angle_between_segments = 7
+
+    def print_bounding_box(self):
+        print(
+            '[[' + str(self.lon_start) + ',' + str(self.lat_start) + '],' \
+            '[' + str(self.lon_start) + ',' + str(self.lat_end) + '],' \
+            '[' + str(self.lon_end) + ',' + str(self.lat_end) + '],' \
+            '[' + str(self.lon_end) + ',' + str(self.lat_start) + '],' \
+            '[' + str(self.lon_start) + ',' + str(self.lat_start) + ']]' \
+        )
 
 
 class TestConfig(ContourPlotConfig):
@@ -54,9 +69,11 @@ class TestConfig(ContourPlotConfig):
         self.lat_start = 52.0
         self.delta_deg = 1.0
         self.lon_end = self.lon_start + self.delta_deg
-        self.lat_end = self.lat_start + self.delta_deg / 2
-        self.n_contours = 41
-        self.min_angle_between_segments = 4
+        self.lat_end = self.lat_start + self.delta_deg / 2.0
+        self.min_angle_between_segments = 7
+        self.latrange = []
+        self.lonrange = []
+        self.Z = [[]]
 
 
 class Contour(object):
@@ -70,18 +87,18 @@ class Contour(object):
         if self.departure_station.has_travel_time_data():
             self.stations.travel_times_from_json(self.departure_station.get_travel_time_filepath())
             if os.path.exists(filepath):
-                logger.warning('Output file ' + filepath + ' already exists. Will not override.')
+                logger.error('Output file ' + filepath + ' already exists. Will not override.')
                 return
         else:
-            logger.warning('Input file ' + self.departure_station.get_travel_time_filepath() + ' not found. Skipping station.')
+            logger.error('Input file ' + self.departure_station.get_travel_time_filepath() + ' not found. Skipping station.')
 
         start = timer()
         numpy.set_printoptions(3, threshold=100, suppress=True)  # .3f
 
         altitude = 0.0
-        lonrange = numpy.arange(self.config.lon_start, self.config.lon_end, self.config.stepsize_deg)
-        latrange = numpy.arange(self.config.lat_start, self.config.lat_end, self.config.stepsize_deg / 2.0)
-        Z = numpy.zeros((int(lonrange.shape[0]), int(latrange.shape[0])))
+        self.lonrange = numpy.arange(self.config.lon_start, self.config.lon_end, self.config.stepsize_deg)
+        self.latrange = numpy.arange(self.config.lat_start, self.config.lat_end, self.config.stepsize_deg / 2.0)
+        self.Z = numpy.zeros((int(self.lonrange.shape[0]), int(self.latrange.shape[0])))
         gps = nsmaps.utilgeo.GPS()
 
         positions = []
@@ -99,11 +116,11 @@ class Contour(object):
         if self.config.n_nearest > len(self.stations):
             self.config.n_nearest = len(self.stations)
         for i in range(0, self.config.n_processes):
-            begin = i * len(latrange)/self.config.n_processes
-            end = (i+1)*len(latrange)/self.config.n_processes
-            latrange_part = latrange[begin:end]
+            begin = i * len(self.latrange)/self.config.n_processes
+            end = (i+1)*len(self.latrange)/self.config.n_processes
+            latrange_part = self.latrange[begin:end]
             process = Process(target=self.interpolate_travel_time, args=(queue, i, self.stations.stations, tree, gps, latrange_part,
-                                                                         lonrange, altitude, self.config.n_nearest, self.config.cycle_speed_kmh))
+                                                                         self.lonrange, altitude, self.config.n_nearest, self.config.cycle_speed_kmh))
             processes.append(process)
 
         for process in processes:
@@ -113,9 +130,9 @@ class Contour(object):
         for i in range(0, self.config.n_processes):
             data = queue.get()
             index_begin = data.index_begin
-            begin = int(index_begin*len(latrange)/self.config.n_processes)
-            end = int((index_begin+1)*len(latrange)/self.config.n_processes)
-            Z[0:][begin:end] = data.Z
+            begin = int(index_begin*len(self.latrange)/self.config.n_processes)
+            end = int((index_begin+1)*len(self.latrange)/self.config.n_processes)
+            self.Z[0:][begin:end] = data.Z
 
         for process in processes:
             process.join()
@@ -123,15 +140,56 @@ class Contour(object):
         end = timer()
         logger.info('finished spatial interpolation in ' + str(end - start) + ' [sec]')
 
+        # self.create_geojson(filepath, max_zoom, min_zoom, stroke_width)
+
+    def create_geojson(self, filepath, min_zoom=0, max_zoom=12, stroke_width=1, n_contours=41):
         figure = plt.figure()
         ax = figure.add_subplot(111)
-        levels = numpy.linspace(0, 200, num=self.config.n_contours)
+        levels = numpy.linspace(0, 200, num=n_contours)
         # contours = plt.contourf(lonrange, latrange, Z, levels=levels, cmap=plt.cm.plasma)
-        contours = ax.contour(lonrange, latrange, Z, levels=levels, cmap=plt.cm.jet)
+        contours = ax.contour(self.lonrange, self.latrange, self.Z, levels=levels, cmap=plt.cm.jet)
         # cbar = figure.colorbar(contours, format='%.1f')
         # plt.savefig('contour_example.png', dpi=150)
-        ndigits = len(str(int(1.0/self.config.stepsize_deg)))+1
-        contour_to_json(contours, filepath, levels, self.config.min_angle_between_segments, ndigits)
+        ndigits = len(str(int(1.0 / self.config.stepsize_deg))) + 1
+        logger.info('converting contour to geojson file: ' + filepath)
+        geojsoncontour.contour_to_geojson(
+            contour=contours,
+            geojson_filepath=filepath,
+            contour_levels=levels,
+            min_angle_deg=self.config.min_angle_between_segments,
+            ndigits=ndigits,
+            unit='min',
+            stroke_width=stroke_width
+        )
+        with open(filepath, 'r') as jsonfile:
+            feature_collection = geojson.load(jsonfile)
+            for feature in feature_collection['features']:
+                feature["tippecanoe"] = {"maxzoom": str(int(max_zoom)), "minzoom": str(int(min_zoom))}
+        dump = geojson.dumps(feature_collection, sort_keys=True)
+        with open(filepath, 'w') as fileout:
+            fileout.write(dump)
+
+    def create_geojson_tiles(self, filepaths, tile_dir, min_zoom=0, max_zoom=12):
+        bound_box_filepath = os.path.join(self.data_dir, 'bounding_box.geojson')
+        assert os.path.exists(bound_box_filepath)
+        filepaths.append(bound_box_filepath)
+        togeojsontiles.geojson_to_mbtiles(
+            filepaths=filepaths,
+            tippecanoe_dir=TIPPECANOE_DIR,
+            mbtiles_file='out.mbtiles',
+            minzoom=min_zoom,
+            maxzoom=max_zoom,
+            full_detail=10,
+            lower_detail=9,
+            min_detail=7
+        )
+        logger.info('converting mbtiles to geojson-tiles')
+        togeojsontiles.mbtiles_to_geojsontiles(
+            tippecanoe_dir=TIPPECANOE_DIR,
+            tile_dir=tile_dir,
+            mbtiles_file='out.mbtiles',
+        )
+        logger.info('DONE: create contour json tiles')
 
     @staticmethod
     def interpolate_travel_time(q, position, stations, kdtree, gps, latrange, lonrange, altitude, n_nearest, cycle_speed_kmh):
@@ -161,46 +219,46 @@ class Contour(object):
         return
 
 
-def contour_to_json(contour, filename, contour_labels, min_angle=2, ndigits=5):
-    # min_angle: only create a new line segment if the angle is larger than this angle, to compress output
-    collections = contour.collections
-    with open(filename, 'w') as fileout:
-        total_points = 0
-        total_points_original = 0
-        collections_json = []
-        contour_index = 0
-        assert len(contour_labels) == len(collections)
-        for collection in collections:
-            paths = collection.get_paths()
-            color = collection.get_edgecolor()
-            paths_json = []
-            for path in paths:
-                v = path.vertices
-                x = []
-                y = []
-                v1 = v[1] - v[0]
-                x.append(round(v[0][0], ndigits))
-                y.append(round(v[0][1], ndigits))
-                for i in range(1, len(v) - 2):
-                    v2 = v[i + 1] - v[i - 1]
-                    diff_angle = math.fabs(angle(v1, v2) * 180.0 / math.pi)
-                    if diff_angle > min_angle:
-                        x.append(round(v[i][0], ndigits))
-                        y.append(round(v[i][1], ndigits))
-                        v1 = v[i] - v[i - 1]
-                x.append(round(v[-1][0], ndigits))
-                y.append(round(v[-1][1], ndigits))
-                total_points += len(x)
-                total_points_original += len(v)
-
-                # x = v[:,0].tolist()
-                # y = v[:,1].tolist()
-                paths_json.append({u"x": x, u"y": y, u"linecolor": color[0].tolist(), u"label": str(int(contour_labels[contour_index])) + ' min'})
-            contour_index += 1
-
-            if paths_json:
-                collections_json.append({u"paths": paths_json})
-        collections_json_f = {}
-        collections_json_f[u"contours"] = collections_json
-        fileout.write(json.dumps(collections_json_f, sort_keys=True))  # indent=2)
-        logger.info('total points: ' + str(total_points) + ', compression: ' + str(int((1.0 - total_points / total_points_original) * 100)) + '%')
+# def contour_to_json(contour, filename, contour_labels, min_angle=2, ndigits=5):
+#     # min_angle: only create a new line segment if the angle is larger than this angle, to compress output
+#     collections = contour.collections
+#     with open(filename, 'w') as fileout:
+#         total_points = 0
+#         total_points_original = 0
+#         collections_json = []
+#         contour_index = 0
+#         assert len(contour_labels) == len(collections)
+#         for collection in collections:
+#             paths = collection.get_paths()
+#             color = collection.get_edgecolor()
+#             paths_json = []
+#             for path in paths:
+#                 v = path.vertices
+#                 x = []
+#                 y = []
+#                 v1 = v[1] - v[0]
+#                 x.append(round(v[0][0], ndigits))
+#                 y.append(round(v[0][1], ndigits))
+#                 for i in range(1, len(v) - 2):
+#                     v2 = v[i + 1] - v[i - 1]
+#                     diff_angle = math.fabs(angle(v1, v2) * 180.0 / math.pi)
+#                     if diff_angle > min_angle:
+#                         x.append(round(v[i][0], ndigits))
+#                         y.append(round(v[i][1], ndigits))
+#                         v1 = v[i] - v[i - 1]
+#                 x.append(round(v[-1][0], ndigits))
+#                 y.append(round(v[-1][1], ndigits))
+#                 total_points += len(x)
+#                 total_points_original += len(v)
+#
+#                 # x = v[:,0].tolist()
+#                 # y = v[:,1].tolist()
+#                 paths_json.append({u"x": x, u"y": y, u"linecolor": color[0].tolist(), u"label": str(int(contour_labels[contour_index])) + ' min'})
+#             contour_index += 1
+#
+#             if paths_json:
+#                 collections_json.append({u"paths": paths_json})
+#         collections_json_f = {}
+#         collections_json_f[u"contours"] = collections_json
+#         fileout.write(json.dumps(collections_json_f, sort_keys=True))  # indent=2)
+#         logger.info('total points: ' + str(total_points) + ', compression: ' + str(int((1.0 - total_points / total_points_original) * 100)) + '%')

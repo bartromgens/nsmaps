@@ -11,15 +11,15 @@ $.ajaxSetup({beforeSend: function(xhr){
 var dataDir = "./nsmaps-data/"
 
 var typeScales = {
-                  'megastation': 9,
-                  'intercitystation': 7,
-                  'knooppuntIntercitystation': 7,
-                  'sneltreinstation': 5,
-                  'knooppuntSneltreinstation': 5,
-                  'knooppuntStoptreinstation': 4,
-                  'stoptreinstation': 4,
-                  'facultatiefStation': 4,
-                  };
+    'megastation': 9,
+    'intercitystation': 7,
+    'knooppuntIntercitystation': 7,
+    'sneltreinstation': 5,
+    'knooppuntSneltreinstation': 5,
+    'knooppuntStoptreinstation': 4,
+    'stoptreinstation': 4,
+    'facultatiefStation': 4,
+};
 
 var map = new ol.Map({target: 'map'});
 var view = new ol.View( {center: [0, 0], zoom: 10, projection: 'EPSG:3857'} );
@@ -35,7 +35,7 @@ var stationFeatures = [];
 var contourLayers = []
 
 
-$.getJSON("./data/stations.json", function(json) {
+$.getJSON(dataDir + "stations.json", function(json) {
     var lon = '5.1';
     var lat = '142.0';
     view.setCenter(ol.proj.fromLonLat([lon, lat]));
@@ -48,10 +48,7 @@ $.getJSON("./data/stations.json", function(json) {
 
 function addContours(station_id)
 {
-    $.getJSON("./nsmaps-data/contours/contours_" + station_id + ".json", function(json) {
-        var contours = json.contours;
-        createContoursLayer(contours, "Travel time");
-    });
+    createContoursLayer(station_id);
 }
 
 
@@ -105,16 +102,34 @@ function createStationLayer(typeScales, stations)
 
     map.addLayer(stationsSelectableLayer);
     map.addLayer(stationsUnselectableLayer);
+
+    // Select features
+    var select = new ol.interaction.Select({
+        layers: [stationsSelectableLayer],
+        condition: ol.events.condition.click
+    });
+
+    select.on('select', function(evt) {
+        if (!evt.selected[0])
+        {
+            return;
+        }
+        for (var i = 0; i < contourLayers.length; ++i)
+        {
+            var removedLayer = map.removeLayer(contourLayers[i]);
+        }
+        contourLayers.length = 0;
+        var station_id = evt.selected[0].get('id');
+        var selected_station_name = evt.selected[0].get('title')
+        addContours(station_id);
+        current_station_control_label.setText(selected_station_name);
+    });
+
+    map.addInteraction(select);
 }
 
 
 function getStationStyle(feature, circleColor) {
-    //var iconStyle = new ol.style.Icon(({
-    //    opacity: 0.75,
-    //    scale: typeScales[feature.get('type')] / 1.5,
-    //    src: 'http://www.ns.nl/static/generic/1.21.1/images/nslogo.svg'
-    //}));
-
     var strokeColor = 'black';
     circleColor = 'yellow'
     if (feature.get('selectable'))
@@ -146,7 +161,7 @@ function getStationStyle(feature, circleColor) {
 function createStationFeature(station, lonLat) {
     return new ol.Feature({
         geometry: new ol.geom.Point( ol.proj.fromLonLat(lonLat) ),
-        name: station.names.long,
+        title: station.names.long,
         id: station.id,
         type: station.type,
         text: station.names.short,
@@ -155,50 +170,47 @@ function createStationFeature(station, lonLat) {
 }
 
 
-function createContoursLayer(contours, name) {
-    console.log('create new contour layers');
-    console.log(contours.length + ' contours');
+var lineStyleFunction = function(feature, resolution) {
+    var scaleForPixelDensity = 1.0; //TODO: get device pixel density
+    var lineWidth = feature.get('stroke-width')/200.0 * scaleForPixelDensity * Math.pow(map.getView().getZoom(), 2.0)
+    var lineStyle = new ol.style.Style({
+        stroke: new ol.style.Stroke({
+            color: feature.get('stroke'),
+            width: lineWidth,
+            opacity: 0.0 //feature.get('opacity')
+        })
+    });
+    return lineStyle;
+};
 
-    // each contour can have multiple (including zero) paths.
-    for (var k = 0; k < contours.length; ++k)
-    {
-        var paths = contours[k].paths;
-        for (var j = 0; j < paths.length; ++j)
-        {
-            var markers = [];
-            for (var i = 0; i < paths[j].x.length; ++i)
-            {
-                var lonLat = [paths[j].x[i], paths[j].y[i]];
-                markers.push(ol.proj.fromLonLat(lonLat));
-            }
+function createContoursLayer(stationId) {
+    var tilespath = dataDir + "contours/" + stationId + '/tiles/{z}/{x}/{y}.geojson';
+//    var extent = ol.extent.applyTransform([2.0, 49.5, 10.0, 54.5], ol.proj.getTransform("EPSG:4326", "EPSG:3857"));
+//    console.log(extent);
 
-            var color = [paths[j].linecolor[0]*255, paths[j].linecolor[1]*255, paths[j].linecolor[2]*255, 0.8];
-            var lineWidth = 3;
-            if ((k+1) % 6 == 0)
-            {
-                lineWidth = 8;
-            }
+    var contourLayer = new ol.layer.VectorTile({
+        source: new ol.source.VectorTile({
+            url: tilespath,
+            format: new ol.format.GeoJSON(),
+            projection: 'EPSG:3857',
+            tileGrid: ol.tilegrid.createXYZ({
+//                extent: extent,
+                maxZoom: 12,
+                minZoom: 1,
+                tileSize: [256, 256]
+            }),
+        }),
+        style: lineStyleFunction
+    });
 
-            var lineStyle = new ol.style.Style({
-                stroke: new ol.style.Stroke({
-                    color: color,
-                    width: lineWidth
-                })
-            });
+//    contourLayer.setZIndex(99);
+    map.addLayer(contourLayer);
+    contourLayers.push(contourLayer);
 
-            var layerLines = new ol.layer.Vector({
-                source: new ol.source.Vector({
-                    features: [new ol.Feature({
-                        geometry: new ol.geom.LineString(markers, 'XY'),
-                        name: paths[j].label
-                    })]
-                }),
-                style: lineStyle
-            });
-            contourLayers.push(layerLines);
-            map.addLayer(layerLines);
-        }
-    }
+    // increase contour line width when zooming
+    map.getView().on('change:resolution', function(evt) {
+        contourLayer.setStyle(lineStyleFunction);
+    });
 }
 
 
@@ -212,52 +224,28 @@ function rgbToHex(r, g, b) {
     return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
 }
 
-// Select features
-
-var select = new ol.interaction.Select({
-    condition: ol.events.condition.click
-});
-
-select.on('select', function(evt) {
-    if (!evt.selected[0])
-    {
-        return;
-    }
-    for (var i = 0; i < contourLayers.length; ++i)
-    {
-        var removedLayer = map.removeLayer(contourLayers[i]);
-    }
-    contourLayers.length = 0;
-    var station_id = evt.selected[0].get('id');
-    var selected_station_name = evt.selected[0].get('name')
-    current_station_control_label.setText("Loading...");
-    addContours(station_id);
-    current_station_control_label.setText(selected_station_name);
-});
-
-map.addInteraction(select);
 
 // Controls
 
 StationNameLabel = function(opt_options) {
-  var options = opt_options || {};
+    var options = opt_options || {};
 
-  var station_label = document.createElement('a');
-  station_label.innerHTML = 'Click on a station';
+    var station_label = document.createElement('a');
+    station_label.innerHTML = 'Click on a station';
 
-  var element = document.createElement('div');
-  element.className = 'station-name ol-control';
-  element.appendChild(station_label);
+    var element = document.createElement('div');
+    element.className = 'station-name ol-control';
+    element.appendChild(station_label);
 
-  ol.control.Control.call(this, {
-    element: element
-  });
+    ol.control.Control.call(this, {
+        element: element
+    });
 
-  this.setText = function (text) {
-    station_label.innerHTML = text;
-  }
-
+    this.setText = function (text) {
+        station_label.innerHTML = text;
+    }
 };
+
 ol.inherits(StationNameLabel, ol.control.Control);
 
 var current_station_control_label = new StationNameLabel()
@@ -266,31 +254,35 @@ map.addControl(new ol.control.FullScreen());
 
 
 // Tooltip
-
 var info = $('#info');
 
 var displayFeatureInfo = function(pixel) {
-  info.css({
-    left: (pixel[0] + 10) + 'px',
-    top: (pixel[1] - 50) + 'px'
-  });
+    info.css({
+        left: (pixel[0] + 10) + 'px',
+        top: (pixel[1] - 50) + 'px'
+    });
 
-  var feature = map.forEachFeatureAtPixel(pixel, function(feature, layer) {
-    return feature;
-  });
+    var feature = map.forEachFeatureAtPixel(pixel, function(feature, layer) {
+        return feature;
+    });
 
-  if (feature) {
-    info.text(feature.get('name'));
-    info.show();
-  } else {
-    info.hide();
-  }
+    if (feature) {
+        var tooltipText = feature.get('title');
+        if (tooltipText != "") {
+            info.text(tooltipText);
+            info.show();
+        } else {
+            info.hide();
+        }
+    } else {
+        info.hide();
+    }
 };
 
 map.on('pointermove', function(evt) {
-  if (evt.dragging) {
-    info.hide();
-    return;
-  }
-  displayFeatureInfo(map.getEventPixel(evt.originalEvent));
+    if (evt.dragging) {
+        info.hide();
+        return;
+    }
+    displayFeatureInfo(map.getEventPixel(evt.originalEvent));
 });

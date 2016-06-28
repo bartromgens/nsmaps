@@ -10,3 +10,5 @@ website/data/traveltimes_from_*.json
 local_settings.py
 *.sqlite
 *.log
+
+out.mbtiles
