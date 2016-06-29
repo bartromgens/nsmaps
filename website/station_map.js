@@ -263,6 +263,7 @@ map.addControl(new ol.control.FullScreen());
 
 // Tooltip
 var info = $('#info');
+info.hide();
 
 var displayFeatureInfo = function(pixel) {
     info.css({
