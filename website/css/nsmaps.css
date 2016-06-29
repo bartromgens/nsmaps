@@ -39,6 +39,7 @@ body {
     padding: 0.5em 0.5em 0.5em 0.5em;
     font-weight: bold;
     background-color: white;
+    box-shadow: 2px 2px 5px rgba(0,0,0,.2);
     border-radius: 5px;
     z-index: 1;
     opacity: 0.95;
@@ -51,20 +52,35 @@ body {
 
 #info-message {
     position: absolute;
-    left: 0;
-    right: 0;
+    left: 50%;
+    right: 3em;
     margin: auto;
-    margin-top: 1%;
+    margin-top: 0.5em;
     padding: 10px;
-    width: 80%;
+    width: 45%;
     max-width: 1000px;
     box-shadow: 2px 2px 5px rgba(0,0,0,.2);
     background-color: white;
     opacity: 0.9;
+    border-radius: 5px;
+    z-index: 2;
 }
 
 #info-message-close {
     float: right;
     display: inline-block;
     padding: 2px 5px;
+}
+
+#select-station-container {
+    position: absolute;
+    left: 3em;
+    margin: auto;
+    margin-top: 0.5em;
+    padding: 10px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,.2);
+    background-color: white;
+    border-radius: 5px;
+    opacity: 0.9;
+    z-index: 2;
 }
