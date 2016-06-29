@@ -44,21 +44,18 @@
                     </ul>
                 </div>
 
+                <div id="info-message">
+                    <button id='info-message-close' type="button" class="btn btn-primary" onclick='this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode); return false;'>x</button>
+                    <h5>What is this?</h5>
+                    <p>
+                        This map shows how long it takes to get somewhere in the Netherlands by train and bicycle (18 km/h).
+                        The lines indicate how far you can get within a given time, from the selected departure station. The lines indicate intervals of 10 minutes.
+                        Click on a train station (blue circle) to change departure station.
+                    </p>
+                </div>
+
             </div>
         </div>
-
-        <!--<div class="container">-->
-            <!--<p>-->
-                <!--This map shows how long it takes to get somewhere in the Netherlands by train and bicycle.-->
-                <!--The lines indicate how far you can get within a given time. The thick lines indicate intervals of 30 minutes.-->
-            <!--</p>-->
-            <!--<p>-->
-                <!--<ul>-->
-                    <!--<li>Click on a train station (blue circle) to change departure station.</li>-->
-                    <!--<li>Hover over the contour lines to see the time they indicate.</li>-->
-                <!--</ul>-->
-            <!--</p>-->
-        <!--</div>-->
 
         <div id="map-container">
             <div id="map">
