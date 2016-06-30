@@ -43,7 +43,7 @@ class ContourPlotConfig(object):
     def __init__(self):
         self.bound_box_filepath = 'bounding_box.geojson'
         self.stepsize_deg = 0.005
-        self.n_processes = 2
+        self.n_processes = 4
         self.cycle_speed_kmh = 18.0
         self.n_nearest = 20
         self.lon_start = 3.0
@@ -67,7 +67,7 @@ class TestConfig(ContourPlotConfig):
     def __init__(self):
         super().__init__()
         self.bound_box_filepath = 'bounding_box_test.geojson'
-        self.stepsize_deg = 0.01
+        self.stepsize_deg = 0.005
         self.n_processes = 4
         self.lon_start = 4.8
         self.lat_start = 52.0
@@ -146,11 +146,10 @@ class Contour(object):
 
         # self.create_geojson(filepath, max_zoom, min_zoom, stroke_width)
 
-    def create_geojson(self, filepath, min_zoom=0, max_zoom=12, stroke_width=1, n_contours=41):
+    def create_geojson(self, filepath, min_zoom=0, max_zoom=12, stroke_width=1, levels=[]):
         figure = Figure(frameon=False)
         FigureCanvas(figure)
         ax = figure.add_subplot(111)
-        levels = numpy.linspace(0, 200, num=n_contours)
         # contours = plt.contourf(lonrange, latrange, Z, levels=levels, cmap=plt.cm.plasma)
         contours = ax.contour(self.lonrange, self.latrange, self.Z, levels=levels, cmap=plt.cm.jet, linewidths=3)
         # cbar = figure.colorbar(contours, format='%.1f')
@@ -197,7 +196,7 @@ class Contour(object):
             minzoom=min_zoom,
             maxzoom=max_zoom,
             full_detail=10,
-            lower_detail=9,
+            lower_detail=8,
             min_detail=7
         )
         logger.info('converting mbtiles to geojson-tiles')
