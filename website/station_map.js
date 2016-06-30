@@ -126,18 +126,53 @@ var showStationContours = function(stationId) {
         var removedLayer = map.removeLayer(contourLayers[i]);
     }
     contourLayers.length = 0;
-    createContoursLayer(stationId);
     station = getStationById(stationId);
     document.getElementById('departure-station-input').value = station.names.long;
+    createContoursLayer(stationId);
+    selectStationFeature(stationId);
 //    current_station_control_label.setText(selected_station_name);
 };
 
+var stationFeaturesSelectable = [];
+
+var selectStationFeature = function(stationId) {
+    for (var i in stationFeaturesSelectable) {
+        var feature = stationFeaturesSelectable[i];
+//        console.log(feature.get('id'));
+        if (feature.get('id') == stationId)
+        {
+            console.log('feature found');
+            feature.setStyle(getSelectedStationStyle(feature));
+        }
+        else {
+            feature.setStyle(getStationStyle(feature));
+        }
+    }
+};
+
+
+var onSelectStationFeature = function(evt) {
+    evt.deselected.forEach(function(feature){
+        feature.setStyle(getStationStyle(feature));
+    });
+
+    if (!evt.selected[0])
+    {
+        return;
+    }
+
+    evt.selected.forEach(function(feature){
+        feature.setStyle(getSelectedStationStyle(feature));
+    });
+    var stationId = evt.selected[0].get('id');
+    showStationContours(stationId);
+//        moveToStation(stationId);
+};
 
 function createStationLayer(typeScales, stations)
 {
     var stationFeaturesUnselectable = [];
-    var stationFeaturesSelectable = [];
-    
+
     for (var i in stations)
     {
         var station = stations[i];
@@ -159,7 +194,7 @@ function createStationLayer(typeScales, stations)
 
     for (var j in stationFeatures)
     {
-        stationFeatures[j].setStyle(getStationStyle(stationFeatures[j], 'black'));
+        stationFeatures[j].setStyle(getStationStyle(stationFeatures[j], 'yellow'));
     }
 
     var stationSelectableSource = new ol.source.Vector({
@@ -190,27 +225,34 @@ function createStationLayer(typeScales, stations)
         condition: ol.events.condition.click
     });
 
-    select.on('select', function(evt) {
-        if (!evt.selected[0])
-        {
-            return;
-        }
-        var stationId = evt.selected[0].get('id');
-        showStationContours(stationId);
-//        moveToStation(stationId);
-    });
+    select.on('select', onSelectStationFeature);
 
     map.addInteraction(select);
 }
 
 
+var getSelectedStationStyle = function(feature) {
+    var strokeColor = 'lightgreen';
+    var circleColor = 'green';
+
+    var circleStyle = new ol.style.Circle(({
+        fill: new ol.style.Fill({color: circleColor}),
+        stroke: new ol.style.Stroke({color: strokeColor, width: 3}),
+        radius: typeScales[feature.get('type')] * 1.5
+    }));
+
+    return new ol.style.Style({
+        image: circleStyle,
+    });
+};
+
+
 function getStationStyle(feature, circleColor) {
     var strokeColor = 'black';
-    circleColor = 'yellow'
     if (feature.get('selectable'))
     {
         strokeColor = 'black';
-        circleColor = '#2293ff'
+        circleColor = '#2293ff';
     }
 
     var circleStyle = new ol.style.Circle(({
@@ -219,12 +261,12 @@ function getStationStyle(feature, circleColor) {
         radius: typeScales[feature.get('type')]
     }));
 
-    var textStyle = new ol.style.Text({
-        text: feature.get('text'),
-        scale: typeScales[feature.get('type')] * 2.0,
-        offsetY: 20,
-        fill: new ol.style.Fill({color: '#000'})
-    });
+//    var textStyle = new ol.style.Text({
+//        text: feature.get('text'),
+//        scale: typeScales[feature.get('type')] * 2.0,
+//        offsetY: 20,
+//        fill: new ol.style.Fill({color: '#000'})
+//    });
 
     return new ol.style.Style({
         image: circleStyle,
