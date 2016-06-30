@@ -34,22 +34,101 @@ map.addLayer(osmLayer);
 var stationFeatures = [];
 var contourLayers = []
 
+var stations = [];
+
+var getStationByName = function(stationName) {
+    for (var i in stations) {
+        if (stations[i].names.long == stationName) {
+            return stations[i];
+        }
+        if (stations[i].names.short == stationName) {
+            return stations[i];
+        }
+    }
+    return null;
+};
+
+var getStationById = function(stationId) {
+    for (var i in stations) {
+        if (stations[i].id == stationId) {
+            return stations[i];
+        }
+    }
+    return null;
+};
+
+
+var moveToStation = function(stationId) {
+    var station = getStationById(stationId);
+    if (!station) {
+        console.log("ERROR: station not found, id:", stationId);
+        return;
+    }
+
+    var pan = ol.animation.pan({
+        duration: 300,
+        source: /** @type {ol.Coordinate} */ (view.getCenter())
+    });
+
+    map.beforeRender(pan);
+    view.setCenter(ol.proj.fromLonLat([station.lon, station.lat]));
+};
 
 $.getJSON(dataDir + "stations.json", function(json) {
     var lon = '5.1';
     var lat = '142.0';
     view.setCenter(ol.proj.fromLonLat([lon, lat]));
 
+    stations = json.stations;
     createStationLayer(typeScales, json.stations);
 
-    addContours("UT");  // initial contours of Utrecht Centraal
+    var stationNames = [];
+    for (var i in stations)
+    {
+        stationNames.push(json.stations[i].names.long);
+        if (json.stations[i].names.long != json.stations[i].names.short) {
+            stationNames.push(json.stations[i].names.short);
+        }
+    }
+
+    document.getElementById('view-deperature-station-button').onclick =
+        function() {
+            var statioName = document.getElementById('departure-station-input').value;
+            console.log(statioName);
+            var station = getStationByName(statioName);
+            if (station) {
+                console.log(station.id);
+                showStationContours(station.id);
+                moveToStation(station.id);
+            } else {
+                console.log("ERROR: station not found");
+            }
+        };
+//    console.log(stationNames);
+
+    $('#the-basics .typeahead').typeahead({
+        hint: true,
+        highlight: true,
+        minLength: 1
+    },
+    {
+        name: 'states',
+        source: substringMatcher(stationNames)
+    });
+
+    createContoursLayer("UT");  // initial contours of Utrecht Centraal
 });
 
 
-function addContours(station_id)
-{
+var showStationContours = function(station_id) {
+    for (var i = 0; i < contourLayers.length; ++i)
+    {
+        var removedLayer = map.removeLayer(contourLayers[i]);
+    }
+    contourLayers.length = 0;
     createContoursLayer(station_id);
-}
+//    current_station_control_label.setText(selected_station_name);
+};
 
 
 function createStationLayer(typeScales, stations)
@@ -114,15 +193,11 @@ function createStationLayer(typeScales, stations)
         {
             return;
         }
-        for (var i = 0; i < contourLayers.length; ++i)
-        {
-            var removedLayer = map.removeLayer(contourLayers[i]);
-        }
-        contourLayers.length = 0;
-        var station_id = evt.selected[0].get('id');
-        var selected_station_name = evt.selected[0].get('title')
-        addContours(station_id);
-        current_station_control_label.setText(selected_station_name);
+        var stationId = evt.selected[0].get('id');
+        showStationContours(stationId);
+//        moveToStation(stationId);
+        station = getStationById(stationId);
+        document.getElementById('departure-station-input').value = station.names.long;
     });
 
     map.addInteraction(select);
@@ -216,9 +291,9 @@ function createContoursLayer(stationId) {
 }
 
 var updateColorBarLegend = function(stationId) {
-    var colorBarImage = document.getElementById('colorbar-image');
+    var colorBarImage = document.getElementById('colorbar-legend');
     var imageUrl = dataDir + "contours/" + stationId + "_major_colorbar.png";
-    colorBarImage.setAttribute("src", imageUrl);
+    colorBarImage.style.backgroundImage = "url(" + imageUrl + ")";
 };
 
 
@@ -295,3 +370,26 @@ map.on('pointermove', function(evt) {
     }
     displayFeatureInfo(map.getEventPixel(evt.originalEvent));
 });
+
+
+var substringMatcher = function(strs) {
+  return function findMatches(q, cb) {
+    var matches, substringRegex;
+
+    // an array that will be populated with substring matches
+    matches = [];
+
+    // regex used to determine if a string contains the substring `q`
+    substrRegex = new RegExp(q, 'i');
+
+    // iterate through the pool of strings and for any string that
+    // contains the substring `q`, add it to the `matches` array
+    $.each(strs, function(i, str) {
+      if (substrRegex.test(str)) {
+        matches.push(str);
+      }
+    });
+
+    cb(matches);
+  };
+};
