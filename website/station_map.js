@@ -74,6 +74,18 @@ var moveToStation = function(stationId) {
     view.setCenter(ol.proj.fromLonLat([station.lon, station.lat]));
 };
 
+
+var showAndPanToStation = function() {
+    var statioName = document.getElementById('departure-station-input').value;
+    var station = getStationByName(statioName);
+    if (station) {
+        showStationContours(station.id);
+        moveToStation(station.id);
+    } else {
+        console.log("ERROR: station not found");
+    }
+};
+
 $.getJSON(dataDir + "stations.json", function(json) {
     var lon = '5.1';
     var lat = '142.0';
@@ -91,42 +103,32 @@ $.getJSON(dataDir + "stations.json", function(json) {
         }
     }
 
-    document.getElementById('view-deperature-station-button').onclick =
-        function() {
-            var statioName = document.getElementById('departure-station-input').value;
-            console.log(statioName);
-            var station = getStationByName(statioName);
-            if (station) {
-                console.log(station.id);
-                showStationContours(station.id);
-                moveToStation(station.id);
-            } else {
-                console.log("ERROR: station not found");
-            }
-        };
-//    console.log(stationNames);
+    document.getElementById('view-deperature-station-button').onclick = showAndPanToStation;
 
+    // autocomplete via typeahead
     $('#the-basics .typeahead').typeahead({
         hint: true,
         highlight: true,
         minLength: 1
     },
     {
-        name: 'states',
+        name: 'station_names',
         source: substringMatcher(stationNames)
     });
 
-    createContoursLayer("UT");  // initial contours of Utrecht Centraal
+    showStationContours("UT");  // initial contours of Utrecht Centraal
 });
 
 
-var showStationContours = function(station_id) {
+var showStationContours = function(stationId) {
     for (var i = 0; i < contourLayers.length; ++i)
     {
         var removedLayer = map.removeLayer(contourLayers[i]);
     }
     contourLayers.length = 0;
-    createContoursLayer(station_id);
+    createContoursLayer(stationId);
+    station = getStationById(stationId);
+    document.getElementById('departure-station-input').value = station.names.long;
 //    current_station_control_label.setText(selected_station_name);
 };
 
@@ -196,8 +198,6 @@ function createStationLayer(typeScales, stations)
         var stationId = evt.selected[0].get('id');
         showStationContours(stationId);
 //        moveToStation(stationId);
-        station = getStationById(stationId);
-        document.getElementById('departure-station-input').value = station.names.long;
     });
 
     map.addInteraction(select);
