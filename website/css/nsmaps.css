@@ -29,35 +29,46 @@ body {
     z-index: 1;
 }
 
+
 #colorbar-legend-container {
     position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 1%;
+    left:0;
+    right:0;
+    bottom: 0%;
+    height: 5em;
     max-width: 600px;
     margin: auto;
-    padding: 0.5em 0.5em 0.5em 0.5em;
+    padding: 0.7em 0.5em 0.5em 0.5em;
     font-weight: bold;
     background-color: white;
-    box-shadow: 2px 2px 5px rgba(0,0,0,.2);
-    border-radius: 5px;
+    border-radius: 5px 5px 0px 0px;
     z-index: 1;
-    opacity: 0.95;
+    opacity: 1.0;
 }
 
-#colorbar-image {
+
+#colorbar-legend {
+    position: absolute;
+    left:0;
+    right:0;
     width: 100%;
-    margin: 0 auto;
+    height: 100%;
+    max-width: 577px;
+    margin: auto;
+    background-image: url("");
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 1;
 }
+
 
 #info-message {
     position: absolute;
-    left: 50%;
-    right: 3em;
+    left: 30%;
     margin: auto;
-    margin-top: 0.5em;
+    margin-top: 5.0em;
     padding: 10px;
-    width: 45%;
+    width: 68%;
     max-width: 1000px;
     box-shadow: 2px 2px 5px rgba(0,0,0,.2);
     background-color: white;
@@ -77,6 +88,7 @@ body {
     left: 3em;
     margin: auto;
     margin-top: 0.5em;
+    margin-right: 0.5em;
     padding: 10px;
     box-shadow: 2px 2px 5px rgba(0,0,0,.2);
     background-color: white;

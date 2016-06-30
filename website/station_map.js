@@ -216,9 +216,9 @@ function createContoursLayer(stationId) {
 }
 
 var updateColorBarLegend = function(stationId) {
-    var colorBarImage = document.getElementById('colorbar-image');
+    var colorBarImage = document.getElementById('colorbar-legend');
     var imageUrl = dataDir + "contours/" + stationId + "_major_colorbar.png";
-    colorBarImage.setAttribute("src", imageUrl);
+    colorBarImage.style.backgroundImage = "url(" + imageUrl + ")";
 };
 
 
