@@ -65,11 +65,11 @@ body {
 
 #info-message {
     position: absolute;
-    left: 30%;
+    right: 5%;
     margin: auto;
     margin-top: 5.0em;
     padding: 10px;
-    width: 68%;
+    width: 80%;
     max-width: 1000px;
     box-shadow: 2px 2px 5px rgba(0,0,0,.2);
     background-color: white;
