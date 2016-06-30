@@ -63,7 +63,7 @@ body {
     background-color: white;
     opacity: 0.9;
     border-radius: 5px;
-    z-index: 2;
+    z-index: 10;
 }
 
 #info-message-close {

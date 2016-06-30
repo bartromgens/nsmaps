@@ -2,7 +2,13 @@
 <html lang="en">
     <head>
 
-        <meta charset="UTF-8">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+        <meta name="description" content="">
+        <meta name="author" content="">
 
         <link rel="stylesheet" href="http://openlayers.org/en/v3.12.1/css/ol.css" type="text/css">
         <link rel="stylesheet" href="./css/nsmaps.css" type="text/css">
@@ -54,6 +60,7 @@
             <div id="map">
 
                 <div id="info"></div>
+
                 <div id="info-message">
                     <button id='info-message-close' type="button" class="btn btn-primary" onclick='this.parentNode.parentNode.removeChild(this.parentNode); return false;'>x</button>
                     <h5>What is this?</h5>
@@ -73,6 +80,7 @@
                     <div class="form-group">
                         <div id="the-basics">
                             <input class="typeahead form-control" type="text" placeholder="Departure Station"/>
+                            <button class="btn btn-primary" type="submit">Update</button>
                         </div>
                     </div>
                 </div>
