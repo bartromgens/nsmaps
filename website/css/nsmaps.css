@@ -84,3 +84,7 @@ body {
     opacity: 0.9;
     z-index: 2;
 }
+
+.ol-attribution {
+    display: none;  /* attributions can be found in the about.html page */
+}
