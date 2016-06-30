@@ -1,5 +1,6 @@
 html, body {
-    height:100%;
+    height: 100%;
+    overflow-x: hidden;
 }
 
 body {
@@ -85,18 +86,30 @@ body {
 
 #select-station-container {
     position: absolute;
-    left: 3em;
+    left:0;
+    right:0;
+    width: 100%;
+    max-width: 20em;
     margin: auto;
     margin-top: 0.5em;
-    margin-right: 0.5em;
     padding: 10px;
     box-shadow: 2px 2px 5px rgba(0,0,0,.2);
     background-color: white;
     border-radius: 5px;
-    opacity: 0.9;
-    z-index: 2;
+    opacity: 0.95;
+    z-index: 50;
 }
 
 .ol-attribution {
     display: none;  /* attributions can be found in the about.html page */
+}
+
+.ol-full-screen {
+    right: unset;
+    left: 0.5em;
+    top: 10em;
+}
+
+.ol-zoom {
+    top: 5em;
 }
