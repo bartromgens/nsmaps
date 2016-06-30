@@ -100,6 +100,18 @@ body {
     z-index: 50;
 }
 
+#clear-station-input-button {
+    position: absolute;
+    right: 1.7em;
+    top: 0;
+    bottom: 0;
+    height: 14px;
+    margin: auto;
+    font-size: 14px;
+    cursor: pointer;
+    color: #ccc;
+}
+
 .ol-attribution {
     display: none;  /* attributions can be found in the about.html page */
 }
@@ -113,3 +125,5 @@ body {
 .ol-zoom {
     top: 5em;
 }
+
+

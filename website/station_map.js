@@ -435,3 +435,8 @@ var substringMatcher = function(strs) {
     cb(matches);
   };
 };
+
+
+$("#clear-station-input-button").click(function(){
+    $("#departure-station-input").val('');
+});
