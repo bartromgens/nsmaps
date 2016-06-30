@@ -312,7 +312,7 @@ function createContoursLayer(stationId) {
             projection: 'EPSG:3857',
             tileGrid: ol.tilegrid.createXYZ({
 //                extent: extent,
-                maxZoom: 12,
+                maxZoom: 11,
                 minZoom: 1,
                 tileSize: [256, 256]
             }),

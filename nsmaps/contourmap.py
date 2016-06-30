@@ -41,8 +41,9 @@ class ContourData(object):
 
 class ContourPlotConfig(object):
     def __init__(self):
+        self.bound_box_filepath = 'bounding_box.geojson'
         self.stepsize_deg = 0.005
-        self.n_processes = 4
+        self.n_processes = 2
         self.cycle_speed_kmh = 18.0
         self.n_nearest = 20
         self.lon_start = 3.0
@@ -65,7 +66,8 @@ class ContourPlotConfig(object):
 class TestConfig(ContourPlotConfig):
     def __init__(self):
         super().__init__()
-        self.stepsize_deg = 0.005
+        self.bound_box_filepath = 'bounding_box_test.geojson'
+        self.stepsize_deg = 0.01
         self.n_processes = 4
         self.lon_start = 4.8
         self.lat_start = 52.0
@@ -185,7 +187,7 @@ class Contour(object):
         )
 
     def create_geojson_tiles(self, filepaths, tile_dir, min_zoom=0, max_zoom=12):
-        bound_box_filepath = os.path.join(self.data_dir, 'bounding_box.geojson')
+        bound_box_filepath = os.path.join(self.data_dir, self.config.bound_box_filepath)
         assert os.path.exists(bound_box_filepath)
         filepaths.append(bound_box_filepath)
         togeojsontiles.geojson_to_mbtiles(
