@@ -146,14 +146,19 @@ class Contour(object):
 
         # self.create_geojson(filepath, max_zoom, min_zoom, stroke_width)
 
-    def create_geojson(self, filepath, min_zoom=0, max_zoom=12, stroke_width=1, levels=[]):
+    def create_geojson(self, filepath, min_zoom=0, max_zoom=12, stroke_width=1, levels=[], norm=None):
         figure = Figure(frameon=False)
         FigureCanvas(figure)
         ax = figure.add_subplot(111)
         # contours = plt.contourf(lonrange, latrange, Z, levels=levels, cmap=plt.cm.plasma)
-        contours = ax.contour(self.lonrange, self.latrange, self.Z, levels=levels, cmap=plt.cm.jet, linewidths=3)
-        # cbar = figure.colorbar(contours, format='%.1f')
-        # plt.savefig('contour_example.png', dpi=150)
+        contours = ax.contour(
+            self.lonrange, self.latrange, self.Z,
+            levels=levels,
+            norm=norm,
+            cmap=plt.cm.jet,
+            linewidths=3
+        )
+
         ndigits = len(str(int(1.0 / self.config.stepsize_deg))) + 1
         logger.info('converting contour to geojson file: ' + filepath)
         geojsoncontour.contour_to_geojson(

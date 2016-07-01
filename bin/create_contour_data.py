@@ -39,18 +39,18 @@ def create_contour_tiles_for_station(departure_station, stations, config):
         return
     filepaths.append(filepath_major)
     contourmap.create_contour_data(filepath_major)
-    levels = numpy.linspace(0, max_level, num=19)
-    contourmap.create_geojson(filepath_major, min_zoom=max_zoom-1, max_zoom=max_zoom, stroke_width=8, levels=levels)
+    levels = numpy.linspace(0, max_level, num=13)
+    contourmap.create_geojson(filepath_major, min_zoom=0, max_zoom=max_zoom-2, stroke_width=8, levels=levels)
+
+    filepath_minor = os.path.join(DATA_DIR, 'contours/' + departure_station.get_code() + '_minor.geojson')
+    filepaths.append(filepath_minor)
+    levels_minor = numpy.linspace(0, max_level, num=19)
+    contourmap.create_geojson(filepath_minor, min_zoom=max_zoom-1, max_zoom=max_zoom, stroke_width=8, levels=levels_minor)
 
     filepath_top = os.path.join(DATA_DIR, 'contours/' + departure_station.get_code() + '_top.geojson')
     filepaths.append(filepath_top)
     levels_top = numpy.linspace(0, max_level, num=7)
     contourmap.create_geojson(filepath_top, min_zoom=0, max_zoom=max_zoom, stroke_width=16, levels=levels_top)
-
-    # filepath_minor = os.path.join(DATA_DIR, 'contours/' + departure_station.get_code() + '_minor.geojson')
-    # filepaths.append(filepath_minor)
-    # levels_minor = numpy.linspace(0, max_level, num=37)
-    # contourmap.create_geojson(filepath_minor, min_zoom=max_zoom, max_zoom=max_zoom, stroke_width=2, levels=levels_minor)
 
     tile_dir = os.path.join(DATA_DIR, 'contours/' + departure_station.get_code() + '/tiles/')
     contourmap.create_geojson_tiles(filepaths, tile_dir=tile_dir, min_zoom=0, max_zoom=max_zoom)
@@ -69,5 +69,5 @@ def create_all():
 
 
 if __name__ == "__main__":
-    test()
-    # create_all()
+    # test()
+    create_all()
