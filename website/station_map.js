@@ -334,7 +334,7 @@ function createContoursLayer(stationId) {
 
 var updateColorBarLegend = function(stationId) {
     var colorBarImage = document.getElementById('colorbar-legend');
-    var imageUrl = dataDir + "contours/" + stationId + "_major_colorbar.png";
+    var imageUrl = dataDir + "contours/" + stationId + "_top_colorbar.png";
     colorBarImage.style.backgroundImage = "url(" + imageUrl + ")";
 };
 
