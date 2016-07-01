@@ -21,7 +21,12 @@ var typeScales = {
     'facultatiefStation': 4,
 };
 
-var map = new ol.Map({target: 'map'});
+var map = new ol.Map({
+    target: 'map',
+//    loadTilesWhileAnimating: true,
+//    loadTilesWhileInteracting: true,
+});
+
 var view = new ol.View( {center: [0, 0], zoom: 10, projection: 'EPSG:3857'} );
 map.setView(view);
 
@@ -138,10 +143,8 @@ var stationFeaturesSelectable = [];
 var selectStationFeature = function(stationId) {
     for (var i in stationFeaturesSelectable) {
         var feature = stationFeaturesSelectable[i];
-//        console.log(feature.get('id'));
         if (feature.get('id') == stationId)
         {
-            console.log('feature found');
             feature.setStyle(getSelectedStationStyle(feature));
         }
         else {
@@ -257,7 +260,10 @@ function getStationStyle(feature, circleColor) {
 
     var circleStyle = new ol.style.Circle(({
         fill: new ol.style.Fill({color: circleColor}),
-        stroke: new ol.style.Stroke({color: strokeColor, width: 3}),
+        stroke: new ol.style.Stroke({
+                    color: strokeColor,
+                    width: 3,
+                }),
         radius: typeScales[feature.get('type')]
     }));
 
@@ -289,18 +295,19 @@ function createStationFeature(station, lonLat) {
 
 var lineStyleFunction = function(feature, resolution) {
     var scaleForPixelDensity = 1.0; //TODO: get device pixel density
-    var lineWidth = feature.get('stroke-width')/200.0 * scaleForPixelDensity * Math.pow(map.getView().getZoom(), 2.0)
+    var lineWidth = feature.get('stroke-width')/300.0 * scaleForPixelDensity * Math.pow(map.getView().getZoom(), 2.0)
     var lineStyle = new ol.style.Style({
         stroke: new ol.style.Stroke({
             color: feature.get('stroke'),
             width: lineWidth,
-            opacity: 0.0 //feature.get('opacity')
+//            lineDash: [20.0, 8.0], //or other combinations
         })
     });
     return lineStyle;
 };
 
 function createContoursLayer(stationId) {
+    console.log('create contour layger for station.id', stationId);
     var tilespath = dataDir + "contours/" + stationId + '/tiles/{z}/{x}/{y}.geojson';
 //    var extent = ol.extent.applyTransform([2.0, 49.5, 10.0, 54.5], ol.proj.getTransform("EPSG:4326", "EPSG:3857"));
 //    console.log(extent);
