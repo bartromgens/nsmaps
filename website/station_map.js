@@ -12,8 +12,8 @@ var dataDir = "./nsmaps-data/"
 
 var typeScales = {
     'megastation': 9,
-    'intercitystation': 7,
     'knooppuntIntercitystation': 7,
+    'intercitystation': 6,
     'sneltreinstation': 5,
     'knooppuntSneltreinstation': 5,
     'knooppuntStoptreinstation': 4,
@@ -217,7 +217,7 @@ function createStationLayer(typeScales, stations)
     });
 
     stationsSelectableLayer.setZIndex(99);
-    stationsUnselectableLayer.setZIndex(0);
+    stationsUnselectableLayer.setZIndex(10);
 
     map.addLayer(stationsSelectableLayer);
     map.addLayer(stationsUnselectableLayer);
@@ -294,8 +294,7 @@ function createStationFeature(station, lonLat) {
 
 
 var lineStyleFunction = function(feature, resolution) {
-    var scaleForPixelDensity = 1.0; //TODO: get device pixel density
-    var lineWidth = feature.get('stroke-width')/300.0 * scaleForPixelDensity * Math.pow(map.getView().getZoom(), 2.0)
+    var lineWidth = feature.get('stroke-width')/2.0;// /200.0 * Math.pow(map.getView().getZoom(), 2.0);
     var lineStyle = new ol.style.Style({
         stroke: new ol.style.Stroke({
             color: feature.get('stroke'),
@@ -446,4 +445,12 @@ var substringMatcher = function(strs) {
 
 $("#clear-station-input-button").click(function(){
     $("#departure-station-input").val('');
+});
+
+
+$('#departure-station-input').keypress(function(event){
+    var keycode = (event.keyCode ? event.keyCode : event.which);
+    if (keycode == '13'){
+       showAndPanToStation();
+    }
 });
