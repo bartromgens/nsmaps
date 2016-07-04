@@ -48,6 +48,9 @@ class Station(object):
     def has_travel_time_data(self):
         return os.path.exists(self.get_travel_time_filepath())
 
+    def get_type(self):
+        return self.nsstation.stationtype
+
     def __str__(self):
         return self.get_name() + ' (' +  self.get_code() + ')' + ', travel time: ' + str(self.travel_time_min)
 
