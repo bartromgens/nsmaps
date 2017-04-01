@@ -83,12 +83,10 @@ class Contour(object):
         self.config = config
         self.data_dir = data_dir
 
-    def create_contour_data(self, filepath):
+    def create_contour_data(self):
+        logger.info('BEGIN')
         if self.departure_station.has_travel_time_data():
             self.stations.travel_times_from_json(self.departure_station.get_travel_time_filepath())
-            if os.path.exists(filepath):
-                logger.error('Output file ' + filepath + ' already exists. Will not override.')
-                return
         else:
             logger.error('Input file ' + self.departure_station.get_travel_time_filepath() + ' not found. Skipping station.')
 
@@ -140,10 +138,15 @@ class Contour(object):
 
         end = timer()
         logger.info('finished spatial interpolation in ' + str(end - start) + ' [sec]')
+        logger.info('END')
 
         # self.create_geojson(filepath, max_zoom, min_zoom, stroke_width)
 
     def create_geojson(self, filepath, min_zoom=0, max_zoom=12, stroke_width=1, levels=[], norm=None):
+        if os.path.exists(filepath):
+            logger.error('Output file ' + filepath + ' already exists. Will not override.')
+            return
+
         figure = Figure(frameon=False)
         FigureCanvas(figure)
         ax = figure.add_subplot(111)

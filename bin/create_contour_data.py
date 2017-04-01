@@ -38,7 +38,7 @@ def create_contours_for_station(departure_station, stations, config):
         print('WARNING: skipping station ' + departure_station.get_code() + ', files already exist.')
         return
     filepaths.append(filepath_major)
-    contourmap.create_contour_data(filepath_major)
+    contourmap.create_contour_data()
     levels = numpy.linspace(0, max_level, num=13)
     contourmap.create_geojson(filepath_major, min_zoom=0, max_zoom=max_zoom-2, stroke_width=8, levels=levels)
 
