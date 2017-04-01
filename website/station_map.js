@@ -8,7 +8,7 @@ $.ajaxSetup({beforeSend: function(xhr){
 }
 });
 
-var dataDir = "./nsmaps-data/"
+var dataDir = "./nsmaps-data/";
 
 var typeScales = {
     'megastation': 9,
@@ -37,7 +37,7 @@ var osmLayer = new ol.layer.Tile({source: osmSource});
 map.addLayer(osmLayer);
 
 var stationFeatures = [];
-var contourLayers = []
+var contourLayers = [];
 
 var stations = [];
 
@@ -374,12 +374,12 @@ StationNameLabel = function(opt_options) {
 
     this.setText = function (text) {
         station_label.innerHTML = text;
-    }
+    };
 };
 
 ol.inherits(StationNameLabel, ol.control.Control);
 
-var current_station_control_label = new StationNameLabel()
+var current_station_control_label = new StationNameLabel();
 map.addControl(current_station_control_label);
 map.addControl(new ol.control.FullScreen());
 
@@ -400,7 +400,7 @@ var displayFeatureInfo = function(pixel) {
 
     if (feature) {
         var tooltipText = feature.get('title');
-        if (tooltipText != "") {
+        if (tooltipText !== '') {
             info.text(tooltipText);
             info.show();
         } else {
