@@ -14,15 +14,15 @@ MAX_STATIONS = 60
 
 
 def main():
-    stations = nsmaps.station.Stations(DATA_DIR)
+    stations = nsmaps.station.Stations(DATA_DIR, test=True)
     major_station_types = (
-        StationType.intercitystation,
-        StationType.knooppuntIntercitystation,
         StationType.megastation,
-        StationType.knooppuntSneltreinstation,
-        StationType.sneltreinstation,
-        StationType.knooppuntStoptreinstation,
-        StationType.stoptreinstation
+        # StationType.knooppuntIntercitystation,
+        # StationType.intercitystation,
+        # StationType.knooppuntSneltreinstation,
+        # StationType.sneltreinstation,
+        # StationType.knooppuntStoptreinstation,
+        # StationType.stoptreinstation
     )
     stations_options = stations.get_stations_for_types(major_station_types)
 
@@ -38,7 +38,7 @@ def main():
             n_stations += 1
             print(station)
 
-    timestamp = "19-04-2016 08:00"
+    timestamp = "19-04-2017 08:00"
     stations.create_traveltimes_data(stations_todo, timestamp)
     stations.recreate_missing_destinations(timestamp, False)
 

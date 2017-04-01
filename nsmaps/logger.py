@@ -12,13 +12,13 @@ console.setLevel(logging.DEBUG)
 handlers.append(console)
 
 # file handlers
-error_file = logging.FileHandler('error.log')
+error_file = logging.FileHandler('log/error.log')
 error_file.setLevel(logging.ERROR)
 handlers.append(error_file)
-info_file = logging.FileHandler('info.log')
+info_file = logging.FileHandler('log/info.log')
 info_file.setLevel(logging.INFO)
 handlers.append(info_file)
-debug_file = logging.FileHandler('debug.log')
+debug_file = logging.FileHandler('log/debug.log')
 debug_file.setLevel(logging.DEBUG)
 handlers.append(debug_file)
 
