@@ -1,5 +1,5 @@
-pytz==2015.7
-requests==2.9.1
-xmltodict==0.10.1
+pytz==2017.2
+requests==2.13.0
+xmltodict==0.10.2
 nsapi==2.7.4
-geojson==1.3.2
+geojson==1.3.4
