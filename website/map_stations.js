@@ -1,5 +1,4 @@
-function addStationsLayer(stations, map, stationFeaturesSelectable)
-{
+function addStationsLayer(stations, map, stationFeaturesSelectable) {
     console.log('createStationLayer');
     var stationFeaturesUnselectable = [];
 
@@ -70,7 +69,7 @@ function addStationsLayer(stations, map, stationFeaturesSelectable)
 
     var onSelectStationFeature = function(evt) {
         evt.deselected.forEach(function(feature){
-            feature.setStyle(getStationStyle(feature));
+            feature.setStyle(map.getStationStyle(feature));
         });
 
         if (!evt.selected[0])

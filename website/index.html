@@ -26,6 +26,7 @@
 
         <script src="map_contours.js"></script>
         <script src="map_stations.js"></script>
+        <script src="nsmap.js"></script>
 
         <title>Dutch Railways and Bicycle Travel Time Map</title>
 
@@ -44,6 +45,20 @@
                         <span class="icon-bar"></span>
                     </button>
                 </div>
+
+                <ul class="nav navbar-nav">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-xs-9">
+                                <div id="the-basics">
+                                    <input id="departure-station-input" class="typeahead form-control" type="text" placeholder="Departure Station"/>
+                                    <span id="clear-station-input-button" class="glyphicon glyphicon-remove-circle"></span>
+                                </div>
+                            </div>
+                            <button id="view-deperature-station-button" class="btn btn-primary col-xs-3" type="submit">Go</button>
+                        </div>
+                    </div>
+                </ul>
 
                 <div class="navbar-collapse collapse" id="navbar-main">
 
@@ -65,7 +80,7 @@
 
                 <div id="info"></div>
 
-                <div id="info-message">
+                <!-- <div id="info-message">
                     <button id='info-message-close' type="button" class="btn btn-primary" onclick='this.parentNode.parentNode.removeChild(this.parentNode); return false;'>x</button>
                     <h5>What is this map?</h5>
                     <p>
@@ -74,30 +89,18 @@
                         </br>
                         Click on a train station (blue circle) to change departure station.
                     </p>
-                </div>
+                </div> -->
 
                 <div id="colorbar-legend-container">
                     <div id="colorbar-legend"></div>
                 </div>
 
-                <div id="select-station-container">
-                    <div class="col-md-12">
-                        <div class="row">
-                            <div class="col-xs-9">
-                                <div id="the-basics">
-                                    <input id="departure-station-input" class="typeahead form-control" type="text" placeholder="Departure Station"/>
-                                    <span id="clear-station-input-button" class="glyphicon glyphicon-remove-circle"></span>
-                                </div>
-                            </div>
-                            <button id="view-deperature-station-button" class="btn btn-primary col-xs-3" type="submit">Go</button>
-                        </div>
-                    </div>
-                </div>
+
 
             </div>
         </div>
 
-        <script src="station_map.js"></script>
+        <script src="main.js"></script>
 
     </body>
 

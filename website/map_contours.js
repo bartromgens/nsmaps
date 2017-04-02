@@ -65,11 +65,54 @@ function addContourLayer(geojsonUrl, map, layerCollection) {
         });
 
         function lineStyleFunction(feature, resolution) {
-            var lineWidth = feature.get('stroke-width')/2.0;
+            var strokeWidth = feature.get('stroke-width');
+            var zoom = map.getView().getZoom();
+            var lineWidth = strokeWidth;
+            var value = feature.get('value');
+            var color = feature.get('stroke');
+            var zoomFactor = 0.7;
+            //var is60Line = value % 60 === 0;
+            //var is30Line = value % 30 === 0;
+            // var is15Line = value % 15 === 0;
+            //var is10Line = value % 10 === 0;
+            //var is5Line = value % 5 === 0;
+
+            var zoomLevelShow10 = 9;
+
+            if (value % 60 === 0) {
+                lineWidth = strokeWidth*2.5;
+            }
+            else if (value % 30 === 0) {
+                lineWidth = strokeWidth*1.5;
+            }
+            else if (value % 10 === 0) {
+                if (zoom <= 8) {
+                    color = 'rgba(0,0,0,0)';
+                }
+                else if (zoom <= 9) {
+                    lineWidth = strokeWidth/2.0;
+                }
+                else {
+                    lineWidth = strokeWidth/1.2;
+                }
+            }
+            else if (value % 5 === 0) {
+                if (zoom <= 10) {
+                    color = 'rgba(0,0,0,0)';
+                }
+                else {
+                    lineWidth = strokeWidth/2.5;
+                }
+            }
+
+            if (zoom <= 8) {
+                lineWidth *= 0.9;
+            }
+
             var lineStyle = new ol.style.Style({
                 stroke: new ol.style.Stroke({
-                    color: feature.get('stroke'),
-                    width: lineWidth
+                    color: color,
+                    width: lineWidth*zoomFactor,
                 })
             });
             return lineStyle;
