@@ -77,11 +77,10 @@ class TestConfig(ContourPlotConfig):
 
 
 class Contour(object):
-    def __init__(self, departure_station, stations, config, data_dir):
+    def __init__(self, departure_station, stations, config):
         self.departure_station = departure_station
         self.stations = stations
         self.config = config
-        self.data_dir = data_dir
 
     def create_contour_data(self):
         logger.info('BEGIN')
@@ -140,10 +139,20 @@ class Contour(object):
         logger.info('finished spatial interpolation in ' + str(end - start) + ' [sec]')
         logger.info('END')
 
-        # self.create_geojson(filepath, max_zoom, min_zoom, stroke_width)
+    @property
+    def data_filename(self):
+        return 'data/contour_data_' + self.departure_station.get_code() + '.npz'
 
-    def create_geojson(self, filepath, min_zoom=0, max_zoom=12, stroke_width=1, levels=[], norm=None):
-        if os.path.exists(filepath):
+    def load(self):
+        with open(self.data_filename, 'rb') as filein:
+            self.Z = numpy.load(filein)
+
+    def save(self):
+        with open(self.data_filename, 'wb') as fileout:
+            numpy.save(fileout, self.Z)
+
+    def create_geojson(self, filepath, stroke_width=1, levels=[], norm=None, overwrite=False):
+        if not overwrite and os.path.exists(filepath):
             logger.error('Output file ' + filepath + ' already exists. Will not override.')
             return
 
@@ -170,13 +179,6 @@ class Contour(object):
             unit='min',
             stroke_width=stroke_width
         )
-        with open(filepath, 'r') as jsonfile:
-            feature_collection = geojson.load(jsonfile)
-            for feature in feature_collection['features']:
-                feature["tippecanoe"] = {"maxzoom": str(int(max_zoom)), "minzoom": str(int(min_zoom))}
-        dump = geojson.dumps(feature_collection, sort_keys=True)
-        with open(filepath, 'w') as fileout:
-            fileout.write(dump)
 
         cbar = figure.colorbar(contours, format='%d', orientation='horizontal')
         cbar.set_label('Travel time [minutes]')
