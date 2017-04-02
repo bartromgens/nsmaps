@@ -64,14 +64,17 @@
                     </button>
                 </div>
 
+
                 <div class="navbar-collapse collapse" id="navbar-main">
+                    <p class="navbar-text hidden-sm">The colored lines indicate train and bicycle travel times from <span id='navbar-trainstation'></span></p>
 
                     <ul class="nav navbar-nav">
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="/about/">About</a></li>
-                        <li><a href="https://github.com/bartromgens/ns-maps" target="_blank">Code</a></li>
+                        <!--<li><a href="/about/">About</a></li>-->
+                        <li><button id="help-button" class="btn btn-link navbar-btn" onclick='$("#info-message").removeClass("hidden");'>Help</button></li>
+                        <li><a href="https://github.com/bartromgens/nsmaps" target="_blank">Code</a></li>
                     </ul>
                 </div>
 
@@ -84,24 +87,31 @@
 
                 <div id="info"></div>
 
-                <!-- <div id="info-message">
-                    <button id='info-message-close' type="button" class="btn btn-primary" onclick='this.parentNode.parentNode.removeChild(this.parentNode); return false;'>x</button>
-                    <h5>What is this map?</h5>
+                <div id="info-message" class="hidden">
+                    <button id='info-message-close' type="button" class="btn btn-primary" onclick='$("#info-message").addClass("hidden");'>x</button>
+                    <h5>What are the lines on the map?</h5>
                     <p>
-                        This map shows how long it takes to get somewhere in the Netherlands by train and bicycle (18 km/h).
-                        The lines indicate how far you can get within a given time, from the selected departure station. The lines indicate intervals of 10 minutes.
+                        This map shows how long it takes to get somewhere in the Netherlands by train and bicycle (18 km/h). Where the bicycle is used to travel from the arrival station to the final destination.
+                        </br>
+                        The lines indicate how far you can travels within a given time, from the selected departure station.
+                    </p>
+                    <p>
+                        Hover your mouse pointer over a line to see the time it indicates.
                         </br>
                         Click on a train station (blue circle) to change departure station.
                     </p>
-                </div> -->
+                    <p>
+                        It uses train tables for Wednesday 19 april 2017 leaving after 8:00 in the morning.
+                    </p>
+                </div>
 
                 <div id="colorbar-legend-container">
                     <div id="colorbar-legend"></div>
                 </div>
 
                 <div id="select-station-container">
-                    <div class="col-md-12">
-                        <div class="row">
+                    <div class="row">
+                        <div class="col-md-12">
                             <div class="col-xs-9">
                                 <div id="the-basics">
                                     <input id="departure-station-input" class="typeahead form-control" type="text" placeholder="Departure Station"/>

@@ -91,6 +91,7 @@ function createNsmap() {
         map.contourLayers.length = 0;
         station = map.getStationById(stationId);
         document.getElementById('departure-station-input').value = station.names.long;
+        $("#navbar-trainstation").text(station.names.long);
         var geojsonUrl = dataDir + "contours/" + stationId + '.geojson';
         addContourLayer(geojsonUrl, map, map.contourLayers);
         updateColorBarLegend(stationId);
