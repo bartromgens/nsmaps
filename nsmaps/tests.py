@@ -155,7 +155,7 @@ class TestContourMap(unittest.TestCase):
         stations.create_traveltimes_data([utrecht], departure_timestamp)
         # config = nsmaps.contourmap.ContourPlotConfig()
         config = nsmaps.contourmap.TestConfig()
-        contour = nsmaps.contourmap.Contour(utrecht, stations, config, self.data_dir)
+        contour = nsmaps.contourmap.Contour(utrecht, stations, config)
         contour_filepath = os.path.join(self.data_dir, self.filename_out)
         contour.create_contour_data()
         contour.create_geojson(filepath=contour_filepath, levels=levels)
