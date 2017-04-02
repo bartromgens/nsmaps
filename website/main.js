@@ -49,31 +49,7 @@ $.getJSON(dataDir + "stations.json", function(json) {
 
 
 // Controls
-
-StationNameLabel = function(opt_options) {
-    var options = opt_options || {};
-
-    var station_label = document.createElement('a');
-    station_label.innerHTML = 'Click on a station';
-
-    var element = document.createElement('div');
-    element.className = 'station-name ol-control';
-    element.appendChild(station_label);
-
-    ol.control.Control.call(this, {
-        element: element
-    });
-
-    this.setText = function (text) {
-        station_label.innerHTML = text;
-    };
-};
-
-ol.inherits(StationNameLabel, ol.control.Control);
-
-nsmap.addControl(new StationNameLabel());
 nsmap.addControl(new ol.control.FullScreen());
-
 
 // Tooltip
 $('#info').hide();
