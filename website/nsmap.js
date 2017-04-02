@@ -43,21 +43,21 @@ function createNsmap() {
     };
 
     map.getStationById = function(stationId) {
-        for (var i in nsmap.stations) {
-            if (nsmap.stations[i].id == stationId) {
-                return nsmap.stations[i];
+        for (var i in map.stations) {
+            if (map.stations[i].id == stationId) {
+                return map.stations[i];
             }
         }
         return null;
     };
 
     map.getStationByName = function(stationName) {
-        for (var i in nsmap.stations) {
-            if (nsmap.stations[i].names.long == stationName) {
-                return nsmap.stations[i];
+        for (var i in map.stations) {
+            if (map.stations[i].names.long == stationName) {
+                return map.stations[i];
             }
-            if (nsmap.stations[i].names.short == stationName) {
-                return nsmap.stations[i];
+            if (map.stations[i].names.short == stationName) {
+                return map.stations[i];
             }
         }
         return null;
@@ -82,17 +82,17 @@ function createNsmap() {
             colorBarImage.style.backgroundImage = "url(" + imageUrl + ")";
         }
 
-        for (var i = 0; i < nsmap.contourLayers.length; ++i)
+        for (var i = 0; i < map.contourLayers.length; ++i)
         {
-            var removedLayer = nsmap.removeLayer(nsmap.contourLayers[i]);
+            var removedLayer = map.removeLayer(map.contourLayers[i]);
         }
-        nsmap.contourLayers.length = 0;
+        map.contourLayers.length = 0;
         station = map.getStationById(stationId);
         document.getElementById('departure-station-input').value = station.names.long;
         var geojsonUrl = dataDir + "contours/" + stationId + '.geojson';
-        addContourLayer(geojsonUrl, nsmap, nsmap.contourLayers);
+        addContourLayer(geojsonUrl, map, map.contourLayers);
         updateColorBarLegend(stationId);
-        this.selectStationFeature(stationId);
+        map.selectStationFeature(stationId);
         //    current_station_control_label.setText(selected_station_name);
     };
 

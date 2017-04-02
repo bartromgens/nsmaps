@@ -19,7 +19,7 @@ function addContourLayer(geojsonUrl, map, layerCollection) {
                 'type': 'Feature',
                 'geometry': {
                     'type': 'MultiLineString',
-                    'coordinates': geometry.length == 1 ? geometry : geometry  //  TODO: remove and report as bug in OL example
+                    'coordinates': geometry,
                 },
                 'properties': value.tags
             };
@@ -78,7 +78,7 @@ function addContourLayer(geojsonUrl, map, layerCollection) {
             var zoomLevelShow5 = 11;
 
             if (value % 60 === 0) {
-                lineWidth = strokeWidth*4.0;
+                lineWidth = strokeWidth*3.0;
             }
             else if (value % 30 === 0) {
                 lineWidth = strokeWidth*2.0;
