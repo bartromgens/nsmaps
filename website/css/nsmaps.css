@@ -35,14 +35,13 @@ body {
     position: absolute;
     left:0;
     right:0;
-    bottom: 0%;
-    height: 5em;
+    bottom: 0;
+    height: 6em;
     max-width: 600px;
     margin: auto;
-    padding: 0.7em 0.5em 0.5em 0.5em;
     font-weight: bold;
     background-color: white;
-    border-radius: 5px 5px 0px 0px;
+    border-radius: 5px 5px 0 0;
     z-index: 1;
     opacity: 1.0;
 }
@@ -80,7 +79,6 @@ body {
 
 #info-message-close {
     float: right;
-    display: inline-block;
     padding: 2px 5px;
 }
 
@@ -88,7 +86,6 @@ body {
     position: absolute;
     left:0;
     right:0;
-    width: 100%;
     max-width: 20em;
     margin: auto;
     margin-top: 0.5em;
@@ -112,9 +109,6 @@ body {
     color: #ccc;
 }
 
-.ol-attribution {
-    display: none;  /* attributions can be found in the about.html page */
-}
 
 .ol-full-screen {
     right: unset;
@@ -125,5 +119,3 @@ body {
 .ol-zoom {
     top: 5em;
 }
-
-
