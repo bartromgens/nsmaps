@@ -76,6 +76,12 @@ function createNsmap() {
     };
 
     map.showStationContours = function(stationId) {
+        function updateColorBarLegend(stationId) {
+            var colorBarImage = document.getElementById('colorbar-legend');
+            var imageUrl = dataDir + "contours/" + stationId + "_colorbar.png";
+            colorBarImage.style.backgroundImage = "url(" + imageUrl + ")";
+        }
+
         for (var i = 0; i < nsmap.contourLayers.length; ++i)
         {
             var removedLayer = nsmap.removeLayer(nsmap.contourLayers[i]);
@@ -83,7 +89,7 @@ function createNsmap() {
         nsmap.contourLayers.length = 0;
         station = map.getStationById(stationId);
         document.getElementById('departure-station-input').value = station.names.long;
-        var geojsonUrl = dataDir + "contours/" + stationId + '_minor.geojson';
+        var geojsonUrl = dataDir + "contours/" + stationId + '.geojson';
         addContourLayer(geojsonUrl, nsmap, nsmap.contourLayers);
         updateColorBarLegend(stationId);
         this.selectStationFeature(stationId);

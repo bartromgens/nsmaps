@@ -68,7 +68,7 @@ function addContourLayer(geojsonUrl, map, layerCollection) {
             var strokeWidth = feature.get('stroke-width');
             var zoom = map.getView().getZoom();
             var lineWidth = strokeWidth;
-            var value = feature.get('value');
+            var value = feature.get('level-value');
             var color = feature.get('stroke');
             // var color = ol.color.asArray(feature.get('stroke'));
             // color[3] = 0.8;

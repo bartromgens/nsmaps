@@ -40,7 +40,6 @@ $.getJSON(dataDir + "stations.json", function(json) {
     });
 
     var initialStationId = url('?station');
-    console.log(initialStationId);
     if (!initialStationId) {
         initialStationId = "UT";
     }
@@ -48,12 +47,6 @@ $.getJSON(dataDir + "stations.json", function(json) {
     nsmap.moveToStation(initialStationId);
 });
 
-
-var updateColorBarLegend = function(stationId) {
-    var colorBarImage = document.getElementById('colorbar-legend');
-    var imageUrl = dataDir + "contours/" + stationId + "_major_colorbar.png";
-    colorBarImage.style.backgroundImage = "url(" + imageUrl + ")";
-};
 
 // Controls
 
@@ -83,10 +76,10 @@ nsmap.addControl(new ol.control.FullScreen());
 
 
 // Tooltip
-var info = $('#info');
-info.hide();
+$('#info').hide();
 
 var displayFeatureInfo = function(pixel) {
+    var info = $('#info');
     info.css({
         left: (pixel[0] + 10) + 'px',
         top: (pixel[1] - 50) + 'px'
@@ -111,7 +104,7 @@ var displayFeatureInfo = function(pixel) {
 
 nsmap.on('pointermove', function(evt) {
     if (evt.dragging) {
-        info.hide();
+        $('#info').hide();
         return;
     }
     displayFeatureInfo(nsmap.getEventPixel(evt.originalEvent));
