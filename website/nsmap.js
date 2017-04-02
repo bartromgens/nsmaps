@@ -11,7 +11,9 @@ function createNsmap() {
     map.setView(view);
 
     var osmSource = new ol.source.OSM("OpenCycleMap");
-    osmSource.setUrl("http://a.tile.opencyclemap.org/transport/{z}/{x}/{y}.png ");
+//    osmSource.setUrl("http://a.tile.opencyclemap.org/transport/{z}/{x}/{y}.png");  // needs an API key
+    osmSource.setUrl("https://a.tile.thunderforest.com/transport/{z}/{x}/{y}.png?apikey=52962bab91de4e789491bc1f5ed4956e");
+
     var osmLayer = new ol.layer.Tile({source: osmSource});
     map.addLayer(osmLayer);
     map.stationFeaturesSelectable = [];
