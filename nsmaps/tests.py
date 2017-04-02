@@ -5,8 +5,6 @@ import unittest
 import hashlib
 
 import numpy
-import matplotlib as mpl
-mpl.use('Agg')  # create plots without running X-server
 import matplotlib.pyplot as plt
 import matplotlib.mlab as mlab
 
@@ -24,7 +22,7 @@ class TestNSApi(unittest.TestCase):
 
     def test_get_station_info(self):
         stations = self.nsapi.get_stations()
-        self.assertEqual(len(stations), 620)
+        self.assertEqual(len(stations), 625)
 
     def test_trip_stop_without(self):
         """ Tests https://github.com/aquatix/ns-api/issues/14 """
@@ -63,6 +61,8 @@ class TestStations(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.testdir = './test/'
+        if os.path.exists(cls.testdir):
+            shutil.rmtree(cls.testdir)
         traveltimes_dir = os.path.join(cls.testdir, 'traveltimes')
         os.mkdir(cls.testdir)
         os.mkdir(traveltimes_dir)
@@ -101,7 +101,7 @@ class TestStations(unittest.TestCase):
 
     def test_create_travel_times_data(self):
         utrecht = self.stations.find_station("Utrecht Centraal")
-        departure_timestamp = "19-04-2016 08:00"
+        departure_timestamp = "19-05-2017 08:00"
         self.assertTrue(utrecht)
         self.stations.create_traveltimes_data([utrecht], departure_timestamp)
         self.assertTrue(os.path.exists(utrecht.get_travel_time_filepath()))
@@ -118,7 +118,7 @@ class TestStations(unittest.TestCase):
 
 class TestContourMap(unittest.TestCase):
     """ Test case for writing a contour to JSON. """
-    filename_out = 'test_contour.json'
+    filename_out = 'test_contour.geojson'
     checksum = '39d2ff2f5cbc9a768e816109f41b3288'
     data_dir = './test/'
 
@@ -146,25 +146,19 @@ class TestContourMap(unittest.TestCase):
     def tearDownClass(cls):
         shutil.rmtree(cls.data_dir)
 
-    def test_create_json(self):
-        min_angle = 10
-        ndigits = 5
-        nsmaps.contourmap.contour_to_json(self.contour_plot, self.filename_out, self.levels, min_angle, ndigits)
-        self.assertTrue(os.path.exists(self.filename_out))
-        with open(self.filename_out, 'rb') as jsonfile:
-            checksum = hashlib.md5(jsonfile.read()).hexdigest()
-            self.assertEqual(checksum, self.checksum)
-
     def test_contour(self):
+        departure_timestamp = "19-04-2016 08:00"
+        max_level_min = 180
+        levels = numpy.linspace(0, max_level_min, num=13)
         stations = nsmaps.station.Stations(self.data_dir, test=True)
         utrecht = stations.find_station('Utrecht Centraal')
-        departure_timestamp = "19-04-2016 08:00"
         stations.create_traveltimes_data([utrecht], departure_timestamp)
-        config = nsmaps.contourmap.ContourPlotConfig()
+        # config = nsmaps.contourmap.ContourPlotConfig()
         config = nsmaps.contourmap.TestConfig()
-        contour = nsmaps.contourmap.Contour(utrecht, stations, config, self.data_dir)
+        contour = nsmaps.contourmap.Contour(utrecht, stations, config)
         contour_filepath = os.path.join(self.data_dir, self.filename_out)
-        contour.create_contour_data(contour_filepath)
+        contour.create_contour_data()
+        contour.create_geojson(filepath=contour_filepath, levels=levels)
         self.assertTrue(os.path.exists(contour_filepath))
 
 

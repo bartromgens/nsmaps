@@ -103,7 +103,7 @@ class Stations(object):
         for station in self.stations:
             # if station.country == "NL" and "Utrecht" in station.names['long']:
             travel_times_available = station.has_travel_time_data()
-            contour_available = os.path.exists(os.path.join(self.data_dir, 'contours/' + station.get_code() + '_top.geojson'))
+            contour_available = os.path.exists(os.path.join(self.data_dir, 'contours/' + station.get_code() + '.geojson'))
             data['stations'].append({'names': station.nsstation.names,
                                      'id': station.get_code(),
                                      'lon': station.get_lon(),

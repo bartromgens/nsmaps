@@ -8,6 +8,7 @@ import numpy
 sys.path.append('../nsmaps')
 
 import nsmaps
+from nsmaps.logger import logger
 
 
 DATA_DIR = './website/nsmaps-data'
@@ -20,40 +21,31 @@ def test():
     departure_station = stations.find_station(departure_station_name)
     assert os.path.exists(os.path.join(DATA_DIR, 'contours/'))
 
-    test_config = nsmaps.contourmap.ContourPlotConfig()
-    # test_config = nsmaps.contourmap.TestConfig()
+    # test_config = nsmaps.contourmap.ContourPlotConfig()
+    test_config = nsmaps.contourmap.TestConfig()
     test_config.print_bounding_box()
 
-    create_contour_tiles_for_station(departure_station, stations, test_config)
+    create_contours_for_station(departure_station, stations, test_config, overwrite_existing=True)
 
 
-def create_contour_tiles_for_station(departure_station, stations, config):
-    max_zoom = 11
+def create_contours_for_station(departure_station, stations, config, overwrite_existing=False, use_saved_data=False):
+    logger.info(departure_station)
     max_level = 180
     filepaths = []
-    contourmap = nsmaps.contourmap.Contour(departure_station, stations, config, DATA_DIR)
+    contourmap = nsmaps.contourmap.Contour(departure_station, stations, config)
 
-    filepath_major = os.path.join(DATA_DIR, 'contours/' + departure_station.get_code() + '_major.geojson')
-    if os.path.exists(filepath_major):
+    filepath_geojson = os.path.join(DATA_DIR, 'contours/' + departure_station.get_code() + '.geojson')
+    if not overwrite_existing and os.path.exists(filepath_geojson):
         print('WARNING: skipping station ' + departure_station.get_code() + ', files already exist.')
         return
-    filepaths.append(filepath_major)
-    contourmap.create_contour_data(filepath_major)
-    levels = numpy.linspace(0, max_level, num=13)
-    contourmap.create_geojson(filepath_major, min_zoom=0, max_zoom=max_zoom-2, stroke_width=8, levels=levels)
-
-    filepath_minor = os.path.join(DATA_DIR, 'contours/' + departure_station.get_code() + '_minor.geojson')
-    filepaths.append(filepath_minor)
-    levels_minor = numpy.linspace(0, max_level, num=19)
-    contourmap.create_geojson(filepath_minor, min_zoom=max_zoom-1, max_zoom=max_zoom, stroke_width=8, levels=levels_minor)
-
-    filepath_top = os.path.join(DATA_DIR, 'contours/' + departure_station.get_code() + '_top.geojson')
-    filepaths.append(filepath_top)
-    levels_top = numpy.linspace(0, max_level, num=7)
-    contourmap.create_geojson(filepath_top, min_zoom=0, max_zoom=max_zoom, stroke_width=16, levels=levels_top)
-
-    tile_dir = os.path.join(DATA_DIR, 'contours/' + departure_station.get_code() + '/tiles/')
-    contourmap.create_geojson_tiles(filepaths, tile_dir=tile_dir, min_zoom=0, max_zoom=max_zoom)
+    filepaths.append(filepath_geojson)
+    if use_saved_data:
+        contourmap.load()
+    else:
+        contourmap.create_contour_data()
+        contourmap.save()
+    levels_minor = numpy.linspace(0, max_level, num=37)
+    contourmap.create_geojson(filepath_geojson, stroke_width=4, levels=levels_minor, overwrite=overwrite_existing)
 
 
 def create_all():
@@ -65,7 +57,7 @@ def create_all():
     for departure_station in stations:
         if departure_station.has_travel_time_data():
             # if departure_station.get_type() == 'megastation':
-            create_contour_tiles_for_station(departure_station, stations, config)
+            create_contours_for_station(departure_station, stations, config, overwrite_existing=False, use_saved_data=False)
 
 
 if __name__ == "__main__":
