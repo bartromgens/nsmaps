@@ -72,12 +72,6 @@ function addContourLayer(geojsonUrl, map, layerCollection) {
             var color = feature.get('stroke');
             var scaleFactor = 0.7;
             var zoomFactor = (zoom*zoom)/100.0;
-            //var is60Line = value % 60 === 0;
-            //var is30Line = value % 30 === 0;
-            // var is15Line = value % 15 === 0;
-            //var is10Line = value % 10 === 0;
-            //var is5Line = value % 5 === 0;
-
             var zoomLevelShow10 = 10;
             var zoomLevelShow5 = 11;
 
@@ -86,6 +80,9 @@ function addContourLayer(geojsonUrl, map, layerCollection) {
             }
             else if (value % 30 === 0) {
                 lineWidth = strokeWidth*2.0;
+            }
+            else if (value % 15 === 0 && zoom < (zoomLevelShow10)) {
+                lineWidth = strokeWidth;
             }
             else if (value % 10 === 0) {
                 if (zoom < zoomLevelShow10) {

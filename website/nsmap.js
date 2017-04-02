@@ -39,7 +39,7 @@ function createNsmap() {
         view.animate({
             center: ol.proj.fromLonLat([station.lon, station.lat]),
             duration: 300
-        })
+        });
     };
 
     map.getStationById = function(stationId) {
@@ -90,8 +90,11 @@ function createNsmap() {
         //    current_station_control_label.setText(selected_station_name);
     };
 
-    map.getStationStyle = function(feature, circleColor) {
+    map.stationStyleFunction = function(feature, resolution) {
+        var zoom = map.getView().getZoom();
+        var zoomFactor = zoom*zoom/100.0;
         var strokeColor = 'black';
+        var circleColor = 'yellow';
         if (feature.get('selectable'))
         {
             strokeColor = 'black';
@@ -102,9 +105,9 @@ function createNsmap() {
             fill: new ol.style.Fill({color: circleColor}),
             stroke: new ol.style.Stroke({
                 color: strokeColor,
-                width: 3,
+                width: 3*zoomFactor,
             }),
-            radius: typeScales[feature.get('type')]
+            radius: typeScales[feature.get('type')]*zoomFactor
         }));
 
         return new ol.style.Style({
@@ -112,7 +115,7 @@ function createNsmap() {
         });
     };
 
-    map.getSelectedStationStyle = function(feature) {
+    map.getSelectedStationStyle = function(feature, resolution) {
         var strokeColor = 'lightgreen';
         var circleColor = 'green';
 
@@ -135,7 +138,7 @@ function createNsmap() {
                 feature.setStyle(map.getSelectedStationStyle(feature));
             }
             else {
-                feature.setStyle(map.getStationStyle(feature));
+                feature.setStyle(map.stationStyleFunction);
             }
         }
     };

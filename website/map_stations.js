@@ -36,7 +36,7 @@ function addStationsLayer(stations, map, stationFeaturesSelectable) {
 
     for (var j in stationFeatures)
     {
-        stationFeatures[j].setStyle(map.getStationStyle(stationFeatures[j], 'yellow'));
+        stationFeatures[j].setStyle(map.stationStyleFunction);
     }
 
     var stationSelectableSource = new ol.source.Vector({
@@ -69,7 +69,7 @@ function addStationsLayer(stations, map, stationFeaturesSelectable) {
 
     var onSelectStationFeature = function(evt) {
         evt.deselected.forEach(function(feature){
-            feature.setStyle(map.getStationStyle(feature));
+            feature.setStyle(map.stationStyleFunction);
         });
 
         if (!evt.selected[0])
