@@ -39,7 +39,13 @@ $.getJSON(dataDir + "stations.json", function(json) {
         source: substringMatcher(stationNames)
     });
 
-    nsmap.showStationContours("UT");  // initial contours of Utrecht Centraal
+    var initialStationId = url('?station');
+    console.log(initialStationId);
+    if (!initialStationId) {
+        initialStationId = "UT";
+    }
+    nsmap.showStationContours(initialStationId);  // initial contours of Utrecht Centraal
+    nsmap.moveToStation(initialStationId);
 });
 
 

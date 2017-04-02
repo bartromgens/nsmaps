@@ -70,6 +70,8 @@ function addContourLayer(geojsonUrl, map, layerCollection) {
             var lineWidth = strokeWidth;
             var value = feature.get('value');
             var color = feature.get('stroke');
+            // var color = ol.color.asArray(feature.get('stroke'));
+            // color[3] = 0.8;
             var scaleFactor = 0.7;
             var zoomFactor = (zoom*zoom)/100.0;
             var zoomLevelShow10 = 10;
@@ -109,6 +111,7 @@ function addContourLayer(geojsonUrl, map, layerCollection) {
                 stroke: new ol.style.Stroke({
                     color: color,
                     width: lineWidth*scaleFactor*zoomFactor,
+                    opacity: 0.4
                 })
             });
             return lineStyle;
@@ -119,7 +122,8 @@ function addContourLayer(geojsonUrl, map, layerCollection) {
             style: lineStyleFunction,
             updateWhileInteracting: false,
             updateWhileAnimating: false,
-            renderMode: 'vector'  // other options stop loading tiles after zooming on large resolutions (OL bug?)
+            renderMode: 'vector',  // other options stop loading tiles after zooming on large resolutions (OL bug?)
+            //preload: 2,
         });
 
         map.addLayer(vectorLayer);

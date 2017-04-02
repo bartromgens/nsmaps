@@ -82,6 +82,7 @@ function addStationsLayer(stations, map, stationFeaturesSelectable) {
         });
         var stationId = evt.selected[0].get('id');
         map.showStationContours(stationId);
+        history.pushState(null, null, '?station=' + stationId);
         //        moveToStation(stationId);
     };
 
