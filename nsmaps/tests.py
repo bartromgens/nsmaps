@@ -22,7 +22,7 @@ class TestNSApi(unittest.TestCase):
 
     def test_get_station_info(self):
         stations = self.nsapi.get_stations()
-        self.assertEqual(len(stations), 625)
+        self.assertEqual(len(stations), 618)
 
     def test_trip_stop_without(self):
         """ Tests https://github.com/aquatix/ns-api/issues/14 """
