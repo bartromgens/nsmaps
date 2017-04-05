@@ -12,9 +12,12 @@ DATA_DIR = './website/nsmaps-data'
 
 MAX_STATIONS = 60
 
+TRAVEL_DATETIME = "19-04-2017 08:00"
+
 
 def main():
     stations = nsmaps.station.Stations(DATA_DIR, test=False)
+
     major_station_types = (
         StationType.megastation,
         StationType.knooppuntIntercitystation,
@@ -39,10 +42,8 @@ def main():
             n_stations += 1
             print(station)
 
-    timestamp = "19-04-2017 08:00"
-    stations.create_traveltimes_data(stations_todo, timestamp)
+    stations.create_traveltimes_data(stations_todo, TRAVEL_DATETIME)
     # stations.recreate_missing_destinations(timestamp, False)
-
 
 if __name__ == "__main__":
     main()
