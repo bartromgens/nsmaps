@@ -1,6 +1,7 @@
 import sys
 import os
 import math
+import fnmatch
 
 from timeit import default_timer as timer
 from multiprocessing import Process, Queue
@@ -81,6 +82,8 @@ class Contour(object):
         self.departure_station = departure_station
         self.stations = stations
         self.config = config
+        self.lonrange = numpy.arange(self.config.lon_start, self.config.lon_end, self.config.stepsize_deg)
+        self.latrange = numpy.arange(self.config.lat_start, self.config.lat_end, self.config.stepsize_deg / 2.0)
 
     def create_contour_data(self):
         logger.info('BEGIN')
@@ -93,8 +96,6 @@ class Contour(object):
         numpy.set_printoptions(3, threshold=100, suppress=True)  # .3f
 
         altitude = 0.0
-        self.lonrange = numpy.arange(self.config.lon_start, self.config.lon_end, self.config.stepsize_deg)
-        self.latrange = numpy.arange(self.config.lat_start, self.config.lat_end, self.config.stepsize_deg / 2.0)
         self.Z = numpy.zeros((int(self.lonrange.shape[0]), int(self.latrange.shape[0])))
         gps = nsmaps.utilgeo.GPS()
 
@@ -197,6 +198,7 @@ class Contour(object):
         # n_nearest: check N nearest stations as best start for cycle route
         logger.info('interpolate_travel_time')
         Z = numpy.zeros((int(latrange.shape[0]), int(lonrange.shape[0])))
+        min_per_m = 1.0 / (cycle_speed_kmh / 60.0 * 1000.0)
         for i, lat in enumerate(latrange):
             if i % (len(latrange) / 10) == 0:
                 logger.debug(str(int(i / len(latrange) * 100)) + '%')
@@ -208,7 +210,7 @@ class Contour(object):
                 for distance, index in zip(distances, indexes):
                     if stations[index].travel_time_min is None:
                         continue
-                    travel_time = stations[index].travel_time_min + distance / 1000.0 / cycle_speed_kmh * 60.0
+                    travel_time = stations[index].travel_time_min + distance * min_per_m
                     if travel_time < min_travel_time:
                         min_travel_time = travel_time
                 Z[i][j] = min_travel_time
@@ -218,3 +220,55 @@ class Contour(object):
         q.put(data)
         logger.info('end interpolate_travel_time')
         return
+
+
+class ContourMerged(object):
+
+    def __init__(self, config):
+        self.config = config
+        self.lonrange = numpy.arange(self.config.lon_start, self.config.lon_end, self.config.stepsize_deg)
+        self.latrange = numpy.arange(self.config.lat_start, self.config.lat_end, self.config.stepsize_deg / 2.0)
+        self.Z = numpy.zeros((int(self.lonrange.shape[0]), int(self.latrange.shape[0])))
+
+    def merge_grid_data(self, data_dir):
+        counter = 0
+        for file in os.listdir(data_dir):
+            if fnmatch.fnmatch(file, '*.npz'):
+                print(file)
+                counter += 1
+                with open(os.path.join(data_dir, file), 'rb') as filein:
+                    self.Z += numpy.load(filein)
+        self.Z = self.Z / counter
+
+    def create_geojson(self, filepath, stroke_width=1, levels=[], norm=None):
+        figure = Figure(frameon=False)
+        FigureCanvas(figure)
+        ax = figure.add_subplot(111)
+        colormap = plt.cm.jet
+        contours = ax.contourf(self.lonrange, self.latrange, self.Z, levels=levels, cmap=colormap)
+        contours = ax.contour(
+            self.lonrange, self.latrange, self.Z,
+            levels=levels,
+            norm=norm,
+            cmap=colormap,
+            linewidths=1
+        )
+
+        ndigits = len(str(int(1.0 / self.config.stepsize_deg))) + 1
+        geojsoncontour.contour_to_geojson(
+            contour=contours,
+            geojson_filepath=filepath,
+            contour_levels=levels,
+            min_angle_deg=self.config.min_angle_between_segments,
+            ndigits=ndigits,
+            unit='min',
+            stroke_width=stroke_width
+        )
+
+        # figure.savefig(
+        #     "combined_map.png",
+        #     dpi=300,
+        #     bbox_inches='tight',
+        #     pad_inches=0,
+        #     transparent=True,
+        # )
