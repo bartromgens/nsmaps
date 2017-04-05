@@ -39,7 +39,8 @@ function addContourLayer(geojsonUrl, map, layerCollection) {
     }).then(function(json) {
         var tileIndex = geojsonvt(json, {
             extent: 4096,
-            debug: 1
+            debug: 1,
+            indexMaxPoints: 100000
         });
 
         var vectorSource = new ol.source.VectorTile({
@@ -74,7 +75,7 @@ function addContourLayer(geojsonUrl, map, layerCollection) {
             // color[3] = 0.8;
             var scaleFactor = 0.7;
             var zoomFactor = (zoom*zoom)/100.0;
-            var zoomLevelShow10 = 10;
+            var zoomLevelShow10 = 9;
             var zoomLevelShow5 = 11;
 
             if (value % 60 === 0) {
