@@ -20,7 +20,7 @@ function addStationsLayer(stations, map, stationFeaturesSelectable) {
         var station = stations[i];
         var lat = parseFloat(station.lat);
         lat = lat + 90.0;
-        var lonLat = [station.lon, lat.toString()];
+        var lonLat = [station.lon.toFixed(5), lat.toFixed(5)];
         station.selectable = station.travel_times_available;
         var stationFeature = createStationFeature(station, lonLat);
         stationFeatures.push(stationFeature);
