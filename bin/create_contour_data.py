@@ -5,7 +5,8 @@ import os
 
 import numpy
 
-sys.path.append('../nsmaps')
+parentdir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(parentdir)
 
 import nsmaps
 from nsmaps.logger import logger
