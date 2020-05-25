@@ -1,7 +1,19 @@
-function addContourLayer(geojsonUrl, map, layerCollection) {
-    console.log('create contour layer for geojson_url', geojsonUrl);
+import OLProjection from "ol/proj/projection";
 
-    var replacer = function(key, value) {
+import OLSourceVectorTile from "ol/source/vectortile";
+import OLLayerVectorTile from "ol/layer/vectortile";
+
+import OLStyle from "ol/style/style";
+import OLStroke from "ol/style/stroke";
+import OLGeoJSON from "ol/format/geojson";
+
+import oltilegrid from "ol/tilegrid";
+
+
+export function addContourLayer(geojsonUrl, map, layerCollection) {
+    console.log('addContourLayer', geojsonUrl);
+
+    const replacer = function(key, value) {
         if (value.geometry) {
             var type;
             var rawType = value.type;
@@ -28,31 +40,30 @@ function addContourLayer(geojsonUrl, map, layerCollection) {
         }
     };
 
-    var tilePixels = new ol.proj.Projection({
+    const tilePixels = new OLProjection({
         code: 'TILE_PIXELS',
         units: 'tile-pixels'
     });
 
-
     return fetch(geojsonUrl).then(function(response) {
         return response.json();
     }).then(function(json) {
-        var tileIndex = geojsonvt(json, {
+        const tileIndex = geojsonvt(json, {
             extent: 4096,
             debug: 1,
             indexMaxPoints: 100000
         });
 
-        var vectorSource = new ol.source.VectorTile({
-            format: new ol.format.GeoJSON(),
-            tileGrid: ol.tilegrid.createXYZ(),
+        const vectorSource = new OLSourceVectorTile({
+            format: new OLGeoJSON(),
+            tileGrid: oltilegrid.createXYZ(),
             tilePixelRatio: 16,
             tileLoadFunction: function(tile) {
-                var format = tile.getFormat();
-                var tileCoord = tile.getTileCoord();
-                var data = tileIndex.getTile(tileCoord[0], tileCoord[1], -tileCoord[2] - 1);
+                const format = tile.getFormat();
+                const tileCoord = tile.getTileCoord();
+                const data = tileIndex.getTile(tileCoord[0], tileCoord[1], -tileCoord[2] - 1);
 
-                var features = format.readFeatures(
+                const features = format.readFeatures(
                     JSON.stringify({
                         type: 'FeatureCollection',
                         features: data ? data.features : []
@@ -66,23 +77,23 @@ function addContourLayer(geojsonUrl, map, layerCollection) {
         });
 
         function lineStyleFunction(feature, resolution) {
-            var strokeWidth = feature.get('stroke-width');
-            var zoom = map.getView().getZoom();
-            var lineWidth = strokeWidth;
-            var value = feature.get('level-value');
-            var color = feature.get('stroke');
+            const strokeWidth = feature.get('stroke-width');
+            const zoom = map.getView().getZoom();
+            let lineWidth = strokeWidth;
+            const value = feature.get('level-value');
+            let color = feature.get('stroke');
             // var color = ol.color.asArray(feature.get('stroke'));
             // color[3] = 0.8;
-            var scaleFactor = 0.7;
-            var zoomFactor = (zoom*zoom)/100.0;
-            var zoomLevelShow10 = 9;
-            var zoomLevelShow5 = 11;
+            const scaleFactor = 0.7;
+            const zoomFactor = zoom * zoom / 100.0;
+            const zoomLevelShow10 = 9;
+            const zoomLevelShow5 = 11;
 
             if (value % 60 === 0) {
-                lineWidth = strokeWidth*3.0;
+                lineWidth = strokeWidth * 3.0;
             }
             else if (value % 30 === 0) {
-                lineWidth = strokeWidth*2.0;
+                lineWidth = strokeWidth * 2.0;
             }
             else if (value % 15 === 0 && zoom < (zoomLevelShow10)) {
                 lineWidth = strokeWidth;
@@ -108,17 +119,16 @@ function addContourLayer(geojsonUrl, map, layerCollection) {
                 lineWidth *= 0.9;
             }
 
-            var lineStyle = new ol.style.Style({
-                stroke: new ol.style.Stroke({
+            return new OLStyle({
+                stroke: new OLStroke({
                     color: color,
-                    width: lineWidth*scaleFactor*zoomFactor,
+                    width: lineWidth * scaleFactor * zoomFactor,
                     opacity: 0.4
                 })
             });
-            return lineStyle;
         }
 
-        var vectorLayer = new ol.layer.VectorTile({
+        var vectorLayer = new OLLayerVectorTile({
             source: vectorSource,
             style: lineStyleFunction,
             updateWhileInteracting: false,

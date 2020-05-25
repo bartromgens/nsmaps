@@ -2,6 +2,7 @@ env/*
 env2/*
 website/data/contours_*.json
 website/data/traveltimes_from_*.json
+node_modules/
 
 *.pyc
 

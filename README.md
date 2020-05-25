@@ -20,8 +20,28 @@ Requires Python 3.4+.
 
 Color contours showing travel times from station A to any location in the Netherlands using a bicycle for the last leg of the trip. 
 
+## Development
+
 #### NS API key 
 
 You need to set an API username and key in `local_settings.py`. 
 Request one [here](http://www.ns.nl/en/travel-information/ns-api).
 Please note that the NS offers a limited number of requests per day. 
+
+### Webpack bundles (JavaScript and CSS)
+
+Install webpack and some plugins and loaders,
+```bash
+sudo npm install webpack -g
+npm install
+```
+
+Watch for changes and compile bundle if found,
+```bash
+webpack --progress --colors --watch
+```
+
+Generate minified production files,
+```bash
+webpack -p
+```

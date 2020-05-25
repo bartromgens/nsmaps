@@ -1,10 +1,21 @@
-function addStationsLayer(stations, map, stationFeaturesSelectable) {
+import OLSourceVector from 'ol/source/vector';
+import OLLayerVector from 'ol/layer/vector';
+
+import OLFeature from 'ol/feature';
+import OLPoint from 'ol/geom/point';
+
+import olproj from 'ol/proj';
+import OLSelect from 'ol/interaction/select';
+import olcondition from 'ol/events/condition';
+
+
+export function addStationsLayer(stations, map, stationFeaturesSelectable) {
     console.log('createStationLayer');
-    var stationFeaturesUnselectable = [];
+    const stationFeaturesUnselectable = [];
 
     function createStationFeature(station, lonLat) {
-        return new ol.Feature({
-            geometry: new ol.geom.Point( ol.proj.fromLonLat(lonLat) ),
+        return new OLFeature({
+            geometry: new OLPoint(olproj.fromLonLat(lonLat)),
             title: station.names.long,
             id: station.id,
             type: station.type,
@@ -13,46 +24,36 @@ function addStationsLayer(stations, map, stationFeaturesSelectable) {
         });
     }
 
-    var stationFeatures = [];
-
-    for (var i in stations)
-    {
-        var station = stations[i];
-        var lat = parseFloat(station.lat);
+    for (const station of stations) {
+        let lat = parseFloat(station.lat);
         lat = lat + 90.0;
-        var lonLat = [station.lon.toFixed(5), lat.toFixed(5)];
+        const lonLat = [station.lon.toFixed(5), lat.toFixed(5)];
         station.selectable = station.travel_times_available;
-        var stationFeature = createStationFeature(station, lonLat);
-        stationFeatures.push(stationFeature);
-        if (station.selectable)
-        {
+        const stationFeature = createStationFeature(station, lonLat);
+        if (station.selectable) {
             stationFeaturesSelectable.push(stationFeature);
         }
-        else
-        {
+        else {
             stationFeaturesUnselectable.push(stationFeature);
         }
     }
 
-    for (var j in stationFeatures)
-    {
-        stationFeatures[j].setStyle(map.stationStyleFunction);
-    }
-
-    var stationSelectableSource = new ol.source.Vector({
+    const stationSelectableSource = new OLSourceVector({
         features: stationFeaturesSelectable
     });
 
-    var stationUnselectableSource = new ol.source.Vector({
+    const stationUnselectableSource = new OLSourceVector({
         features: stationFeaturesUnselectable
     });
 
-    var stationsSelectableLayer = new ol.layer.Vector({
-        source: stationSelectableSource
+    const stationsSelectableLayer = new OLLayerVector({
+        source: stationSelectableSource,
+        style: map.stationStyleFunction
     });
 
-    var stationsUnselectableLayer = new ol.layer.Vector({
-        source: stationUnselectableSource
+    const stationsUnselectableLayer = new OLLayerVector({
+        source: stationUnselectableSource,
+        style: map.stationStyleFunction
     });
 
     stationsSelectableLayer.setZIndex(99);
@@ -62,28 +63,27 @@ function addStationsLayer(stations, map, stationFeaturesSelectable) {
     map.addLayer(stationsUnselectableLayer);
 
     // Select features
-    var select = new ol.interaction.Select({
+    const select = new OLSelect({
         layers: [stationsSelectableLayer],
-        condition: ol.events.condition.click
+        condition: olcondition.click
     });
 
-    var onSelectStationFeature = function(evt) {
+    const onSelectStationFeature = function(evt) {
         evt.deselected.forEach(function(feature){
             feature.setStyle(map.stationStyleFunction);
         });
 
-        if (!evt.selected[0])
-        {
+        if (!evt.selected[0]) {
             return;
         }
 
         evt.selected.forEach(function(feature){
             feature.setStyle(map.getSelectedStationStyle(feature));
         });
-        var stationId = evt.selected[0].get('id');
+        const stationId = evt.selected[0].get('id');
         map.showStationContours(stationId);
         history.pushState(null, null, '?station=' + stationId);
-        $("#click-tip").hide();
+        $('#click-tip').hide();
         //        moveToStation(stationId);
     };
 

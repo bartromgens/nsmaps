@@ -1,27 +1,33 @@
+// import 'bootstrap';
+
+import OLControlFullScreen from "ol/control/fullscreen";
+
+const NSMap = require("./nsmap");
+const NSStations = require("./map_stations");
+
+const DATA_DIR = "./nsmaps-data/";
 
 // http://stackoverflow.com/a/4234006
 $.ajaxSetup({
-    beforeSend: function(xhr){
-        if (xhr.overrideMimeType)
-        {
+    beforeSend: function(xhr) {
+        if (xhr.overrideMimeType) {
             xhr.overrideMimeType("application/json");
         }
     }
 });
 
-var dataDir = "./nsmaps-data/";
 
-nsmap = createNsmap();
+const nsmap = NSMap.createNsmap(DATA_DIR);
 
-$.getJSON(dataDir + "stations.json", function(json) {
+
+$.getJSON(DATA_DIR + "stations.json", function(json) {
     nsmap.stations = json.stations;
-    addStationsLayer(json.stations, nsmap, nsmap.stationFeaturesSelectable);
+    NSStations.addStationsLayer(json.stations, nsmap, nsmap.stationFeaturesSelectable);
 
-    var stationNames = [];
-    for (var i in nsmap.stations)
-    {
+    const stationNames = [];
+    for (let i in nsmap.stations) {
         stationNames.push(json.stations[i].names.long);
-        if (json.stations[i].names.long != json.stations[i].names.short) {
+        if (json.stations[i].names.long !== json.stations[i].names.short) {
             stationNames.push(json.stations[i].names.short);
         }
     }
@@ -39,7 +45,7 @@ $.getJSON(dataDir + "stations.json", function(json) {
         source: substringMatcher(stationNames)
     });
 
-    var initialStationId = url('?station');
+    let initialStationId = url('?station');
     if (!initialStationId) {
         initialStationId = "UT";
     }
@@ -49,24 +55,24 @@ $.getJSON(dataDir + "stations.json", function(json) {
 
 
 // Controls
-nsmap.addControl(new ol.control.FullScreen());
+// nsmap.addControl(new OLControlFullScreen());
 
 // Tooltip
 $('#info').hide();
 
-var displayFeatureInfo = function(pixel) {
-    var info = $('#info');
+const displayFeatureInfo = function(pixel) {
+    const info = $('#info');
     info.css({
         left: (pixel[0] + 10) + 'px',
         top: (pixel[1] - 50) + 'px'
     });
 
-    var feature = nsmap.forEachFeatureAtPixel(pixel, function(feature, layer) {
+    const feature = nsmap.forEachFeatureAtPixel(pixel, function(feature, layer) {
         return feature;
     });
 
     if (feature) {
-        var tooltipText = feature.get('title');
+        const tooltipText = feature.get('title');
         if (tooltipText !== '') {
             info.text(tooltipText);
             info.show();
@@ -87,15 +93,15 @@ nsmap.on('pointermove', function(evt) {
 });
 
 
-var substringMatcher = function(strs) {
+const substringMatcher = function(strs) {
     return function findMatches(q, cb) {
-        var matches, substringRegex;
+        let matches, substringRegex;
 
         // an array that will be populated with substring matches
         matches = [];
 
         // regex used to determine if a string contains the substring `q`
-        substrRegex = new RegExp(q, 'i');
+        const substrRegex = new RegExp(q, 'i');
 
         // iterate through the pool of strings and for any string that
         // contains the substring `q`, add it to the `matches` array
@@ -116,8 +122,8 @@ $("#clear-station-input-button").click(function(){
 
 
 $('#departure-station-input').keypress(function(event){
-    var keycode = (event.keyCode ? event.keyCode : event.which);
-    if (keycode == '13'){
+    const keycode = (event.keyCode ? event.keyCode : event.which);
+    if (keycode === '13'){
         nsmap.showAndPanToStation();
     }
 });

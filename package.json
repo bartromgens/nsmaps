@@ -1,0 +1,23 @@
+{
+  "name": "nsmaps",
+  "version": "1.0.0",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "bootstrap": "^4.5.0",
+    "jquery": "^3.5.1",
+    "ol": "^4.6.4",
+    "popper.js": "^1.16.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "babel-preset-es2015": "^6.24.1",
+    "css-loader": "^3.4.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "path": "^0.12.7",
+    "style-loader": "^1.1.2",
+    "webpack": "^4.41.5",
+    "webpack-cleanup-plugin": "^0.5.1",
+    "webpack-manifest-plugin": "^2.2.0"
+  }
+}
